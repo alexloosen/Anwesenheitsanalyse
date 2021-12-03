@@ -1,3 +1,5 @@
+import requests
+
 def connect_drill(query, caching=True, chunk_size: int = 0):
     #username = os.getenv("DRILLUSERNAME")
     host = 'https://proxima.bigdata.fh-aachen.de:8047'
