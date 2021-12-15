@@ -1,3 +1,6 @@
 data.json
 .ipynb_checkpoints/
 __pycache__/
+*.json
+*.txt
+.idea/
