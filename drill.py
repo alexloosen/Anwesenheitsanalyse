@@ -1,4 +1,6 @@
 import requests
+import pandas as pd
+import datetime as dt
 
 def connect_drill(query, caching=True, chunk_size: int = 0):
     #username = os.getenv("DRILLUSERNAME")
@@ -17,7 +19,8 @@ def connect_drill(query, caching=True, chunk_size: int = 0):
     data = {'query': "{q}".format(q=query)}
 
     try:
-        result = requests.post(host + '/query', json=data, headers=headers)
+        result = requests.post(host + '/query', json=data, headers=headers, verify=True)
+        print(result)
     except Exception as e:
         print("The drill-proxy is not reachable. Please check if you are in the FH-Aachen network.")
         raise (e)
@@ -33,33 +36,49 @@ def connect_drill(query, caching=True, chunk_size: int = 0):
         print(result.text)
     return data
     
-#   SELECT * FROM dfs.co2meter.`sensor_data`
-#   SELECT `timestamp`,`room`, `presence`, `co2_ppm`, `temperature_celsius`, `relative_humidity_percent` 
-#    FROM ipenv.data.`sensor_data`
-#    WHERE `room` LIKE '{room}' 
-#    AND `timestamp` > 1627776000
-#    AND `timestamp` < 1634346061
-def get_PIR_data(room: str = "H217"):
-    dict_rooms = {'H217': 'Elsen', 'H216': 'Galla', 'H215': 'Remmy'}
+#    query = """SELECT *
+#                FROM dfs.co2meter.`sensor_data`
+#                WHERE `serial_number` = 's_3c6105d3abae_299589'
+#                FETCH FIRST 100000 ROWS ONLY"""
+
+#    query = """SELECT `timestamp`,`room`, `presence`, `co2_ppm`, `temperature_celsius`, `relative_humidity_percent` 
+#                FROM ipenv.data.`sensor_data_v1`
+#                WHERE `timestamp` > 1627776000
+#                AND `room` LIKE '{room}'
+#                LIMIT 1000000""".format(room=room)
+
+#                WHERE SensorID LIKE 's_e8db84c5f33d_281913'
+
+#{"room":{"0":"Daniel","1":"Felix N #2","2":"Calvin","3":"bigDataLab","4":"FelixAkku","5":"Galla","6":null,"7":"Lukasbuero","8":"Remmy","9":"Felix B. #1","10":"Felix N #1","11":"Elsen","12":"Internal Server Error"}}
+
+
+def get_PIR_data(room: str = "H217", presence = True):
+    dict_rooms = {'dfs': 'dfs', 'H217': 'Elsen', 'H216': 'Galla', 'H215': 'Remmy', '0':'Daniel',
+                  '1':'Felix N#2','2':'Calvin','3':'bigDataLab','4':'FelixAkku', '7':'Lukasbuero','9':'Felix B. #1','10':'Felix N #1'}
     room = dict_rooms[room]
     
     query = """SELECT `timestamp`,`room`, `presence`, `co2_ppm`, `temperature_celsius`, `relative_humidity_percent` 
-                FROM ipenv.data.`sensor_data`
-                WHERE `room` LIKE '{room}' 
-                AND `timestamp` > 1627776000
-                ORDER BY `timestamp` ASC
-                LIMIT 10000000""".format(room=room)
-    
+                FROM ipenv.data.`sensor_data_v1`
+                WHERE `timestamp` > 1627776000
+                AND `room` LIKE '{room}'""".format(room=room)
+#                LIMIT 1000000""".format(room=room)
+
+    pir_data = pd.DataFrame
     pir_data = connect_drill(query, caching=True)
     
+    if (pir_data.empty):
+        return pir_data
+
+    pd.set_option("display.max_rows", None, "display.max_columns", None)
+
     # apply CET time offset to timestamp
     pir_data["timestamp"].dt.tz_localize('Europe/Berlin', ambiguous=True, nonexistent='shift_forward')
     pir_data["timestamp"] = pir_data["timestamp"] + pd.Timedelta(hours=2)
 
-    pir_data["presence"] = pir_data["presence"].astype(int)
-    pir_data.head()
-    
-    pir_data = pir_data.groupby(pd.Grouper(key="timestamp", freq="5min")).mean()\
+    if (presence):
+        pir_data["presence"] = pir_data["presence"].astype(int)
+
+    pir_data = pir_data.groupby(pd.Grouper(key="timestamp", freq="2min")).mean()\
         .round(0).reset_index(drop=False)
-    
+
     return pir_data

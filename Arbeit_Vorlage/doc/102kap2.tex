@@ -1,0 +1,35 @@
+\clearpage
+\chapter{\textbf{Grundlagen}}\label{grundlagen}
+%\addtocontents{toc}{\vspace{0.8cm}}
+
+\section{Unterkapitel}\label{unterkapitel}
+\addtocontents{toc}{\vspace{0.8cm}}
+
+Wir sehen im Folgenden die Formel für die Faltung von Wahrscheinlichkeitsdichtefunktionen, als Gleichungsarray:
+
+\begin{align}
+(p_i * p_j)(n) & =  \sum_{k \in \mathbb{D}} p_i(k) \cdot p_j(n - k) \\
+p_{total} & =  p_0 \ast p_1 \ast \ldots p_{n-1}; \forall n
+\end{align}
+
+% Formel
+Hier ist nur eine einfache Formel mit der \texttt{equation}-Umgebung für die Minkowski Metrik:
+\begin{equation}\label{Minkowski}
+D\left(X,Y\right)=\left(\sum_{i=1}^n |x_i-y_i|^p\right)^{1/p}\\
+\end{equation}
+
+Wie in Gleichung \ref{Minkowski} zu erkennen ist, ergibt sich die L2-Norm (Euklidische Distanz), wenn man den Exponenten $p = 2$ wählt.
+
+Support Vector Machines \cite{Haykin99} nutzen die Euklidische Distanz (oder äquivalent) das Skalarprodukt.
+%% Zwei Abbildungen, die zusammen gehören
+
+%\begin{figure}
+%        \centering
+%        \begin{minipage}[c]{0.45\textwidth}
+%                \includegraphics[height=6.5cm]{pic/dateiname1.png}
+%        \end{minipage}
+%        \begin{minipage}[c]{0.45\textwidth}
+%                \includegraphics[height=6.5cm]{pic/dateiname2.png}
+%        \end{minipage}
+%        \caption{Zwei Abbildungen}\label{fig:zwei_abb}
+%\end{figure}

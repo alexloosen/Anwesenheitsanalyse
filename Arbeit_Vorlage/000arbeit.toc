@@ -1,0 +1,22 @@
+\babel@toc {ngerman}{}\relax 
+\linespread {1}
+\contentsline {chapter}{\numberline {1}\textbf {Einleitung}}{4}{}%
+\contentsline {section}{\numberline {1.1}Motivation und Aufgabenstellung}{4}{}%
+\contentsline {section}{\numberline {1.2}Vorgehensweise}{5}{}%
+\vspace {0.8cm}
+\contentsline {chapter}{\numberline {2}\textbf {Grundlagen}}{6}{}%
+\contentsline {section}{\numberline {2.1}Unterkapitel}{6}{}%
+\vspace {0.8cm}
+\contentsline {chapter}{\numberline {3}\textbf {Kapitel 3}}{7}{}%
+\vspace {0.8cm}
+\contentsline {chapter}{\numberline {4}\textbf {Zusammenfassung und Ausblick}}{9}{}%
+\vspace {0.8cm}
+\contentsline {chapter}{Quellenverzeichnis}{10}{}%
+\contentsline {chapter}{Abkürzungsverzeichnis}{11}{}%
+\contentsline {chapter}{Abbildungsverzeichnis}{12}{}%
+\contentsline {chapter}{Tabellenverzeichnis}{13}{}%
+\vspace {0.8cm}
+\contentsline {chapter}{Anhang}{13}{}%
+\contentsline {chapter}{\numberline {A}Quellcode}{14}{}%
+\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{15}{}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

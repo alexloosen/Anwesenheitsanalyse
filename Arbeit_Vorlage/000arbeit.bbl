@@ -1,0 +1,22 @@
+\begin{thebibliography}{}
+
+\bibitem[Hartnett, 2018]{ImageAttack}
+Hartnett, K. (2018).
+\newblock Machine learning confronts the elephant in the room.
+\newblock Quanta Magazine, Online.
+\newblock
+  https://www.quantamagazine.org/machine-learning-confronts-the-elephant-in-the-room-20180920/.
+
+\bibitem[Haykin, 1999]{Haykin99}
+Haykin, S. (1999).
+\newblock {\em {Neural Networks - A Comprehensive Foundation}}.
+\newblock Prentice Hall, 2 edition.
+
+\bibitem[Le, 2018]{Segmentation}
+Le, J. (2018).
+\newblock How to do semantic segmentation using deep learning.
+\newblock Online.
+\newblock
+  https://medium.com/nanonets/how-to-do-image-segmentation-using-deep-learning-c673cc5862ef.
+
+\end{thebibliography}

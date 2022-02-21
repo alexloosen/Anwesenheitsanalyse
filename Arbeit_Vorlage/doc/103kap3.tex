@@ -1,0 +1,40 @@
+\clearpage
+\chapter{\textbf{Kapitel 3}}\label{kap3}
+\addtocontents{toc}{\vspace{0.8cm}}
+
+\begin{table}[htb]
+\caption{Messergebnisse}
+\label{tab:messung}
+\centering
+\begin{tabu}{l|[2pt]C|C|C}
+Stellung & \frac{T_U}{^\circ C}  & \frac{T_c}{^\circ C} & \frac{\Delta T}{^\circ C}  \\
+\tabucline[2pt]{-}
+senkrecht (0°) & 27,3 & 69,8 & 42,5\\
+\tabucline[0.5pt]{-}
+waagerecht (90°) & 26,6 & 70,6 & 44,0\\
+\end{tabu}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Smartphone Sensordaten}
+\begin{tabu}{|p{9cm}|l|l|}
+\hline
+Sensorinformation&Format&frequency [$s^{-1}$]\\
+\hline
+App identifier for vendor & int64 & once per transfer\\
+WIFI and network carrier IP addresses& int128 & once per transfer\\
+battery level& int8 & 0.1\\
+Position information: latitude, longitude, altitude, speed, course, vertical position accuracy, horizontal position accuracy, floor level information& float32[8] & 1\\
+Heading information: heading.x, heading.y, heading.z, true heading, magnetic heading, heading accuracy& float16[6] & 1 \\
+Accelerometer information: acceleration.x, acceleration.y, acceleration.z& float16[3] & 2 \\
+Gyroscope information: rotationRate.x, rotationRate.y, rotationRate.z& float16[3] & 2 \\
+altimeter information: relative altitude, pressure & float16[2] & 1 \\ 
+timestamp & uint32 & once per transfer \\
+Temperature [°C] & float16 & 1\\
+\hline
+\end{tabu}
+\label{tab:smartphonesensor}
+\end{table}
+
+Wie in Tabelle \ref{tab:smartphonesensor} zu sehen ist, ist es besser, Trennlinien nur dort einzusetzen, wo logische Grenzen liegen.
