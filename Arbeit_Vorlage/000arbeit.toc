@@ -5,18 +5,18 @@
 \contentsline {section}{\numberline {1.2}Vorgehensweise}{5}{}%
 \vspace {0.8cm}
 \contentsline {chapter}{\numberline {2}\textbf {Grundlagen}}{6}{}%
-\contentsline {section}{\numberline {2.1}Unterkapitel}{6}{}%
+\contentsline {section}{\numberline {2.1}Machine Learning}{6}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{\numberline {3}\textbf {Kapitel 3}}{7}{}%
+\contentsline {chapter}{\numberline {3}\textbf {Kapitel 3}}{9}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{\numberline {4}\textbf {Zusammenfassung und Ausblick}}{9}{}%
+\contentsline {chapter}{\numberline {4}\textbf {Zusammenfassung und Ausblick}}{11}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Quellenverzeichnis}{10}{}%
-\contentsline {chapter}{Abkürzungsverzeichnis}{11}{}%
-\contentsline {chapter}{Abbildungsverzeichnis}{12}{}%
-\contentsline {chapter}{Tabellenverzeichnis}{13}{}%
+\contentsline {chapter}{Quellenverzeichnis}{12}{}%
+\contentsline {chapter}{Abkürzungsverzeichnis}{13}{}%
+\contentsline {chapter}{Abbildungsverzeichnis}{14}{}%
+\contentsline {chapter}{Tabellenverzeichnis}{15}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Anhang}{13}{}%
-\contentsline {chapter}{\numberline {A}Quellcode}{14}{}%
-\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{15}{}%
+\contentsline {chapter}{Anhang}{15}{}%
+\contentsline {chapter}{\numberline {A}Quellcode}{16}{}%
+\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{17}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

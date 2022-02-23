@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  15 FEB 2022 13:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  23 FEB 2022 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -736,37 +736,58 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface.
 
+
+Overfull \hbox (5.58821pt too wide) in paragraph at lines 26--41
+\OT1/ptm/m/n/12 Luftfeuchtigkeits- und CO2-Werte als aus-sa-ge-kr[]aftige In-di-ka-to-ren f[]ur mensch-li-che Pr[]asenz
+ []
+
 [4
 
 
 
 
 
-]) [5]
+]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 64.
+ (d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)) [5]
 \openout2 = `./doc/102kap2.aux'.
 
  (./doc/102kap2.tex
 chapter 2.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 16.
-(d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Overfull \hbox (1.7129pt too wide) in paragraph at lines 23--25
-[]\OT1/ptm/m/n/12 Support Vec-tor Ma-chi-nes [[]] nut-zen die Eu-kli-di-sche Di-stanz (oder []aquivalent)
- []
-
-) [6
+[6
 
 
 
 
 
 ]
+<./pic/Clustering_Beispiel.png, id=24, 369.63094pt x 386.94562pt>
+File: ./pic/Clustering_Beispiel.png Graphic file (type png)
+<use ./pic/Clustering_Beispiel.png>
+Package pdftex.def Info: ./pic/Clustering_Beispiel.png  used on input line 42.
+(pdftex.def)             Requested size: 227.62204pt x 238.28603pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--46
+
+ []
+
+[7 <./pic/Clustering_Beispiel.png>]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 59.
+ (d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (1.7129pt too wide) in paragraph at lines 66--68
+[]\OT1/ptm/m/n/12 Support Vec-tor Ma-chi-nes [[]] nut-zen die Eu-kli-di-sche Di-stanz (oder []aquivalent)
+ []
+
+) [8]
 \openout2 = `./doc/103kap3.aux'.
 
  (./doc/103kap3.tex
 chapter 3.
-(d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+
 Underfull \hbox (badness 1655) in paragraph at lines 36--36
 []\OT1/ptm/m/n/12 Position in-for-ma-ti-on: la-ti-tu-de, lon-gi-tu-de, al-titu-de,
  []
@@ -779,18 +800,18 @@ Underfull \hbox (badness 3482) in paragraph at lines 36--36
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [7
+) [9
 
 
 
 
 
-] [8]
+] [10]
 \openout2 = `./doc/111Schluss.aux'.
 
  (./doc/111Schluss.tex
 chapter 4.
-) [9
+) [11
 
 
 
@@ -801,7 +822,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 16--21
 []\OT1/ptm/m/n/12 Le, J. (2018).  How to do se-man-tic seg-men-ta-ti-on using de-ep lear-
  []
 
-) [10
+) [12
 
 
 
@@ -809,7 +830,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 16--21
 ]
 \openout2 = `./doc/202abkuerzungsverzeichnis.aux'.
 
- (./doc/202abkuerzungsverzeichnis.tex) [11
+ (./doc/202abkuerzungsverzeichnis.tex) [13
 
 
 
@@ -818,7 +839,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 16--21
 \tf@lof=\write4
 \openout4 = `000arbeit.lof'.
 
- [12
+ [14
 
 
 
@@ -827,31 +848,31 @@ Underfull \hbox (badness 1975) in paragraph at lines 16--21
 \tf@lot=\write5
 \openout5 = `000arbeit.lot'.
 
- [13
+ [15
 
 
 ]
 chapter A.
-[14
+[16
 
 ]
 chapter B.
-[15
+[17
 
 ] (./000arbeit.aux (./doc/001titelblatt.aux) (./doc/002erklaerung.aux) (./doc/101kap1.aux) (./doc/102kap2.aux) (./doc/103kap3.aux) (./doc/111Schluss.aux) (./doc/202abkuerzungsverzeichnis.aux)) ) 
 Here is how much of TeX's memory you used:
- 16120 strings out of 478278
- 322640 string characters out of 5846055
- 771303 words of memory out of 5000000
- 33999 multiletter control sequences out of 15000+600000
+ 16134 strings out of 478278
+ 323002 string characters out of 5846055
+ 771328 words of memory out of 5000000
+ 34011 multiletter control sequences out of 15000+600000
  489168 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10700b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/devTools/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 000arbeit.pdf (15 pages, 204846 bytes).
+Output written on 000arbeit.pdf (17 pages, 258395 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 137 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

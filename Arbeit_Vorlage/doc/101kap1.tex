@@ -10,14 +10,14 @@ wie Heizung, Lüftung oder Beleuchtung. Während sie bisher hauptsächlich für 
 der Energieeffizienz von gewerblichen und öffentlichen Gebäuden genutzt wurde, welche in 
 Zuge solcher Optimierungsschritte als ,,Smart Buildings'' bezeichnet werden, 
 rückt sie in den letzten Jahren zunehmend unter dem Begriff ,,Smart Home'' auch in den privaten 
-Bereich. Die beiden Begriffe stehen in den letzten Jahren so im Vordergrund, da eine
+Bereich. Die beiden Begriffe stehen in den letzten Jahren so im Vordergrund, weil eine
 Verbesserung der Energieeffizienz durch bauphysikalische Maßnahmen, wie verminderte 
 Wärmeverluste durch bessere Isolation, an ihre Grenzen gestoßen sind.
 \\
-Zur weiteren Steigerung der Energieeffizienz ist es also nötig, die Gebäude-technik
+Zur weiteren Steigerung der Energieeffizienz ist es also nötig, die Gebäudetechnik
 automatisch anzusteuern, sodass sog. Performance-Gaps vermieden werden. Performance-Gaps
 stellen eine Diskrepanz im Energieverbrauch eines Gebäudes zwischen einem theoretischen 
-Soll-Wert zu einem tatsächlichem Ist-Wert dar.
+Soll-Wert zu einem tatsächlichem Ist-Wert dar. 
 
 
 \section{Motivation und Aufgabenstellung}
@@ -25,9 +25,21 @@ Soll-Wert zu einem tatsächlichem Ist-Wert dar.
 
 Für nahezu alle Bereiche der Gebäudeautomatisierung stellt die Anwesenheit 
 von Personen eine zentrale Variable dar. Da die direkte Messung von Anwesenheit über z.B. 
-Infrarotsensoren nicht verlässlich ist, soll in dieser Arbeit untersucht werden, inwiefern 
+Infrarotsensoren nicht verlässlich und rechtlich problematisch ist, soll in dieser Arbeit untersucht werden, inwiefern 
 Machine-Learning Algorithmen genutzt werden können, um eine genaue Erwartung über 
-die Anwesenheit von Personen anhand von CO2-Werten in der Raumluft zu treffen.
+die Anwesenheit von Personen anhand von CO2-Werten in der Raumluft zu treffen.\\
+Um eine angemessene Datengrundlage zu schaffen, wurden in diversen Büro-Räumen der FH Aachen Temperatur-,
+Luftfeuchtigkeits-, Infrarot- und CO2-Sensoren angebracht, deren Messungen kontinuierlich auf einer Datenbank
+gespeichert wurden. Der Zeitraum der Messwerte begann Mitte 2021. In allen Räumen sind täglich ein oder mehrere
+Personen im Rahmen eines ca. 8 stündigen Arbeitstages anwesend, weshalb die Temperatur-, Luftfeuchtigkeits-
+und CO2-Werte als aussagekräftige Indikatoren für menschliche Präsenz angesehen werden können.
+Es gab keine Einschränkungen hinsichtlich dessen, welche konkreten Machine-Learning Algorithmen 
+benutzt werden sollten.\\
+Als Programmiersprache für das Projekt wurde Python gewählt. Python ist wegen seiner umfassenden
+Machine-Learning Bibliotheken und einfachen Auswertungstechniken anhand von z.B. Graphen und Statistiken 
+gut für diesen Anwendungsfall geeignet.
+
+
 
 %% Beispiel für das Einfügen einer Abbildung
 
@@ -46,3 +58,20 @@ die Anwesenheit von Personen anhand von CO2-Werten in der Raumluft zu treffen.
 \addtocontents{toc}{\vspace{0.8cm}} % -> Abstand im Inhaltsverzeichnis
 
 % Untersuchungsverlauf(pro Kapitel ein kurzer Absatz mit Verweis auf die Kapitelnummer)
+
+Das Projekte beschäftigte sich im Schwerpunkt mit den folgenden Arbeitsschritten:
+\begin{itemize}
+    \item Datenbeschaffung durch Datenbankzugriffe per SQL
+    \item Analyse und Vorbereitung der Daten (Pre-Processing)
+    \item Trainieren von Machine-Learning Models anhand der vorbereiteten Datensets
+    \item Ergebnisauswertung durch Gegenüberstellung verschiedener Datensets und Models
+\end{itemize}
+Da es zwischen allen verfügbaren Datensets der einzlnen Räume und Machine-Learning-Models eine Vielzahl an
+Kombinationsmöglichkeiten gibt, war es ein Anspruch der Projektarbeit, ein möglichst übersichtliches, 
+gut gekapseltes Python Programm zu erstellen, mit dem man einfach und schnell verschiedene Datensets  
+verarbeiten und mit einer dem Forschungszweck angemessenen Anzahl von Machine-Learning Models auszuwerten. 
+Um einen Vergleich der Ergebnisse zu ermöglichen, sollen diese klar und verständlich dargestellt werden. 
+Da nicht bei allen Algorithmen die gleichen Leistungsindikatoren genutzt werden, sollen hauptsächlich nur 
+jene Indikatoren betrachtet werden, die bzgl. aller Algorithmen auch gleiche Bedeutung haben. Falls Model-
+spezifische Leistungsindikatoren als besonders Erkenntnisreich erachtet werden, wird dies in dieser Arbeit
+angemerkt.
