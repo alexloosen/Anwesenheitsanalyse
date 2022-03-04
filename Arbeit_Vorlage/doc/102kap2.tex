@@ -92,18 +92,71 @@ kann.
 In Abb. \ref{fig:SVC_1D} ist der SVC ein Punkt auf einer eindimensionalen Linie, auf der das Gewicht in Kg von z.B. 
 Mäusen in ,,Unter-'' und ,,Übergewichtig'' unterteilt wird. Dieser Punkt ist Ergebnis aller Verhältnisse der einzelnen
 Datenpunkte zueinander. Durch sog. ,,\textit{Kernel Funktionen}'' versucht der Algorithmus nun Beziehungen 
-in höheren Dimensionen zu finden, wie z.B. $Masse^2$, $Masse^3$ usw. .\\
+in höheren Dimensionen zu finden, wie z.B. $Masse^2$, $Masse^3$ usw. . Der SVC stellt dann in diesen Dimensionen 
+eine Linie in einem zwei-dimensionalen oder eine Ebene in einem drei-dimensionalen Koordinatensystem dar.\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10.0cm]{pic/SVC_2D.png}
+    \caption{Beispiel eines Support Vector Classifiers in der zweiten Dimension}
+    \label{fig:SVC_2D}
+\end{figure}
+
 Da der SVC die Verhältnisse aller Datenpunkte zueinander betrachtet, ist er sehr anfällig für Ausreißer in 
-den Daten, was während der Projektarbeit, auch bezüglich anderer Klassifizierungsmethoden, berücksichtigt wurde.
+den Daten, was bei der Datenvorbereitung und der Auswertung beachtet werden muss.
 
 \subsection{Gradient Boosting Classifier}
+Der Gradien Boosting Classifier(GBC) versucht seine Erwartungen auf Grund von Abweichungen eines Labels vom 
+Durchschnitt dieses Labels zu treffen. Erweitert man das Datenset im o.g. Beispiel um das Alter einer Maus, wird 
+ein GBC als Ausgangswert den Durchschnitt aller Label-Werte, also dem Gewicht, berechnen. Danach werden die 
+Abweichungen aller Label-Werte zu diesem Durchschnitt gebildet. Diese Abweichungen werden nun in Beziehung zu den 
+anderen Spalten des Datensets gesetzt. Beispielsweise könnte man so davon ausgehen, dass ausgewachsene Mäuse von einem 
+bestimmten Alter über dem Durchschnittsgewicht liegen. Genauso liegen besonders junge Mäuse wahrscheinlich immer
+einen ähnlichen Wert unter dem Durchschnittsgewicht. So wurde zwischen dem Label \textit{Gewicht} und der Spalte 
+\textit{Alter} eine Beziehung hergestellt. In weiteren Iterationen orientiert sich der GBC immer an der Abweichung 
+zum Durchschnittswert des vorherigen Baumes. So werden die getroffenen Erwartungen über mehrere Iterationen immer 
+präziser.\newpage
 
+\subsection{Neuronale Netzwerke}
+Die Funktionsweise eines Neuronalen Netzwerks ist direkt angelehnt an die Funktionsweise des menschlichen Gehirns.
+Einzelne Knotenpunkten(Neuronen) werden mithilfe von Gewichteten Verbindungen verknüpft, sodass das Netzwerk versucht 
+Eingabewerte bestimmten Ausgabewerten zuzuordnen. Diese Zuordnung der Ein- und Ausgabewerte im Input- und Output-Layer 
+geschiet nicht direkt, sondern durch ein oder mehrere \textit{Hidden Layer}, dessen Neuronenzahl üblicherweise über 
+der Anzahl Neuronen im Input Layer liegt. Die Anzahl der Neuronen im Output-Layer entspricht der Anzahl an Ergebnissen, 
+die sich aus dem Input Ergeben können. Im Beispiel der Anwesenheitsanalyse entspräche das hier also zwei Neuronen für 
+An- und Abwesenheit.
 
-\subsection{Bagging Classifier}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10.0cm]{pic/NN.png}
+    \caption{Beispiel eines neuronalen Netzwerks}
+    \label{fig:NN}
+\end{figure}
 
-\subsection{Neural Networks}
+Liegt an einem Neuron eine Information an, wird diese als Eingabe einer Aktivierungsfunktion $\varphi$ genutzt, 
+die mithilfe eines bestimmten Schwellwertes bestimmt, ob dieses Neuron aufgrund der Eingabe aktiviert wird. Über eine 
+bestimmte Anzahl von Iterationen werden die Gewichtungen zwischen den einzelnen Neuronen stärker oder schwächer.
+
 
 \subsection{Long Short Term Memory}
+Das Long Short Term Memory (LSTM) ist eine Abwandlung herkömmlicher Neuronalen Netzwerke. Es handelt sich um ein
+\textit{rekurrentes} Neurales Netzwerk, was bedeutet, dass jedes Neuron seine Ausgabewerte auch wieder als Eingabewerte
+nutzt. Der Begriff \textit{Memory} rührt daher, dass durch diese Rückkopplung eine Art Gedächtnis entsteht, durch 
+welches das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-Wertes ziehen kann.\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10.0cm]{pic/RecurrentNN.png}
+    \caption{Beispiel eines rekurrenten neuronalen Netzwerks}
+    \label{fig:RecNN}
+\end{figure}
+
+Wird beispielsweise beim Satz ,,Das Auto ist Rot.'' das Wort ,,Das'' verarbeitet, kann das Netzwerk nun beim nächsten
+Schritt eine zusätzliche Erwartung treffen, dass das nächste Wort wahrscheinlich nicht ebenfalls ,,Das'' sein wird.
+Ein LSTM kann auf diese Weise eine Vielzahl von Zeitschritten zurückblicken und verlässt sich so nicht direkt auf 
+einen gegebenen Input, sondern auf einen langen Verlauf von bereits verarbeiteten Input-Werten. 
+LSTMs sind deshalb besonders interessant für Probleme bei denen Beziehungen zwischen kontinuierlichen 
+Datenwerten gebildet werden müssen.
 
 \section{CO2 als Anwesenheitsindikator}\label{CO2}
 
@@ -111,28 +164,117 @@ Der CO2-Gehalt der Raumluft ist als sehr guter Indikator für menschliche Präse
 Umweltindikatoren wie Temperatur oder Luftfeuchtigkeit hat der CO2-Gehalt die Eigenschaft, dass es in 
 geschlossenen Räumen keine äußeren Einflussfaktoren für diesen Messwert gibt. In einem Büroraum kann der 
 Mensch als alleinige Quelle für CO2 angesehen werden.\\
-Der Anteil an CO2 in der Atemluft beträgt zwischen 350 und 450 ppm. Es gibt in Deutschland und auch Europa 
+Der Anteil von CO2 in frischer Atemluft beträgt zwischen 350 und 450 ppm. Es gibt in Deutschland und auch Europa 
 keine grundsätzlich festgelegten Grenzwerte für akzeptable Raumluft, vielmehr raten Gesundheitsämter 
 verschiedener Länder Grenzwerte zwischen 1200 und 1500 ppm einzuhalten. Bei der Obergrenze von 1500 ppm 
 entstehen beim Menschen erste Müdigkeitserscheinungen, weshalb dieser Wert in der Literatur als maximaler 
-Richtwert für Innenräume gilt. 
+Richtwert für Innenräume gilt. \newpage
 
 \section{Outlier Detection}
+Wie bereits erwähnt, spielen Datenausreißer für die Ergebnisse mancher Algorithmen eine große Rolle. Überall 
+wo z.B. aus einer Reihe von Datenwerten Durchschnittswerte berechnet werden, würden Ausreißer in den Daten das 
+Ergebnis verfälschen und die Leistung des Algorithmus deutlich senken.
+Um diese Ausreißer vor dem Training der Models zu beseitigen wurde das Verfahren des 
+\textit{Interquartilabstands} (IQR nach der englischen Bezeichnung \textit{Interquartile Range}) gewählt.\\
+Der IQR gibt die Intervallgröße an, die ein Wert vom Median einer Datenreihe abweichen darf. Bei einer 
+der Größe nach sortierten Datenreihe $x = (x_0,x_1,...,x_n)$ bestimmt man die Mediane der unteren und oberen 
+Hälfe des Datensets $Q_1$ und $Q_2$. Der IQR ergibt sich nun aus 
 
 \begin{align}
-(p_i * p_j)(n) & =  \sum_{k \in \mathbb{D}} p_i(k) \cdot p_j(n - k) \\
-p_{total} & =  p_0 \ast p_1 \ast \ldots p_{n-1}; \forall n
+    IQR = Q_2 - Q_1
+\end{align}
+Mit diesm Wert kann man nun die erlaubten Ober- und Untergrenzen 
+des Datensets mit 
+\begin{align}
+    Limit_{upper} = Q_2 + 1.5 * IQR \\
+    Limit_{lower} = Q_1 - 1.5 * IQR
+\end{align} 
+bestimmen. Alle Werte die außerhalb dieser Grenzen liegen, können als Ausreißer betrachtet werden.\\
+Ausreißer zu entfernen, ist hier wichtig, da die Sensoren Messfehler erzeugen können, oder gelegentlich zur 
+Demonstration von starken Veränderungen in der direkten Nähe des Sensors geatmet wurde und es so in vielen 
+Datensets kurzfristige CO2-Werte gibt, die natürlich in geschlossenen Räumen nicht vorkommen.
+
+\begin{minipage}{\textwidth}
+    \section{Sensordaten}
+    Wie bereits beschrieben, wurden die Sensordaten in mehreren Räumen der FH Aachen kontinuierlich 
+    gesammelt. Durch das Filtern nach der Beziehung des Raumes ergab sich folgende Datenstruktur als
+    Ausgangslage:\\
+    
+    \begin{tabular}{|p{4.5cm}||p{3cm}|p{7cm}|}
+        \hline
+        \multicolumn{3}{|c|}{Sensordaten} \\
+        \hline
+        Name&Format &Beschreibung\\
+        \hline
+        timestamp&timestamp&Zeitpunkt der Messung\\
+        co2\_ppm&integer&CO2-Wert\\
+        temperature\_celsius&float&Temperatur in Grad Celsius\\
+        relative\_humidity\_percent&float&Luftfeuchtigkeit\\
+        presence&boolean&Aktivität des Bewegungssensors\\
+        \hline
+    \end{tabular}     
+\end{minipage}
+
+\section{Datenbeschaffung und -Vorbereitung}
+Die Daten wurden lokal auf einem der FH-Server in Form eines \textit{Hadoop Distributed File System} (HDFS) 
+gespeichert. Mithilfe von Apache Drill konnten die Daten jederzeit mit einfachen SQL-Abfragen beschafft werden. 
+Die Daten wurden so durch die gesamte Dauer des Projektes immer aktuell gehalten, damit alle Erkenntnisse 
+immer auf der aktuellsten Datenlage basieren.
+\\\\
+Die Datenvorbereitung oder Pre-Processing ist eine der wichtigsten Schritte bei der Anwendung von Machine 
+Learning. Durch sie kann man beim Training des Models durch Bearbeitung bestehender Spalten oder Hinzufügen 
+von zusätzlichen Spalten im Datenset Schwerpunkte setzen, die es den Algorithmen beim Training zum einen 
+erleichtern, ihre Erwartungen zu präzisieren, zum anderen aber auch die Leitung beim Verarbeiten bestimmter 
+Spalten zu steigern.
+\subsection{Gruppierung}
+Die Sensordaten wurden alle sechs Sekunden erfasst. Da sich weder CO2-Gehalt noch Feuchtigkeits- oder 
+Temperaturwerte der Raumluft so schnell nicht verändert, wurden die Daten direkt beim Drill per SQL zu 
+zwei-Minuten-Intervallen zusammengefasst. Dabei werden über alle Spalten hinweg Durchschnittswerte gebildet, 
+die dann nachher zu einem Datensatz zusammengefasst werden. 
+Dies steigert die Leistung aller Algorithmen erheblich, da sich die Zahl der 
+Datensätze um den Faktor 20 verringert. Da sich, wie oben erwähnt, der CO2-Gehalt der Raumluft in einem 
+Intervall von zwei Minuten kaum merklich verändert, verringert sich die Genauigkeit des gesamten Datensetz 
+dadurch nicht maßgeblich.
+\subsection{Zyklische Codierung}
+Zyklische Codierung wird immer dort verwendet, wo Daten sich in wiederholenden Schemata bewegen. Diese 
+Schemata, wie z.B. die Zahlenumbrüche bei einer Uhrzeit, sind für Algorithmen nicht direkt ersichtlich und 
+sind zudem für Computer nicht leicht zu verarbeiten. Durch eine Encodierung in 
+Sinus- und Cosinus-Werte können diese Zusammenhänge vereinfacht werden.\\
+Hierzu wurde der Timestamp zuerst in Sekunden übersetzt, sodass sich ein bestimmter Zeitpunkt eines Tages 
+immer zwischen 0 und 86400 Sekunden bewegt.
+Aus diesem Wert wurden dann zwei neue Datenspalten ,,\textit{hour\_sin}'' und ,,\textit{hour\_cos}'' 
+in das Datenset eingefügt welche sich durch 
+
+\begin{align}
+    hour\_sin = sin(2 * \pi * x / x_{max}) \\ 
+    hour\_cos = cos(2 * \pi * x / x_{max})
+\end{align} 
+
+ergeben. So kann jede Tageszeit einer eindeutigen Kombination aus Sinus- und Cosinus-Werten zwischen 
+$0$ und $1$ zugeordnet werden.
+
+\subsection{Deltas und Shift-Werte}
+Desweiteren wurden von den Spalten ,,\textit{co2\_ppm}'', ,,\textit{temperature\_celsius}'' und \break 
+,,\textit{relative\_humidity\_percent}'', die tatsächlich Rückschlüsse auf die Präsenz zulassen, \break 
+zusätzliche Delta- und Shift-Spalten angelegt.\\\\
+Ein Shift-Wert bedeutet lediglich, dass  in einer Zeile $x_n$ des Datensets 
+zusätzlich, neben den aktuellen Werten, auch Werte von $k$ Zeilen zuvor, also $x_{n-k}$ stehen. So haben 
+alle Algorithmen direkten Zugriff auf Vergangenheitswerte der ausgewählten Spalten.\\\\
+Delta-Spalten stellen, dem Namen nach, Deltas zu vorherigen Werten dar:
+
+\begin{align}
+    \Delta x_k = x_n - x_{n-k}    
 \end{align}
 
-% Formel
-Hier ist nur eine einfache Formel mit der \texttt{equation}-Umgebung für die Minkowski Metrik:
-\begin{equation}\label{Minkowski}
-D\left(X,Y\right)=\left(\sum_{i=1}^n |x_i-y_i|^p\right)^{1/p}\\
-\end{equation}
+Die Erwartung ist hier, dass die Änderung der CO2-, Temperatur- und 
+Luftfeuchtigkeitswerte ein wichtigerer Indikator sein könnte, als die tatsächlichen Werte. In einem schlecht 
+klimatisierten Raum könnten Grundwerte von z.B. CO2 höher sein, als in anderen Räumen. Durch die hinzufügten 
+Deltas werden diese Grundwerte ignoriert und Rückschlüsse auf die aktuelle Präsenz sind besser möglich.\\
+Im Zuge der Projektarbeit wurden verschiedene Kombinationsmöglichkeiten von Delta- und Shiftwerten mit 
+Zeitschritten zwischen zwei Minuten und einer Stunde mit Hinblick auf Verbesserungen der Model-Genauigkeiten 
+getestet.
 
-Wie in Gleichung \ref{Minkowski} zu erkennen ist, ergibt sich die L2-Norm (Euklidische Distanz), wenn man den Exponenten $p = 2$ wählt.
-
-Support Vector Machines \cite{Haykin99} nutzen die Euklidische Distanz (oder äquivalent) das Skalarprodukt.
+ 
 %% Zwei Abbildungen, die zusammen gehören
 
 %\begin{figure}

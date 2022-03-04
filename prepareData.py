@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
 
 def encodeCyclical(df, col, max_val):
     df[col + '_sin'] = np.sin(2 * np.pi * df[col]/max_val)
@@ -50,18 +51,18 @@ def insertWeekday(df):
 
 def preProcessDataset(df):
     # Daten mit falschen PIR-Werten rausschmeissen
-    df_new = prepareData.dropSection(df, 1634518800, 1637586000)
+    df_new = dropSection(df, 1634518800, 1637586000)
 
     # Timestamp einfacher zu verarbeiten, wenn als Integer gespeichert
-    df_new = prepareData.convertTimestamp(df_new)
+    df_new = convertTimestamp(df_new)
     # Integer Timestamp jetzt zyklisch encodieren
-    df_new = prepareData.encodeCyclical(df_new, 'second', 86400)
+    df_new = encodeCyclical(df_new, 'second', 86400)
 
     # Deltas einfuegen
-    df_new = prepareData.addDelta(df_new, 'co2_ppm', 1)
-    df_new = prepareData.addDelta(df_new, 'co2_ppm', 2)
-    df_new = prepareData.addDelta(df_new, 'co2_ppm', 3)
-    df_new = prepareData.addDelta(df_new, 'co2_ppm', 4)
+    df_new = addDelta(df_new, 'co2_ppm', 1)
+    df_new = addDelta(df_new, 'co2_ppm', 2)
+    df_new = addDelta(df_new, 'co2_ppm', 3)
+    df_new = addDelta(df_new, 'co2_ppm', 4)
 
     # Daten shiften
     #df_new['co2_ppm_last'] = df_new.shift(1)['co2_ppm']
@@ -72,28 +73,19 @@ def preProcessDataset(df):
     #df_new['past1_delta'] = df_new.shift(1)['co2_ppm'] - df_new.shift(2)['co2_ppm']
     #df_new['past2_delta'] = df_new.shift(2)['co2_ppm'] - df_new.shift(3)['co2_ppm']
 
-    # Werte von vor n-Minuten einfuegen
-    #df_comp['past1'] = df_comp.shift(1)['co2_ppm']
-    #df_comp['past2'] = df_comp.shift(2)['co2_ppm']
-    #df_comp['past1_delta'] = df_comp.shift(1)['co2_ppm'] - df_comp.shift(2)['co2_ppm']
-    #df_comp['past2_delta'] = df_comp.shift(2)['co2_ppm'] - df_comp.shift(3)['co2_ppm']
-
     # Wochentag einfuegen
     # verringert Genauigkeit, weil wahrscheinlich zu "verlaesslich"
 
-    df_new = prepareData.insertWeekday(df_new)
+    df_new = insertWeekday(df_new)
     #df_new = df_new.drop(df_new[df_new.dayOfWeek > 4].index)
 
     # Leere Felder entfernen
     df_new = df_new.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
 
     # Ausreisser mit Interquartile Range (IQR) und Tukey's Method loeschen
-    outlier_indices = prepareData.detectOutliers(df_new)
+    outlier_indices = detectOutliers(df_new)
     df_new.drop(index=outlier_indices, inplace=True)
 
-    outlier_indices = prepareData.detectOutliers(df_comp)
-    df_comp.drop(index=outlier_indices, inplace=True)
-    
     return df_new
 
 def reshape_data_for_LSTM(X, y, timesteps_per_sample):
@@ -118,7 +110,7 @@ def reshape_data_for_LSTM(X, y, timesteps_per_sample):
     
     return X_reshaped, y_reshaped
 
-def normalize_min_max(df, scaler=None):
+def normalize_min_max(dataframe, scaler=None):
     if scaler is None:
         scaler = MinMaxScaler(feature_range=(0, 1))       
         dataframe = pd.DataFrame(data=scaler.fit_transform(dataframe), columns=dataframe.columns)
