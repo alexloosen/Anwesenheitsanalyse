@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  24 FEB 2022 13:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  4 MAR 2022 14:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -784,16 +784,67 @@ File: pic/SVC_1D.png Graphic file (type png)
 <use pic/SVC_1D.png>
 Package pdftex.def Info: pic/SVC_1D.png  used on input line 87.
 (pdftex.def)             Requested size: 284.52756pt x 49.17384pt.
- [8 <./pic/DecisionTree.png> <./pic/SVC_1D.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 128.
- (d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Overfull \hbox (1.7129pt too wide) in paragraph at lines 135--137
-[]\OT1/ptm/m/n/12 Support Vec-tor Ma-chi-nes [[]] nut-zen die Eu-kli-di-sche Di-stanz (oder []aquivalent)
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--97
+
  []
 
-) [9]
+[8 <./pic/DecisionTree.png> <./pic/SVC_1D.png>]
+<pic/SVC_2D.png, id=38, 598.235pt x 396.48125pt>
+File: pic/SVC_2D.png Graphic file (type png)
+<use pic/SVC_2D.png>
+Package pdftex.def Info: pic/SVC_2D.png  used on input line 100.
+(pdftex.def)             Requested size: 284.52756pt x 188.57254pt.
+ [9 <./pic/SVC_2D.png>]
+<pic/NN.png, id=45, 527.9725pt x 452.69125pt>
+File: pic/NN.png Graphic file (type png)
+<use pic/NN.png>
+Package pdftex.def Info: pic/NN.png  used on input line 131.
+(pdftex.def)             Requested size: 284.52756pt x 243.95229pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
+
+ []
+
+<pic/RecurrentNN.png, id=46, 527.9725pt x 211.79124pt>
+File: pic/RecurrentNN.png Graphic file (type png)
+<use pic/RecurrentNN.png>
+Package pdftex.def Info: pic/RecurrentNN.png  used on input line 149.
+(pdftex.def)             Requested size: 284.52756pt x 114.13289pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./pic/NN.png>] [11 <./pic/RecurrentNN.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 199--202
+
+ []
+
+
+Overfull \hbox (24.05809pt too wide) in paragraph at lines 203--216
+[][] 
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 219--229
+
+ []
+
+[13]
+Underfull \hbox (badness 5490) in paragraph at lines 257--264
+\OT1/ptm/m/n/12 Desweiteren wur-den von den Spal-ten ,,\OT1/ptm/m/it/12 co2[]ppm\OT1/ptm/m/n/12 '', ,,\OT1/ptm/m/it/12 tem-pe-ra-ture[]celsius\OT1/ptm/m/n/12 '' und 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--264
+
+ []
+
+) [14]
 \openout2 = `./doc/103kap3.aux'.
 
  (./doc/103kap3.tex
@@ -811,29 +862,29 @@ Underfull \hbox (badness 3482) in paragraph at lines 36--36
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [10
+) [15
 
 
 
 
 
-] [11]
+] [16]
 \openout2 = `./doc/111Schluss.aux'.
 
  (./doc/111Schluss.tex
 chapter 4.
-) [12
+) [17
 
 
 
 
 
 ] (./000arbeit.bbl
-Underfull \hbox (badness 1975) in paragraph at lines 16--21
+Underfull \hbox (badness 1975) in paragraph at lines 11--16
 []\OT1/ptm/m/n/12 Le, J. (2018).  How to do se-man-tic seg-men-ta-ti-on using de-ep lear-
  []
 
-) [13
+) [18
 
 
 
@@ -841,7 +892,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 16--21
 ]
 \openout2 = `./doc/202abkuerzungsverzeichnis.aux'.
 
- (./doc/202abkuerzungsverzeichnis.tex) [14
+ (./doc/202abkuerzungsverzeichnis.tex) [19
 
 
 
@@ -850,7 +901,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 16--21
 \tf@lof=\write4
 \openout4 = `000arbeit.lof'.
 
- [15
+ [20
 
 
 
@@ -859,31 +910,31 @@ Underfull \hbox (badness 1975) in paragraph at lines 16--21
 \tf@lot=\write5
 \openout5 = `000arbeit.lot'.
 
- [16
+ [21
 
 
 ]
 chapter A.
-[17
+[22
 
 ]
 chapter B.
-[18
+[23
 
 ] (./000arbeit.aux (./doc/001titelblatt.aux) (./doc/002erklaerung.aux) (./doc/101kap1.aux) (./doc/102kap2.aux) (./doc/103kap3.aux) (./doc/111Schluss.aux) (./doc/202abkuerzungsverzeichnis.aux)) ) 
 Here is how much of TeX's memory you used:
- 16165 strings out of 478278
- 323808 string characters out of 5846055
- 771373 words of memory out of 5000000
- 34039 multiletter control sequences out of 15000+600000
- 489168 words of font info for 68 fonts, out of 8000000 for 9000
+ 16153 strings out of 478278
+ 323703 string characters out of 5846055
+ 772381 words of memory out of 5000000
+ 34029 multiletter control sequences out of 15000+600000
+ 489667 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10700b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
-{d:/devTools/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 000arbeit.pdf (18 pages, 278210 bytes).
+{d:/devTools/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on 000arbeit.pdf (23 pages, 310450 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
