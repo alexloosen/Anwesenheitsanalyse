@@ -3,7 +3,7 @@
 %\addtocontents{toc}{\vspace{0.8cm}}
 
 \section{Machine Learning}\label{unterkapitel}
-\addtocontents{toc}{\vspace{0.8cm}}
+\addtocontents{toc}{}%\vspace{0.8cm}}
 
 Grundsätzlich beschreibt Machine Learning das Entwickeln mathematischer Modelle zur statistischen Auswertung
 von Daten. Dabei wird dem Modell anhand von Daten zu einem bestimmten Sachverhalt beigebracht, in einem 
@@ -49,13 +49,13 @@ so aus den Feldern des Datensets bestimmte Abhängigkeiten abzuleiten.
 
 Bei der ,,\textit{Dimensionality Reduction}'' versucht der Algorithmus das Datenset in einer 
 Dimensionalität, also seiner Anzahl an Feldern, zu reduzieren. Es wird also die Frage gestellt, 
-ob das bestehende Datenset auch mit weniger Feldern Abhängigkeiten feststellen lässt. Dieser 
+ob sich in einem bestehenden Datenset auch mit weniger Feldern Abhängigkeiten feststellen lassen. Dieser 
 Schritt wird vorallem für Modelle benutzt, die sensibel gegenüber hoher Dimensionalitäten sind, 
 sodass das Datenset vor dem Training in seiner Dimensionalität heruntergebrochen werden kann.
 
 Im Rahmen des Projektes wurden hauptsächlich Klassifizierungs-Algorithmen genutzt, da ein Großteil der 
 Datensets Labels zur Überprüfung hatte. Um einen Vergleich herzustellen werden später trotzdem noch 
-einzelne Ergebnisse von Clustering und Dimensionality Reduction betrachtet. Im folgenden sollen die genutzten 
+einzelne Ergebnisse von Clustering und Dimensionality Reduction betrachtet. Im Folgenden sollen die genutzten 
 Modelle erklärt werden.
 
 \subsection{Random Forest Classifier}
@@ -156,7 +156,7 @@ Schritt eine zusätzliche Erwartung treffen, dass das nächste Wort wahrscheinli
 Ein LSTM kann auf diese Weise eine Vielzahl von Zeitschritten zurückblicken und verlässt sich so nicht direkt auf 
 einen gegebenen Input, sondern auf einen langen Verlauf von bereits verarbeiteten Input-Werten. 
 LSTMs sind deshalb besonders interessant für Probleme bei denen Beziehungen zwischen kontinuierlichen 
-Datenwerten gebildet werden müssen.
+Datenwerten gebildet werden müssen.\newpage
 
 \section{CO2 als Anwesenheitsindikator}\label{CO2}
 
@@ -168,7 +168,19 @@ Der Anteil von CO2 in frischer Atemluft beträgt zwischen 350 und 450 ppm. Es gi
 keine grundsätzlich festgelegten Grenzwerte für akzeptable Raumluft, vielmehr raten Gesundheitsämter 
 verschiedener Länder Grenzwerte zwischen 1200 und 1500 ppm einzuhalten. Bei der Obergrenze von 1500 ppm 
 entstehen beim Menschen erste Müdigkeitserscheinungen, weshalb dieser Wert in der Literatur als maximaler 
-Richtwert für Innenräume gilt. \newpage
+Richtwert für Innenräume gilt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pic/co2_singleDay.png}
+    \caption{CO2 Gehalt der Raumluft über einen Tag}
+    \label{fig:CO2_oneDay}
+\end{figure}
+
+Es ist zu erkennen, dass die CO2-Werte in einem normalen Büroraum innerhalb dieser empfohlenen Grenzen schwanken.
+Mit einigen kleinen Pausen sind fast durchgehend Personen anwesend, die täglich etwa um 13:00 den Raum lüften.
+Es ist auch klar zu erkennen, dass der CO2-Gehalt während Abwesenheit durch die passive Lüftung des Raumes  
+(Tür-/Fensterspalten) langsam wieder gegen den Grundwert bewegt.
 
 \section{Outlier Detection}
 Wie bereits erwähnt, spielen Datenausreißer für die Ergebnisse mancher Algorithmen eine große Rolle. Überall 
@@ -194,26 +206,24 @@ Ausreißer zu entfernen, ist hier wichtig, da die Sensoren Messfehler erzeugen k
 Demonstration von starken Veränderungen in der direkten Nähe des Sensors geatmet wurde und es so in vielen 
 Datensets kurzfristige CO2-Werte gibt, die natürlich in geschlossenen Räumen nicht vorkommen.
 
-\begin{minipage}{\textwidth}
-    \section{Sensordaten}
-    Wie bereits beschrieben, wurden die Sensordaten in mehreren Räumen der FH Aachen kontinuierlich 
-    gesammelt. Durch das Filtern nach der Beziehung des Raumes ergab sich folgende Datenstruktur als
-    Ausgangslage:\\
-    
-    \begin{tabular}{|p{4.5cm}||p{3cm}|p{7cm}|}
-        \hline
-        \multicolumn{3}{|c|}{Sensordaten} \\
-        \hline
-        Name&Format &Beschreibung\\
-        \hline
-        timestamp&timestamp&Zeitpunkt der Messung\\
-        co2\_ppm&integer&CO2-Wert\\
-        temperature\_celsius&float&Temperatur in Grad Celsius\\
-        relative\_humidity\_percent&float&Luftfeuchtigkeit\\
-        presence&boolean&Aktivität des Bewegungssensors\\
-        \hline
-    \end{tabular}     
-\end{minipage}
+\section{Sensordaten}
+Wie bereits beschrieben, wurden die Sensordaten in mehreren Räumen der FH Aachen kontinuierlich 
+gesammelt. Durch das Filtern nach der Beziehung des Raumes ergab sich folgende Datenstruktur als
+Ausgangslage:\\
+
+\begin{tabular}{|p{4.5cm}||p{3cm}|p{7cm}|}
+    \hline
+    \multicolumn{3}{|c|}{Sensordaten} \\
+    \hline
+    Name&Format &Beschreibung\\
+    \hline
+    timestamp&timestamp&Zeitpunkt der Messung\\
+    co2\_ppm&integer&CO2-Wert\\
+    temperature\_celsius&float&Temperatur in Grad Celsius\\
+    relative\_humidity\_percent&float&Luftfeuchtigkeit\\
+    presence&boolean&Aktivität des Bewegungssensors\\
+    \hline
+\end{tabular}     
 
 \section{Datenbeschaffung und -Vorbereitung}
 Die Daten wurden lokal auf einem der FH-Server in Form eines \textit{Hadoop Distributed File System} (HDFS) 
@@ -274,7 +284,48 @@ Im Zuge der Projektarbeit wurden verschiedene Kombinationsmöglichkeiten von Del
 Zeitschritten zwischen zwei Minuten und einer Stunde mit Hinblick auf Verbesserungen der Model-Genauigkeiten 
 getestet.
 
- 
+\subsection{Validierung}
+\sloppy
+Über das Projekt hinweg wurden verschiedene Validierungsmethoden verwendet. Grundsätzlich unterteilt man das 
+Datenset in ein Trainings- und Testset mit einem Verhältnis von etwa 80-20. Das bedeutet, dass das Model mit
+80 prozent der Daten trainiert wird, wobei die anderen 20 prozent zurückgehalten werden, um daraufhin das 
+fertig trainierte Model daran zu testen. Aus dem Ergebnis dieses Tests ergibt sich ein Prozentwert, der die 
+allgemeine Genauigkeit des Models repräsentiert, d.h. wie verlässlich das Model die An- und Abwesenheit des 
+Testsets selbst berechnen kann, wenn man ihm den tatsächlichen Wert vorenthält.\\
+Dieser Gesamtwert ist wiederrum der Durchschnitt der jeweiligen Genauigkeit beim errechnen von An- und 
+Abwesenheit. In diesem Anwendungsfall ist es durchaus wichtig, beide Genauigkeiten einzeln zu betrachten, 
+da ein Arbeitstag nur etwa ein Drittel eines tatsächlichen Tages darstellt. 
+Das Datenset ist also mit einem Verhältnis von etwa 8/16 in Richtung der Abwesenheit unausgeglichen. Dies 
+lässt die Erwartung zu, dass das trainierte Model wesentlich besser darin sein wird, Abwesenheit zu erkennen,
+als Anwesenheit.\\
+Hierzu wurde bei der Auswertung der Ergebnisse immer auch der \textit{Classification Report} hinzugezogen,
+aus dem ersichtlich ist, wie genau das Model beide möglichen Labelwerte berrechnen konnte.\\\\
+Desweiteren war es entscheidend zu erkennen, dass das Datenset über mehrere Monate hinweg nicht perfekt uniform 
+ist, da es in bestimmten Monaten zu verhätlnismäßig vielen Urlaubstagen (z.B. Weihnachten/Silvester) und damit 
+einer Häufung an Abwesenheits-Werten kommt.
+Wenn die Daten nun im o.g. Verhältnis aufgeteilt werden und dann viele Daten des Testsets in solchen Monaten 
+liegen, könnte es beim Ergebnis zu Verzerrungen kommen.\\
+Hierfür wurde eine \textit{Kreuzvalidierung} (engl. Cross Validation) implementiert. Bei einer CV wird das 
+Datenset immernoch im gleichen Verhältnis aufgeteilt, allerdings mehrmals, sodass die Trainings- und Testsets 
+jedes mal aus jeweils anderen Daten bestehen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pic/CV.png}
+    \caption{Beispiel einer Kreuzvalidierung}
+    \label{fig:CV}
+\end{figure}
+
+Errechnet man nun die Durchschnittsgenauigkeit aller Iterationen der CV, ergibt sich eine Gesamtgenauigkeit, 
+die das Model besser repräsentiert, weil es an einer größeren Anzahl an verschiedenen Daten trainiert und 
+getestet wurde.
+\\\\
+Da es für manche Räume keine Datensätze mit Labelwerten gab, musste die Validierung dieser Datensätze 
+augenscheinlich erfolgen. Hierfür wurde in ein Datenset eine Labelspalte eingefügt, die dann vom trainierten
+Model selbst gefüllt werden sollte. Das Ergebnis musste dann in einem Graphen gezeichnet und per Hand validiert 
+werden. Da sich das Ergebnis der Berechnung in diesem Anwendungsfall, wie oben gezeigt, sehr übersichtlich als 
+Graph darstellen lässt, war diese Methode der Validierung zwar nicht perfekt, lieferte aber trotzdem einen 
+ausreichenden Eindruck über die Qualität des trainierten Models.
 %% Zwei Abbildungen, die zusammen gehören
 
 %\begin{figure}
