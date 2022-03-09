@@ -176,11 +176,19 @@ Richtwert für Innenräume gilt.
     \caption{CO2 Gehalt der Raumluft über einen Tag}
     \label{fig:CO2_oneDay}
 \end{figure}
-
+ 
 Es ist zu erkennen, dass die CO2-Werte in einem normalen Büroraum innerhalb dieser empfohlenen Grenzen schwanken.
 Mit einigen kleinen Pausen sind fast durchgehend Personen anwesend, die täglich etwa um 13:00 den Raum lüften.
 Es ist auch klar zu erkennen, dass der CO2-Gehalt während Abwesenheit durch die passive Lüftung des Raumes  
 (Tür-/Fensterspalten) langsam wieder gegen den Grundwert bewegt.
+
+\section{Luftfeuchtigkeit und Temperatur}
+Auch wenn Luftfeuchtigkeit und Temperatur Indikatoren für menschliche Präsenz in einem Raum sein können, 
+unterliegen sie in ihrer Nützlichkeit dem CO2-Gehalt der Raumluft in einem wichtigen Faktor. 
+Sie sich beide stark beeinlusst, von äußeren Umweltfaktoren wie dem aktuellen Wetter oder der Jahreszeit.
+Beide Werte wurden zunächst in das Training aller Modelle miteinbezogen, es wird allerdings im Folgenden 
+Kapitel gezeigt, dass diese beiden Werte zusammen mit dem CO2-Werte nicht von besonderem Nutzen sind und 
+deshalb später nicht weiter genutzt werden.  
 
 \section{Outlier Detection}
 Wie bereits erwähnt, spielen Datenausreißer für die Ergebnisse mancher Algorithmen eine große Rolle. Überall 

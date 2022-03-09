@@ -17,7 +17,7 @@ def loadModel(filename):
     return loaded_model
 
 def evaluateClassifier(model, test_features, test_labels):
-    accuracy = np.mean(cross_val_score(model, test_features, test_labels, cv=5))
+    accuracy = np.mean(cross_val_score(model, test_features, test_labels, cv=3))
     return accuracy
 
 def parameterTuning(modelType, Xtrain, ytrain, Xtest, ytest, X_presence, y_presence):
@@ -81,7 +81,7 @@ def parameterTuning(modelType, Xtrain, ytrain, Xtest, ytest, X_presence, y_prese
     print('Optimized Accuracy: {:0.2f}%.'.format(100 * random_accuracy))
     print('Improvement of {:0.2f}%.'.format(100 * (random_accuracy - base_accuracy) / base_accuracy))
     
-    saveModel(gsearch1.best_estimator_, 'models\'' + modelType + '.mod')
+    saveModel(gsearch1.best_estimator_, 'models\\' + modelType + '.mod')
 
 def crossValidation(model, X_presence, y_presence, cv):
     print(cross_val_score(model, X_presence, y_presence, cv=cv))

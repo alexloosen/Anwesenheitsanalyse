@@ -63,13 +63,56 @@ def preProcessDataset(df):
     df_new = addDelta(df_new, 'co2_ppm', 2)
     df_new = addDelta(df_new, 'co2_ppm', 3)
     df_new = addDelta(df_new, 'co2_ppm', 4)
-
+    df_new = addDelta(df_new, 'co2_ppm', 5)
+    df_new = addDelta(df_new, 'co2_ppm', 6)
+    df_new = addDelta(df_new, 'co2_ppm', 7)
+    df_new = addDelta(df_new, 'co2_ppm', 8)
+#    df_new = addDelta(df_new, 'co2_ppm', 9)
+#    df_new = addDelta(df_new, 'co2_ppm', 10)
+#    df_new = addDelta(df_new, 'co2_ppm', 11)
+#    df_new = addDelta(df_new, 'co2_ppm', 12)
+#    df_new = addDelta(df_new, 'co2_ppm', 13)
+#    df_new = addDelta(df_new, 'co2_ppm', 14)
+#    df_new = addDelta(df_new, 'co2_ppm', 15)
+    
+#    df_new = addDelta(df_new, 'temperature_celsius', 1)
+#    df_new = addDelta(df_new, 'temperature_celsius', 2)
+#    df_new = addDelta(df_new, 'temperature_celsius', 3)
+#    df_new = addDelta(df_new, 'temperature_celsius', 4)
+#    df_new = addDelta(df_new, 'temperature_celsius', 5)
+#    df_new = addDelta(df_new, 'temperature_celsius', 6)
+#    df_new = addDelta(df_new, 'temperature_celsius', 7)
+#    df_new = addDelta(df_new, 'temperature_celsius', 8)
+    
+#    df_new = addDelta(df_new, 'relative_humidity_percent', 1)
+#    df_new = addDelta(df_new, 'relative_humidity_percent', 2)
+#    df_new = addDelta(df_new, 'relative_humidity_percent', 3)
+#    df_new = addDelta(df_new, 'relative_humidity_percent', 4)
+#    df_new = addDelta(df_new, 'relative_humidity_percent', 5)
+#    df_new = addDelta(df_new, 'relative_humidity_percent', 6)
+#    df_new = addDelta(df_new, 'relative_humidity_percent', 7)
+#    df_new = addDelta(df_new, 'relative_humidity_percent', 8)
+    
     # Daten shiften
     #df_new['co2_ppm_last'] = df_new.shift(1)['co2_ppm']
 
     # Werte von vor n-Minuten einfuegen
-    #df_new['past1'] = df_new.shift(1)['co2_ppm']
-    #df_new['past2'] = df_new.shift(2)['co2_ppm']
+#    df_new['co2_ppm_shift1'] = df_new.shift(1)['co2_ppm']
+#    df_new['co2_ppm_shift2'] = df_new.shift(2)['co2_ppm']
+#    df_new['co2_ppm_shift3'] = df_new.shift(3)['co2_ppm']
+#    df_new['co2_ppm_shift4'] = df_new.shift(4)['co2_ppm']
+#    df_new['co2_ppm_shift5'] = df_new.shift(5)['co2_ppm']
+#    df_new['co2_ppm_shift6'] = df_new.shift(6)['co2_ppm']
+#    df_new['co2_ppm_shift7'] = df_new.shift(7)['co2_ppm']
+#    df_new['co2_ppm_shift8'] = df_new.shift(8)['co2_ppm']
+#    df_new['co2_ppm_shift9'] = df_new.shift(9)['co2_ppm']
+#    df_new['co2_ppm_shift10'] = df_new.shift(10)['co2_ppm']
+#    df_new['co2_ppm_shift11'] = df_new.shift(11)['co2_ppm']
+#    df_new['co2_ppm_shift12'] = df_new.shift(12)['co2_ppm']
+#    df_new['co2_ppm_shift13'] = df_new.shift(13)['co2_ppm']
+#    df_new['co2_ppm_shift14'] = df_new.shift(14)['co2_ppm']
+#    df_new['co2_ppm_shift15'] = df_new.shift(15)['co2_ppm']
+
     #df_new['past1_delta'] = df_new.shift(1)['co2_ppm'] - df_new.shift(2)['co2_ppm']
     #df_new['past2_delta'] = df_new.shift(2)['co2_ppm'] - df_new.shift(3)['co2_ppm']
 
