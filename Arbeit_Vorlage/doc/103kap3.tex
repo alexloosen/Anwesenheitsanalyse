@@ -2,39 +2,102 @@
 \chapter{\textbf{Anwendung und Ergebnisse}}\label{kap3}
 \addtocontents{toc}{\vspace{0.8cm}}
 
-\begin{table}[htb]
-\caption{Anwendung und Ergebnisse}
-\label{tab:messung}
-\centering
-\begin{tabu}{l|[2pt]C|C|C}
-Stellung & \frac{T_U}{^\circ C}  & \frac{T_c}{^\circ C} & \frac{\Delta T}{^\circ C}  \\
-\tabucline[2pt]{-}
-senkrecht (0°) & 27,3 & 69,8 & 42,5\\
-\tabucline[0.5pt]{-}
-waagerecht (90°) & 26,6 & 70,6 & 44,0\\
-\end{tabu}
-\end{table}
+\subsection{Feature Vektor}
+Der Feature Vektor FV beschreibt das Ergebnis des Datensets nach der Vorverarbeitung. 
+Durch die o.g. Schritte ergibt sich eine Vielzahl an möglichen zusätzlichen Features,
+mit denen man das Datenset versehen könnte. Es sollte zunächst ermittelt werden, welche diese Features wirklich 
+aussagekräftig sind, um den FV nicht unnötig zu überladen. Einige Algorithmen geben nach dem Training 
+Auskunft darüber, in welchem Maß ein Feature in die Berechnung einfließt. Zur Wahl eines FVs der 
+nach dem Training mit einem Modell eine möglichst hohe Genauigkeit liefert, wurden verschiedene Kombinationen durch 
+Verknüpfung von Temperatur, Luftfeuchtigkeit, CO2 mit jeweiligen Delta- und Shiftwerten vorgenommen. Ziel war es, 
+mit einem möglichst kleinen Vektor eine möglichst hohe Genauigkeit zu erreichen, da die meisten Algorithmen eine 
+direkte Abhängigkeit zwischen Dauer der Berechnung und Dimensionalität des FV haben.  
 
-\begin{table}[h]
-\centering
-\caption{Smartphone Sensordaten}
-\begin{tabu}{|p{9cm}|l|l|}
-\hline
-Sensorinformation&Format&frequency [$s^{-1}$]\\
-\hline
-App identifier for vendor & int64 & once per transfer\\
-WIFI and network carrier IP addresses& int128 & once per transfer\\
-battery level& int8 & 0.1\\
-Position information: latitude, longitude, altitude, speed, course, vertical position accuracy, horizontal position accuracy, floor level information& float32[8] & 1\\
-Heading information: heading.x, heading.y, heading.z, true heading, magnetic heading, heading accuracy& float16[6] & 1 \\
-Accelerometer information: acceleration.x, acceleration.y, acceleration.z& float16[3] & 2 \\
-Gyroscope information: rotationRate.x, rotationRate.y, rotationRate.z& float16[3] & 2 \\
-altimeter information: relative altitude, pressure & float16[2] & 1 \\ 
-timestamp & uint32 & once per transfer \\
-Temperature [°C] & float16 & 1\\
-\hline
-\end{tabu}
-\label{tab:smartphonesensor}
-\end{table}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pic/feature_importances.png}
+    \caption{Feature Importances eines Random Forest}
+    \label{fig:FI}
+\end{figure}
 
-Wie in Tabelle \ref{tab:smartphonesensor} zu sehen ist, ist es besser, Trennlinien nur dort einzusetzen, wo logische Grenzen liegen.
+In der o.g. Grafik sind neben den ursprünglichen Datenwerten nun auch Delta- und Shiftwerte zu sehen. Wie bereits 
+im vorherigen Kapitel angedeutet, sieht man hier klar, dass die Temperatur- und Luftfeuchtigkeitswerte für 
+die Errechnung der Labels kaum zu Rate gezogen werden. Weder die Grund- noch Deltawerte weisen eine hohe 
+Wichtigkeit für das Model auf.
+\newpage
+Nach Exkludierung von Temperatur und Luftfeuchtigkeit wurden neue Deltas und Shifts für die CO2-Werte eingefügt 
+und die Feature Importances erneut betrachtet. Es ist zu erkennen, dass auch die CO2-Werte von n Minuten zuvor 
+ebenfalls nicht maßgeblich in die Berechnung einfließen.\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pic/feature_importances_better.png}
+    \caption{Feature Importances eines Random Forest}
+    \label{fig:FIB}
+\end{figure}
+
+Der Graph bestätigt die Annahme, dass beim CO2 die Deltawerte deutlich ausschlaggebender sind, als die 
+tatsächliche Messung zu einem bestimmten Moment. \\
+
+Wenn diese Werte nur in solch geringem Maß zur Berechnung beitragen, muss ebenfalls die Schlussfolgerung daraus, 
+dass die Genauigkeit auch ohne diese Werte innerhalb einer gewissen Toleranz konstant bleibt, überprüft werden.
+\\
+Im Folgenden werden beispielhaft vier verschiedene Feature Vektoren beschrieben, aus denen der Vektor, der im 
+weiteren Verlauf des Projektes benutzt werden sollte, abgeleitet wurde.
+\begin{center}
+    \begin{tabular}{ |c||c| } 
+     \hline
+     Feature Vektor & Beschreibung \\ 
+     \hline\hline
+     FV1 & Temperatur und Luftfeuchtigkeit mit Shift-Werten\\ 
+     FV2 & Temperatur und Luftfeuchtigkeit ohne Shift-Werte \\ 
+     FV3 & Keine Temperatur- und Luftfeuchtigkeitswerte \\ 
+     FV4 & FV3 ohne CO2-Shift-Werte \\
+     \hline
+    \end{tabular}
+\end{center}
+
+Mit diesen vier Vektoren wurden nun verschiedene Modelle trainiert und deren Genauigkeiten gegenübergestellt.
+
+\begin{center}
+    \begin{tabular}{|p{1.5cm}||p{3cm}| p{3cm}| p{3cm}| p{3cm}|} 
+        \hline
+        Feature-Vektor&RF (Random Forest) &SV (Support Vector)&GB (Gradient Boost)&LR (Logistic Regression)\\ [0.5ex] 
+        \hline\hline
+        FV1&0.944805&	0.912594&	0.943618&	0.935428\\
+        \hline
+        FV2&0.946477&	0.918528&	0.931867&	0.916739\\
+        \hline
+        FV3&0.945256&	0.917241&	0.944554&	0.938136\\
+        \hline
+        FV4&0.945725&	0.912095&	0.947024&	0.931573\\
+        \hline
+    \end{tabular}\\        
+\end{center}
+
+Wie deutlich sichtbar ist, sind die Genauigkeiten fast identisch. Dies war Anlass sowohl die Temperatur- und 
+Luftfeuchtigkeitswerte, als auch die Shift-Werte der CO2-Messungen nicht weiter zu betrachten.\\\\
+\newpage
+Aus diesen Betrachtungen ergab sich folgender FV der für den weiteren Verlauf des Projektes genutzt wurde:\\
+
+\begin{center}
+    \begin{tabular}{ |c||c| } 
+     \hline
+     Feld & Beschreibung \\ 
+     \hline\hline
+     second\_sin & timestamp-Sinusanteil\\
+     second\_cos & timestamp-Cosinusanteil\\
+     day\_of\_week & Wochentag der Messung\\
+     co2\_ppm & CO2-Wert\\ 
+     co2\_ppm\_delta1 & Delta zum CO2-Wert vor 2 Minuten\\ 
+     co2\_ppm\_delta2 & Delta zum CO2-Wert vor 4 Minuten\\ 
+     co2\_ppm\_delta3 & Delta zum CO2-Wert vor 6 Minuten\\ 
+     co2\_ppm\_delta4 & Delta zum CO2-Wert vor 8 Minuten\\ 
+     co2\_ppm\_delta5 & Delta zum CO2-Wert vor 10 Minuten\\ 
+     co2\_ppm\_delta6 & Delta zum CO2-Wert vor 12 Minuten\\ 
+     co2\_ppm\_delta7 & Delta zum CO2-Wert vor 14 Minuten\\ 
+     co2\_ppm\_delta8 & Delta zum CO2-Wert vor 16 Minuten\\ 
+     \hline
+    \end{tabular}
+\end{center}
+

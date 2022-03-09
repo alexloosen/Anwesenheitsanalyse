@@ -1,3 +1,5 @@
+import matplotlib.pyplot as mplt
+
 def plotHistoryAccuracy(history):
     mplt.plot(history.history['accuracy'])
     mplt.plot(history.history['val_accuracy'])
