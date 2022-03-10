@@ -67,13 +67,13 @@ def preProcessDataset(df):
     df_new = addDelta(df_new, 'co2_ppm', 6)
     df_new = addDelta(df_new, 'co2_ppm', 7)
     df_new = addDelta(df_new, 'co2_ppm', 8)
-#    df_new = addDelta(df_new, 'co2_ppm', 9)
-#    df_new = addDelta(df_new, 'co2_ppm', 10)
-#    df_new = addDelta(df_new, 'co2_ppm', 11)
-#    df_new = addDelta(df_new, 'co2_ppm', 12)
-#    df_new = addDelta(df_new, 'co2_ppm', 13)
-#    df_new = addDelta(df_new, 'co2_ppm', 14)
-#    df_new = addDelta(df_new, 'co2_ppm', 15)
+    df_new = addDelta(df_new, 'co2_ppm', 9)
+    df_new = addDelta(df_new, 'co2_ppm', 10)
+    df_new = addDelta(df_new, 'co2_ppm', 11)
+    df_new = addDelta(df_new, 'co2_ppm', 12)
+    df_new = addDelta(df_new, 'co2_ppm', 13)
+    df_new = addDelta(df_new, 'co2_ppm', 14)
+    df_new = addDelta(df_new, 'co2_ppm', 15)
     
 #    df_new = addDelta(df_new, 'temperature_celsius', 1)
 #    df_new = addDelta(df_new, 'temperature_celsius', 2)
@@ -113,8 +113,12 @@ def preProcessDataset(df):
 #    df_new['co2_ppm_shift14'] = df_new.shift(14)['co2_ppm']
 #    df_new['co2_ppm_shift15'] = df_new.shift(15)['co2_ppm']
 
-    #df_new['past1_delta'] = df_new.shift(1)['co2_ppm'] - df_new.shift(2)['co2_ppm']
-    #df_new['past2_delta'] = df_new.shift(2)['co2_ppm'] - df_new.shift(3)['co2_ppm']
+#    df_new['shift1_delta'] = df_new.shift(1)['co2_ppm'] - df_new.shift(2)['co2_ppm']
+#    df_new['shift2_delta'] = df_new.shift(2)['co2_ppm'] - df_new.shift(3)['co2_ppm']
+#    df_new['shift3_delta'] = df_new.shift(3)['co2_ppm'] - df_new.shift(4)['co2_ppm']
+#    df_new['shift4_delta'] = df_new.shift(4)['co2_ppm'] - df_new.shift(5)['co2_ppm']
+#    df_new['shift5_delta'] = df_new.shift(5)['co2_ppm'] - df_new.shift(6)['co2_ppm']
+#    df_new['shift6_delta'] = df_new.shift(6)['co2_ppm'] - df_new.shift(7)['co2_ppm']
 
     # Wochentag einfuegen
     # verringert Genauigkeit, weil wahrscheinlich zu "verlaesslich"

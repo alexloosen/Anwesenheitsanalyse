@@ -101,3 +101,50 @@ Aus diesen Betrachtungen ergab sich folgender FV der für den weiteren Verlauf d
     \end{tabular}
 \end{center}
 
+\newpage
+\section{Erwartungsberechnung eines Tages}
+Die ausgewählten Algorithmen konnten mit dem ausgewählten FV bei der Erwartungsberechnung über das gesamte 
+Datenset eine Genauigkeit von etwa 94\% erreichen. Eine \textit{Confusion Matrix}, welche die errechneten 
+Werte den tatsächlichen gegenüberstellt, zeigt, dass im hier benutzten Beispiel, ein Random Forest Classifier 
+selbst bei der starken Unausgeglichenheit des Datensets ähnlich viele Fehler in sowohl An- als auch Abwesenheit 
+macht.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{pic/confusion_matrix.png}
+    \caption{Confusion Matrix eines RFC}
+    \label{fig:ConMatrix}
+\end{figure}
+
+In den Feldern oben links und unten rechts ist jeweils zu sehen, wann das Modell eine richtige Erwartung 
+für jeweils Ab- und Anwesenheit errechnet hat, während die Felder oben rechts und unten links jeweils die falschen
+Erwartung für beide Werte zeigen.\\\\
+
+\newpage
+Es ist ebenfalls aufschlussreich die erwarteten Labelwerte mit den tatsächlichen grafisch gegenüberzustellen, 
+indem man das ursprüngliche Datenset mit timestamp und CO2-Wert zeichnet. Dabei wird die gemessene Anwesenheit 
+farblich als gelb für an- und blau für abwesend eingefärbt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{pic/nov23_actual.png}
+    \caption{Messwerte des 13. Januar}
+    \label{fig:ConMatrix}
+\end{figure}
+
+Löscht man aus dieser Datenreihe die tatsächlichen Labelwerte und fügt stattdessen die errechneten 
+Anwesenheitswerte des Modells ein, zeigt sich die hohe Genauigkeit deutlich. Bis auf einige kleine Fehler
+trifft das Modell eine sehr präzise Aussage über die aktuelle Anwesenheit.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{pic/nov23_predicted.png}
+    \caption{Messwerte des 13. Januar}
+    \label{fig:ConMatrix}
+\end{figure}
+
+Dieses Ergebnis konnte über eine Vielzahl von Kombinationen verschiedener Räume und Modelle weiterhin
+bestätigt und repliziert werden. Die Tatsache, dass die Genauigkeiten aller Modelle so nah beieinander 
+liegen, rührt daher, dass dieses Datenset ein typisches Klassifizierungsproblem darstellt,
+wodurch die sich wiederholenden Schemata in den CO2-Werten von einer Vielzahl von Algorithmen schnell 
+erkannt und verarbeitet werden können.

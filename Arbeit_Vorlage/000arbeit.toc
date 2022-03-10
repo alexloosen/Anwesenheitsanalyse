@@ -1,37 +1,38 @@
 \babel@toc {ngerman}{}\relax 
 \linespread {1}
-\contentsline {chapter}{\numberline {1}\textbf {Einleitung}}{4}{}%
-\contentsline {section}{\numberline {1.1}Motivation und Aufgabenstellung}{4}{}%
-\contentsline {section}{\numberline {1.2}Vorgehensweise}{5}{}%
+\contentsline {chapter}{\numberline {1}\textbf {Einleitung}}{5}{}%
+\contentsline {section}{\numberline {1.1}Motivation und Aufgabenstellung}{5}{}%
+\contentsline {section}{\numberline {1.2}Vorgehensweise}{6}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{\numberline {2}\textbf {Grundlagen}}{6}{}%
-\contentsline {section}{\numberline {2.1}Machine Learning}{6}{}%
+\contentsline {chapter}{\numberline {2}\textbf {Grundlagen}}{7}{}%
+\contentsline {section}{\numberline {2.1}Machine Learning}{7}{}%
 
-\contentsline {subsection}{\numberline {2.1.1}Random Forest Classifier}{8}{}%
-\contentsline {subsection}{\numberline {2.1.2}Support Vector Classifier}{8}{}%
-\contentsline {subsection}{\numberline {2.1.3}Gradient Boosting Classifier}{9}{}%
-\contentsline {subsection}{\numberline {2.1.4}Neuronale Netzwerke}{10}{}%
-\contentsline {subsection}{\numberline {2.1.5}Long Short Term Memory}{10}{}%
-\contentsline {section}{\numberline {2.2}CO2 als Anwesenheitsindikator}{12}{}%
-\contentsline {section}{\numberline {2.3}Luftfeuchtigkeit und Temperatur}{12}{}%
-\contentsline {section}{\numberline {2.4}Outlier Detection}{13}{}%
-\contentsline {section}{\numberline {2.5}Sensordaten}{13}{}%
-\contentsline {section}{\numberline {2.6}Datenbeschaffung und -Vorbereitung}{14}{}%
-\contentsline {subsection}{\numberline {2.6.1}Gruppierung}{14}{}%
-\contentsline {subsection}{\numberline {2.6.2}Zyklische Codierung}{15}{}%
-\contentsline {subsection}{\numberline {2.6.3}Deltas und Shift-Werte}{15}{}%
-\contentsline {subsection}{\numberline {2.6.4}Validierung}{16}{}%
-\contentsline {chapter}{\numberline {3}\textbf {Anwendung und Ergebnisse}}{18}{}%
+\contentsline {subsection}{\numberline {2.1.1}Random Forest Classifier}{9}{}%
+\contentsline {subsection}{\numberline {2.1.2}Support Vector Classifier}{9}{}%
+\contentsline {subsection}{\numberline {2.1.3}Gradient Boosting Classifier}{10}{}%
+\contentsline {subsection}{\numberline {2.1.4}Neuronale Netzwerke}{11}{}%
+\contentsline {subsection}{\numberline {2.1.5}Long Short Term Memory}{11}{}%
+\contentsline {section}{\numberline {2.2}CO2 als Anwesenheitsindikator}{13}{}%
+\contentsline {section}{\numberline {2.3}Luftfeuchtigkeit und Temperatur}{13}{}%
+\contentsline {section}{\numberline {2.4}Outlier Detection}{14}{}%
+\contentsline {section}{\numberline {2.5}Sensordaten}{14}{}%
+\contentsline {section}{\numberline {2.6}Datenbeschaffung und -Vorbereitung}{15}{}%
+\contentsline {subsection}{\numberline {2.6.1}Gruppierung}{15}{}%
+\contentsline {subsection}{\numberline {2.6.2}Zyklische Codierung}{16}{}%
+\contentsline {subsection}{\numberline {2.6.3}Deltas und Shift-Werte}{16}{}%
+\contentsline {subsection}{\numberline {2.6.4}Validierung}{17}{}%
+\contentsline {chapter}{\numberline {3}\textbf {Anwendung und Ergebnisse}}{19}{}%
 \vspace {0.8cm}
-\contentsline {subsection}{\numberline {3.0.1}Feature Vektor}{18}{}%
-\contentsline {chapter}{\numberline {4}\textbf {Zusammenfassung und Ausblick}}{22}{}%
+\contentsline {subsection}{\numberline {3.0.1}Feature Vektor}{19}{}%
+\contentsline {section}{\numberline {3.1}Erwartungsberechnung eines Tages}{23}{}%
+\contentsline {chapter}{\numberline {4}\textbf {Zusammenfassung und Ausblick}}{25}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Quellenverzeichnis}{23}{}%
-\contentsline {chapter}{Abkürzungsverzeichnis}{24}{}%
-\contentsline {chapter}{Abbildungsverzeichnis}{25}{}%
-\contentsline {chapter}{Tabellenverzeichnis}{26}{}%
+\contentsline {chapter}{Quellenverzeichnis}{26}{}%
+\contentsline {chapter}{Abkürzungsverzeichnis}{27}{}%
+\contentsline {chapter}{Abbildungsverzeichnis}{28}{}%
+\contentsline {chapter}{Tabellenverzeichnis}{29}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Anhang}{26}{}%
-\contentsline {chapter}{\numberline {A}Quellcode}{27}{}%
-\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{28}{}%
+\contentsline {chapter}{Anhang}{29}{}%
+\contentsline {chapter}{\numberline {A}Quellcode}{30}{}%
+\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{31}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
