@@ -60,7 +60,7 @@ def get_PIR_data(room: str = "H217", presence = True):
     query = """SELECT *
                 FROM ipenv.data.`sensor_data_v1`
                 WHERE `timestamp` > 1627776000
-                AND `room` LIKE '{room}' LIMIT 100""".format(room=room)
+                AND `room` LIKE '{room}' LIMIT 10000000""".format(room=room)
 #                LIMIT 1000000""".format(room=room)
 
     pir_data = pd.DataFrame
@@ -78,7 +78,7 @@ def get_PIR_data(room: str = "H217", presence = True):
     if (presence):
         pir_data["presence"] = pir_data["presence"].astype(int)
 
-    #pir_data = pir_data.groupby(pd.Grouper(key="timestamp", freq="2min")).mean()\
-    #    .round(0).reset_index(drop=False)
+    pir_data = pir_data.groupby(pd.Grouper(key="timestamp", freq="2min")).mean()\
+        .round(0).reset_index(drop=False)
 
     return pir_data

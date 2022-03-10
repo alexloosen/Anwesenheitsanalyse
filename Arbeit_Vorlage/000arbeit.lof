@@ -1,17 +1,20 @@
 \babel@toc {ngerman}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Beispiel für Clustering\relax }}{7}{}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Beispiel eines Decision Trees\relax }}{8}{}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Beispiel eines Support Vector Classifiers\relax }}{8}{}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Beispiel eines Support Vector Classifiers in der zweiten Dimension\relax }}{9}{}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel eines neuronalen Netzwerks\relax }}{10}{}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Beispiel eines rekurrenten neuronalen Netzwerks\relax }}{11}{}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces CO2 Gehalt der Raumluft über einen Tag\relax }}{12}{}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Beispiel einer Kreuzvalidierung\relax }}{16}{}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Beispiel für Clustering\relax }}{8}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Beispiel eines Decision Trees\relax }}{9}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Beispiel eines Support Vector Classifiers\relax }}{9}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Beispiel eines Support Vector Classifiers in der zweiten Dimension\relax }}{10}{}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel eines neuronalen Netzwerks\relax }}{11}{}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Beispiel eines rekurrenten neuronalen Netzwerks\relax }}{12}{}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces CO2 Gehalt der Raumluft über einen Tag\relax }}{13}{}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Beispiel einer Kreuzvalidierung\relax }}{17}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Feature Importances eines Random Forest\relax }}{18}{}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Feature Importances eines Random Forest\relax }}{19}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Feature Importances eines Random Forest\relax }}{19}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Feature Importances eines Random Forest\relax }}{20}{}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Confusion Matrix eines RFC\relax }}{23}{}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Messwerte des 13. Januar\relax }}{24}{}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Messwerte des 13. Januar\relax }}{24}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
