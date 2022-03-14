@@ -292,7 +292,7 @@ Im Zuge der Projektarbeit wurden verschiedene Kombinationsmöglichkeiten von Del
 Zeitschritten zwischen zwei Minuten und einer Stunde mit Hinblick auf Verbesserungen der Model-Genauigkeiten 
 getestet.
 
-\subsection{Validierung}
+\section{Validierung}
 \sloppy
 Über das Projekt hinweg wurden verschiedene Validierungsmethoden verwendet. Grundsätzlich unterteilt man das 
 Datenset in ein Trainings- und Testset mit einem Verhältnis von etwa 80-20. Das bedeutet, dass das Model mit
@@ -334,6 +334,31 @@ Model selbst gefüllt werden sollte. Das Ergebnis musste dann in einem Graphen g
 werden. Da sich das Ergebnis der Berechnung in diesem Anwendungsfall, wie oben gezeigt, sehr übersichtlich als 
 Graph darstellen lässt, war diese Methode der Validierung zwar nicht perfekt, lieferte aber trotzdem einen 
 ausreichenden Eindruck über die Qualität des trainierten Models.
+
+\subsection{Parameter Tuning}
+\textit{Parameter Tuning} beschreibt einen Schritt der Modell-Optimierung, der normalerweise stattfindet, 
+nachdem ein funktionierendes Modell, das mit bereits verarbeiteten Daten gute Ergebnisse liefert, erstellt 
+wurde. Jedes Modell besitzt Parameter, die bei der Erstellung festgesetzt werden. Diese Parameter haben 
+großen Einfluss auf den Trainingsprozess, weshalb es sich anbietet, die Genauigkeiten mehrerer Modelle 
+mit verschiedenen Paramter-Kombinationen zu testen.\\
+Das im Scikit-Learn enthaltene \textit{GridSearchCV}-Modul
+bietet die Möglichkeit einem Modell eine Vielzahl an verschiedenen Parameter-Optionen zu übergeben. Mit diesen 
+werden kann automatisch Modelle trainiert und per Kreuzvalidierung verglichen. Am Ende liefert das Modul 
+die Parameter-Kombination, mit der das beste Ergebnis erzielt wurde.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pic/param_test.png}
+    \caption{Beispiel einer Sammlung von Parameter-Optionen}
+    \label{fig:CV}
+\end{figure}
+
+Im obenstehenden Beispiel kann man erkennen, dass für bestimmte Parameter (rot) eine Sammlung an erlaubten 
+Werten (grün) übergeben werden. Alle Kombinationen aus diesen Parameter-Optionen werden dann vom 
+GridSearchCV-Modul ausgewertet.\\
+Die Verbesserungen gegenüber Standard-Parametern bewegen sich normalerweise im niedrigen einstelligen 
+Prozent-Bereich und kann auch zu einer leichten Verschlechterung führen, wenn die Standard-Parameter
+der einzelnen Modelle bereits gut gewählt waren.
 %% Zwei Abbildungen, die zusammen gehören
 
 %\begin{figure}

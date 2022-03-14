@@ -1,4 +1,5 @@
 import modelTuning as modelTuning
+import prepareData as prepareData
 
 from sklearn.ensemble import BaggingClassifier, GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -22,6 +23,8 @@ def createClassifier(classType, Xtrain, ytrain):
         modelClass = BaggingClassifier()
     elif (classType == 'LR'):
         modelClass = LogisticRegression(max_iter=1000)
+        Xtrain, scaler = prepareData.normalize_min_max(Xtrain)
+        ytrain, scaler = prepareData.normalize_min_max(ytrain)
         
     modelClass.fit(Xtrain, ytrain)
     modelTuning.saveModel(modelClass, 'models\\' + classType + '.mod')
