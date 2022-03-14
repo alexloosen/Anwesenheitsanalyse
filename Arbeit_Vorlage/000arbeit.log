@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  10 MAR 2022 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  14 MAR 2022 11:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -557,7 +557,11 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box72
-) (./000arbeit.aux (./doc/001titelblatt.aux) (./doc/002erklaerung.aux) (./doc/101kap1.aux) (./doc/102kap2.aux) (./doc/103kap3.aux
+) (./000arbeit.aux (./doc/001titelblatt.aux) (./doc/002erklaerung.aux) (./doc/101kap1.aux) (./doc/102kap2.aux
+
+LaTeX Warning: Label `fig:CV' multiply defined.
+
+) (./doc/103kap3.aux
 
 LaTeX Warning: Label `fig:ConMatrix' multiply defined.
 
@@ -874,16 +878,22 @@ File: pic/CV.png Graphic file (type png)
 Package pdftex.def Info: pic/CV.png  used on input line 322.
 (pdftex.def)             Requested size: 298.75264pt x 158.78487pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--338
+Underfull \hbox (badness 10000) in paragraph at lines 327--337
 
  []
 
-[17 <./pic/CV.png>]) [18]
+[17 <./pic/CV.png>]
+<pic/param_test.png, id=81, 319.94531pt x 145.29282pt>
+File: pic/param_test.png Graphic file (type png)
+<use pic/param_test.png>
+Package pdftex.def Info: pic/param_test.png  used on input line 351.
+(pdftex.def)             Requested size: 256.07741pt x 116.28983pt.
+) [18 <./pic/param_test.png>]
 \openout2 = `./doc/103kap3.aux'.
 
  (./doc/103kap3.tex
 chapter 3.
-<pic/feature_importances.png, id=84, 495.35063pt x 348.55219pt>
+<pic/feature_importances.png, id=85, 495.35063pt x 348.55219pt>
 File: pic/feature_importances.png Graphic file (type png)
 <use pic/feature_importances.png>
 Package pdftex.def Info: pic/feature_importances.png  used on input line 18.
@@ -899,7 +909,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
 
  []
 
-<pic/feature_importances_better.png, id=89, 422.32782pt x 347.79938pt>
+<pic/feature_importances_better.png, id=90, 422.32782pt x 347.79938pt>
 File: pic/feature_importances_better.png Graphic file (type png)
 <use pic/feature_importances_better.png>
 Package pdftex.def Info: pic/feature_importances_better.png  used on input line 34.
@@ -940,7 +950,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
  []
 
 [22]
-<pic/confusion_matrix.png, id=99, 296.60812pt x 283.0575pt>
+<pic/confusion_matrix.png, id=100, 296.60812pt x 283.0575pt>
 File: pic/confusion_matrix.png Graphic file (type png)
 <use pic/confusion_matrix.png>
 Package pdftex.def Info: pic/confusion_matrix.png  used on input line 114.
@@ -956,12 +966,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 119--122
  []
 
 [23 <./pic/confusion_matrix.png>]
-<pic/nov23_actual.png, id=103, 1017.04968pt x 502.12593pt>
+<pic/nov23_actual.png, id=104, 1017.04968pt x 502.12593pt>
 File: pic/nov23_actual.png Graphic file (type png)
 <use pic/nov23_actual.png>
 Package pdftex.def Info: pic/nov23_actual.png  used on input line 130.
 (pdftex.def)             Requested size: 384.1096pt x 189.63757pt.
-<pic/nov23_predicted.png, id=104, 1019.30812pt x 537.50812pt>
+<pic/nov23_predicted.png, id=105, 1019.30812pt x 537.50812pt>
 File: pic/nov23_predicted.png Graphic file (type png)
 <use pic/nov23_predicted.png>
 Package pdftex.def Info: pic/nov23_predicted.png  used on input line 141.
@@ -1025,18 +1035,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16175 strings out of 478278
- 324695 string characters out of 5846055
+ 16182 strings out of 478278
+ 324848 string characters out of 5846055
  775442 words of memory out of 5000000
- 34044 multiletter control sequences out of 15000+600000
+ 34050 multiletter control sequences out of 15000+600000
  489667 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10700b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/devTools/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 000arbeit.pdf (31 pages, 631647 bytes).
+Output written on 000arbeit.pdf (31 pages, 641261 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
+ 179 PDF objects out of 1000 (max. 8388607)
  102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

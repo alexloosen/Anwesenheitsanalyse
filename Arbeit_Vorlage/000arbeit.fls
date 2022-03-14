@@ -1074,6 +1074,11 @@ INPUT ./pic/CV.png
 INPUT pic/CV.png
 INPUT ./pic/CV.png
 INPUT ./pic/CV.png
+INPUT ./pic/param_test.png
+INPUT ./pic/param_test.png
+INPUT pic/param_test.png
+INPUT ./pic/param_test.png
+INPUT ./pic/param_test.png
 INPUT ./doc/103kap3.tex
 INPUT ./doc/103kap3.tex
 INPUT ./doc/103kap3.tex

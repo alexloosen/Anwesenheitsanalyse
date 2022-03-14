@@ -20,11 +20,12 @@
 \contentsline {subsection}{\numberline {2.6.1}Gruppierung}{15}{}%
 \contentsline {subsection}{\numberline {2.6.2}Zyklische Codierung}{16}{}%
 \contentsline {subsection}{\numberline {2.6.3}Deltas und Shift-Werte}{16}{}%
-\contentsline {subsection}{\numberline {2.6.4}Validierung}{17}{}%
+\contentsline {section}{\numberline {2.7}Validierung}{17}{}%
+\contentsline {subsection}{\numberline {2.7.1}Parameter Tuning}{18}{}%
 \contentsline {chapter}{\numberline {3}\textbf {Anwendung und Ergebnisse}}{19}{}%
 \vspace {0.8cm}
 \contentsline {subsection}{\numberline {3.0.1}Feature Vektor}{19}{}%
-\contentsline {section}{\numberline {3.1}Erwartungsberechnung eines Tages}{23}{}%
+\contentsline {section}{\numberline {3.1}Ergebnisse der Erwartungsberechnung}{23}{}%
 \contentsline {chapter}{\numberline {4}\textbf {Zusammenfassung und Ausblick}}{25}{}%
 \vspace {0.8cm}
 \contentsline {chapter}{Quellenverzeichnis}{26}{}%
