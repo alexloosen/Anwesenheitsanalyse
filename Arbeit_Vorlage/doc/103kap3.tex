@@ -2,7 +2,7 @@
 \chapter{\textbf{Anwendung und Ergebnisse}}\label{kap3}
 \addtocontents{toc}{\vspace{0.8cm}}
 
-\subsection{Feature Vektor}
+\section{Feature Vektor}
 Der Feature Vektor FV beschreibt das Ergebnis des Datensets nach der Vorverarbeitung. 
 Durch die o.g. Schritte ergibt sich eine Vielzahl an möglichen zusätzlichen Features,
 mit denen man das Datenset versehen könnte. Es sollte zunächst ermittelt werden, welche diese Features wirklich 
@@ -102,7 +102,19 @@ Aus diesen Betrachtungen ergab sich folgender FV der für den weiteren Verlauf d
 \end{center}
 
 \newpage
-\section{Ergebnisse der Erwartungsberechnung}
+\section{Ergebnisse}
+Da nicht alle Algorithmen auf die gleiche Weise evaluiert und grafisch dargestellt werden können, sollen 
+die Ergebnisse zu 
+\begin{itemize}
+    \item Clustering Modellen
+    \item Decision Tree Modellen
+    \item Neuralen Netzwerken
+\end{itemize}
+einzeln betrachtet.
+
+\subsection{Clustering Modelle}
+
+\subsection{Decision Tree Modelle}
 Die ausgewählten Algorithmen konnten mit dem ausgewählten FV bei der Erwartungsberechnung über das gesamte 
 Datenset eine Genauigkeit von etwa 94\% erreichen. Eine \textit{Confusion Matrix}, welche die errechneten 
 Werte den tatsächlichen gegenüberstellt, zeigt, dass im hier benutzten Beispiel, ein Random Forest Classifier 
@@ -148,3 +160,34 @@ bestätigt und repliziert werden. Die Tatsache, dass die Genauigkeiten aller Mod
 liegen, rührt daher, dass dieses Datenset ein typisches Klassifizierungsproblem darstellt,
 wodurch die sich wiederholenden Schemata in den CO2-Werten von einer Vielzahl von Algorithmen schnell 
 erkannt und verarbeitet werden können.
+
+Beim Tuning der ausgewählten Modelle wurden als Parameter-Optionen ausschließlich Werte gewählt, die nicht 
+den Standardwerten der Modelle entsprechen. Somit sollte das GridSearchCV-Modul ausschließlich in der Menge 
+von Parametern nach möglichen suchen, die nicht den Standard-Einstellungen entsprechen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pic/param_eval.png}
+    \caption{Ergebnisse des Parameter Tuning}
+    \label{fig:PT_eval}
+\end{figure}
+
+Es ist zu sehen, dass das Parameter Tuning die Genauigkeit der Modelle im erwarteten Rahmen erhöht oder 
+verringert hat. Dies bestätigt die Annahme, dass dieser Anwendungsfall ein typisches Klassifizierungsproblem 
+darstellt, weshalb die Modelle nicht mehr maßgeblich verbessert werden können. Der Schritt des Parameter Tunings 
+sollte trotzdem grundsätzlich immer durchgeführt werden, um zu erkennen, ob man durch eine einfache Änderung 
+der Parameter eine Verbesserung des Modells hervorbringen kann.\\
+
+Zusätzlich wurden die \textit{ROC-Curves} der True- und False-Positives gegeneinander gezeichent um zu erknennen 
+inwiefern die Ergebnisse zufällig oder errechnet sind.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pic/roc_curves.png}
+    \caption{ROC-Curves aller Modelle}
+    \label{fig:PT_eval}
+\end{figure}
+
+Man sieht deutlich, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines der Modelle weist anzeichen 
+auf, dass Ergebnisse wegen mangelnder Informationen erraten werden.
+\subsection{Neurale Netzwerke}

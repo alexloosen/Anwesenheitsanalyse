@@ -4,6 +4,7 @@ import prepareData as prepareData
 from sklearn.ensemble import BaggingClassifier, GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
 
 import tensorflow as tf
 from keras.models import Sequential
@@ -12,6 +13,8 @@ from keras.layers import LSTM
 from keras.layers import Dropout
 from keras.layers import SpatialDropout1D
 
+import numpy as np
+
 def createClassifier(classType, Xtrain, ytrain):
     if (classType == 'RFC'):
         modelClass = RandomForestClassifier()
@@ -19,13 +22,13 @@ def createClassifier(classType, Xtrain, ytrain):
         modelClass = SVC()
     elif (classType == 'GBC'):
         modelClass = GradientBoostingClassifier()
-    elif (classType == 'BC'):
-        modelClass = BaggingClassifier()
+    elif (classType == 'KNN'):
+        modelClass = KNeighborsClassifier()
     elif (classType == 'LR'):
-        modelClass = LogisticRegression(max_iter=1000)
-        Xtrain, scaler = prepareData.normalize_min_max(Xtrain)
-        ytrain, scaler = prepareData.normalize_min_max(ytrain)
-        
+        modelClass = LogisticRegression(solver='saga', max_iter=5000)
+        #Xtrain, scaler = prepareData.normalize_min_max(Xtrain)
+        #ytrain, scaler = prepareData.normalize_min_max(ytrain)
+    
     modelClass.fit(Xtrain, ytrain)
     modelTuning.saveModel(modelClass, 'models\\' + classType + '.mod')
 
