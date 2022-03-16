@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 def encodeCyclical(df, col, max_val):
     df[col + '_sin'] = np.sin(2 * np.pi * df[col]/max_val)
@@ -159,7 +159,7 @@ def reshape_data_for_LSTM(X, y, timesteps_per_sample):
 
 def normalize_min_max(dataframe, scaler=None):
     if scaler is None:
-        scaler = MinMaxScaler(feature_range=(0, 1))       
+        scaler = MinMaxScaler(feature_range=(0, 1))
         dataframe = pd.DataFrame(data=scaler.fit_transform(dataframe), columns=dataframe.columns)
     else:
         dataframe = pd.DataFrame(data=scaler.transform(dataframe), columns=dataframe.columns)

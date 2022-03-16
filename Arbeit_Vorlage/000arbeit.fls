@@ -1024,6 +1024,8 @@ INPUT ./doc/102kap2.tex
 INPUT ./doc/102kap2.tex
 INPUT ./doc/102kap2.tex
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
+INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./pic/Clustering_Beispiel.png
 INPUT ./pic/Clustering_Beispiel.png
 INPUT ./pic/Clustering_Beispiel.png
@@ -1031,8 +1033,6 @@ INPUT ./pic/Clustering_Beispiel.png
 INPUT ./pic/Clustering_Beispiel.png
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
-INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf
@@ -1069,6 +1069,11 @@ INPUT ./pic/co2_singleDay.png
 INPUT ./pic/co2_singleDay.png
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT ./pic/confusion_matrix_ex.png
+INPUT ./pic/confusion_matrix_ex.png
+INPUT pic/confusion_matrix_ex.png
+INPUT ./pic/confusion_matrix_ex.png
+INPUT ./pic/confusion_matrix_ex.png
 INPUT ./pic/CV.png
 INPUT ./pic/CV.png
 INPUT pic/CV.png
@@ -1114,6 +1119,16 @@ INPUT ./pic/nov23_predicted.png
 INPUT pic/nov23_predicted.png
 INPUT ./pic/nov23_predicted.png
 INPUT ./pic/nov23_predicted.png
+INPUT ./pic/param_eval.png
+INPUT ./pic/param_eval.png
+INPUT pic/param_eval.png
+INPUT ./pic/param_eval.png
+INPUT ./pic/param_eval.png
+INPUT ./pic/roc_curves.png
+INPUT ./pic/roc_curves.png
+INPUT pic/roc_curves.png
+INPUT ./pic/roc_curves.png
+INPUT ./pic/roc_curves.png
 INPUT ./doc/111Schluss.tex
 INPUT ./doc/111Schluss.tex
 INPUT ./doc/111Schluss.tex

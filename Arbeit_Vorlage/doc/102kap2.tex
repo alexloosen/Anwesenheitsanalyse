@@ -1,6 +1,24 @@
 \clearpage
-\chapter{\textbf{Grundlagen}}\label{grundlagen}
-%\addtocontents{toc}{\vspace{0.8cm}}
+\chapter{\textbf{Stand der Technik für Anwesenheitserkennung/-Prognose}}\label{grundlagen}
+\addtocontents{toc}{\vspace{0.8cm}}
+
+Man kann verschiedene Techniken zur Anwesenheitserkennung und -Prognose in Innenräumen in \text{aktive} und
+\textit{passive} Verfahren unterteilen. Aktive Verfahren messen die menschliche Anwesenheit mit Kamera-, 
+Infrarot-, Mikrowellen-, oder Ultraschallsensoren. Durch diese kann menschliche Präsenz sowohl direkt 
+(Kamera-, Infrarotsensoren) oder indirekt über Veränderungen in den physischen Eigenschaften des Raumes 
+festegestellt werden. Verändert sich beispielsweise durch menschliche Anwesenheit die Luftfeuchtigkeit 
+in einem Raum in sehr geringem Maß, wird die  Laufzeit einer Ultraschallwelle die durch diesen Raum 
+geschickt wird, leicht verringert, da die Schallgeschwindigkeit in dichteren Medien zunimmt.\\
+Die Systeme unterscheiden sich neben der Art der Messung auch deutlich in der Komplexität der Implementierung.
+Während Ultraschallsensoren wegen der verhätlnismäßig geringen Schallgeschwindigkeit keine besonders hohe 
+Genauigkeit besitzen müssen, sind die an einen Mikrowellensensor gestellten Ansprüche wesentlich höher. Mit 
+diesen können Bewegungen durch Ausnutzung des Doppler-Effektes einer elektromagnetischen Welle erkannt werden. 
+elektromagnetische Wellen sind im gegensatz zu Schallwellen etwa um einen Faktor von einer Million schneller, 
+weshalb Messungen sehr viel genauer sein müssen, um die gleiche Aussagekraft zu besitzen.\\
+Hier verdeutlicht sich nochmals die Motivation dieser Arbeit, da CO2-Sensoren weder teuer sind, noch 
+besondere Ansprüche an die Positionierung im Raum oder Kallibrierung besitzen.
+
+\chapter{\textbf{Untersuchte Verfahren}}
 
 \section{Machine Learning}\label{unterkapitel}
 \addtocontents{toc}{}%\vspace{0.8cm}}
@@ -77,6 +95,18 @@ Sachverhalt ,,abstimmen'' zu lassen. Während sich in einem einzelnen Entscheidu
 entwickeln können, sinkt die Chance auf eine solche Fehleinschätzung, je mehr unabhängige 
 Entscheidungsbäume man befragt. 
 
+\subsection{Gradient Boosting Classifier}
+Der Gradien Boosting Classifier(GBC) versucht seine Erwartungen auf Grund von Abweichungen eines Labels vom 
+Durchschnitt dieses Labels zu treffen. Erweitert man das Datenset im o.g. Beispiel um das Alter einer Maus, wird 
+ein GBC als Ausgangswert den Durchschnitt aller Label-Werte, also dem Gewicht, berechnen. Danach werden die 
+Abweichungen aller Label-Werte zu diesem Durchschnitt gebildet. Diese Abweichungen werden nun in Beziehung zu den 
+anderen Spalten des Datensets gesetzt. Beispielsweise könnte man so davon ausgehen, dass ausgewachsene Mäuse von einem 
+bestimmten Alter über dem Durchschnittsgewicht liegen. Genauso liegen besonders junge Mäuse wahrscheinlich immer
+einen ähnlichen Wert unter dem Durchschnittsgewicht. So wurde zwischen dem Label \textit{Gewicht} und der Spalte 
+\textit{Alter} eine Beziehung hergestellt. In weiteren Iterationen orientiert sich der GBC immer an der Abweichung 
+zum Durchschnittswert des vorherigen Baumes. So werden die getroffenen Erwartungen über mehrere Iterationen immer 
+präziser.
+
 \subsection{Support Vector Classifier}
 Der Support Vector Classifier(SVC) versucht in einem Datenset anhand von bestimmten Cut-Off-Values klare Grenzen 
 zwischen Werten zu finden, sodass man alle Messwerte ober- und unterhalb der Grenze eindeutig Klassifizieren 
@@ -105,17 +135,7 @@ eine Linie in einem zwei-dimensionalen oder eine Ebene in einem drei-dimensional
 Da der SVC die Verhältnisse aller Datenpunkte zueinander betrachtet, ist er sehr anfällig für Ausreißer in 
 den Daten, was bei der Datenvorbereitung und der Auswertung beachtet werden muss.
 
-\subsection{Gradient Boosting Classifier}
-Der Gradien Boosting Classifier(GBC) versucht seine Erwartungen auf Grund von Abweichungen eines Labels vom 
-Durchschnitt dieses Labels zu treffen. Erweitert man das Datenset im o.g. Beispiel um das Alter einer Maus, wird 
-ein GBC als Ausgangswert den Durchschnitt aller Label-Werte, also dem Gewicht, berechnen. Danach werden die 
-Abweichungen aller Label-Werte zu diesem Durchschnitt gebildet. Diese Abweichungen werden nun in Beziehung zu den 
-anderen Spalten des Datensets gesetzt. Beispielsweise könnte man so davon ausgehen, dass ausgewachsene Mäuse von einem 
-bestimmten Alter über dem Durchschnittsgewicht liegen. Genauso liegen besonders junge Mäuse wahrscheinlich immer
-einen ähnlichen Wert unter dem Durchschnittsgewicht. So wurde zwischen dem Label \textit{Gewicht} und der Spalte 
-\textit{Alter} eine Beziehung hergestellt. In weiteren Iterationen orientiert sich der GBC immer an der Abweichung 
-zum Durchschnittswert des vorherigen Baumes. So werden die getroffenen Erwartungen über mehrere Iterationen immer 
-präziser.\newpage
+\newpage
 
 \subsection{Neuronale Netzwerke}
 Die Funktionsweise eines Neuronalen Netzwerks ist direkt angelehnt an die Funktionsweise des menschlichen Gehirns.
@@ -190,30 +210,6 @@ Beide Werte wurden zunächst in das Training aller Modelle miteinbezogen, es wir
 Kapitel gezeigt, dass diese beiden Werte zusammen mit dem CO2-Werte nicht von besonderem Nutzen sind und 
 deshalb später nicht weiter genutzt werden.  
 
-\section{Outlier Detection}
-Wie bereits erwähnt, spielen Datenausreißer für die Ergebnisse mancher Algorithmen eine große Rolle. Überall 
-wo z.B. aus einer Reihe von Datenwerten Durchschnittswerte berechnet werden, würden Ausreißer in den Daten das 
-Ergebnis verfälschen und die Leistung des Algorithmus deutlich senken.
-Um diese Ausreißer vor dem Training der Models zu beseitigen wurde das Verfahren des 
-\textit{Interquartilabstands} (IQR nach der englischen Bezeichnung \textit{Interquartile Range}) gewählt.\\
-Der IQR gibt die Intervallgröße an, die ein Wert vom Median einer Datenreihe abweichen darf. Bei einer 
-der Größe nach sortierten Datenreihe $x = (x_0,x_1,...,x_n)$ bestimmt man die Mediane der unteren und oberen 
-Hälfe des Datensets $Q_1$ und $Q_2$. Der IQR ergibt sich nun aus 
-
-\begin{align}
-    IQR = Q_2 - Q_1
-\end{align}
-Mit diesm Wert kann man nun die erlaubten Ober- und Untergrenzen 
-des Datensets mit 
-\begin{align}
-    Limit_{upper} = Q_2 + 1.5 * IQR \\
-    Limit_{lower} = Q_1 - 1.5 * IQR
-\end{align} 
-bestimmen. Alle Werte die außerhalb dieser Grenzen liegen, können als Ausreißer betrachtet werden.\\
-Ausreißer zu entfernen, ist hier wichtig, da die Sensoren Messfehler erzeugen können, oder gelegentlich zur 
-Demonstration von starken Veränderungen in der direkten Nähe des Sensors geatmet wurde und es so in vielen 
-Datensets kurzfristige CO2-Werte gibt, die natürlich in geschlossenen Räumen nicht vorkommen.
-
 \section{Sensordaten}
 Wie bereits beschrieben, wurden die Sensordaten in mehreren Räumen der FH Aachen kontinuierlich 
 gesammelt. Durch das Filtern nach der Beziehung des Raumes ergab sich folgende Datenstruktur als
@@ -232,6 +228,8 @@ Ausgangslage:\\
     presence&boolean&Aktivität des Bewegungssensors\\
     \hline
 \end{tabular}     
+
+\chapter{Technische Umsetzung}
 
 \section{Datenbeschaffung und -Vorbereitung}
 Die Daten wurden lokal auf einem der FH-Server in Form eines \textit{Hadoop Distributed File System} (HDFS) 
@@ -292,17 +290,77 @@ Im Zuge der Projektarbeit wurden verschiedene Kombinationsmöglichkeiten von Del
 Zeitschritten zwischen zwei Minuten und einer Stunde mit Hinblick auf Verbesserungen der Model-Genauigkeiten 
 getestet.
 
+\subsection{Outlier Detection}
+Wie bereits erwähnt, spielen Datenausreißer für die Ergebnisse mancher Algorithmen eine große Rolle. Überall 
+wo z.B. aus einer Reihe von Datenwerten Durchschnittswerte berechnet werden, würden Ausreißer in den Daten das 
+Ergebnis verfälschen und die Leistung des Algorithmus deutlich senken.
+Um diese Ausreißer vor dem Training der Models zu beseitigen wurde das Verfahren des 
+\textit{Interquartilabstands} (IQR nach der englischen Bezeichnung \textit{Interquartile Range}) gewählt.\\
+Der IQR gibt die Intervallgröße an, die ein Wert vom Median einer Datenreihe abweichen darf. Bei einer 
+der Größe nach sortierten Datenreihe $x = (x_0,x_1,...,x_n)$ bestimmt man die Mediane der unteren und oberen 
+Hälfe des Datensets $Q_1$ und $Q_2$. Der IQR ergibt sich nun aus 
+
+\begin{align}
+    IQR = Q_2 - Q_1
+\end{align}
+Mit diesm Wert kann man nun die erlaubten Ober- und Untergrenzen 
+des Datensets mit 
+\begin{align}
+    Limit_{upper} = Q_2 + 1.5 * IQR \\
+    Limit_{lower} = Q_1 - 1.5 * IQR
+\end{align} 
+bestimmen. Alle Werte die außerhalb dieser Grenzen liegen, können als Ausreißer betrachtet werden.\\
+Ausreißer zu entfernen, ist hier wichtig, da die Sensoren Messfehler erzeugen können, oder gelegentlich zur 
+Demonstration von starken Veränderungen in der direkten Nähe des Sensors geatmet wurde und es so in vielen 
+Datensets kurzfristige CO2-Werte gibt, die natürlich in geschlossenen Räumen nicht vorkommen.
+
 \section{Validierung}
 \sloppy
 Über das Projekt hinweg wurden verschiedene Validierungsmethoden verwendet. Grundsätzlich unterteilt man das 
 Datenset in ein Trainings- und Testset mit einem Verhältnis von etwa 80-20. Das bedeutet, dass das Model mit
 80 prozent der Daten trainiert wird, wobei die anderen 20 prozent zurückgehalten werden, um daraufhin das 
-fertig trainierte Model daran zu testen. Aus dem Ergebnis dieses Tests ergibt sich ein Prozentwert, der die 
-allgemeine Genauigkeit des Models repräsentiert, d.h. wie verlässlich das Model die An- und Abwesenheit des 
-Testsets selbst berechnen kann, wenn man ihm den tatsächlichen Wert vorenthält.\\
-Dieser Gesamtwert ist wiederrum der Durchschnitt der jeweiligen Genauigkeit beim errechnen von An- und 
-Abwesenheit. In diesem Anwendungsfall ist es durchaus wichtig, beide Genauigkeiten einzeln zu betrachten, 
-da ein Arbeitstag nur etwa ein Drittel eines tatsächlichen Tages darstellt. 
+fertig trainierte Model daran zu testen. Aus dem Ergebnis dieses Tests ergeben sich verschiedene Werte, die  
+die allgemeine Genauigkeit des Models repräsentiert, d.h. wie verlässlich das Model die An- und Abwesenheit 
+des Testsets selbst berechnen kann, wenn man ihm den tatsächlichen Wert vorenthält.\\
+Allgemeine Basis für die errechneten Genauigkeiten bildet die sog. \textit{Confusion Matrix}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pic/confusion_matrix_ex.png}
+    \caption{Beispiel einer Confusion Matrix}
+    \label{fig:CV}
+\end{figure}
+
+Diese zeigt, inwiefern sich die Genauigkeit des Modells neben tatsächlich richtig erkannten Werte aus 
+false negatives und false positives zusammensetzt.\\
+Die \textit{Accuracy Score} ist die meistgenutzte Metrik für Klassifikation und berechnet sich aus der 
+Summe der richtigen Ergebnisse geteilt durch die Summe aller Ergebnisse.
+
+\begin{center}
+    $AccuracyScore = \dfrac{TP + TN}{TP + TN + FP + FN}$    
+\end{center}
+Die \textit{Recall Score} beschreibt die Genauigkeit bezogen auf alle erkannten positiven Ergebniswerte. 
+%Dabei ist wichtig, dass wenn ein Algorithmus beispielsweise Anwesenheit zu erkennen versucht auch ein
+%false negative als Treffer gewertet wird.
+\begin{center}
+    $RecallScore = \dfrac{TP}{TP + FN}$    
+\end{center}
+
+Die \textit{Precision Score} gibt die allgemeine Menge an positiven Werten, die hätten erkannt werden müssen.
+\begin{center}
+    $PrecisionScore = \dfrac{TP}{TP + FP}$    
+\end{center}
+
+Die \textit{F1-Score} ist der Durchschnittswert aus Recall- und Precision-Score und gibt im Allgemeinen eine 
+gute Auskunft über die Qualität eines Modells.\\
+
+\begin{center}
+    $F1\_Score = \dfrac{2}{\dfrac{1}{PrecisionScore} + \dfrac{1}{RecallScore}} = \dfrac{2 \cdot (PrecisionScore \cdot RecallScore)}{PrecisionScore + RecallScore}$    
+\end{center}
+
+\vspace{0.75cm}
+In diesem Anwendungsfall ist es durchaus wichtig, Anwesenheitswerte genauer zu betrachten als 
+Abwesenheitswerte, da ein Arbeitstag nur etwa ein Drittel eines tatsächlichen Tages darstellt. 
 Das Datenset ist also mit einem Verhältnis von etwa 8/16 in Richtung der Abwesenheit unausgeglichen. Dies 
 lässt die Erwartung zu, dass das trainierte Model wesentlich besser darin sein wird, Abwesenheit zu erkennen,
 als Anwesenheit.\\
