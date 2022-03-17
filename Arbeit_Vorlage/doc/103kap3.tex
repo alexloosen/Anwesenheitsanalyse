@@ -1,5 +1,5 @@
 \clearpage
-\chapter{\textbf{Anwendung und Ergebnisse}}\label{kap3}
+\chapter{\textbf{Anwendung und Ergebnisse}}\label{kap5}
 \addtocontents{toc}{\vspace{0.8cm}}
 
 \section{Feature Vektor}
@@ -59,21 +59,33 @@ weiteren Verlauf des Projektes benutzt werden sollte, abgeleitet wurde.
 
 Mit diesen vier Vektoren wurden nun verschiedene Modelle trainiert und deren Genauigkeiten gegenübergestellt.
 
+
+
+
+
+
 \begin{center}
-    \begin{tabular}{|p{1.5cm}||p{3cm}| p{3cm}| p{3cm}| p{3cm}|} 
+    \begin{tabular}{|p{1.5cm}||p{2cm}| p{2cm}| p{2cm}| p{2cm}| p{2cm}|} 
         \hline
-        Feature-Vektor&RF (Random Forest) &SV (Support Vector)&GB (Gradient Boost)&LR (Logistic Regression)\\ [0.5ex] 
+        Feature-Vektor&RF &SV &GB &KNN&LR \\ [0.5ex] 
         \hline\hline
-        FV1&0.944805&	0.912594&	0.943618&	0.935428\\
+        FV1&0.944805&	0.912594&	0.943618&	0.926824&   0.935428\\
         \hline
-        FV2&0.946477&	0.918528&	0.931867&	0.916739\\
+        FV2&0.946477&	0.918528&	0.931867&	0.925483&   0.916739\\
         \hline
-        FV3&0.945256&	0.917241&	0.944554&	0.938136\\
+        FV3&0.945256&	0.917241&	0.944554&	0.930148&   0.938136\\
         \hline
-        FV4&0.945725&	0.912095&	0.947024&	0.931573\\
+        FV4&0.945725&	0.912095&	0.947024&	0.929685&   0.931573\\
         \hline
     \end{tabular}\\        
 \end{center}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pic/FV_comp.png}
+    \caption{Vergleich der Genauigkeiten}
+    \label{fig:FIB}
+\end{figure}
 
 Wie deutlich sichtbar ist, sind die Genauigkeiten fast identisch. Dies war Anlass sowohl die Temperatur- und 
 Luftfeuchtigkeitswerte, als auch die Shift-Werte der CO2-Messungen nicht weiter zu betrachten.\\\\

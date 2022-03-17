@@ -136,6 +136,28 @@ Da der SVC die Verhältnisse aller Datenpunkte zueinander betrachtet, ist er seh
 den Daten, was bei der Datenvorbereitung und der Auswertung beachtet werden muss.
 
 \newpage
+\subsection{K-Nearest-Neighbours}
+Der \textit{K-Nearest-Neighbours}-Algorithmus KNN betrachtet den Abstand von einem gegebenen Punkt $p$ zu einer 
+Menge an Punken in einem Datenset und ordnet ihn gemäß dieser Abstände einer bestimmten Kategorie zu. Die 
+Zuordnung geschiet anhand der Kategorie der größten Menge an nähesten Nachbarn.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=12.0cm]{pic/KNN.png}
+    \caption{Beispiel eines KNN}
+    \label{fig:NN}
+\end{figure}
+
+Im oben gezeigten Beispiel würde ein Punkt anhand seiner drei nächsten Nachbarn als "grün" kategorisiert.
+Die Anzahl der gewünschten Nachbarn die zu untersuchen sind, ist frei wählbar.
+Da die Abstandsberechnung über den \textit{Euklidischen Abstand} berechnet wird, funktioniert dieser 
+Algorithmus auch in höheren Dimensionen, da 
+
+\begin{center}
+    $d = \sqrt{(x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2 + ... + (n2 - n1)^2}$
+\end{center}
+
+sich in beliebig viele Dimensionen fortsetzen lässt.
 
 \subsection{Neuronale Netzwerke}
 Die Funktionsweise eines Neuronalen Netzwerks ist direkt angelehnt an die Funktionsweise des menschlichen Gehirns.
@@ -162,7 +184,7 @@ bestimmte Anzahl von Iterationen werden die Gewichtungen zwischen den einzelnen 
 Das Long Short Term Memory (LSTM) ist eine Abwandlung herkömmlicher Neuronalen Netzwerke. Es handelt sich um ein
 \textit{rekurrentes} Neurales Netzwerk, was bedeutet, dass jedes Neuron seine Ausgabewerte auch wieder als Eingabewerte
 nutzt. Der Begriff \textit{Memory} rührt daher, dass durch diese Rückkopplung eine Art Gedächtnis entsteht, durch 
-welches das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-Wertes ziehen kann.\\
+die das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-Wertes ziehen kann.\\
 
 \begin{figure}[h]
     \centering
@@ -171,8 +193,8 @@ welches das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Inp
     \label{fig:RecNN}
 \end{figure}
 
-Wird beispielsweise beim Satz ,,Das Auto ist Rot.'' das Wort ,,Das'' verarbeitet, kann das Netzwerk nun beim nächsten
-Schritt eine zusätzliche Erwartung treffen, dass das nächste Wort wahrscheinlich nicht ebenfalls ,,Das'' sein wird.
+Wird beispielsweise beim Satz ,,Dieses Auto ist Rot.'' das Wort ,,Dieses'' verarbeitet, kann das Netzwerk nun beim nächsten
+Schritt eine zusätzliche Erwartung treffen, dass das nächste Wort wahrscheinlich nicht ebenfalls ,,Dieses'' sein wird.
 Ein LSTM kann auf diese Weise eine Vielzahl von Zeitschritten zurückblicken und verlässt sich so nicht direkt auf 
 einen gegebenen Input, sondern auf einen langen Verlauf von bereits verarbeiteten Input-Werten. 
 LSTMs sind deshalb besonders interessant für Probleme bei denen Beziehungen zwischen kontinuierlichen 
@@ -320,7 +342,7 @@ Datensets kurzfristige CO2-Werte gibt, die natürlich in geschlossenen Räumen n
 Datenset in ein Trainings- und Testset mit einem Verhältnis von etwa 80-20. Das bedeutet, dass das Model mit
 80 prozent der Daten trainiert wird, wobei die anderen 20 prozent zurückgehalten werden, um daraufhin das 
 fertig trainierte Model daran zu testen. Aus dem Ergebnis dieses Tests ergeben sich verschiedene Werte, die  
-die allgemeine Genauigkeit des Models repräsentiert, d.h. wie verlässlich das Model die An- und Abwesenheit 
+die allgemeine Genauigkeit des Models repräsentieren, d.h. wie verlässlich das Model die An- und Abwesenheit 
 des Testsets selbst berechnen kann, wenn man ihm den tatsächlichen Wert vorenthält.\\
 Allgemeine Basis für die errechneten Genauigkeiten bildet die sog. \textit{Confusion Matrix}.
 
@@ -331,10 +353,11 @@ Allgemeine Basis für die errechneten Genauigkeiten bildet die sog. \textit{Conf
     \label{fig:CV}
 \end{figure}
 
-Diese zeigt, inwiefern sich die Genauigkeit des Modells neben tatsächlich richtig erkannten Werte aus 
-false negatives und false positives zusammensetzt.\\
-Die \textit{Accuracy Score} ist die meistgenutzte Metrik für Klassifikation und berechnet sich aus der 
-Summe der richtigen Ergebnisse geteilt durch die Summe aller Ergebnisse.
+Diese zeigt, inwiefern sich die Genauigkeit des Modells neben tatsächlich richtig erkannten Werten zusätzliche
+aus false negatives und false positives zusammensetzt.\\
+\newpage
+Die \textit{Accuracy Score} ist eine einfache Methode zur Bestimmung der Modellqualität und berechnet sich 
+aus der Summe der richtigen Ergebnisse geteilt durch die Summe aller Ergebnisse.
 
 \begin{center}
     $AccuracyScore = \dfrac{TP + TN}{TP + TN + FP + FN}$    
@@ -346,7 +369,8 @@ Die \textit{Recall Score} beschreibt die Genauigkeit bezogen auf alle erkannten 
     $RecallScore = \dfrac{TP}{TP + FN}$    
 \end{center}
 
-Die \textit{Precision Score} gibt die allgemeine Menge an positiven Werten, die hätten erkannt werden müssen.
+Die \textit{Precision Score} gibt die allgemeine Menge, an positiven Werten, die hätten erkannt werden müssen,
+an.
 \begin{center}
     $PrecisionScore = \dfrac{TP}{TP + FP}$    
 \end{center}
