@@ -13,7 +13,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Beispiel einer Confusion Matrix\relax }}{18}{}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Beispiel einer Kreuzvalidierung\relax }}{20}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Beispiel einer Sammlung von Parameter-Optionen\relax }}{20}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Beispiel einer Sammlung von Parameter-Optionen\relax }}{21}{}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Feature Importances eines Random Forest\relax }}{22}{}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Feature Importances eines Random Forest\relax }}{23}{}%
@@ -23,6 +23,8 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Messwerte des 13. Januar\relax }}{27}{}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Ergebnisse des Parameter Tuning\relax }}{28}{}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces ROC-Curves aller Modelle\relax }}{28}{}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Ergebnisse des NN\relax }}{29}{}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Ergebnisse des LSTM\relax }}{29}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
