@@ -1,12 +1,22 @@
 \clearpage
 \chapter{\textbf{Stand der Technik für Anwesenheitserkennung/-Prognose}}\label{grundlagen}
-\addtocontents{toc}{\vspace{0.8cm}}
+%\addtocontents{toc}{\vspace{0.5cm}}
 
 Man kann verschiedene Techniken zur Anwesenheitserkennung und -Prognose in Innenräumen in \text{aktive} und
-\textit{passive} Verfahren unterteilen. Aktive Verfahren messen die menschliche Anwesenheit mit Kamera-, 
-Infrarot-, Mikrowellen-, oder Ultraschallsensoren. Durch diese kann menschliche Präsenz sowohl direkt 
-(Kamera-, Infrarotsensoren) oder indirekt über Veränderungen in den physischen Eigenschaften des Raumes 
-festegestellt werden. Verändert sich beispielsweise durch menschliche Anwesenheit die Luftfeuchtigkeit 
+\textit{passive} Verfahren unterteilen. 
+\section{Aktive und Passive Messverfahren}
+Aktive Verfahren messen die menschliche Anwesenheit etwa mit 
+Kamera- oder Infrarotsensoren, welche den Menschen direkt im Raum erkennen können. Ein Kamerasensor nimmt
+dabei kontinuierlich Bilder des Raumes auf, während ein Algorithmus im Hintergrund versucht ein 3D-Modell 
+eines menschlichen Skeletts auf sich bewegende Teile des Bildes zu legen. Bewegen sich über mehrere Bilder 
+hinweg die Bereiche auf und unmittelbar neben dem 3D-Modell bewegt sich wahrscheinlich gerade ein Mensch durch den Raum.\\
+Infrarotsensoren funktionieren eher wie ein klassischer Bewegungsmelder, welcher Unterschiede in der 
+Infrarotstrahlung eines Raumes erkennt. Durch die generierte Körperwärme des menschlichen Körpers, sorgt ein
+Mensch, der sich durch den Sensor bewegt, für einen Ausschlag des Sensors.\\\\
+
+Passive Verfahren orientieren sich an den physischen Eigenschaften des Raumes. Anstatt die Präsenz des 
+Menschen direkt zu messen, wird versucht, diese von Veränderungen der physikalischen Eigenschaften des Raumes
+zu erkennen. Verändert sich beispielsweise durch menschliche Anwesenheit die Luftfeuchtigkeit 
 in einem Raum in sehr geringem Maß, wird die  Laufzeit einer Ultraschallwelle die durch diesen Raum 
 geschickt wird, leicht verringert, da die Schallgeschwindigkeit in dichteren Medien zunimmt.\\
 Die Systeme unterscheiden sich neben der Art der Messung auch deutlich in der Komplexität der Implementierung.
@@ -78,7 +88,7 @@ Modelle erklärt werden.
 
 \subsection{Random Forest Classifier}
 
-Random Forests stellen eine Unterkategorien der ,,\textit{Decision Trees}'' dar. Decision Trees sind einfache
+\textit{Random Forest Classifier} RFC stellen eine Unterkategorien der ,,\textit{Decision Trees}'' dar. Decision Trees sind einfache
 Anordnungen von bestimmten Fragen, die über das Datenset gestellt werden, um eine Klassifikation zu erreichen.
 
 \begin{figure}[h]
@@ -96,7 +106,7 @@ entwickeln können, sinkt die Chance auf eine solche Fehleinschätzung, je mehr 
 Entscheidungsbäume man befragt. 
 
 \subsection{Gradient Boosting Classifier}
-Der Gradien Boosting Classifier(GBC) versucht seine Erwartungen auf Grund von Abweichungen eines Labels vom 
+Der \textit{Gradient Boosting Classifier} GBC versucht seine Erwartungen auf Grund von Abweichungen eines Labels vom 
 Durchschnitt dieses Labels zu treffen. Erweitert man das Datenset im o.g. Beispiel um das Alter einer Maus, wird 
 ein GBC als Ausgangswert den Durchschnitt aller Label-Werte, also dem Gewicht, berechnen. Danach werden die 
 Abweichungen aller Label-Werte zu diesem Durchschnitt gebildet. Diese Abweichungen werden nun in Beziehung zu den 
@@ -108,7 +118,7 @@ zum Durchschnittswert des vorherigen Baumes. So werden die getroffenen Erwartung
 präziser.
 
 \subsection{Support Vector Classifier}
-Der Support Vector Classifier(SVC) versucht in einem Datenset anhand von bestimmten Cut-Off-Values klare Grenzen 
+Der \textit{Support Vector Classifier} SVC versucht in einem Datenset anhand von bestimmten Cut-Off-Values klare Grenzen 
 zwischen Werten zu finden, sodass man alle Messwerte ober- und unterhalb der Grenze eindeutig Klassifizieren 
 kann.
 
@@ -181,7 +191,7 @@ bestimmte Anzahl von Iterationen werden die Gewichtungen zwischen den einzelnen 
 
 
 \subsection{Long Short Term Memory}
-Das Long Short Term Memory (LSTM) ist eine Abwandlung herkömmlicher Neuronalen Netzwerke. Es handelt sich um ein
+Das \textit{Long Short Term Memory} LSTM ist eine Abwandlung herkömmlicher Neuronalen Netzwerke. Es handelt sich um ein
 \textit{rekurrentes} Neurales Netzwerk, was bedeutet, dass jedes Neuron seine Ausgabewerte auch wieder als Eingabewerte
 nutzt. Der Begriff \textit{Memory} rührt daher, dass durch diese Rückkopplung eine Art Gedächtnis entsteht, durch 
 die das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-Wertes ziehen kann.\\
@@ -416,6 +426,21 @@ Model selbst gefüllt werden sollte. Das Ergebnis musste dann in einem Graphen g
 werden. Da sich das Ergebnis der Berechnung in diesem Anwendungsfall, wie oben gezeigt, sehr übersichtlich als 
 Graph darstellen lässt, war diese Methode der Validierung zwar nicht perfekt, lieferte aber trotzdem einen 
 ausreichenden Eindruck über die Qualität des trainierten Models.
+
+
+\subsection{Over- und Underfitting}
+Over- und Underfitting sind Probleme, die bei allen Machine Learning Algorithmen auftreten können und bezeichnen 
+im Allgemeinen einen falschen Umgang mit dem Datenset.
+\textit{Overfitting} bedeutet, dass das Modell mit zu vielen, sich zu stark ähnelnden, Daten trainiert wurde, 
+wodurch es nur in der Lage ist, neue Daten richtig zu kategorisieren, die dem Trainingsset besonders ähnlich sind.
+Overfitting kann während einer Kreuzvalidierung oder Validierung anhand eines anderen Datensets, als dem 
+Trainingsset, erkannt werden.\\
+Um Overfitting zu verhindern, kann das Datenset zu vereinfacht werden, um so die Beziehungen zwischen den
+für die Erwartungsberechnung relevanten Spalten zu stärken.\\\\
+\textit{Underfitting} bedeutet dagegen, dass es das Modell nicht geschafft hat, zwischen den gegebenen Daten
+Beziehungen herzustellen, die das Modell unbekannte Daten richtig kategorisieren lassen. Hier reicht es 
+normalerweise aus, dem Modell mehr Daten zur Verfügung zu stellen und in der Datenvorbereitung Felder 
+einzufügen, die dem Modell bestimmte Beziehungen zwischen Datenfeldern hervorheben sollen. 
 
 \subsection{Parameter Tuning}
 \textit{Parameter Tuning} beschreibt einen Schritt der Modell-Optimierung, der normalerweise stattfindet, 

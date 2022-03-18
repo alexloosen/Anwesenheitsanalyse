@@ -1,6 +1,6 @@
 \clearpage
 \chapter{\textbf{Anwendung und Ergebnisse}}\label{kap5}
-\addtocontents{toc}{\vspace{0.8cm}}
+%\addtocontents{toc}{\vspace{0.8cm}}
 
 \section{Feature Vektor}
 Der Feature Vektor FV beschreibt das Ergebnis des Datensets nach der Vorverarbeitung. 
@@ -58,11 +58,6 @@ weiteren Verlauf des Projektes benutzt werden sollte, abgeleitet wurde.
 \end{center}
 
 Mit diesen vier Vektoren wurden nun verschiedene Modelle trainiert und deren Genauigkeiten gegenübergestellt.
-
-
-
-
-
 
 \begin{center}
     \begin{tabular}{|p{1.5cm}||p{2cm}| p{2cm}| p{2cm}| p{2cm}| p{2cm}|} 
@@ -202,4 +197,33 @@ inwiefern die Ergebnisse zufällig oder errechnet sind.
 
 Man sieht deutlich, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines der Modelle weist anzeichen 
 auf, dass Ergebnisse wegen mangelnder Informationen erraten werden.
+
 \subsection{Neurale Netzwerke}
+Die beiden implementierten Neuronalen Netze konnten eine ähnliche Leistung, wie die bereits oben genannten 
+Algorithmen erzielen. Beide Modelle wurden über so viele Iterationen (Epochen) trainiert, bis ersichtlich war,
+dass die Genauigkeit gegen einen Wert konvergiert. Zur Auswertung wurden hier die \textit{Accuracy-} und 
+\textit{Loss}-Funktionen genutzt. Die Genauigkeit beschreibt, wie bei den anderen Modellen das Verhältnis
+zwischen richtigen und falschen Berechnungen.\\
+Die Loss-Funktion hingegen gibt die Abweichung einer Schätzung zum tatsächlichen Wert an. Diese beiden Wert 
+werden nach jeder Epoche ausgewertet, während zunächst der Erfolg während des Trainigs als \textit{train}
+angegeben wird und danach das Modell an einem zufälligen Teil des Validierungssets \textit{val} getestet wird.
+Liegen diese beiden Kurven nah beieinander, ist dies ein gutes Anzeichen für ein funktionierndes Modell ohne 
+Over- oder Underfitting, da sowohl beim Training als auch bei der Validierung die Genauigkeiten Ähnlichkeiten
+aufweisen, während zugleich die Loss-Funktion minimiert wird.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{pic/eval_NN.png}
+    \caption{Ergebnisse des NN}
+    \label{fig:PT_eval}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{pic/eval_LSTM.png}
+    \caption{Ergebnisse des LSTM}
+    \label{fig:PT_eval}
+\end{figure}
+
+Wie zu sehen ist, weisen beide Arten neuraler Netzwerke diese Eigenschaften auf. Die Genauigkeiten beider Modelle
+konvergierten auch nach verschiedenen Epochen-Werten etwa bei 89\%.

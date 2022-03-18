@@ -1,3 +1,35 @@
 \clearpage
 \chapter{\textbf{Zusammenfassung und Ausblick}}\label{zusammenfassung}
-\addtocontents{toc}{\vspace{0.8cm}}
+%\addtocontents{toc}{\vspace{0.8cm}}
+
+\section{CO2 als Anwesenheitsindikator}
+Die Genauigkeit aller Modelle bei der Präsenzerkennung während der gesamten Durchfürungsphase des Projektes 
+lag zwischen 88\% bei neuronalen Netzwerken und 95\% bei den Klassifizierungsalgorithmen. 
+Die Beziehung zwischen der aktuellen Tageszeit und dem CO2-Gehalt der Luft, konnte erfolgreich bestätigt 
+werden. Dieses Ergebnis wird ebenfalls gestützt von der vorangegangenen Forschung.\\
+Weiterhin konnte gezeigt werden, dass alle Modelle zusätzlich in der Lage sind, menschliche Präsenz außerhalb
+der trainierten Uhrzeiten korrekt zu erkennen, wenn die Modelle mit Deltas zu Vergangenheitswerten des 
+CO2-Gehalts trainiert werden. Die Präsenzerkennung ist also vollständig unabhängig von den Umständen des
+Trainigssets und kann sowohl für andere Räume, als auch zu anderen Tageszeiten effektiv genutzt werden. 
+CO2 ist somit als geeigneter Indikator für menschliche Präsenz in Innenräumen anzusehen.\\\\
+Die Zweckmäßigkeit von CO2-Sensoren für Gebäudeautomatisierungssysteme konnte als kostengünstige und leicht 
+zu implemtentierende Option gezeigt werden.
+
+\section{Mögliche Verbesserungen}
+Die Genauigkeit von Machine Learning Modellen kann allgemein durch die Hinzugabe von mehr Daten in ein Modell 
+verbessert werden. 
+Da der Datenbestand, auf die sich diese Arbeit stützt, über die Bearbeitungszeit des Projektes 
+kontinuierlich vergrößert wurde, wuchs damit auch die Anzahl an Anhaltspunkten für Zusammenhänge zwischen den 
+Datenfeldern stetig an. Besonders nützlich wäre das Sammeln von Messdaten über ein oder mehrere Jahre hinweg.
+Somit hätten die Modelle eine Chance Gewohnheiten in z.B. Urlaubstagen, Feiertage oder auch wiederkehrende
+Meetings korrekt einzuordnen, sodass Gebäudeautomatisierungssysteme ein Maximum an Komfort und Energieeffizienz
+herstellen können.\\\\
+
+Da Infrarotsensoren inhärent nicht in der Lage sind kontinuierliche Präsenz zu erkennen, wenn sich die Personen
+im Raum nicht bewegen, kam es innerhalb des Datensets immer wieder zu kleinen Messfehlern, die durch die Gruppierung
+und Durchschnittsberechnung der Präsenzwerte behoben werden mussten. Es ist klar davon auszugehen, dass eine 
+genauere Datenlage auch die Qualität der trainierten Modelle steigern würde.\\
+Zusätzlich existierten im Datenset durch seltene Probleme mit der Hardware längere Datenreihen mit falschen 
+Labelwerten, welche während der Bearbeitung ausgeschlossen werden mussten. Da sich dadurch die für das Training 
+geeignete Datenmenge verringerte, ist auch hier davon auszugehen, dass das Aussortieren dieser Werte
+mit einer Verringerung der Modellqualität einherging. 
