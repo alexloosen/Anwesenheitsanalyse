@@ -3,28 +3,29 @@
 %\addtocontents{toc}{\vspace{0.5cm}}
 
 Man kann verschiedene Techniken zur Anwesenheitserkennung und -Prognose in Innenräumen in \text{aktive} und
-\textit{passive} Verfahren unterteilen. 
-\section{Aktive und Passive Messverfahren}
+\textit{passive} Verfahren unterteilen. \\
+%\section{Aktive und Passive Messverfahren}
 Aktive Verfahren messen die menschliche Anwesenheit etwa mit 
 Kamera- oder Infrarotsensoren, welche den Menschen direkt im Raum erkennen können. Ein Kamerasensor nimmt
 dabei kontinuierlich Bilder des Raumes auf, während ein Algorithmus im Hintergrund versucht ein 3D-Modell 
 eines menschlichen Skeletts auf sich bewegende Teile des Bildes zu legen. Bewegen sich über mehrere Bilder 
-hinweg die Bereiche auf und unmittelbar neben dem 3D-Modell bewegt sich wahrscheinlich gerade ein Mensch durch den Raum.\\
-Infrarotsensoren funktionieren eher wie ein klassischer Bewegungsmelder, welcher Unterschiede in der 
+hinweg die Bereiche auf und unmittelbar neben dem 3D-Modell, registriert das System eine Anwesenheit.\\
+Infrarotsensoren dagegen funktionieren eher wie ein klassischer Bewegungsmelder, welcher Unterschiede in der 
 Infrarotstrahlung eines Raumes erkennt. Durch die generierte Körperwärme des menschlichen Körpers, sorgt ein
 Mensch, der sich durch den Sensor bewegt, für einen Ausschlag des Sensors.\\\\
 
-Passive Verfahren orientieren sich an den physischen Eigenschaften des Raumes. Anstatt die Präsenz des 
-Menschen direkt zu messen, wird versucht, diese von Veränderungen der physikalischen Eigenschaften des Raumes
-zu erkennen. Verändert sich beispielsweise durch menschliche Anwesenheit die Luftfeuchtigkeit 
+Passive Verfahren orientieren sich an den physikalischen Eigenschaften des Raumes. Anstatt die Präsenz des 
+Menschen direkt zu messen, wird versucht, diese von Veränderungen der Eigenschaften der Raumluft oder bestimmter
+Strahlungswerte des Raumes zu erkennen. 
+Verändert sich beispielsweise durch menschliche Anwesenheit die Luftfeuchtigkeit 
 in einem Raum in sehr geringem Maß, wird die  Laufzeit einer Ultraschallwelle die durch diesen Raum 
 geschickt wird, leicht verringert, da die Schallgeschwindigkeit in dichteren Medien zunimmt.\\
 Die Systeme unterscheiden sich neben der Art der Messung auch deutlich in der Komplexität der Implementierung.
 Während Ultraschallsensoren wegen der verhätlnismäßig geringen Schallgeschwindigkeit keine besonders hohe 
-Genauigkeit besitzen müssen, sind die an einen Mikrowellensensor gestellten Ansprüche wesentlich höher. Mit 
-diesen können Bewegungen durch Ausnutzung des Doppler-Effektes einer elektromagnetischen Welle erkannt werden. 
-elektromagnetische Wellen sind im gegensatz zu Schallwellen etwa um einen Faktor von einer Million schneller, 
-weshalb Messungen sehr viel genauer sein müssen, um die gleiche Aussagekraft zu besitzen.\\
+Genauigkeit besitzen müssen, sind die an einen Mikrowellensensor gestellten Ansprüche wesentlich höher, da sich
+Mikrowellen mit $300*10^6 \,m/s$ gegenüber der Schallgeschwindigkeit mit lediglich etwa $330\, m/s$ ausbreiten.
+Mit Mikrowellen können Bewegungen durch Ausnutzung des Doppler-Effektes einer elektromagnetischen Welle erkannt 
+werden.\\
 Hier verdeutlicht sich nochmals die Motivation dieser Arbeit, da CO2-Sensoren weder teuer sind, noch 
 besondere Ansprüche an die Positionierung im Raum oder Kallibrierung besitzen.
 
@@ -203,8 +204,32 @@ die das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-W
     \label{fig:RecNN}
 \end{figure}
 
-Wird beispielsweise beim Satz ,,Dieses Auto ist Rot.'' das Wort ,,Dieses'' verarbeitet, kann das Netzwerk nun beim nächsten
-Schritt eine zusätzliche Erwartung treffen, dass das nächste Wort wahrscheinlich nicht ebenfalls ,,Dieses'' sein wird.
+\newpage
+Bei einem LSTM verfügt jedes Neuron zusätzlich über einen Zell-Status, welcher durch einen Input verändert werden kann.
+Auf diesen Status nehmen \textit{Input-}, \textit{Forget-} und \textit{Output}-Gates Einfluss. Diese drei Gates
+besitzen jeweils ein eigenes neronales Netzwerk $\sigma$.\\\\
+Das Input-Gate bestimmt, ob der Zell-Status andhand des anliegenden Inputs verändert werden darf.
+Das Forget-Gate gibt an, ob der Status der Zelle zurückgesetzt und somit das ,,Gedächtnis'' der Zelle gelöscht wird. Es
+stellt die zentrale Komponente des LSTMs dar.
+Das Output-Gate regelt, ähnlich wie Aktivierungsfunktion normaler NNs, ob der anliegende Input zu einem Output 
+der Zelle führt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=12.0cm]{pic/LSTM-Cell.png}
+    \caption{Vereinfachter Aufbau einer LSTM-Zelle}
+    \label{fig:RecNN}
+\end{figure}
+
+Geht man von einem LSTM aus, dass über eine Liste an Namen verfügt und anhand einem Datensatz gelernt
+hat, zwei Namen mit der Beziehung ,,sah'' zu z.B. ,,Jonas sah Jakob.'' zu verknüpfen.\\
+Das LSTM hat nun intern einen Status, der angibt, dass auf einen Namen mit hoher Wahrscheinlichkeit das Wort 
+,,sah'' und mit niedriger Wahrscheinlichkeit ein zweiter Name folgt. 
+Beginnt man nun einen neuen Satz mit ,,Jakob'', werden als mögliche nächste Worte ,,Jonas'', ,,Jakob'' und ,,sah''
+ausgewählt. Bisher ähnelt dieser Verlauf einem normalen Neuronalen Netzwerks. Beim LSTM
+steht aber nun wegen dem vorherigen Durchlauf der Name ,,Jakob'' im Forget-Gate, sodass ,,Jakob'' aus der verfügbaren
+Wortauswahl für das nächste Wort gelöscht wird.\\
+
 Ein LSTM kann auf diese Weise eine Vielzahl von Zeitschritten zurückblicken und verlässt sich so nicht direkt auf 
 einen gegebenen Input, sondern auf einen langen Verlauf von bereits verarbeiteten Input-Werten. 
 LSTMs sind deshalb besonders interessant für Probleme bei denen Beziehungen zwischen kontinuierlichen 

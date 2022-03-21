@@ -1067,6 +1067,11 @@ INPUT ./pic/RecurrentNN.png
 INPUT pic/RecurrentNN.png
 INPUT ./pic/RecurrentNN.png
 INPUT ./pic/RecurrentNN.png
+INPUT ./pic/LSTM-Cell.png
+INPUT ./pic/LSTM-Cell.png
+INPUT pic/LSTM-Cell.png
+INPUT ./pic/LSTM-Cell.png
+INPUT ./pic/LSTM-Cell.png
 INPUT ./pic/co2_singleDay.png
 INPUT ./pic/co2_singleDay.png
 INPUT pic/co2_singleDay.png
@@ -1139,6 +1144,11 @@ INPUT ./pic/roc_curves.png
 INPUT pic/roc_curves.png
 INPUT ./pic/roc_curves.png
 INPUT ./pic/roc_curves.png
+INPUT ./pic/h217_predicting_livingroom.png
+INPUT ./pic/h217_predicting_livingroom.png
+INPUT pic/h217_predicting_livingroom.png
+INPUT ./pic/h217_predicting_livingroom.png
+INPUT ./pic/h217_predicting_livingroom.png
 INPUT ./pic/eval_NN.png
 INPUT ./pic/eval_NN.png
 INPUT pic/eval_NN.png

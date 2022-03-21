@@ -2,45 +2,45 @@
 \linespread {1}
 \contentsline {chapter}{\numberline {1}\textbf {Einleitung}}{5}{}%
 \contentsline {section}{\numberline {1.1}Motivation und Aufgabenstellung}{5}{}%
-\contentsline {section}{\numberline {1.2}Vorgehensweise}{6}{}%
-\contentsline {chapter}{\numberline {2}\textbf {Stand der Technik für Anwesenheitserkennung/-Prognose}}{7}{}%
-\contentsline {section}{\numberline {2.1}Aktive und Passive Messverfahren}{7}{}%
-\contentsline {chapter}{\numberline {3}\textbf {Untersuchte Verfahren}}{8}{}%
-\contentsline {section}{\numberline {3.1}Machine Learning}{8}{}%
+\contentsline {section}{\numberline {1.2}Vorgehensweise}{7}{}%
+\contentsline {chapter}{\numberline {2}\textbf {Stand der Technik für Anwesenheitserkennung/-Prognose}}{8}{}%
+\contentsline {chapter}{\numberline {3}\textbf {Untersuchte Verfahren}}{9}{}%
+\contentsline {section}{\numberline {3.1}Machine Learning}{9}{}%
 
-\contentsline {subsection}{\numberline {3.1.1}Random Forest Classifier}{10}{}%
-\contentsline {subsection}{\numberline {3.1.2}Gradient Boosting Classifier}{10}{}%
-\contentsline {subsection}{\numberline {3.1.3}Support Vector Classifier}{11}{}%
-\contentsline {subsection}{\numberline {3.1.4}K-Nearest-Neighbours}{12}{}%
-\contentsline {subsection}{\numberline {3.1.5}Neuronale Netzwerke}{12}{}%
-\contentsline {subsection}{\numberline {3.1.6}Long Short Term Memory}{13}{}%
-\contentsline {section}{\numberline {3.2}CO2 als Anwesenheitsindikator}{14}{}%
-\contentsline {section}{\numberline {3.3}Luftfeuchtigkeit und Temperatur}{14}{}%
-\contentsline {section}{\numberline {3.4}Sensordaten}{15}{}%
-\contentsline {chapter}{\numberline {4}Technische Umsetzung}{16}{}%
-\contentsline {section}{\numberline {4.1}Datenbeschaffung und -Vorbereitung}{16}{}%
-\contentsline {subsection}{\numberline {4.1.1}Gruppierung}{16}{}%
-\contentsline {subsection}{\numberline {4.1.2}Zyklische Codierung}{16}{}%
-\contentsline {subsection}{\numberline {4.1.3}Deltas und Shift-Werte}{17}{}%
-\contentsline {subsection}{\numberline {4.1.4}Outlier Detection}{17}{}%
-\contentsline {section}{\numberline {4.2}Validierung}{18}{}%
-\contentsline {subsection}{\numberline {4.2.1}Over- und Underfitting}{20}{}%
-\contentsline {subsection}{\numberline {4.2.2}Parameter Tuning}{20}{}%
-\contentsline {chapter}{\numberline {5}\textbf {Anwendung und Ergebnisse}}{22}{}%
-\contentsline {section}{\numberline {5.1}Feature Vektor}{22}{}%
-\contentsline {section}{\numberline {5.2}Ergebnisse}{26}{}%
-\contentsline {subsection}{\numberline {5.2.1}Clustering Modelle}{26}{}%
-\contentsline {subsection}{\numberline {5.2.2}Decision Tree Modelle}{26}{}%
-\contentsline {subsection}{\numberline {5.2.3}Neurale Netzwerke}{29}{}%
-\contentsline {chapter}{\numberline {6}\textbf {Zusammenfassung und Ausblick}}{30}{}%
-\contentsline {section}{\numberline {6.1}CO2 als Anwesenheitsindikator}{30}{}%
-\contentsline {section}{\numberline {6.2}Mögliche Verbesserungen}{30}{}%
-\contentsline {chapter}{Quellenverzeichnis}{31}{}%
-\contentsline {chapter}{Abkürzungsverzeichnis}{32}{}%
-\contentsline {chapter}{Abbildungsverzeichnis}{33}{}%
-\contentsline {chapter}{Tabellenverzeichnis}{34}{}%
+\contentsline {subsection}{\numberline {3.1.1}Random Forest Classifier}{11}{}%
+\contentsline {subsection}{\numberline {3.1.2}Gradient Boosting Classifier}{11}{}%
+\contentsline {subsection}{\numberline {3.1.3}Support Vector Classifier}{12}{}%
+\contentsline {subsection}{\numberline {3.1.4}K-Nearest-Neighbours}{13}{}%
+\contentsline {subsection}{\numberline {3.1.5}Neuronale Netzwerke}{13}{}%
+\contentsline {subsection}{\numberline {3.1.6}Long Short Term Memory}{14}{}%
+\contentsline {section}{\numberline {3.2}CO2 als Anwesenheitsindikator}{16}{}%
+\contentsline {section}{\numberline {3.3}Luftfeuchtigkeit und Temperatur}{16}{}%
+\contentsline {section}{\numberline {3.4}Sensordaten}{17}{}%
+\contentsline {chapter}{\numberline {4}Technische Umsetzung}{18}{}%
+\contentsline {section}{\numberline {4.1}Datenbeschaffung und -Vorbereitung}{18}{}%
+\contentsline {subsection}{\numberline {4.1.1}Gruppierung}{18}{}%
+\contentsline {subsection}{\numberline {4.1.2}Zyklische Codierung}{18}{}%
+\contentsline {subsection}{\numberline {4.1.3}Deltas und Shift-Werte}{19}{}%
+\contentsline {subsection}{\numberline {4.1.4}Outlier Detection}{19}{}%
+\contentsline {section}{\numberline {4.2}Validierung}{20}{}%
+\contentsline {subsection}{\numberline {4.2.1}Over- und Underfitting}{22}{}%
+\contentsline {subsection}{\numberline {4.2.2}Parameter Tuning}{22}{}%
+\contentsline {chapter}{\numberline {5}\textbf {Anwendung und Ergebnisse}}{24}{}%
+\contentsline {section}{\numberline {5.1}Feature Vektor}{24}{}%
+\contentsline {section}{\numberline {5.2}Ergebnisse}{28}{}%
+\contentsline {subsection}{\numberline {5.2.1}Clustering Modelle}{28}{}%
+\contentsline {subsection}{\numberline {5.2.2}Decision Tree Modelle}{28}{}%
+\contentsline {section}{\numberline {5.3}Umgang mit fehlenden Präsenz-Labels}{31}{}%
+\contentsline {subsection}{\numberline {5.3.1}Neurale Netzwerke}{32}{}%
+\contentsline {chapter}{\numberline {6}\textbf {Zusammenfassung und Ausblick}}{33}{}%
+\contentsline {section}{\numberline {6.1}CO2 als Anwesenheitsindikator}{33}{}%
+\contentsline {section}{\numberline {6.2}Mögliche Verbesserungen}{33}{}%
+\contentsline {chapter}{Quellenverzeichnis}{34}{}%
+\contentsline {chapter}{Abkürzungsverzeichnis}{35}{}%
+\contentsline {chapter}{Abbildungsverzeichnis}{36}{}%
+\contentsline {chapter}{Tabellenverzeichnis}{37}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Anhang}{34}{}%
-\contentsline {chapter}{\numberline {A}Quellcode}{35}{}%
-\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{36}{}%
+\contentsline {chapter}{Anhang}{37}{}%
+\contentsline {chapter}{\numberline {A}Quellcode}{38}{}%
+\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{39}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

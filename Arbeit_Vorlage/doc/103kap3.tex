@@ -59,22 +59,6 @@ weiteren Verlauf des Projektes benutzt werden sollte, abgeleitet wurde.
 
 Mit diesen vier Vektoren wurden nun verschiedene Modelle trainiert und deren Genauigkeiten gegenübergestellt.
 
-\begin{center}
-    \begin{tabular}{|p{1.5cm}||p{2cm}| p{2cm}| p{2cm}| p{2cm}| p{2cm}|} 
-        \hline
-        Feature-Vektor&RF &SV &GB &KNN&LR \\ [0.5ex] 
-        \hline\hline
-        FV1&0.944805&	0.912594&	0.943618&	0.926824&   0.935428\\
-        \hline
-        FV2&0.946477&	0.918528&	0.931867&	0.925483&   0.916739\\
-        \hline
-        FV3&0.945256&	0.917241&	0.944554&	0.930148&   0.938136\\
-        \hline
-        FV4&0.945725&	0.912095&	0.947024&	0.929685&   0.931573\\
-        \hline
-    \end{tabular}\\        
-\end{center}
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{pic/FV_comp.png}
@@ -82,8 +66,10 @@ Mit diesen vier Vektoren wurden nun verschiedene Modelle trainiert und deren Gen
     \label{fig:FIB}
 \end{figure}
 
-Wie deutlich sichtbar ist, sind die Genauigkeiten fast identisch. Dies war Anlass sowohl die Temperatur- und 
-Luftfeuchtigkeitswerte, als auch die Shift-Werte der CO2-Messungen nicht weiter zu betrachten.\\\\
+Wie deutlich sichtbar ist, sind die Genauigkeiten fast identisch. Diese Gegenüberstellung wurde über das Projekt
+hinweg mehrfach wiederholt und ergab immer ähnliche Unterschiede.
+Dies war Anlass sowohl die Temperatur- und Luftfeuchtigkeitswerte, als auch die Shift-Werte der CO2-Messungen 
+nicht weiter zu betrachten.\\\\
 \newpage
 Aus diesen Betrachtungen ergab sich folgender FV der für den weiteren Verlauf des Projektes genutzt wurde:\\
 
@@ -174,8 +160,8 @@ von Parametern nach möglichen suchen, die nicht den Standard-Einstellungen ents
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\textwidth]{pic/param_eval.png}
-    \caption{Ergebnisse des Parameter Tuning}
+    \includegraphics[width=0.6\textwidth]{pic/param_eval.png}
+    \caption{!!PLACEHOLDER-GRAFIK!! Ergebnisse des Parameter Tuning}
     \label{fig:PT_eval}
 \end{figure}
 
@@ -197,6 +183,37 @@ inwiefern die Ergebnisse zufällig oder errechnet sind.
 
 Man sieht deutlich, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines der Modelle weist anzeichen 
 auf, dass Ergebnisse wegen mangelnder Informationen erraten werden.
+
+\section{Umgang mit fehlenden Präsenz-Labels}
+Da zur Auswertung auch eine große Menge an Datensätzen ohne Präsenz-Label zur Verfügung standen, wurden die trainierten
+Modelle zusätzlich auf diese Datensets angewandt und die Ergebnisse so gut wie möglich ausgewertet. Die Ergebnisse
+sind hier aufgrund des fehlenden Labels lediglich augenscheinlich zu bewerten, da eine mathematische Ermittlung
+der Genauikgeit nicht möglich ist.\\
+Die Frage, die sich in diesem Kontext stellt, ist die, ob ein auf einen Büroraum trainiertes Modell auch richtige
+Erwartungen für einen Wohnraum treffen kann.
+Da das Modell unter anderen auf eine Erkennung der aktuellen Tageszeit trainert wird, muss geprüft
+werden, inwiefern ein solches Modell auch Aussagen über CO2-Werte treffen kann, dessen Veränderungen außerhalb
+der bisher trainierten Arbeitszeiten von etwa 7 Uhr morgens bis 17 Uhr Nachmittags befinden. 
+Außerdem ist der Wohnraum deutlich größer, als ein Büro und hat in diesem Fall eine größere Anzahl anwesender
+Personen, wodurch sich die ermittelten Deltas der CO2-Werte erheblich von den Büroräumen unterscheiden.\\
+Eines der Datensets zeichnete kontinuierliche Werte aus einem Wohnzimmer auf, in dem sich über einen 
+Tag hinweg maximal drei Personen befanden. Die Zeiten, zu denen in diesem Wohnzimmer anhand der CO2-Werte
+Anwesenheit zu erkennen war, unterschied sich deutlich von den Datensets der Büroräume der FH-Aachen. Die 
+starken Anstiege des CO2-Wertes waren bei diesem Datenset viel mehr über den Tag verteilt, wodurch sich die 
+Datenreihe für diesen Test besonders anbot.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{pic/h217_predicting_livingroom.png}
+    \caption{Büroraum-Modell trifft Erwartungen für Wohnzimmer}
+    \label{fig:PT_eval}
+\end{figure}
+
+Wie anhand der Einfärbung zu erkennen, ist, kann das Modell auch unabhängig von der Tageszeit und den bekannten
+Gegebenheiten eines normalen Arbeitstages Anwesenheit erkennen. Vorallem deutliche Anstiege und Abfälle
+werden deutlich jeweils Geld und Blau eingefärbt, während es auf einigen Strecken zwischen den Maxima und Minima
+nur gelegentlich zu Fehleinschätzungen kommt.
+
 
 \subsection{Neurale Netzwerke}
 Die beiden implementierten Neuronalen Netze konnten eine ähnliche Leistung, wie die bereits oben genannten 
