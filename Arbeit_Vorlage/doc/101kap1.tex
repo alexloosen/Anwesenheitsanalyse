@@ -10,15 +10,16 @@ wie Heizung, Lüftung oder Beleuchtung. Während sie bisher hauptsächlich für 
 der Energieeffizienz von gewerblichen und öffentlichen Gebäuden genutzt wurde, welche in 
 Zuge solcher Optimierungsschritte als ,,Smart Buildings'' bezeichnet werden, 
 rückt sie in den letzten Jahren zunehmend unter dem Begriff ,,Smart Home'' auch in den privaten 
-Bereich. Die beiden Begriffe stehen in den letzten Jahren so im Vordergrund, weil eine
+Bereich.\\
+Die beiden Begriffe stehen in den letzten Jahren so im Vordergrund, weil eine
 Verbesserung der Energieeffizienz durch bauphysikalische Maßnahmen, wie verminderte 
 Wärmeverluste durch bessere Isolation, an ihre Grenzen gestoßen sind.
-\\
+\\\\
 In Deutschland haben private Haushalte einen Anteil am gesamten Energieverbrauch des Landes von 
 etwa 30\%. Davon nimmt die Erzeugung der Raumwärme einen Anteil von etwa 70\% ein. Vorallem bezogen
 auf den Energieverbrauch durch das Heizen stellt die Gebäudeautomatisierung also einen der größten
 Sektoren dar, in denen eine Optimierung der Prozesse entscheidend wäre. Beispielsweise können Wärmeverluste
-über die Nacht hinweg um 20\% verringert werden, wenn Abends die Rolläden heruntergelassen werden.\\
+über die Nacht hinweg um 20\% verringert werden, wenn Abends die Rolläden heruntergelassen werden.\\\\
 Zur weiteren Steigerung der Energieeffizienz ist es also nötig, die Gebäudetechnik insofern
 automatisch anzusteuern, sodass sog. Performance-Gaps vermieden werden. Performance-Gaps
 stellen eine Diskrepanz im Energieverbrauch eines Gebäudes zwischen einem theoretischen 
@@ -32,21 +33,22 @@ Für nahezu alle Bereiche der Gebäudeautomatisierung stellt die Anwesenheit
 von Personen eine zentrale Variable dar. Es ist entscheidend bei einem Optimierungsprozess zu erkennen, zu
 welchen Zeitpunkten sich Menschen in einem Raum aufhalten. Beispielsweise werden in vielen gewerblich 
 genutzen Gebäuden werden grundsätzlich alle Räume beheizt - unabhängig von tatsächlicher Anwesenheit von Personen. 
-Eine Erkennung von menschlicher Anwesenheit ist bei der Optimierung also essenziell.\\
+Eine Erkennung von menschlicher Anwesenheit ist bei der Optimierung also essenziell.\\\\
 Da die direkte Messung von Anwesenheit über z.B. Infrarot- oder Kamerasensoren rechtlich problematisch ist, 
 soll in dieser Arbeit untersucht werden, inwiefern Machine-Learning Algorithmen genutzt werden können, 
-um eine genaue Erwartung über die Anwesenheit von Personen anhand von CO2-Werten in der Raumluft zu treffen.\\
+um eine genaue Erwartung über die Anwesenheit von Personen anhand von CO2-Werten in der Raumluft zu treffen.\\\\
 Die Motivation der Optimierung der Gebäudeautomatisierung exisitert, da ein steigender CO2-Gehalt der 
 Raumluft nachweislich mit einer Abnahme der menschlich kognitiven Leistung einhergeht. Mehrere Studien
 konnten belegen, dass sowohl sprachliche als auch logisch- mathematische Fähigkeiten abnehmen, sobald 
 der CO2-Gehalt der  Raumluft bestimmte Werte überschreitet.\\ 
 Um eine angemessene Datengrundlage zu schaffen, wurden in diversen Büro-Räumen der FH Aachen Temperatur-,
 Luftfeuchtigkeits-, Infrarot- und CO2-Sensoren angebracht, deren Messungen kontinuierlich auf einer Datenbank
-gespeichert wurden. Der Zeitraum der Messwerte begann Mitte 2021. In allen Räumen sind täglich ein oder mehrere
+gespeichert wurden. Der Zeitraum der Messwerte begann Mitte 2021.\\
+In allen Räumen sind täglich ein oder mehrere
 Personen im Rahmen eines ca. 8 stündigen Arbeitstages anwesend, weshalb die Temperatur-, Luftfeuchtigkeits-
 und CO2-Werte als aussagekräftige Indikatoren für menschliche Präsenz angesehen werden können.
 Es gab keine Einschränkungen hinsichtlich dessen, welche konkreten Machine-Learning Algorithmen 
-benutzt werden sollten.\\
+benutzt werden sollten.\\\\
 Als Programmiersprache für das Projekt wurde Python gewählt. Python ist wegen seiner umfassenden
 Machine-Learning Bibliotheken und einfachen Auswertungstechniken anhand von z.B. Graphen und Statistiken 
 gut für diesen Anwendungsfall geeignet.
@@ -81,7 +83,7 @@ Das Projekte beschäftigte sich im Schwerpunkt mit den folgenden Arbeitsschritte
 Da es zwischen allen verfügbaren Datensets der einzlnen Räume und Machine-Learning-Models eine Vielzahl an
 Kombinationsmöglichkeiten gibt, war es ein Anspruch der Projektarbeit, ein möglichst übersichtliches, 
 gut gekapseltes Python Programm zu erstellen, mit dem man einfach und schnell verschiedene Datensets  
-verarbeiten und mit einer dem Forschungszweck angemessenen Anzahl von Machine-Learning Models auszuwerten. 
+verarbeiten und mit einer dem Forschungszweck angemessenen Anzahl von Machine-Learning Models auszuwerten. \\\\
 Um einen Vergleich der Ergebnisse zu ermöglichen, sollen diese klar und verständlich dargestellt werden. 
 Da nicht bei allen Algorithmen die gleichen Leistungsindikatoren genutzt werden, sollen hauptsächlich nur 
 jene Indikatoren betrachtet werden, die bzgl. aller Algorithmen auch gleiche Bedeutung haben. Falls Model-

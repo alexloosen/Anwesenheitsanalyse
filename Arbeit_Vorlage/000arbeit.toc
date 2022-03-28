@@ -10,37 +10,38 @@
 \contentsline {subsection}{\numberline {3.1.1}Random Forest Classifier}{11}{}%
 \contentsline {subsection}{\numberline {3.1.2}Gradient Boosting Classifier}{11}{}%
 \contentsline {subsection}{\numberline {3.1.3}Support Vector Classifier}{12}{}%
-\contentsline {subsection}{\numberline {3.1.4}K-Nearest-Neighbours}{13}{}%
-\contentsline {subsection}{\numberline {3.1.5}Neuronale Netzwerke}{13}{}%
-\contentsline {subsection}{\numberline {3.1.6}Long Short Term Memory}{14}{}%
-\contentsline {section}{\numberline {3.2}CO2 als Anwesenheitsindikator}{16}{}%
-\contentsline {section}{\numberline {3.3}Luftfeuchtigkeit und Temperatur}{16}{}%
-\contentsline {section}{\numberline {3.4}Sensordaten}{17}{}%
-\contentsline {chapter}{\numberline {4}Technische Umsetzung}{18}{}%
-\contentsline {section}{\numberline {4.1}Datenbeschaffung und -Vorbereitung}{18}{}%
-\contentsline {subsection}{\numberline {4.1.1}Gruppierung}{18}{}%
-\contentsline {subsection}{\numberline {4.1.2}Zyklische Codierung}{18}{}%
-\contentsline {subsection}{\numberline {4.1.3}Deltas und Shift-Werte}{19}{}%
-\contentsline {subsection}{\numberline {4.1.4}Outlier Detection}{19}{}%
-\contentsline {section}{\numberline {4.2}Validierung}{20}{}%
-\contentsline {subsection}{\numberline {4.2.1}Over- und Underfitting}{22}{}%
-\contentsline {subsection}{\numberline {4.2.2}Parameter Tuning}{22}{}%
-\contentsline {chapter}{\numberline {5}\textbf {Anwendung und Ergebnisse}}{24}{}%
-\contentsline {section}{\numberline {5.1}Feature Vektor}{24}{}%
-\contentsline {section}{\numberline {5.2}Ergebnisse}{28}{}%
-\contentsline {subsection}{\numberline {5.2.1}Clustering Modelle}{28}{}%
-\contentsline {subsection}{\numberline {5.2.2}Decision Tree Modelle}{28}{}%
-\contentsline {section}{\numberline {5.3}Umgang mit fehlenden Präsenz-Labels}{31}{}%
-\contentsline {subsection}{\numberline {5.3.1}Neurale Netzwerke}{32}{}%
-\contentsline {chapter}{\numberline {6}\textbf {Zusammenfassung und Ausblick}}{33}{}%
-\contentsline {section}{\numberline {6.1}CO2 als Anwesenheitsindikator}{33}{}%
-\contentsline {section}{\numberline {6.2}Mögliche Verbesserungen}{33}{}%
-\contentsline {chapter}{Quellenverzeichnis}{34}{}%
-\contentsline {chapter}{Abkürzungsverzeichnis}{35}{}%
-\contentsline {chapter}{Abbildungsverzeichnis}{36}{}%
-\contentsline {chapter}{Tabellenverzeichnis}{37}{}%
+\contentsline {subsection}{\numberline {3.1.4}Logistische Regression}{13}{}%
+\contentsline {subsection}{\numberline {3.1.5}K-Nearest-Neighbours}{14}{}%
+\contentsline {subsection}{\numberline {3.1.6}Neuronale Netzwerke}{15}{}%
+\contentsline {subsection}{\numberline {3.1.7}Long Short Term Memory}{16}{}%
+\contentsline {section}{\numberline {3.2}CO2 als Anwesenheitsindikator}{18}{}%
+\contentsline {section}{\numberline {3.3}Luftfeuchtigkeit und Temperatur}{18}{}%
+\contentsline {section}{\numberline {3.4}Sensordaten}{19}{}%
+\contentsline {chapter}{\numberline {4}Technische Umsetzung}{20}{}%
+\contentsline {section}{\numberline {4.1}Datenbeschaffung und -Vorbereitung}{20}{}%
+\contentsline {subsection}{\numberline {4.1.1}Gruppierung}{20}{}%
+\contentsline {subsection}{\numberline {4.1.2}Zyklische Codierung}{20}{}%
+\contentsline {subsection}{\numberline {4.1.3}Deltas und Shift-Werte}{21}{}%
+\contentsline {subsection}{\numberline {4.1.4}Outlier Detection}{21}{}%
+\contentsline {section}{\numberline {4.2}Validierung}{22}{}%
+\contentsline {subsection}{\numberline {4.2.1}Over- und Underfitting}{24}{}%
+\contentsline {subsection}{\numberline {4.2.2}Parameter Tuning}{25}{}%
+\contentsline {chapter}{\numberline {5}\textbf {Anwendung und Ergebnisse}}{26}{}%
+\contentsline {section}{\numberline {5.1}Feature Vektor}{26}{}%
+\contentsline {section}{\numberline {5.2}Ergebnisse}{30}{}%
+\contentsline {subsection}{\numberline {5.2.1}Clustering Modelle}{30}{}%
+\contentsline {subsection}{\numberline {5.2.2}Decision Tree Modelle}{30}{}%
+\contentsline {section}{\numberline {5.3}Umgang mit fehlenden Präsenz-Labels}{33}{}%
+\contentsline {subsection}{\numberline {5.3.1}Neurale Netzwerke}{34}{}%
+\contentsline {chapter}{\numberline {6}\textbf {Zusammenfassung und Ausblick}}{35}{}%
+\contentsline {section}{\numberline {6.1}CO2 als Anwesenheitsindikator}{35}{}%
+\contentsline {section}{\numberline {6.2}Mögliche Verbesserungen}{35}{}%
+\contentsline {chapter}{Quellenverzeichnis}{36}{}%
+\contentsline {chapter}{Abkürzungsverzeichnis}{37}{}%
+\contentsline {chapter}{Abbildungsverzeichnis}{38}{}%
+\contentsline {chapter}{Tabellenverzeichnis}{39}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Anhang}{37}{}%
-\contentsline {chapter}{\numberline {A}Quellcode}{38}{}%
-\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{39}{}%
+\contentsline {chapter}{Anhang}{39}{}%
+\contentsline {chapter}{\numberline {A}Quellcode}{40}{}%
+\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{41}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
