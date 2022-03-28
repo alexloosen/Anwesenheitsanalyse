@@ -3,29 +3,30 @@
 %\addtocontents{toc}{\vspace{0.5cm}}
 
 Man kann verschiedene Techniken zur Anwesenheitserkennung und -Prognose in Innenräumen in \text{aktive} und
-\textit{passive} Verfahren unterteilen. \\
+\textit{passive} Verfahren unterteilen. \\\\
 %\section{Aktive und Passive Messverfahren}
 Aktive Verfahren messen die menschliche Anwesenheit etwa mit 
 Kamera- oder Infrarotsensoren, welche den Menschen direkt im Raum erkennen können. Ein Kamerasensor nimmt
 dabei kontinuierlich Bilder des Raumes auf, während ein Algorithmus im Hintergrund versucht ein 3D-Modell 
 eines menschlichen Skeletts auf sich bewegende Teile des Bildes zu legen. Bewegen sich über mehrere Bilder 
-hinweg die Bereiche auf und unmittelbar neben dem 3D-Modell, registriert das System eine Anwesenheit.\\
+hinweg die Bereiche auf und unmittelbar neben dem 3D-Modell, registriert das System eine Anwesenheit.\\\\
 Infrarotsensoren dagegen funktionieren eher wie ein klassischer Bewegungsmelder, welcher Unterschiede in der 
 Infrarotstrahlung eines Raumes erkennt. Durch die generierte Körperwärme des menschlichen Körpers, sorgt ein
-Mensch, der sich durch den Sensor bewegt, für einen Ausschlag des Sensors.\\\\
+Mensch, der sich durch den Sensor bewegt, für einen Ausschlag des Sensors.\\
 
 Passive Verfahren orientieren sich an den physikalischen Eigenschaften des Raumes. Anstatt die Präsenz des 
-Menschen direkt zu messen, wird versucht, diese von Veränderungen der Eigenschaften der Raumluft oder bestimmter
-Strahlungswerte des Raumes zu erkennen. 
+Menschen direkt zu messen, wird versucht, diese von Veränderungen der Eigenschaften der Raumluft oder 
+elektromagnetischer Strahlung des Raumes zu erkennen. \\
 Verändert sich beispielsweise durch menschliche Anwesenheit die Luftfeuchtigkeit 
 in einem Raum in sehr geringem Maß, wird die  Laufzeit einer Ultraschallwelle die durch diesen Raum 
 geschickt wird, leicht verringert, da die Schallgeschwindigkeit in dichteren Medien zunimmt.\\
 Die Systeme unterscheiden sich neben der Art der Messung auch deutlich in der Komplexität der Implementierung.
 Während Ultraschallsensoren wegen der verhätlnismäßig geringen Schallgeschwindigkeit keine besonders hohe 
 Genauigkeit besitzen müssen, sind die an einen Mikrowellensensor gestellten Ansprüche wesentlich höher, da sich
-Mikrowellen mit $300*10^6 \,m/s$ gegenüber der Schallgeschwindigkeit mit lediglich etwa $330\, m/s$ ausbreiten.
+Mikrowellen mit $300\cdot10^6 \,m/s$ gegenüber der Schallgeschwindigkeit mit lediglich etwa $330\, m/s$ ausbreiten.
 Mit Mikrowellen können Bewegungen durch Ausnutzung des Doppler-Effektes einer elektromagnetischen Welle erkannt 
-werden.\\
+werden. Bewegen sich Objekte oder Personen auf den Sensor zu, wird das Echo der Welle gestaucht, wodurch die 
+Bewegung erkannt wird.\\
 Hier verdeutlicht sich nochmals die Motivation dieser Arbeit, da CO2-Sensoren weder teuer sind, noch 
 besondere Ansprüche an die Positionierung im Raum oder Kallibrierung besitzen.
 
@@ -35,7 +36,8 @@ besondere Ansprüche an die Positionierung im Raum oder Kallibrierung besitzen.
 \addtocontents{toc}{}%\vspace{0.8cm}}
 
 Grundsätzlich beschreibt Machine Learning das Entwickeln mathematischer Modelle zur statistischen Auswertung
-von Daten. Dabei wird dem Modell anhand von Daten zu einem bestimmten Sachverhalt beigebracht, in einem 
+von Daten.\\
+Dabei wird dem Modell anhand von Daten zu einem bestimmten Sachverhalt beigebracht, in einem 
 Datenset Schemata zu erkennen, womit sich eine Erwartung über die Umstände des Datensets treffen lässt.
 Beispielsweise könnte ein solches Model aus einem Datenset mit der aktuellen Jahreszeit, Uhrzeit und 
 Position der Sonne am Himmel trainiert werden, sodass es auch schließlich in einem anderen Datenset 
@@ -44,7 +46,9 @@ Als Vorbild für diesen ,,Lernvorgang'' dient das menschliche Gehirn, welches eb
 bestimmten Input-Parametern wie z.B. der Form und Farbe eines Gegenstandes eine Beziehung herzustellen,
 um das beobachtete Objekt in Zukunft schneller kategorisieren zu können.\\
 Da eine Vielzahl von effektiven Machine Learning Algorithmen existiert, ist es essenziell, sich mit den
-Stärken und Schwächen einzelner Herangehensweisen zu befassen.\newpage
+Stärken und Schwächen einzelner Herangehensweisen zu befassen.\\\\
+!! schreib hier noch was !!
+\newpage
 
 Im Wesentlichen kann Machine Learning in zwei Unterkategorien unterteilt werden:
 \begin{itemize}
@@ -69,6 +73,7 @@ Label, Zusammenhänge zwischen bestimmten Feldern des Datensets herzustellen. So
 arbeiten vorrangig mit ,,\textit{Clustering}'' und ,,\textit{Dimensionality Reduction}''.\\
 ,,\textit{Clustering}''-Algorithmen versuchen ein Datenset in kleinere Bereiche einzuteilen und
 so aus den Feldern des Datensets bestimmte Abhängigkeiten abzuleiten.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=8.0cm]{./pic/Clustering_Beispiel.png}
@@ -147,6 +152,51 @@ Da der SVC die Verhältnisse aller Datenpunkte zueinander betrachtet, ist er seh
 den Daten, was bei der Datenvorbereitung und der Auswertung beachtet werden muss.
 
 \newpage
+\subsection{Logistische Regression}
+
+Die logistische Regression ordnet Daten einem bestimmten Label anhand einer Wahrscheinlichkeit zu. Trotz dem Teilnamen
+,,Regression'' handelt es sich um einen Klassifizierungsalgorithmus. Der Name kommt daher, dass die berechnete Wahrscheinlichkeit
+zu einem kontinuierlichen Label zwischen 0 und 1 führt, was durch die Form einer Sigmoid-Funktion ausgedrückt wird.
+Der Algorithmus eignet sich wegen dieser Eigenschaft besonders für  das Klassifizierungsproblem der Projektarbeit, 
+bei der ein Wahrheitswert, wie ,,Anwesenheit'' oder ,,Abwesenheit'' untersucht werden soll.\\
+Nutzt man logistische Regression beispielsweise zur Abbildung einer Beziehung zwischen Gewicht von Mäusen in Gramm 
+zu einer Wahrscheinlichkeit für Übergewicht, könnte das entstehende Modell wie folgt aussehen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10.0cm]{pic/logistic_regression.png}
+    \caption{Beispiel logistischer Regression}
+    \label{fig:SVC_2D}
+\end{figure}
+
+Die Sigmoid-Funktion wird grundsätzlich durch
+
+\begin{align}
+    p = \frac{1}{1 + e^{-(x-\mu)/s}}
+\end{align}
+
+beschrieben, wobei x der Eingabewert in Gramm und $\mu$ der Mittelpunkt der Kurve beschreibt, der sich aus dem 
+Verhältnis von Eintrittswahrscheinlichkeit $p_1$ und Gegenwahrscheinlichkeit $p_0$ ergibt.
+
+\begin{align}
+    p(\mu) = 0.5 = \frac{p_1}{p_0}   
+\end{align}
+
+Zusätzlich beschreibt s einen Skalierungsparameter, mit dem die Form der Kurve flacher oder steiler werden kann,
+was angibt, wie eindeutig die hereingegebenen Daten zugeordnet werden können. Wären im o.g. Beispiel also alle roten
+Punkte jeweils links und rechts von der Mitte einsortiert, wäre die Sigmoid-Funktion in der Mitte sehr steil, da alle
+Daten anhand des Mittelpunktes klar getrennt werden könnten.\newpage
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10.0cm]{pic/logistic_regression_high s.png}
+    \caption{Logistische Regression mit deutlicher Skalierung}
+    \label{fig:SVC_2D}
+\end{figure}
+
+Anhand der optimierten Sigmoid-Funktion können nun neue Daten klassifiziert werden, wobei die Wahrscheinlichkeit
+bei $p < 0.5$ auf 0 und $p >= 0.5$ auf 1 gerundet wird.
+
 \subsection{K-Nearest-Neighbours}
 Der \textit{K-Nearest-Neighbours}-Algorithmus KNN betrachtet den Abstand von einem gegebenen Punkt $p$ zu einer 
 Menge an Punken in einem Datenset und ordnet ihn gemäß dieser Abstände einer bestimmten Kategorie zu. Die 
@@ -160,13 +210,13 @@ Zuordnung geschiet anhand der Kategorie der größten Menge an nähesten Nachbar
 \end{figure}
 
 Im oben gezeigten Beispiel würde ein Punkt anhand seiner drei nächsten Nachbarn als "grün" kategorisiert.
-Die Anzahl der gewünschten Nachbarn die zu untersuchen sind, ist frei wählbar.
+Die Anzahl der gewünschten Nachbarn die zu untersuchen sind, ist frei wählbar. \newpage
 Da die Abstandsberechnung über den \textit{Euklidischen Abstand} berechnet wird, funktioniert dieser 
 Algorithmus auch in höheren Dimensionen, da 
 
-\begin{center}
-    $d = \sqrt{(x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2 + ... + (n2 - n1)^2}$
-\end{center}
+\begin{align}
+    d = \sqrt{(x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2 + ... + (n2 - n1)^2}
+\end{align}
 
 sich in beliebig viele Dimensionen fortsetzen lässt.
 
@@ -204,7 +254,6 @@ die das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-W
     \label{fig:RecNN}
 \end{figure}
 
-\newpage
 Bei einem LSTM verfügt jedes Neuron zusätzlich über einen Zell-Status, welcher durch einen Input verändert werden kann.
 Auf diesen Status nehmen \textit{Input-}, \textit{Forget-} und \textit{Output}-Gates Einfluss. Diese drei Gates
 besitzen jeweils ein eigenes neronales Netzwerk $\sigma$.\\\\
@@ -221,6 +270,7 @@ der Zelle führt.
     \label{fig:RecNN}
 \end{figure}
 
+\newpage
 Geht man von einem LSTM aus, dass über eine Liste an Namen verfügt und anhand einem Datensatz gelernt
 hat, zwei Namen mit der Beziehung ,,sah'' zu z.B. ,,Jonas sah Jakob.'' zu verknüpfen.\\
 Das LSTM hat nun intern einen Status, der angibt, dass auf einen Namen mit hoher Wahrscheinlichkeit das Wort 
@@ -424,13 +474,14 @@ Das Datenset ist also mit einem Verhältnis von etwa 8/16 in Richtung der Abwese
 lässt die Erwartung zu, dass das trainierte Model wesentlich besser darin sein wird, Abwesenheit zu erkennen,
 als Anwesenheit.\\
 Hierzu wurde bei der Auswertung der Ergebnisse immer auch der \textit{Classification Report} hinzugezogen,
-aus dem ersichtlich ist, wie genau das Model beide möglichen Labelwerte berrechnen konnte.\\\\
+aus dem ersichtlich ist, wie genau das Model beide möglichen Labelwerte berrechnen konnte.
+\newpage
 Desweiteren war es entscheidend zu erkennen, dass das Datenset über mehrere Monate hinweg nicht perfekt uniform 
 ist, da es in bestimmten Monaten zu verhätlnismäßig vielen Urlaubstagen (z.B. Weihnachten/Silvester) und damit 
 einer Häufung an Abwesenheits-Werten kommt.
 Wenn die Daten nun im o.g. Verhältnis aufgeteilt werden und dann viele Daten des Testsets in solchen Monaten 
 liegen, könnte es beim Ergebnis zu Verzerrungen kommen.\\
-Hierfür wurde eine \textit{Kreuzvalidierung} (engl. Cross Validation) implementiert. Bei einer CV wird das 
+Hierfür wurde eine \textit{Kreuzvalidierung} (engl. Cross Validation CV) implementiert. Bei einer CV wird das 
 Datenset immernoch im gleichen Verhältnis aufgeteilt, allerdings mehrmals, sodass die Trainings- und Testsets 
 jedes mal aus jeweils anderen Daten bestehen.
 
