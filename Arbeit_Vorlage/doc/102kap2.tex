@@ -27,30 +27,28 @@ Mikrowellen mit $300\cdot10^6 \,m/s$ gegenüber der Schallgeschwindigkeit mit le
 Mit Mikrowellen können Bewegungen durch Ausnutzung des Doppler-Effektes einer elektromagnetischen Welle erkannt 
 werden. Bewegen sich Objekte oder Personen auf den Sensor zu, wird das Echo der Welle gestaucht, wodurch die 
 Bewegung erkannt wird.\\
-Hier verdeutlicht sich nochmals die Motivation dieser Arbeit, da CO2-Sensoren weder teuer sind, noch 
-besondere Ansprüche an die Positionierung im Raum oder Kallibrierung besitzen.
+Hier verdeutlicht sich nochmals die Motivation dieser Arbeit, da Sensoren für Temperatur, Luftfeuchtigkeit, oder CO2
+weder teuer sind, noch besondere Ansprüche an Positionierung im Raum oder Kallibrierung besitzen.
 
 \chapter{\textbf{Untersuchte Verfahren}}
 
 \section{Machine Learning}\label{unterkapitel}
 \addtocontents{toc}{}%\vspace{0.8cm}}
 
-Grundsätzlich beschreibt Machine Learning das Entwickeln mathematischer Modelle zur statistischen Auswertung
-von Daten.\\
-Dabei wird dem Modell anhand von Daten zu einem bestimmten Sachverhalt beigebracht, in einem 
-Datenset Schemata zu erkennen, womit sich eine Erwartung über die Umstände des Datensets treffen lässt.
-Beispielsweise könnte ein solches Model aus einem Datenset mit der aktuellen Jahreszeit, Uhrzeit und 
+Machine Learning ist ein Teilbereich der künstlichen Intelligenz und beschreibt das Entwickeln mathematischer 
+Modelle zur statistischen Auswertung von Daten.\\
+Dabei wird dem Modell anhand von Trainigsdaten beigebracht, Gesetzmäßigkeiten zu erkennen, um danach Erwartungen 
+über bisher unbekannte Daten treffen zu können.  
+Beispielsweise könnte ein solches Modell aus einem Datenset mit der aktuellen Jahreszeit, Uhrzeit und 
 Position der Sonne am Himmel trainiert werden, sodass es auch schließlich in einem anderen Datenset 
 aus Jahreszeit und Position der Sonne Rückschlüsse auf die Uhrzeit treffen kann.\\
 Als Vorbild für diesen ,,Lernvorgang'' dient das menschliche Gehirn, welches ebenfalls versucht zwischen 
 bestimmten Input-Parametern wie z.B. der Form und Farbe eines Gegenstandes eine Beziehung herzustellen,
 um das beobachtete Objekt in Zukunft schneller kategorisieren zu können.\\
 Da eine Vielzahl von effektiven Machine Learning Algorithmen existiert, ist es essenziell, sich mit den
-Stärken und Schwächen einzelner Herangehensweisen zu befassen.\\\\
-!! schreib hier noch was !!
-\newpage
+Stärken und Schwächen einzelner Herangehensweisen zu befassen.\\
 
-Im Wesentlichen kann Machine Learning in zwei Unterkategorien unterteilt werden:
+In dieser Arbeit sollen zwei Unterkategorien des Machine Learning genauer betrachtet werden:
 \begin{itemize}
     \item \textit{Supervised Learning} 
     \item \textit{Unsupervised Learning}
@@ -67,7 +65,7 @@ Bei einer sog. ,,\textit{Klassifizierung}'' sind diese Labels fest vorgegeben, w
 ,,\textit{Regression}'' kontinuierlicher Natur sind. Im Kontext dieser Arbeit wäre das Ergebnis einer 
 Klassifizierung eine ,,1'' für Anwesenheit und eine ,,0'' für Abwesenheit, während das Ergebnis einer 
 Regression eine Wahrscheinlichkeit auf Anwesenheit zwischen 0.0 und 1.0 darstellen würde.
-\newline\newline
+\newpage
 Beim ,,\textit{Unsupervised Learning}'' versucht das Modell ohne Referenz zu einem bestimmten 
 Label, Zusammenhänge zwischen bestimmten Feldern des Datensets herzustellen. Solche Modelle 
 arbeiten vorrangig mit ,,\textit{Clustering}'' und ,,\textit{Dimensionality Reduction}''.\\
@@ -91,7 +89,7 @@ Im Rahmen des Projektes wurden hauptsächlich Klassifizierungs-Algorithmen genut
 Datensets Labels zur Überprüfung hatte. Um einen Vergleich herzustellen werden später trotzdem noch 
 einzelne Ergebnisse von Clustering und Dimensionality Reduction betrachtet. Im Folgenden sollen die genutzten 
 Modelle erklärt werden.
-
+\newpage
 \subsection{Random Forest Classifier}
 
 \textit{Random Forest Classifier} RFC stellen eine Unterkategorien der ,,\textit{Decision Trees}'' dar. Decision Trees sind einfache
@@ -122,7 +120,7 @@ einen ähnlichen Wert unter dem Durchschnittsgewicht. So wurde zwischen dem Labe
 \textit{Alter} eine Beziehung hergestellt. In weiteren Iterationen orientiert sich der GBC immer an der Abweichung 
 zum Durchschnittswert des vorherigen Baumes. So werden die getroffenen Erwartungen über mehrere Iterationen immer 
 präziser.
-
+\newpage
 \subsection{Support Vector Classifier}
 Der \textit{Support Vector Classifier} SVC versucht in einem Datenset anhand von bestimmten Cut-Off-Values klare Grenzen 
 zwischen Werten zu finden, sodass man alle Messwerte ober- und unterhalb der Grenze eindeutig Klassifizieren 
@@ -254,10 +252,10 @@ die das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-W
     \label{fig:RecNN}
 \end{figure}
 
-Bei einem LSTM verfügt jedes Neuron zusätzlich über einen Zell-Status, welcher durch einen Input verändert werden kann.
-Auf diesen Status nehmen \textit{Input-}, \textit{Forget-} und \textit{Output}-Gates Einfluss. Diese drei Gates
+Bei einem LSTM verfügt jedes Neuron zusätzlich über einen Zell-Status $C_t$, welcher durch einen Input $x_t$ verändert werden kann.
+Auf den Zell-Status nehmen \textit{Input-}, \textit{Forget-} und \textit{Output}-Gates Einfluss. Diese drei Gates
 besitzen jeweils ein eigenes neronales Netzwerk $\sigma$.\\\\
-Das Input-Gate bestimmt, ob der Zell-Status andhand des anliegenden Inputs verändert werden darf.
+Das Input-Gate bestimmt, ob der Zell-Status anhand des anliegenden Inputs verändert werden darf.
 Das Forget-Gate gibt an, ob der Status der Zelle zurückgesetzt und somit das ,,Gedächtnis'' der Zelle gelöscht wird. Es
 stellt die zentrale Komponente des LSTMs dar.
 Das Output-Gate regelt, ähnlich wie Aktivierungsfunktion normaler NNs, ob der anliegende Input zu einem Output 
@@ -355,7 +353,7 @@ Temperaturwerte der Raumluft so schnell nicht verändert, wurden die Daten direk
 zwei-Minuten-Intervallen zusammengefasst. Dabei werden über alle Spalten hinweg Durchschnittswerte gebildet, 
 die dann nachher zu einem Datensatz zusammengefasst werden. 
 Dies steigert die Leistung aller Algorithmen erheblich, da sich die Zahl der 
-Datensätze um den Faktor 20 verringert. Da sich, wie oben erwähnt, der CO2-Gehalt der Raumluft in einem 
+Datensätze sich stark verringert. Da sich, wie oben erwähnt, der CO2-Gehalt der Raumluft in einem 
 Intervall von zwei Minuten kaum merklich verändert, verringert sich die Genauigkeit des gesamten Datensetz 
 dadurch nicht maßgeblich.
 \subsection{Zyklische Codierung}

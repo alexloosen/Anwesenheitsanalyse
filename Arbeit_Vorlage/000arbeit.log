@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  28 MAR 2022 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  1 APR 2022 17:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -803,22 +803,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--27
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--55
+Underfull \hbox (badness 10000) in paragraph at lines 32--59
 
  []
 
 
-Overfull \hbox (5.92534pt too wide) in paragraph at lines 32--55
+Overfull \hbox (5.92534pt too wide) in paragraph at lines 32--59
 \OT1/ptm/m/n/12 lich pro-ble-ma-tisch ist, soll in die-ser Ar-beit un-ter-sucht wer-den, in-wie-fern Machine-Learning
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--55
+Underfull \hbox (badness 10000) in paragraph at lines 32--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--55
+Underfull \hbox (badness 10000) in paragraph at lines 32--59
 
  []
 
@@ -829,11 +829,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--55
 
 
 ] [6]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 78.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 82.
  (d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 83--141
+Underfull \hbox (badness 10000) in paragraph at lines 87--141
 
  []
 
@@ -871,69 +871,65 @@ Overfull \hbox (4.38167pt too wide) in paragraph at lines 17--32
 ]
 chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--51
+Underfull \hbox (badness 10000) in paragraph at lines 38--50
 
  []
 
 [9
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 58--76
-
- []
-
 <./pic/Clustering_Beispiel.png, id=39, 369.63094pt x 386.94562pt>
 File: ./pic/Clustering_Beispiel.png Graphic file (type png)
 <use ./pic/Clustering_Beispiel.png>
-Package pdftex.def Info: ./pic/Clustering_Beispiel.png  used on input line 79.
+Package pdftex.def Info: ./pic/Clustering_Beispiel.png  used on input line 77.
 (pdftex.def)             Requested size: 227.62204pt x 238.28603pt.
-[10 <./pic/Clustering_Beispiel.png>]
+ [10 <./pic/Clustering_Beispiel.png>]
 <pic/DecisionTree.png, id=44, 763.85374pt x 283.0575pt>
 File: pic/DecisionTree.png Graphic file (type png)
 <use pic/DecisionTree.png>
-Package pdftex.def Info: pic/DecisionTree.png  used on input line 102.
+Package pdftex.def Info: pic/DecisionTree.png  used on input line 100.
 (pdftex.def)             Requested size: 284.52756pt x 105.43364pt.
  [11 <./pic/DecisionTree.png>]
 <pic/SVC_1D.png, id=50, 631.60968pt x 109.1578pt>
 File: pic/SVC_1D.png Graphic file (type png)
 <use pic/SVC_1D.png>
-Package pdftex.def Info: pic/SVC_1D.png  used on input line 133.
+Package pdftex.def Info: pic/SVC_1D.png  used on input line 131.
 (pdftex.def)             Requested size: 284.52756pt x 49.17384pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--143
+Underfull \hbox (badness 10000) in paragraph at lines 136--141
 
  []
 
 <pic/SVC_2D.png, id=51, 598.235pt x 396.48125pt>
 File: pic/SVC_2D.png Graphic file (type png)
 <use pic/SVC_2D.png>
-Package pdftex.def Info: pic/SVC_2D.png  used on input line 146.
+Package pdftex.def Info: pic/SVC_2D.png  used on input line 144.
 (pdftex.def)             Requested size: 284.52756pt x 188.57254pt.
 [12 <./pic/SVC_1D.png> <./pic/SVC_2D.png>]
 <pic/logistic_regression.png, id=56, 726.715pt x 451.6875pt>
 File: pic/logistic_regression.png Graphic file (type png)
 <use pic/logistic_regression.png>
-Package pdftex.def Info: pic/logistic_regression.png  used on input line 167.
+Package pdftex.def Info: pic/logistic_regression.png  used on input line 165.
 (pdftex.def)             Requested size: 284.52756pt x 176.84662pt.
  [13 <./pic/logistic_regression.png>]
 <pic/logistic_regression_high s.png, id=64, 726.715pt x 451.6875pt>
 File: pic/logistic_regression_high s.png Graphic file (type png)
 <use pic/logistic_regression_high s.png>
-Package pdftex.def Info: pic/logistic_regression_high s.png  used on input line 192.
+Package pdftex.def Info: pic/logistic_regression_high s.png  used on input line 190.
 (pdftex.def)             Requested size: 284.52756pt x 176.84662pt.
 <pic/KNN.png, id=65, 658.46pt x 425.59pt>
 File: pic/KNN.png Graphic file (type png)
 <use pic/KNN.png>
-Package pdftex.def Info: pic/KNN.png  used on input line 207.
+Package pdftex.def Info: pic/KNN.png  used on input line 205.
 (pdftex.def)             Requested size: 341.43306pt x 220.68465pt.
  [14 <./pic/logistic_regression_high s.png> <./pic/KNN.png>]
 <pic/NN.png, id=71, 527.9725pt x 452.69125pt>
 File: pic/NN.png Graphic file (type png)
 <use pic/NN.png>
-Package pdftex.def Info: pic/NN.png  used on input line 234.
+Package pdftex.def Info: pic/NN.png  used on input line 232.
 (pdftex.def)             Requested size: 284.52756pt x 243.95229pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--249
+Underfull \hbox (badness 10000) in paragraph at lines 243--247
 
  []
 
@@ -941,25 +937,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--249
 <pic/RecurrentNN.png, id=77, 527.9725pt x 211.79124pt>
 File: pic/RecurrentNN.png Graphic file (type png)
 <use pic/RecurrentNN.png>
-Package pdftex.def Info: pic/RecurrentNN.png  used on input line 252.
+Package pdftex.def Info: pic/RecurrentNN.png  used on input line 250.
 (pdftex.def)             Requested size: 284.52756pt x 114.13289pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--265
+Underfull \hbox (badness 10000) in paragraph at lines 255--263
 
  []
 
 <pic/LSTM-Cell.png, id=78, 698.61pt x 405.515pt>
 File: pic/LSTM-Cell.png Graphic file (type png)
 <use pic/LSTM-Cell.png>
-Package pdftex.def Info: pic/LSTM-Cell.png  used on input line 268.
+Package pdftex.def Info: pic/LSTM-Cell.png  used on input line 266.
 (pdftex.def)             Requested size: 341.43306pt x 198.1905pt.
 [16 <./pic/RecurrentNN.png> <./pic/LSTM-Cell.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 274--282
+Underfull \hbox (badness 10000) in paragraph at lines 272--280
 
  []
 
 
-Overfull \hbox (2.26395pt too wide) in paragraph at lines 283--286
+Overfull \hbox (2.26395pt too wide) in paragraph at lines 281--284
 []\OT1/ptm/m/n/12 Ein LSTM kann auf die-se Wei-se ei-ne Viel-zahl von Zeit-schrit-ten zur[]uckblicken und verl[]asst
  []
 
@@ -967,59 +963,59 @@ Overfull \hbox (2.26395pt too wide) in paragraph at lines 283--286
 <pic/co2_singleDay.png, id=87, 464.4853pt x 344.78813pt>
 File: pic/co2_singleDay.png Graphic file (type png)
 <use pic/co2_singleDay.png>
-Package pdftex.def Info: pic/co2_singleDay.png  used on input line 302.
+Package pdftex.def Info: pic/co2_singleDay.png  used on input line 300.
 (pdftex.def)             Requested size: 298.75264pt x 221.76846pt.
  [18 <./pic/co2_singleDay.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 321--324
+Underfull \hbox (badness 10000) in paragraph at lines 319--322
 
  []
 
 
-Overfull \hbox (24.05809pt too wide) in paragraph at lines 325--338
+Overfull \hbox (24.05809pt too wide) in paragraph at lines 323--336
 [][] 
  []
 
 [19]
 chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--352
+Underfull \hbox (badness 10000) in paragraph at lines 340--350
+
+ []
+
+
+Underfull \hbox (badness 5490) in paragraph at lines 378--385
+\OT1/ptm/m/n/12 Desweiteren wur-den von den Spal-ten ,,\OT1/ptm/m/it/12 co2[]ppm\OT1/ptm/m/n/12 '', ,,\OT1/ptm/m/it/12 tem-pe-ra-ture[]celsius\OT1/ptm/m/n/12 '' und 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--385
 
  []
 
 [20
 
-]
-Underfull \hbox (badness 5490) in paragraph at lines 380--387
-\OT1/ptm/m/n/12 Desweiteren wur-den von den Spal-ten ,,\OT1/ptm/m/it/12 co2[]ppm\OT1/ptm/m/n/12 '', ,,\OT1/ptm/m/it/12 tem-pe-ra-ture[]celsius\OT1/ptm/m/n/12 '' und 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 380--387
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 380--387
-
- []
-
-[21]
-Underfull \hbox (badness 2478) in paragraph at lines 426--433
+] [21]
+Underfull \hbox (badness 2478) in paragraph at lines 424--431
 []\OT1/ptm/m/n/12 Uber das Pro-jekt hin-weg wur-den ver-schie-de-ne Va-li-die-rungs-me-tho-den ver-wen-det.
  []
 
 <pic/confusion_matrix_ex.png, id=102, 271.0125pt x 77.53969pt>
 File: pic/confusion_matrix_ex.png Graphic file (type png)
 <use pic/confusion_matrix_ex.png>
-Package pdftex.def Info: pic/confusion_matrix_ex.png  used on input line 436.
+Package pdftex.def Info: pic/confusion_matrix_ex.png  used on input line 434.
 (pdftex.def)             Requested size: 256.07741pt x 73.26945pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--443
+Underfull \hbox (badness 10000) in paragraph at lines 439--441
 
  []
 
 [22 <./pic/confusion_matrix_ex.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 463--465
+Underfull \hbox (badness 10000) in paragraph at lines 461--463
 
  []
 
@@ -1027,20 +1023,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 463--465
 <pic/CV.png, id=109, 597.73312pt x 317.68687pt>
 File: pic/CV.png Graphic file (type png)
 <use pic/CV.png>
-Package pdftex.def Info: pic/CV.png  used on input line 490.
+Package pdftex.def Info: pic/CV.png  used on input line 488.
 (pdftex.def)             Requested size: 298.75264pt x 158.78487pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 495--505
+Underfull \hbox (badness 10000) in paragraph at lines 493--503
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--520
+Underfull \hbox (badness 10000) in paragraph at lines 506--518
 
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 508--520
+Underfull \hbox (badness 1394) in paragraph at lines 506--518
 \OT1/ptm/m/it/12 Underfitting \OT1/ptm/m/n/12 be-deu-tet da-ge-gen, dass es das Mo-dell nicht ge-schafft hat, zwi-schen
  []
 
@@ -1048,7 +1044,7 @@ Underfull \hbox (badness 1394) in paragraph at lines 508--520
 <pic/param_test.png, id=113, 319.94531pt x 145.29282pt>
 File: pic/param_test.png Graphic file (type png)
 <use pic/param_test.png>
-Package pdftex.def Info: pic/param_test.png  used on input line 534.
+Package pdftex.def Info: pic/param_test.png  used on input line 532.
 (pdftex.def)             Requested size: 256.07741pt x 116.28983pt.
 ) [25 <./pic/param_test.png>]
 \openout2 = `./doc/103kap3.aux'.
@@ -1254,7 +1250,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10700b,731s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/devTools/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 000arbeit.pdf (41 pages, 997713 bytes).
+Output written on 000arbeit.pdf (41 pages, 998132 bytes).
 PDF statistics:
  233 PDF objects out of 1000 (max. 8388607)
  128 compressed objects within 2 object streams

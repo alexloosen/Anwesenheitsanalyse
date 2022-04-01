@@ -46,9 +46,13 @@ Luftfeuchtigkeits-, Infrarot- und CO2-Sensoren angebracht, deren Messungen konti
 gespeichert wurden. Der Zeitraum der Messwerte begann Mitte 2021.\\
 In allen Räumen sind täglich ein oder mehrere
 Personen im Rahmen eines ca. 8 stündigen Arbeitstages anwesend, weshalb die Temperatur-, Luftfeuchtigkeits-
-und CO2-Werte als aussagekräftige Indikatoren für menschliche Präsenz angesehen werden können.
+und CO2-Messwerte über einen Tag hinweg Schwankungen aufweisen. Diese sollen von einem Machine Learning Modell
+mit der direkten Präsenzmessung des Infrarotsensors gegenübergestellt werden, sodass das fertig Trainierte Modell
+anhand der Messwerte von Temperatur, Luftfeuchtigkeit und CO2 Aussagen über menschliche Präsenz treffen kann.\\
+Die Frage, ob ein in einem Raum trainiertes Modell auch präzise Aussagen über die Anwesenheit in einem anderen Raum
+treffen kann, stellte eines besondere Bedeutung dar.\\\\
 Es gab keine Einschränkungen hinsichtlich dessen, welche konkreten Machine-Learning Algorithmen 
-benutzt werden sollten.\\\\
+benutzt werden sollten.\\
 Als Programmiersprache für das Projekt wurde Python gewählt. Python ist wegen seiner umfassenden
 Machine-Learning Bibliotheken und einfachen Auswertungstechniken anhand von z.B. Graphen und Statistiken 
 gut für diesen Anwendungsfall geeignet.
@@ -73,11 +77,11 @@ gut für diesen Anwendungsfall geeignet.
 
 % Untersuchungsverlauf(pro Kapitel ein kurzer Absatz mit Verweis auf die Kapitelnummer)
 
-Das Projekte beschäftigte sich im Schwerpunkt mit den folgenden Arbeitsschritten:
+Das Projekt beschäftigte sich im Schwerpunkt mit den folgenden Arbeitsschritten:
 \begin{itemize}
     \item Datenbeschaffung durch Datenbankzugriffe per SQL
     \item Analyse und Vorbereitung der Daten (Pre-Processing)
-    \item Trainieren von Machine-Learning Models anhand der vorbereiteten Datensets
+    \item Trainieren von Machine-Learning Modellen anhand der vorbereiteten Datensets
     \item Ergebnisauswertung durch Gegenüberstellung verschiedener Datensets und Models
 \end{itemize}
 Da es zwischen allen verfügbaren Datensets der einzlnen Räume und Machine-Learning-Models eine Vielzahl an
