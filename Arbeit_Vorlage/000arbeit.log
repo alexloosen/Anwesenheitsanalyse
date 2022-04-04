@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  1 APR 2022 17:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  4 APR 2022 15:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,6 +598,12 @@ LaTeX Warning: Label `fig:PT_eval' multiply defined.
 
 LaTeX Warning: Label `fig:PT_eval' multiply defined.
 
+
+LaTeX Warning: Label `fig:PT_eval' multiply defined.
+
+
+LaTeX Warning: Label `fig:PT_eval' multiply defined.
+
 ) (./doc/111Schluss.aux) (./doc/202abkuerzungsverzeichnis.aux))
 \openout1 = `000arbeit.aux'.
 
@@ -915,107 +921,114 @@ Package pdftex.def Info: pic/logistic_regression.png  used on input line 165.
 <pic/logistic_regression_high s.png, id=64, 726.715pt x 451.6875pt>
 File: pic/logistic_regression_high s.png Graphic file (type png)
 <use pic/logistic_regression_high s.png>
-Package pdftex.def Info: pic/logistic_regression_high s.png  used on input line 190.
+Package pdftex.def Info: pic/logistic_regression_high s.png  used on input line 191.
 (pdftex.def)             Requested size: 284.52756pt x 176.84662pt.
-<pic/KNN.png, id=65, 658.46pt x 425.59pt>
+ [14 <./pic/logistic_regression_high s.png>]
+<pic/KNN.png, id=69, 658.46pt x 425.59pt>
 File: pic/KNN.png Graphic file (type png)
 <use pic/KNN.png>
-Package pdftex.def Info: pic/KNN.png  used on input line 205.
+Package pdftex.def Info: pic/KNN.png  used on input line 206.
 (pdftex.def)             Requested size: 341.43306pt x 220.68465pt.
- [14 <./pic/logistic_regression_high s.png> <./pic/KNN.png>]
-<pic/NN.png, id=71, 527.9725pt x 452.69125pt>
+ [15 <./pic/KNN.png>]
+<pic/NN.png, id=75, 527.9725pt x 452.69125pt>
 File: pic/NN.png Graphic file (type png)
 <use pic/NN.png>
-Package pdftex.def Info: pic/NN.png  used on input line 232.
+Package pdftex.def Info: pic/NN.png  used on input line 233.
 (pdftex.def)             Requested size: 284.52756pt x 243.95229pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--247
+Underfull \hbox (badness 10000) in paragraph at lines 244--248
 
  []
 
-[15 <./pic/NN.png>]
-<pic/RecurrentNN.png, id=77, 527.9725pt x 211.79124pt>
+<pic/RecurrentNN.png, id=76, 527.9725pt x 211.79124pt>
 File: pic/RecurrentNN.png Graphic file (type png)
 <use pic/RecurrentNN.png>
-Package pdftex.def Info: pic/RecurrentNN.png  used on input line 250.
+Package pdftex.def Info: pic/RecurrentNN.png  used on input line 251.
 (pdftex.def)             Requested size: 284.52756pt x 114.13289pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--263
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16 <./pic/NN.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 256--264
 
  []
 
-<pic/LSTM-Cell.png, id=78, 698.61pt x 405.515pt>
+<pic/LSTM-Cell.png, id=81, 698.61pt x 405.515pt>
 File: pic/LSTM-Cell.png Graphic file (type png)
 <use pic/LSTM-Cell.png>
-Package pdftex.def Info: pic/LSTM-Cell.png  used on input line 266.
+Package pdftex.def Info: pic/LSTM-Cell.png  used on input line 267.
 (pdftex.def)             Requested size: 341.43306pt x 198.1905pt.
-[16 <./pic/RecurrentNN.png> <./pic/LSTM-Cell.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 272--280
 
- []
-
-
-Overfull \hbox (2.26395pt too wide) in paragraph at lines 281--284
+Overfull \hbox (2.26395pt too wide) in paragraph at lines 272--276
 []\OT1/ptm/m/n/12 Ein LSTM kann auf die-se Wei-se ei-ne Viel-zahl von Zeit-schrit-ten zur[]uckblicken und verl[]asst
  []
 
-[17]
-<pic/co2_singleDay.png, id=87, 464.4853pt x 344.78813pt>
-File: pic/co2_singleDay.png Graphic file (type png)
-<use pic/co2_singleDay.png>
-Package pdftex.def Info: pic/co2_singleDay.png  used on input line 300.
-(pdftex.def)             Requested size: 298.75264pt x 221.76846pt.
- [18 <./pic/co2_singleDay.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 319--322
+[17 <./pic/RecurrentNN.png> <./pic/LSTM-Cell.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 278--286
 
  []
 
 
-Overfull \hbox (24.05809pt too wide) in paragraph at lines 323--336
+Underfull \hbox (badness 10000) in paragraph at lines 295--300
+
+ []
+
+<pic/co2_singleDay.png, id=87, 464.4853pt x 344.78813pt>
+File: pic/co2_singleDay.png Graphic file (type png)
+<use pic/co2_singleDay.png>
+Package pdftex.def Info: pic/co2_singleDay.png  used on input line 303.
+(pdftex.def)             Requested size: 298.75264pt x 221.76846pt.
+[18 <./pic/co2_singleDay.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 323--326
+
+ []
+
+
+Overfull \hbox (24.05809pt too wide) in paragraph at lines 327--340
 [][] 
  []
 
 [19]
 chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--350
+Underfull \hbox (badness 10000) in paragraph at lines 344--354
 
  []
 
 
-Underfull \hbox (badness 5490) in paragraph at lines 378--385
+Underfull \hbox (badness 5490) in paragraph at lines 382--389
 \OT1/ptm/m/n/12 Desweiteren wur-den von den Spal-ten ,,\OT1/ptm/m/it/12 co2[]ppm\OT1/ptm/m/n/12 '', ,,\OT1/ptm/m/it/12 tem-pe-ra-ture[]celsius\OT1/ptm/m/n/12 '' und 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--385
+Underfull \hbox (badness 10000) in paragraph at lines 382--389
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--385
+Underfull \hbox (badness 10000) in paragraph at lines 382--389
 
  []
 
 [20
 
 ] [21]
-Underfull \hbox (badness 2478) in paragraph at lines 424--431
+Underfull \hbox (badness 2478) in paragraph at lines 427--434
 []\OT1/ptm/m/n/12 Uber das Pro-jekt hin-weg wur-den ver-schie-de-ne Va-li-die-rungs-me-tho-den ver-wen-det.
  []
 
 <pic/confusion_matrix_ex.png, id=102, 271.0125pt x 77.53969pt>
 File: pic/confusion_matrix_ex.png Graphic file (type png)
 <use pic/confusion_matrix_ex.png>
-Package pdftex.def Info: pic/confusion_matrix_ex.png  used on input line 434.
+Package pdftex.def Info: pic/confusion_matrix_ex.png  used on input line 437.
 (pdftex.def)             Requested size: 256.07741pt x 73.26945pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--441
+Underfull \hbox (badness 10000) in paragraph at lines 442--444
 
  []
 
 [22 <./pic/confusion_matrix_ex.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 461--463
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
 
  []
 
@@ -1023,20 +1036,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 461--463
 <pic/CV.png, id=109, 597.73312pt x 317.68687pt>
 File: pic/CV.png Graphic file (type png)
 <use pic/CV.png>
-Package pdftex.def Info: pic/CV.png  used on input line 488.
+Package pdftex.def Info: pic/CV.png  used on input line 491.
 (pdftex.def)             Requested size: 298.75264pt x 158.78487pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--503
+Underfull \hbox (badness 10000) in paragraph at lines 496--506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--518
+Underfull \hbox (badness 10000) in paragraph at lines 509--521
 
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 506--518
+Underfull \hbox (badness 1394) in paragraph at lines 509--521
 \OT1/ptm/m/it/12 Underfitting \OT1/ptm/m/n/12 be-deu-tet da-ge-gen, dass es das Mo-dell nicht ge-schafft hat, zwi-schen
  []
 
@@ -1044,7 +1057,7 @@ Underfull \hbox (badness 1394) in paragraph at lines 506--518
 <pic/param_test.png, id=113, 319.94531pt x 145.29282pt>
 File: pic/param_test.png Graphic file (type png)
 <use pic/param_test.png>
-Package pdftex.def Info: pic/param_test.png  used on input line 532.
+Package pdftex.def Info: pic/param_test.png  used on input line 535.
 (pdftex.def)             Requested size: 256.07741pt x 116.28983pt.
 ) [25 <./pic/param_test.png>]
 \openout2 = `./doc/103kap3.aux'.
@@ -1102,15 +1115,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--76
 <pic/confusion_matrix.png, id=133, 296.60812pt x 283.0575pt>
 File: pic/confusion_matrix.png Graphic file (type png)
 <use pic/confusion_matrix.png>
-Package pdftex.def Info: pic/confusion_matrix.png  used on input line 120.
+Package pdftex.def Info: pic/confusion_matrix.png  used on input line 118.
 (pdftex.def)             Requested size: 213.39568pt x 203.65437pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--128
+Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--128
+Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
 
@@ -1118,47 +1131,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--128
 <pic/nov23_actual.png, id=137, 1017.04968pt x 502.12593pt>
 File: pic/nov23_actual.png Graphic file (type png)
 <use pic/nov23_actual.png>
-Package pdftex.def Info: pic/nov23_actual.png  used on input line 136.
+Package pdftex.def Info: pic/nov23_actual.png  used on input line 134.
 (pdftex.def)             Requested size: 384.1096pt x 189.63757pt.
 <pic/nov23_predicted.png, id=138, 1019.30812pt x 537.50812pt>
 File: pic/nov23_predicted.png Graphic file (type png)
 <use pic/nov23_predicted.png>
-Package pdftex.def Info: pic/nov23_predicted.png  used on input line 147.
+Package pdftex.def Info: pic/nov23_predicted.png  used on input line 145.
 (pdftex.def)             Requested size: 384.1096pt x 202.54926pt.
  [31 <./pic/nov23_actual.png> <./pic/nov23_predicted.png>]
 <pic/param_eval.png, id=145, 361.35pt x 217.5628pt>
 File: pic/param_eval.png Graphic file (type png)
 <use pic/param_eval.png>
-Package pdftex.def Info: pic/param_eval.png  used on input line 164.
+Package pdftex.def Info: pic/param_eval.png  used on input line 162.
 (pdftex.def)             Requested size: 256.07741pt x 154.18185pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--174
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
 
  []
 
 <pic/roc_curves.png, id=146, 326.72063pt x 218.31563pt>
 File: pic/roc_curves.png Graphic file (type png)
 <use pic/roc_curves.png>
-Package pdftex.def Info: pic/roc_curves.png  used on input line 180.
+Package pdftex.def Info: pic/roc_curves.png  used on input line 178.
 (pdftex.def)             Requested size: 298.75264pt x 199.6269pt.
 [32 <./pic/param_eval.png> <./pic/roc_curves.png>]
 <pic/h217_predicting_livingroom.png, id=151, 1008.76875pt x 552.56438pt>
 File: pic/h217_predicting_livingroom.png Graphic file (type png)
 <use pic/h217_predicting_livingroom.png>
-Package pdftex.def Info: pic/h217_predicting_livingroom.png  used on input line 208.
+Package pdftex.def Info: pic/h217_predicting_livingroom.png  used on input line 206.
 (pdftex.def)             Requested size: 426.79135pt x 233.7786pt.
  [33 <./pic/h217_predicting_livingroom.png>]
 <pic/eval_NN.png, id=155, 816.04875pt x 283.81032pt>
 File: pic/eval_NN.png Graphic file (type png)
 <use pic/eval_NN.png>
-Package pdftex.def Info: pic/eval_NN.png  used on input line 234.
+Package pdftex.def Info: pic/eval_NN.png  used on input line 232.
 (pdftex.def)             Requested size: 384.1096pt x 133.59007pt.
 <pic/eval_LSTM.png, id=156, 816.04875pt x 290.58563pt>
 File: pic/eval_LSTM.png Graphic file (type png)
 <use pic/eval_LSTM.png>
-Package pdftex.def Info: pic/eval_LSTM.png  used on input line 241.
+Package pdftex.def Info: pic/eval_LSTM.png  used on input line 239.
 (pdftex.def)             Requested size: 384.1096pt x 136.77922pt.
-) [34 <./pic/eval_NN.png> <./pic/eval_LSTM.png>]
+
+Underfull \hbox (badness 1137) in paragraph at lines 248--258
+\OT1/ptm/m/n/12 Wegen der Un-aus-ge-gli-chen-heit des Da-ten-sets sind ca. zwei Drit-tel des Da-ten-sets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--258
+
+ []
+
+[34 <./pic/eval_NN.png> <./pic/eval_LSTM.png>]
+<pic/pca.png, id=160, 764.8575pt x 391.4625pt>
+File: pic/pca.png Graphic file (type png)
+<use pic/pca.png>
+Package pdftex.def Info: pic/pca.png  used on input line 277.
+(pdftex.def)             Requested size: 384.1096pt x 196.5909pt.
+ [35 <./pic/pca.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+<pic/pca1.png, id=164, 436.63126pt x 386.94562pt>
+File: pic/pca1.png Graphic file (type png)
+<use pic/pca1.png>
+Package pdftex.def Info: pic/pca1.png  used on input line 291.
+(pdftex.def)             Requested size: 234.73654pt x 208.02644pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 296--143
+
+ []
+
+[36 <./pic/pca1.png>]
 \openout2 = `./doc/111Schluss.aux'.
 
  (./doc/111Schluss.tex
@@ -1188,7 +1232,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--27
 
  []
 
-) [35
+) [37
 
 
 
@@ -1199,7 +1243,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 11--16
 []\OT1/ptm/m/n/12 Le, J. (2018).  How to do se-man-tic seg-men-ta-ti-on using de-ep lear-
  []
 
-) [36
+) [38
 
 
 
@@ -1207,7 +1251,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 11--16
 ]
 \openout2 = `./doc/202abkuerzungsverzeichnis.aux'.
 
- (./doc/202abkuerzungsverzeichnis.tex) [37
+ (./doc/202abkuerzungsverzeichnis.tex) [39
 
 
 
@@ -1216,7 +1260,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 11--16
 \tf@lof=\write4
 \openout4 = `000arbeit.lof'.
 
- [38
+ [40
 
 
 
@@ -1225,16 +1269,16 @@ Underfull \hbox (badness 1975) in paragraph at lines 11--16
 \tf@lot=\write5
 \openout5 = `000arbeit.lot'.
 
- [39
+ [41
 
 
 ]
 chapter A.
-[40
+[42
 
 ]
 chapter B.
-[41
+[43
 
 ] (./000arbeit.aux (./doc/001titelblatt.aux) (./doc/002erklaerung.aux) (./doc/101kap1.aux) (./doc/102kap2.aux) (./doc/103kap3.aux) (./doc/111Schluss.aux) (./doc/202abkuerzungsverzeichnis.aux))
 
@@ -1242,18 +1286,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16267 strings out of 478278
- 326884 string characters out of 5846055
+ 16281 strings out of 478278
+ 327099 string characters out of 5846055
  776462 words of memory out of 5000000
- 34124 multiletter control sequences out of 15000+600000
+ 34136 multiletter control sequences out of 15000+600000
  489667 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10700b,731s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/devTools/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 000arbeit.pdf (41 pages, 998132 bytes).
+Output written on 000arbeit.pdf (43 pages, 1108783 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
+ 242 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

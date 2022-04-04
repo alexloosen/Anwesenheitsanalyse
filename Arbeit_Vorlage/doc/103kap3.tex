@@ -106,8 +106,6 @@ die Ergebnisse zu
 \end{itemize}
 einzeln betrachtet.
 
-\subsection{Clustering Modelle}
-
 \subsection{Decision Tree Modelle}
 Die ausgewählten Algorithmen konnten mit dem ausgewählten FV bei der Erwartungsberechnung über das gesamte 
 Datenset eine Genauigkeit von etwa 94\% erreichen. Eine \textit{Confusion Matrix}, welche die errechneten 
@@ -245,3 +243,55 @@ aufweisen, während zugleich die Loss-Funktion minimiert wird.
 
 Wie zu sehen ist, weisen beide Arten neuraler Netzwerke diese Eigenschaften auf. Die Genauigkeiten beider Modelle
 konvergierten auch nach verschiedenen Epochen-Werten etwa bei 89\%.
+
+\subsection{Clustering Modelle}
+Clustering Modelle hatten von allen benutzten Algorithmen die größten Schwierigkeiten bei der Klassifikation
+des Datensets. Während die Genauigkeit bei der Erwartungsberechnung von Abwesenheit bei 94\% lag, konnte das
+K-Means-Modell Anwesenheiten nur zu 50\% erkennen, was bedeutet, dass das Modell das Ergebnis errät, anstatt
+ihn zuverlässig zu berechnen. \\
+Wegen der Unausgeglichenheit des Datensets sind ca. zwei Drittel des Datensets sehr einfach zu 
+klassifizieren, da es im ganzen Datenset nie Anwesenheiten zwischen beispielsweise 20:00 Uhr und 06:00 Uhr 
+gibt. Selbst wenn das Modell beim letzten Drittel, also den Anwesenheiten rät und somit nur
+zu 50\% trifft, suggeriert eine daraus resultierende Genauigkeit von etwa 80\% ein funktionierendes Modell,
+allerdings zeigt sich hier, warum auch die Gegenüberstellung von True und False Positives in der 
+Modellauswertung von entscheidender Wichtigkeit sein kann.\\
+
+\begin{center}
+    \begin{tabular}{|p{1.5cm}||p{1.8cm}|p{1.5cm}|p{1.5cm}|}
+        \hline
+        \hfill Präsenz&\hfill Precision &\hfill Recall &\hfill F1\\
+        \hline
+        \hline
+        \hfill 0&\hfill 0.94&\hfill 0.79&\hfill 0.86\\
+        \hfill 1&\hfill 0.50&\hfill 0.82&\hfill 0.62\\
+        \hline
+    \end{tabular}          
+\end{center}
+
+Wie anhand der Precision-Score zu sehen ist, tritt hier genau der oben beschriebene Fall ein.\\
+Zur Veranschaulichung der Ergebnisse hilft eine Dimensionalitätsreduktion, bei der man das Datenset auf zwei
+Dimensionen reduziert und die An- und Abwesenheiten in einem Graphen darstellt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{pic/pca.png}
+    \caption{Reduktion des Datensets auf zwei Dimensionen}
+    \label{fig:PT_eval}
+\end{figure}
+
+Die Menge der Anwesenheiten (Orange) ist nahezu identisch mit der Teilmenge der Abwesenheiten (Blau). Das heißt,
+dass alle Datenpunkte die in der linken Hälfte des blauen Datensets liegen, sehr einfach klassifiziert 
+werden können. 
+\newpage
+Legt man beide Datensets übereinander ist es nun nahezu unmöglich zwischen An- und Abwesenheits
+zu unterscheiden.\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.55\textwidth]{pic/pca1.png}
+    \caption{Datenreduktion ohne Trennung}
+    \label{fig:PT_eval}
+\end{figure}
+
+Das Erkennen von Abwesenheit im linken Teilbild ist nun erheblich einfacher, als die Trennung zwischen 
+An- und Abwesenheit im rechten Teilbild.\\
