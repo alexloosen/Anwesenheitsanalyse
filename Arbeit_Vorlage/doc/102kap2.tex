@@ -180,10 +180,11 @@ Verhältnis von Eintrittswahrscheinlichkeit $p_1$ und Gegenwahrscheinlichkeit $p
     p(\mu) = 0.5 = \frac{p_1}{p_0}   
 \end{align}
 
+\newpage
 Zusätzlich beschreibt s einen Skalierungsparameter, mit dem die Form der Kurve flacher oder steiler werden kann,
 was angibt, wie eindeutig die hereingegebenen Daten zugeordnet werden können. Wären im o.g. Beispiel also alle roten
 Punkte jeweils links und rechts von der Mitte einsortiert, wäre die Sigmoid-Funktion in der Mitte sehr steil, da alle
-Daten anhand des Mittelpunktes klar getrennt werden könnten.\newpage
+Daten anhand des Mittelpunktes klar getrennt werden könnten.
 
 \begin{figure}[h]
     \centering
@@ -194,7 +195,7 @@ Daten anhand des Mittelpunktes klar getrennt werden könnten.\newpage
 
 Anhand der optimierten Sigmoid-Funktion können nun neue Daten klassifiziert werden, wobei die Wahrscheinlichkeit
 bei $p < 0.5$ auf 0 und $p >= 0.5$ auf 1 gerundet wird.
-
+\newpage
 \subsection{K-Nearest-Neighbours}
 Der \textit{K-Nearest-Neighbours}-Algorithmus KNN betrachtet den Abstand von einem gegebenen Punkt $p$ zu einer 
 Menge an Punken in einem Datenset und ordnet ihn gemäß dieser Abstände einer bestimmten Kategorie zu. Die 
@@ -208,7 +209,7 @@ Zuordnung geschiet anhand der Kategorie der größten Menge an nähesten Nachbar
 \end{figure}
 
 Im oben gezeigten Beispiel würde ein Punkt anhand seiner drei nächsten Nachbarn als "grün" kategorisiert.
-Die Anzahl der gewünschten Nachbarn die zu untersuchen sind, ist frei wählbar. \newpage
+Die Anzahl der gewünschten Nachbarn die zu untersuchen sind, ist frei wählbar.
 Da die Abstandsberechnung über den \textit{Euklidischen Abstand} berechnet wird, funktioniert dieser 
 Algorithmus auch in höheren Dimensionen, da 
 
@@ -217,7 +218,7 @@ Algorithmus auch in höheren Dimensionen, da
 \end{align}
 
 sich in beliebig viele Dimensionen fortsetzen lässt.
-
+\newpage
 \subsection{Neuronale Netzwerke}
 Die Funktionsweise eines Neuronalen Netzwerks ist direkt angelehnt an die Funktionsweise des menschlichen Gehirns.
 Einzelne Knotenpunkten(Neuronen) werden mithilfe von Gewichteten Verbindungen verknüpft, sodass das Netzwerk versucht 
@@ -251,7 +252,7 @@ die das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-W
     \caption{Beispiel eines rekurrenten neuronalen Netzwerks}
     \label{fig:RecNN}
 \end{figure}
-
+\newpage
 Bei einem LSTM verfügt jedes Neuron zusätzlich über einen Zell-Status $C_t$, welcher durch einen Input $x_t$ verändert werden kann.
 Auf den Zell-Status nehmen \textit{Input-}, \textit{Forget-} und \textit{Output}-Gates Einfluss. Diese drei Gates
 besitzen jeweils ein eigenes neronales Netzwerk $\sigma$.\\\\
@@ -268,6 +269,11 @@ der Zelle führt.
     \label{fig:RecNN}
 \end{figure}
 
+Ein LSTM kann auf diese Weise eine Vielzahl von Zeitschritten zurückblicken und verlässt sich so nicht direkt auf 
+einen gegebenen Input, sondern auf einen langen Verlauf von bereits verarbeiteten Input-Werten. 
+LSTMs sind deshalb besonders interessant für Probleme bei denen Beziehungen zwischen kontinuierlichen 
+Datenwerten gebildet werden müssen.
+
 \newpage
 Geht man von einem LSTM aus, dass über eine Liste an Namen verfügt und anhand einem Datensatz gelernt
 hat, zwei Namen mit der Beziehung ,,sah'' zu z.B. ,,Jonas sah Jakob.'' zu verknüpfen.\\
@@ -278,22 +284,19 @@ ausgewählt. Bisher ähnelt dieser Verlauf einem normalen Neuronalen Netzwerks. 
 steht aber nun wegen dem vorherigen Durchlauf der Name ,,Jakob'' im Forget-Gate, sodass ,,Jakob'' aus der verfügbaren
 Wortauswahl für das nächste Wort gelöscht wird.\\
 
-Ein LSTM kann auf diese Weise eine Vielzahl von Zeitschritten zurückblicken und verlässt sich so nicht direkt auf 
-einen gegebenen Input, sondern auf einen langen Verlauf von bereits verarbeiteten Input-Werten. 
-LSTMs sind deshalb besonders interessant für Probleme bei denen Beziehungen zwischen kontinuierlichen 
-Datenwerten gebildet werden müssen.\newpage
+
 
 \section{CO2 als Anwesenheitsindikator}\label{CO2}
 
-Der CO2-Gehalt der Raumluft ist als sehr guter Indikator für menschliche Präsenz anzusehen. Anders als andere 
-Umweltindikatoren wie Temperatur oder Luftfeuchtigkeit hat der CO2-Gehalt die Eigenschaft, dass es in 
-geschlossenen Räumen keine äußeren Einflussfaktoren für diesen Messwert gibt. In einem Büroraum kann der 
-Mensch als alleinige Quelle für CO2 angesehen werden.\\
+%Der CO2-Gehalt der Raumluft ist als sehr guter Indikator für menschliche Präsenz anzusehen. Anders als andere 
+%Umweltindikatoren wie Temperatur oder Luftfeuchtigkeit hat der CO2-Gehalt die Eigenschaft, dass es in 
+%geschlossenen Räumen keine äußeren Einflussfaktoren für diesen Messwert gibt. In einem Büroraum kann der 
+%Mensch als alleinige Quelle für CO2 angesehen werden.\\
 Der Anteil von CO2 in frischer Atemluft beträgt zwischen 350 und 450 ppm. Es gibt in Deutschland und auch Europa 
 keine grundsätzlich festgelegten Grenzwerte für akzeptable Raumluft, vielmehr raten Gesundheitsämter 
 verschiedener Länder Grenzwerte zwischen 1200 und 1500 ppm einzuhalten. Bei der Obergrenze von 1500 ppm 
 entstehen beim Menschen erste Müdigkeitserscheinungen, weshalb dieser Wert in der Literatur als maximaler 
-Richtwert für Innenräume gilt.
+Richtwert für Innenräume gilt.\\
 
 \begin{figure}[h]
     \centering
@@ -307,6 +310,7 @@ Mit einigen kleinen Pausen sind fast durchgehend Personen anwesend, die täglich
 Es ist auch klar zu erkennen, dass sich der CO2-Gehalt während Abwesenheit durch die passive Lüftung des Raumes  
 (Tür-/Fensterspalten) langsam wieder gegen den Grundwert bewegt.
 
+\newpage
 \section{Luftfeuchtigkeit und Temperatur}
 Auch wenn Luftfeuchtigkeit und Temperatur Indikatoren für menschliche Präsenz in einem Raum sein können, 
 unterliegen sie in ihrer Nützlichkeit dem CO2-Gehalt der Raumluft in einem wichtigen Faktor. 
@@ -404,7 +408,6 @@ Um diese Ausreißer vor dem Training der Models zu beseitigen wurde das Verfahre
 Der IQR gibt die Intervallgröße an, die ein Wert vom Median einer Datenreihe abweichen darf. Bei einer 
 der Größe nach sortierten Datenreihe $x = (x_0,x_1,...,x_n)$ bestimmt man die Mediane der unteren und oberen 
 Hälfe des Datensets $Q_1$ und $Q_2$. Der IQR ergibt sich nun aus 
-
 \begin{align}
     IQR = Q_2 - Q_1
 \end{align}
