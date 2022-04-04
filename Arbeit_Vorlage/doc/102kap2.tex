@@ -69,7 +69,7 @@ Regression eine Wahrscheinlichkeit auf Anwesenheit zwischen 0.0 und 1.0 darstell
 Beim ,,\textit{Unsupervised Learning}'' versucht das Modell ohne Referenz zu einem bestimmten 
 Label, Zusammenhänge zwischen bestimmten Feldern des Datensets herzustellen. Solche Modelle 
 arbeiten vorrangig mit ,,\textit{Clustering}'' und ,,\textit{Dimensionality Reduction}''.\\
-,,\textit{Clustering}''-Algorithmen versuchen ein Datenset in kleinere Bereiche einzuteilen und
+,,\textit{Clustering}''-Algorithmen versuchen ein Datenset in kleinere Teilmengen einzuteilen und
 so aus den Feldern des Datensets bestimmte Abhängigkeiten abzuleiten.
 
 \begin{figure}[h]
@@ -79,14 +79,15 @@ so aus den Feldern des Datensets bestimmte Abhängigkeiten abzuleiten.
     \label{fig:Clustering_Beispiel}
 \end{figure}
 
-Bei der ,,\textit{Dimensionality Reduction}'' versucht der Algorithmus das Datenset in einer 
+Bei der ,,\textit{Dimensionality Reduction}'' versucht der Algorithmus das Datenset in seiner 
 Dimensionalität, also seiner Anzahl an Feldern, zu reduzieren. Es wird also die Frage gestellt, 
 ob sich in einem bestehenden Datenset auch mit weniger Feldern Abhängigkeiten feststellen lassen. Dieser 
 Schritt wird vorallem für Modelle benutzt, die sensibel gegenüber hoher Dimensionalitäten sind, 
 sodass das Datenset vor dem Training in seiner Dimensionalität heruntergebrochen werden kann.
 
 Im Rahmen des Projektes wurden hauptsächlich Klassifizierungs-Algorithmen genutzt, da ein Großteil der 
-Datensets Labels zur Überprüfung hatte. Um einen Vergleich herzustellen werden später trotzdem noch 
+Datensets Labels zur Überprüfung hatte.\\
+Um einen Vergleich herzustellen werden später trotzdem noch 
 einzelne Ergebnisse von Clustering und Dimensionality Reduction betrachtet. Im Folgenden sollen die genutzten 
 Modelle erklärt werden.
 \newpage
@@ -110,11 +111,14 @@ entwickeln können, sinkt die Chance auf eine solche Fehleinschätzung, je mehr 
 Entscheidungsbäume man befragt. 
 
 \subsection{Gradient Boosting Classifier}
-Der \textit{Gradient Boosting Classifier} GBC versucht seine Erwartungen auf Grund von Abweichungen eines Labels vom 
-Durchschnitt dieses Labels zu treffen. Erweitert man das Datenset im o.g. Beispiel um das Alter einer Maus, wird 
+Der \textit{Gradient Boosting Classifier} GBC ist eine Abwandlung eines RFC und  versucht, seine Erwartungen
+aufgrund von Abweichungen eines Labels vom Durchschnitt dieses Labels zu treffen. \\
+Erweitert man das Datenset im o.g. Beispiel um das Alter einer Maus, wird 
 ein GBC als Ausgangswert den Durchschnitt aller Label-Werte, also dem Gewicht, berechnen. Danach werden die 
 Abweichungen aller Label-Werte zu diesem Durchschnitt gebildet. Diese Abweichungen werden nun in Beziehung zu den 
-anderen Spalten des Datensets gesetzt. Beispielsweise könnte man so davon ausgehen, dass ausgewachsene Mäuse von einem 
+anderen Spalten des Datensets gesetzt. 
+\\\\
+Beispielsweise könnte man so davon ausgehen, dass ausgewachsene Mäuse von einem 
 bestimmten Alter über dem Durchschnittsgewicht liegen. Genauso liegen besonders junge Mäuse wahrscheinlich immer
 einen ähnlichen Wert unter dem Durchschnittsgewicht. So wurde zwischen dem Label \textit{Gewicht} und der Spalte 
 \textit{Alter} eine Beziehung hergestellt. In weiteren Iterationen orientiert sich der GBC immer an der Abweichung 

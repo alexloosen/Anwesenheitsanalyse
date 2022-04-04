@@ -109,7 +109,7 @@ einzeln betrachtet.
 \subsection{Decision Tree Modelle}
 Die ausgewählten Algorithmen konnten mit dem ausgewählten FV bei der Erwartungsberechnung über das gesamte 
 Datenset eine Genauigkeit von etwa 94\% erreichen. Eine \textit{Confusion Matrix}, welche die errechneten 
-Werte den tatsächlichen gegenüberstellt, zeigt, dass im hier benutzten Beispiel, ein Random Forest Classifier 
+Werte den tatsächlichen Labelwerten gegenüberstellt, zeigt, dass im hier benutzten Beispiel, ein Random Forest Classifier 
 selbst bei der starken Unausgeglichenheit des Datensets ähnlich viele Fehler in sowohl An- als auch Abwesenheit 
 macht.
 
@@ -125,7 +125,7 @@ für jeweils Ab- und Anwesenheit errechnet hat, während die Felder oben rechts 
 Erwartung für beide Werte zeigen.\\\\
 
 \newpage
-Es ist ebenfalls aufschlussreich die erwarteten Labelwerte mit den tatsächlichen grafisch gegenüberzustellen, 
+Es ist ebenfalls aufschlussreich die erwarteten Labelwerte mit den tatsächlichen Labelwerten grafisch gegenüberzustellen, 
 indem man das ursprüngliche Datenset mit timestamp und CO2-Wert zeichnet. Dabei wird die gemessene Anwesenheit 
 farblich als gelb für an- und blau für abwesend eingefärbt.
 
@@ -155,7 +155,7 @@ erkannt und verarbeitet werden können.
 
 Beim Tuning der ausgewählten Modelle wurden als Parameter-Optionen ausschließlich Werte gewählt, die nicht 
 den Standardwerten der Modelle entsprechen. Somit sollte das GridSearchCV-Modul ausschließlich in der Menge 
-von Parametern nach möglichen suchen, die nicht den Standard-Einstellungen entsprechen.
+von Parametern nach Möglichkeiten suchen, die nicht den Standard-Einstellungen entsprechen.
 
 \begin{figure}[h]
     \centering
@@ -180,8 +180,8 @@ inwiefern die Ergebnisse zufällig oder errechnet sind.
     \label{fig:PT_eval}
 \end{figure}
 
-Man sieht deutlich, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines der Modelle weist anzeichen 
-auf, dass Ergebnisse wegen mangelnder Informationen erraten werden.
+Man sieht deutlich, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines der Modelle weist Anzeichen 
+auf, dass Ergebnisse wegen Underfitting erraten werden.
 
 \section{Umgang mit fehlenden Präsenz-Labels}
 Da zur Auswertung auch eine große Menge an Datensätzen ohne Präsenz-Label zur Verfügung standen, wurden die trainierten
