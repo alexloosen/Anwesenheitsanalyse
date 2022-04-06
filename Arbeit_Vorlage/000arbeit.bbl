@@ -1,17 +1,24 @@
 \begin{thebibliography}{}
 
-\bibitem[Hartnett, 2018]{ImageAttack}
-Hartnett, K. (2018).
-\newblock Machine learning confronts the elephant in the room.
-\newblock Quanta Magazine, Online.
-\newblock
-  https://www.quantamagazine.org/machine-learning-confronts-the-elephant-in-the-room-20180920/.
+\bibitem[Hanfstaengl et~al., 2019]{IPPR}
+Hanfstaengl, L., Parzinger, M., Wirnsberger, M., Spindler, U., and Wellisch, U.
+  (2019).
+\newblock Identifying the presence of people in a room based on machine
+  learning techniques using data of room control systems.
+\newblock Conference.
 
-\bibitem[Le, 2018]{Segmentation}
-Le, J. (2018).
-\newblock How to do semantic segmentation using deep learning.
+\bibitem[Umweltbundesamt, 2020]{Umweltbundesamt}
+Umweltbundesamt (2020).
+\newblock Endenergieverbrauch der privaten haushalte.
 \newblock Online.
 \newblock
-  https://medium.com/nanonets/how-to-do-image-segmentation-using-deep-learning-c673cc5862ef.
+  https://www.umweltbundesamt.de/daten/private-haushalte-konsum/wohnen/energieverbrauch-privater-haushalte/.
+
+\bibitem[Umweltbundesamt, 2022]{Umweltbundesamt1}
+Umweltbundesamt (2022).
+\newblock Energieverbrauch nach energieträgern und sektoren.
+\newblock Online.
+\newblock
+  https://www.umweltbundesamt.de/daten/energie/energieverbrauch-nach-energietraegern-sektoren.
 
 \end{thebibliography}
