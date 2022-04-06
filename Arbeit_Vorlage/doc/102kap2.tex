@@ -168,7 +168,7 @@ zu einer Wahrscheinlichkeit für Übergewicht, könnte das entstehende Modell wi
     \centering
     \includegraphics[width=10.0cm]{pic/logistic_regression.png}
     \caption{Beispiel logistischer Regression}
-    \label{fig:SVC_2D}
+    \label{fig:LR}
 \end{figure}
 
 Die Sigmoid-Funktion wird grundsätzlich durch
@@ -194,7 +194,7 @@ Daten anhand des Mittelpunktes klar getrennt werden könnten.
     \centering
     \includegraphics[width=10.0cm]{pic/logistic_regression_high s.png}
     \caption{Logistische Regression mit deutlicher Skalierung}
-    \label{fig:SVC_2D}
+    \label{fig:LR_scal}
 \end{figure}
 
 Anhand der optimierten Sigmoid-Funktion können nun neue Daten klassifiziert werden, wobei die Wahrscheinlichkeit
@@ -209,7 +209,7 @@ Zuordnung geschiet anhand der Kategorie der größten Menge an nähesten Nachbar
     \centering
     \includegraphics[width=12.0cm]{pic/KNN.png}
     \caption{Beispiel eines KNN}
-    \label{fig:NN}
+    \label{fig:KNN}
 \end{figure}
 
 Im oben gezeigten Beispiel würde ein Punkt anhand seiner drei nächsten Nachbarn als "grün" kategorisiert.
@@ -270,7 +270,7 @@ der Zelle führt.
     \centering
     \includegraphics[width=12.0cm]{pic/LSTM-Cell.png}
     \caption{Vereinfachter Aufbau einer LSTM-Zelle}
-    \label{fig:RecNN}
+    \label{fig:LSTM_Cell}
 \end{figure}
 
 Ein LSTM kann auf diese Weise eine Vielzahl von Zeitschritten zurückblicken und verlässt sich so nicht direkt auf 
@@ -328,19 +328,23 @@ Wie bereits beschrieben, wurden die Sensordaten in mehreren Räumen der FH Aache
 gesammelt. Durch das Filtern nach der Beziehung des Raumes ergab sich folgende Datenstruktur als
 Ausgangslage:\\
 
-\begin{tabular}{|p{4.5cm}||p{3cm}|p{7cm}|}
-    \hline
-    \multicolumn{3}{|c|}{Sensordaten} \\
-    \hline
-    Name&Format &Beschreibung\\
-    \hline
-    timestamp&timestamp&Zeitpunkt der Messung\\
-    co2\_ppm&integer&CO2-Wert\\
-    temperature\_celsius&float&Temperatur in Grad Celsius\\
-    relative\_humidity\_percent&float&Luftfeuchtigkeit\\
-    presence&boolean&Aktivität des Bewegungssensors\\
-    \hline
-\end{tabular}     
+\begin{table}
+    \caption{Sensordaten}
+    \centering
+    \begin{tabular}{|p{4.5cm}||p{3cm}|p{5.5cm}|}
+        \hline
+        \multicolumn{3}{|c|}{Sensordaten} \\
+        \hline
+        Name&Format &Beschreibung\\
+        \hline
+        timestamp&timestamp&Zeitpunkt der Messung\\
+        co2\_ppm&integer&CO2-Wert\\
+        temperature\_celsius&float&Temperatur in Grad Celsius\\
+        relative\_humidity\_percent&float&Luftfeuchtigkeit\\
+        presence&boolean&Aktivität Bewegungssensor\\
+        \hline
+    \end{tabular}             
+\end{table}
 
 \chapter{Technische Umsetzung}
 
@@ -538,7 +542,7 @@ die Parameter-Kombination, mit der das beste Ergebnis erzielt wurde.
     \centering
     \includegraphics[width=0.6\textwidth]{pic/param_test.png}
     \caption{Beispiel einer Sammlung von Parameter-Optionen}
-    \label{fig:CV}
+    \label{fig:Param_Test}
 \end{figure}
 
 Im obenstehenden Beispiel kann man erkennen, dass für bestimmte Parameter (rot) eine Sammlung an erlaubten 

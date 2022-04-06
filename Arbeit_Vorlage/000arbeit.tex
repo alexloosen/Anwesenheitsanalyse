@@ -144,16 +144,17 @@
 \include{./doc/111Schluss}
 
 % Nachspann
-\nocite{Segmentation} % Quelle wird nicht im Text erwähnt -> Quellenverzeichnis
-\nocite{ImageAttack}
+%\nocite{Segmentation} % Quelle wird nicht im Text erwähnt -> Quellenverzeichnis
+%\nocite{ImageAttack}
 % Weitere quellen müssen in 'bib/quellen.bib' eingetragen werden
 % !!! -> BibTex ausführen! Sonst tauchen die Quellen nicht im Verzeichnis auf.
-
+%\nocite{Segmentation1}
 % Quellenverzeichnis
 \clearpage
 %\bibliographystyle{alpha}
 \bibliographystyle{apalike}
 \bibliography{./bib/quellen}
+%\addbibresources{./bib/quellen}
 \addcontentsline{toc}{chapter}{Quellenverzeichnis}
 %\addtocontents{toc}{\vspace{0.8cm}}
 
@@ -178,12 +179,48 @@
 % Anhaenge
 \addcontentsline{toc}{chapter}{Anhang}
 \appendix
-%\input{./app/Dateiname}
+%\input{./app/Anwesenheitsanalyse.py}
+%\input{./app/createModel.py}
+%\input{./app/drill.py}
+%\input{./app/modelTuning.py}
+%\input{./app/prepareData.py}
+%input{./app/validation.py}
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1,                   % start line enumeration with line 1000
+  frame=single,	                 % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  %keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=10pt,                   % how far the line-numbers are from the code
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
 \chapter{Quellcode}
-\begin{enumerate}
-      \item Source 1
-      \item Source 2
-\end{enumerate}
+\lstinputlisting[language=Python]{app/Anwesenheitsanalyse.py}
+\lstinputlisting[language=Python]{app/createModel.py}
+\lstinputlisting[language=Python]{app/drill.py}
+\lstinputlisting[language=Python]{app/modelTuning.py}
+\lstinputlisting[language=Python]{app/prepareData.py}
+\lstinputlisting[language=Python]{app/validation.py}
+%\begin{enumerate}
+%      \item Source 1
+%      \item Source 2
+%\end{enumerate}
 
 % Anhänge im Ordner 'app' ablegen
 

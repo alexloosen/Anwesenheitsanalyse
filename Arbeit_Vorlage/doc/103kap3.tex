@@ -45,16 +45,20 @@ dass die Genauigkeit auch ohne diese Werte innerhalb einer gewissen Toleranz kon
 Im Folgenden werden beispielhaft vier verschiedene Feature Vektoren beschrieben, aus denen der Vektor, der im 
 weiteren Verlauf des Projektes benutzt werden sollte, abgeleitet wurde.
 \begin{center}
-    \begin{tabular}{ |c||c| } 
-     \hline
-     Feature Vektor & Beschreibung \\ 
-     \hline\hline
-     FV1 & CO2, Temperatur und Luftfeuchtigkeit mit Shift-Werten\\ 
-     FV2 & CO2, Temperatur und Luftfeuchtigkeit ohne Shift-Werte \\ 
-     FV3 & Nur CO2 mit Shift-Werten\\ 
-     FV4 & Nur CO2 ohne Shift-Werte \\
-     \hline
-    \end{tabular}
+    \begin{table}
+        \centering
+        \caption{Vergleich Feature Vektoren}
+        \begin{tabular}{ |c||c| } 
+        \hline
+        Feature Vektor & Beschreibung \\ 
+        \hline\hline
+        FV1 & CO2, Temperatur und Luftfeuchtigkeit mit Shift-Werten\\ 
+        FV2 & CO2, Temperatur und Luftfeuchtigkeit ohne Shift-Werte \\ 
+        FV3 & Nur CO2 mit Shift-Werten\\ 
+        FV4 & Nur CO2 ohne Shift-Werte \\
+        \hline
+        \end{tabular}
+    \end{table}
 \end{center}
 
 Mit diesen vier Vektoren wurden nun verschiedene Modelle trainiert und deren Genauigkeiten gegenübergestellt.
@@ -63,7 +67,7 @@ Mit diesen vier Vektoren wurden nun verschiedene Modelle trainiert und deren Gen
     \centering
     \includegraphics[width=0.8\textwidth]{pic/FV_comp.png}
     \caption{Vergleich der Genauigkeiten}
-    \label{fig:FIB}
+    \label{fig:FV_comp}
 \end{figure}
 
 Wie deutlich sichtbar ist, sind die Genauigkeiten fast identisch. Diese Gegenüberstellung wurde über das Projekt
@@ -75,24 +79,28 @@ optimieren.\\\\
 Aus diesen Betrachtungen ergab sich folgender FV der für den weiteren Verlauf des Projektes genutzt wurde:\\
 
 \begin{center}
-    \begin{tabular}{ |c||c| } 
-     \hline
-     Feld & Beschreibung \\ 
-     \hline\hline
-     second\_sin & timestamp-Sinusanteil\\
-     second\_cos & timestamp-Cosinusanteil\\
-     day\_of\_week & Wochentag der Messung\\
-     co2\_ppm & CO2-Wert\\ 
-     co2\_ppm\_delta1 & Delta zum CO2-Wert vor 2 Minuten\\ 
-     co2\_ppm\_delta2 & Delta zum CO2-Wert vor 4 Minuten\\ 
-     co2\_ppm\_delta3 & Delta zum CO2-Wert vor 6 Minuten\\ 
-     co2\_ppm\_delta4 & Delta zum CO2-Wert vor 8 Minuten\\ 
-     co2\_ppm\_delta5 & Delta zum CO2-Wert vor 10 Minuten\\ 
-     co2\_ppm\_delta6 & Delta zum CO2-Wert vor 12 Minuten\\ 
-     co2\_ppm\_delta7 & Delta zum CO2-Wert vor 14 Minuten\\ 
-     co2\_ppm\_delta8 & Delta zum CO2-Wert vor 16 Minuten\\ 
-     \hline
-    \end{tabular}
+    \begin{table}
+        \centering
+        \caption{Feature Vektor}
+        \begin{tabular}{ |c||c| } 
+        \hline
+        Feld & Beschreibung \\ 
+        \hline\hline
+        second\_sin & timestamp-Sinusanteil\\
+        second\_cos & timestamp-Cosinusanteil\\
+        day\_of\_week & Wochentag der Messung\\
+        co2\_ppm & CO2-Wert\\ 
+        co2\_ppm\_delta1 & Delta zum CO2-Wert vor 2 Minuten\\ 
+        co2\_ppm\_delta2 & Delta zum CO2-Wert vor 4 Minuten\\ 
+        co2\_ppm\_delta3 & Delta zum CO2-Wert vor 6 Minuten\\ 
+        co2\_ppm\_delta4 & Delta zum CO2-Wert vor 8 Minuten\\ 
+        co2\_ppm\_delta5 & Delta zum CO2-Wert vor 10 Minuten\\ 
+        co2\_ppm\_delta6 & Delta zum CO2-Wert vor 12 Minuten\\ 
+        co2\_ppm\_delta7 & Delta zum CO2-Wert vor 14 Minuten\\ 
+        co2\_ppm\_delta8 & Delta zum CO2-Wert vor 16 Minuten\\ 
+        \hline
+        \end{tabular}
+    \end{table}
 \end{center}
 
 \newpage
@@ -133,7 +141,7 @@ farblich als gelb für an- und blau für abwesend eingefärbt.
     \centering
     \includegraphics[width=0.9\textwidth]{pic/nov23_actual.png}
     \caption{Messwerte des 13. Januar}
-    \label{fig:ConMatrix}
+    \label{fig:nov23}
 \end{figure}
 
 Löscht man aus dieser Datenreihe die tatsächlichen Labelwerte und fügt stattdessen die errechneten 
@@ -144,7 +152,7 @@ trifft das Modell eine sehr präzise Aussage über die aktuelle Anwesenheit.
     \centering
     \includegraphics[width=0.9\textwidth]{pic/nov23_predicted.png}
     \caption{Messwerte des 13. Januar}
-    \label{fig:ConMatrix}
+    \label{fig:nov23_pred}
 \end{figure}
 
 Dieses Ergebnis konnte über eine Vielzahl von Kombinationen verschiedener Räume und Modelle weiterhin
@@ -177,13 +185,13 @@ inwiefern die Ergebnisse zufällig oder errechnet sind.
     \centering
     \includegraphics[width=0.7\textwidth]{pic/roc_curves.png}
     \caption{ROC-Curves aller Modelle}
-    \label{fig:PT_eval}
+    \label{fig:Roc_curves}
 \end{figure}
 
 Man sieht deutlich, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines der Modelle weist Anzeichen 
 auf, dass Ergebnisse wegen Underfitting erraten werden.
 
-\section{Umgang mit fehlenden Präsenz-Labels}
+\subsection{Umgang mit fehlenden Präsenz-Labels}
 Da zur Auswertung auch eine große Menge an Datensätzen ohne Präsenz-Label zur Verfügung standen, wurden die trainierten
 Modelle zusätzlich auf diese Datensets angewandt und die Ergebnisse so gut wie möglich ausgewertet. Die Ergebnisse
 sind hier aufgrund des fehlenden Labels lediglich augenscheinlich zu bewerten, da eine mathematische Ermittlung
@@ -205,7 +213,7 @@ Datenreihe für diesen Test besonders anbot.
     \centering
     \includegraphics[width=1.0\textwidth]{pic/h217_predicting_livingroom.png}
     \caption{Büroraum-Modell trifft Erwartungen für Wohnzimmer}
-    \label{fig:PT_eval}
+    \label{fig:pred_livingroom}
 \end{figure}
 
 Wie anhand der Einfärbung zu erkennen, ist, kann das Modell auch unabhängig von der Tageszeit und den bekannten
@@ -231,14 +239,14 @@ aufweisen, während zugleich die Loss-Funktion minimiert wird.
     \centering
     \includegraphics[width=0.9\textwidth]{pic/eval_NN.png}
     \caption{Ergebnisse des NN}
-    \label{fig:PT_eval}
+    \label{fig:eval_NN}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{pic/eval_LSTM.png}
     \caption{Ergebnisse des LSTM}
-    \label{fig:PT_eval}
+    \label{fig:eval_LSTM}
 \end{figure}
 
 Wie zu sehen ist, weisen beide Arten neuraler Netzwerke diese Eigenschaften auf. Die Genauigkeiten beider Modelle
@@ -257,15 +265,19 @@ allerdings zeigt sich hier, warum auch die Gegenüberstellung von True und False
 Modellauswertung von entscheidender Wichtigkeit sein kann.\\
 
 \begin{center}
-    \begin{tabular}{|p{1.5cm}||p{1.8cm}|p{1.5cm}|p{1.5cm}|}
-        \hline
-        \hfill Präsenz&\hfill Precision &\hfill Recall &\hfill F1\\
-        \hline
-        \hline
-        \hfill 0&\hfill 0.94&\hfill 0.79&\hfill 0.86\\
-        \hfill 1&\hfill 0.50&\hfill 0.82&\hfill 0.62\\
-        \hline
-    \end{tabular}          
+    \begin{table}
+        \centering
+        \caption{Genauigkeitsauswertung}
+        \begin{tabular}{|p{1.5cm}||p{1.8cm}|p{1.5cm}|p{1.5cm}|}
+            \hline
+            \hfill Präsenz&\hfill Precision &\hfill Recall &\hfill F1\\
+            \hline
+            \hline
+            \hfill 0&\hfill 0.94&\hfill 0.79&\hfill 0.86\\
+            \hfill 1&\hfill 0.50&\hfill 0.82&\hfill 0.62\\
+            \hline
+        \end{tabular}          
+    \end{table}
 \end{center}
 
 Wie anhand der Precision-Score zu sehen ist, tritt hier genau der oben beschriebene Fall ein.\\
@@ -276,7 +288,7 @@ Dimensionen reduziert und die An- und Abwesenheiten in einem Graphen darstellt.
     \centering
     \includegraphics[width=0.9\textwidth]{pic/pca.png}
     \caption{Reduktion des Datensets auf zwei Dimensionen}
-    \label{fig:PT_eval}
+    \label{fig:pca}
 \end{figure}
 
 Die Menge der Anwesenheiten (Orange) ist nahezu identisch mit der Teilmenge der Abwesenheiten (Blau). Das heißt,
@@ -290,7 +302,7 @@ zu unterscheiden.\\
     \centering
     \includegraphics[width=0.55\textwidth]{pic/pca1.png}
     \caption{Datenreduktion ohne Trennung}
-    \label{fig:PT_eval}
+    \label{fig:pca1}
 \end{figure}
 
 Das Erkennen von Abwesenheit im linken Teilbild ist nun erheblich einfacher, als die Trennung zwischen 
