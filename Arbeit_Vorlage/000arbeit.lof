@@ -12,7 +12,7 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Beispiel eines neuronalen Netzwerks\relax }}{15}{}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Beispiel eines rekurrenten neuronalen Netzwerks\relax }}{16}{}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Vereinfachter Aufbau einer LSTM-Zelle\relax }}{16}{}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces CO2 Gehalt der Raumluft über einen Tag\relax }}{17}{}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces CO2-Gehalt der Raumluft über einen Tag\relax }}{17}{}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Beispiel einer Confusion Matrix\relax }}{21}{}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Beispiel einer Kreuzvalidierung\relax }}{23}{}%

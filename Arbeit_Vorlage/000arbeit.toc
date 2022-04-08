@@ -3,7 +3,7 @@
 \contentsline {chapter}{\numberline {1}\textbf {Einleitung}}{5}{}%
 \contentsline {section}{\numberline {1.1}Motivation und Aufgabenstellung}{5}{}%
 \contentsline {section}{\numberline {1.2}Vorgehensweise}{6}{}%
-\contentsline {chapter}{\numberline {2}\textbf {Stand der Technik für Anwesenheitserkennung/-Prognose}}{7}{}%
+\contentsline {chapter}{\numberline {2}\textbf {Stand der Technik für Anwesenheitserkennung/-prognose}}{7}{}%
 \contentsline {chapter}{\numberline {3}\textbf {Untersuchte Verfahren}}{8}{}%
 \contentsline {section}{\numberline {3.1}Machine Learning}{8}{}%
 
@@ -43,5 +43,5 @@
 \vspace {0.8cm}
 \contentsline {chapter}{Anhang}{40}{}%
 \contentsline {chapter}{\numberline {A}Quellcode}{41}{}%
-\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{57}{}%
+\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{42}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
