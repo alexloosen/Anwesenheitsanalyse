@@ -1,8 +1,8 @@
 \clearpage
-\chapter{\textbf{Stand der Technik für Anwesenheitserkennung/-Prognose}}\label{grundlagen}
+\chapter{\textbf{Stand der Technik für Anwesenheitserkennung/-prognose}}\label{grundlagen}
 %\addtocontents{toc}{\vspace{0.5cm}}
 
-Man kann verschiedene Techniken zur Anwesenheitserkennung und -Prognose in Innenräumen in \text{aktive} und
+Man kann verschiedene Techniken zur Anwesenheitserkennung und -prognose in Innenräumen in \text{aktive} und
 \textit{passive} Verfahren unterteilen. \\\\
 %\section{Aktive und Passive Messverfahren}
 Aktive Verfahren messen die menschliche Anwesenheit etwa mit 
@@ -11,23 +11,24 @@ dabei kontinuierlich Bilder des Raumes auf, während ein Algorithmus im Hintergr
 eines menschlichen Skeletts auf sich bewegende Teile des Bildes zu legen. Bewegen sich über mehrere Bilder 
 hinweg die Bereiche auf und unmittelbar neben dem 3D-Modell, registriert das System eine Anwesenheit.\\\\
 Infrarotsensoren dagegen funktionieren eher wie ein klassischer Bewegungsmelder, welcher Unterschiede in der 
-Infrarotstrahlung eines Raumes erkennt. Durch die generierte Körperwärme des menschlichen Körpers, sorgt ein
-Mensch, der sich durch den Sensor bewegt, für einen Ausschlag des Sensors.\\
+Infrarotstrahlung eines Raumes erkennt. Durch die generierte Körperwärme des menschlichen Körpers, verursacht 
+ein Mensch, der sich durch den Sensor bewegt, einen Ausschlag des Sensors.\\
 
 Passive Verfahren orientieren sich an den physikalischen Eigenschaften des Raumes. Anstatt die Präsenz des 
 Menschen direkt zu messen, wird versucht, diese von Veränderungen der Eigenschaften der Raumluft oder 
 elektromagnetischer Strahlung des Raumes zu erkennen. \\
 Verändert sich beispielsweise durch menschliche Anwesenheit die Luftfeuchtigkeit 
-in einem Raum in sehr geringem Maß, wird die  Laufzeit einer Ultraschallwelle die durch diesen Raum 
+in einem Raum in sehr geringem Maß, wird die  Laufzeit einer Ultraschallwelle, die durch diesen Raum 
 geschickt wird, leicht verringert, da die Schallgeschwindigkeit in dichteren Medien zunimmt.\\
 Die Systeme unterscheiden sich neben der Art der Messung auch deutlich in der Komplexität der Implementierung.
-Während Ultraschallsensoren wegen der verhätlnismäßig geringen Schallgeschwindigkeit keine besonders hohe 
+Während Ultraschallsensoren wegen der verhältnismäßig geringen Schallgeschwindigkeit keine besonders hohe 
 Genauigkeit besitzen müssen, sind die an einen Mikrowellensensor gestellten Ansprüche wesentlich höher, da sich
-Mikrowellen mit $300\cdot10^6 \,m/s$ gegenüber der Schallgeschwindigkeit mit lediglich etwa $330\, m/s$ ausbreiten.
+Mikrowellen mit deutlich höherer Geschwindigkeit im Raum ausbreiten. Mikrowellen erreichen in Atemluft Geschwindigkeiten
+von ca. $300\cdot10^6 \,m/s$, Schallwellen lediglich ca. $330\, m/s$.
 Mit Mikrowellen können Bewegungen durch Ausnutzung des Doppler-Effektes einer elektromagnetischen Welle erkannt 
 werden. Bewegen sich Objekte oder Personen auf den Sensor zu, wird das Echo der Welle gestaucht, wodurch die 
 Bewegung erkannt wird.\\
-Hier verdeutlicht sich nochmals die Motivation dieser Arbeit, da Sensoren für Temperatur, Luftfeuchtigkeit, oder CO2
+Hier verdeutlicht sich nochmals die Motivation dieser Arbeit, da Sensoren für Temperatur, Luftfeuchtigkeit oder CO2
 weder teuer sind, noch besondere Ansprüche an Positionierung im Raum oder Kallibrierung besitzen.
 
 \chapter{\textbf{Untersuchte Verfahren}}
@@ -39,11 +40,11 @@ Machine Learning ist ein Teilbereich der künstlichen Intelligenz und beschreibt
 Modelle zur statistischen Auswertung von Daten.\\
 Dabei wird dem Modell anhand von Trainigsdaten beigebracht, Gesetzmäßigkeiten zu erkennen, um danach Erwartungen 
 über bisher unbekannte Daten treffen zu können.  
-Beispielsweise könnte ein solches Modell aus einem Datenset mit der aktuellen Jahreszeit, Uhrzeit und 
+Beispielsweise könnte ein solches Modell aus einem Datenset mit aktueller Jahreszeit, Uhrzeit und 
 Position der Sonne am Himmel trainiert werden, sodass es auch schließlich in einem anderen Datenset 
 aus Jahreszeit und Position der Sonne Rückschlüsse auf die Uhrzeit treffen kann.\\
 Als Vorbild für diesen ,,Lernvorgang'' dient das menschliche Gehirn, welches ebenfalls versucht zwischen 
-bestimmten Input-Parametern wie z.B. der Form und Farbe eines Gegenstandes eine Beziehung herzustellen,
+bestimmten Input-Parametern wie z.B. Form und Farbe eines Gegenstandes eine Beziehung herzustellen,
 um das beobachtete Objekt in Zukunft schneller kategorisieren zu können.\\
 Da eine Vielzahl von effektiven Machine Learning Algorithmen existiert, ist es essenziell, sich mit den
 Stärken und Schwächen einzelner Herangehensweisen zu befassen.\\
@@ -55,10 +56,10 @@ In dieser Arbeit sollen zwei Unterkategorien des Machine Learning genauer betrac
 \end{itemize}
 \textit{Supervised Learning} bedeutet zwischen bestimmten Feldern eines Datensets eine Beziehung
 zu einem sog. Label herzustellen, welches als eine Art Ergebnis aus den Eingabewerten gesehen 
-werden kann. Ein so traniertes Model kann dann neue, ihm vorher unbekannte Datensets, mit einem 
-Label versehen - etwa wie in dem o.g. Beispiel wo Jahreszeit und Sonnenposition die Eingabewerte 
+werden kann. Ein so traniertes Modell kann dann neue, ihm vorher unbekannte Datensets, mit einem 
+Label versehen - etwa wie in dem o.g. Beispiel, wo Jahreszeit und Sonnenposition die Eingabewerte 
 und die Uhrzeit das Label darstellen. Der Begriff ,,\textit{supervised}'' ergibt sich daraus, dass 
-das Datenset, mit dem das Model traniert wird, diese Labels gegeben 
+das Datenset, mit dem das Modell traniert wird, diese Labels gegeben 
 hat, sodass das Modell sich bei jedem Schritt des Lernvorgangs selbst korrigieren kann, falls 
 eine Fehleinschätzung getroffen wurde.
 Bei einer sog. ,,\textit{Klassifizierung}'' sind diese Labels fest vorgegeben, während sie in der 
@@ -80,20 +81,20 @@ so aus den Feldern des Datensets bestimmte Abhängigkeiten abzuleiten.
 \end{figure}
 
 Bei der ,,\textit{Dimensionality Reduction}'' versucht der Algorithmus das Datenset in seiner 
-Dimensionalität, also seiner Anzahl an Feldern, zu reduzieren. Es wird also die Frage gestellt, 
+Dimensionalität, also in der Anzahl an Feldern, zu reduzieren. Es wird also die Frage gestellt, 
 ob sich in einem bestehenden Datenset auch mit weniger Feldern Abhängigkeiten feststellen lassen. Dieser 
-Schritt wird vorallem für Modelle benutzt, die sensibel gegenüber hoher Dimensionalitäten sind, 
+Schritt wird vor allem für Modelle benutzt, die sensibel gegenüber hoher Dimensionalitäten sind, 
 sodass das Datenset vor dem Training in seiner Dimensionalität heruntergebrochen werden kann.
 
 Im Rahmen des Projektes wurden hauptsächlich Klassifizierungs-Algorithmen genutzt, da ein Großteil der 
 Datensets Labels zur Überprüfung hatte.\\
-Um einen Vergleich herzustellen werden später trotzdem noch 
+Um einen Vergleich zu ermöglichen, werden später trotzdem noch 
 einzelne Ergebnisse von Clustering und Dimensionality Reduction betrachtet. Im Folgenden sollen die genutzten 
 Modelle erklärt werden.
 \newpage
 \subsection{Random Forest Classifier}
 
-\textit{Random Forest Classifier} RFC stellen eine Unterkategorien der ,,\textit{Decision Trees}'' dar. Decision Trees sind einfache
+\textit{Random Forest Classifier} RFC stellen eine Unterkategorie der ,,\textit{Decision Trees}'' dar. Decision Trees sind einfache
 Anordnungen von bestimmten Fragen, die über das Datenset gestellt werden, um eine Klassifikation zu erreichen.
 
 \begin{figure}[h]
@@ -103,7 +104,7 @@ Anordnungen von bestimmten Fragen, die über das Datenset gestellt werden, um ei
     \label{fig:DT_Beispiel}
 \end{figure}
 
-Erstellt man ein ,,\textit{Ensemble}'' aus Decision Trees die Erwartungen über einen zufällig gewählten 
+Erstellt man ein ,,\textit{Ensemble}'' aus Decision Trees, die Erwartungen über einen zufällig gewählten 
 Teil des Datensets treffen können, entsteht ein Random Forest.
 Der Random Forest Classifier versucht, eine Menge einfacher Schätzfunktionen über einen komplexeren 
 Sachverhalt ,,abstimmen'' zu lassen. Während sich in einem einzelnen Entscheidungsbaum Fehleinschätzungen 
@@ -113,13 +114,13 @@ Entscheidungsbäume man befragt.
 \subsection{Gradient Boosting Classifier}
 Der \textit{Gradient Boosting Classifier} GBC ist eine Abwandlung eines RFC und  versucht, seine Erwartungen
 aufgrund von Abweichungen eines Labels vom Durchschnitt dieses Labels zu treffen. \\
-Erweitert man das Datenset im o.g. Beispiel um das Alter einer Maus, wird 
+Versucht man beispielsweise aus dem Gewicht eines Tieres dessen Alter zu bestimmen, wird 
 ein GBC als Ausgangswert den Durchschnitt aller Label-Werte, also dem Gewicht, berechnen. Danach werden die 
 Abweichungen aller Label-Werte zu diesem Durchschnitt gebildet. Diese Abweichungen werden nun in Beziehung zu den 
 anderen Spalten des Datensets gesetzt. 
 \\\\
-Beispielsweise könnte man so davon ausgehen, dass ausgewachsene Mäuse von einem 
-bestimmten Alter über dem Durchschnittsgewicht liegen. Genauso liegen besonders junge Mäuse wahrscheinlich immer
+Beispielsweise könnte man so davon ausgehen, dass ausgewachsene Tiere von einem 
+bestimmten Alter über dem Durchschnittsgewicht liegen. Genauso liegen besonders junge Tiere wahrscheinlich immer
 einen ähnlichen Wert unter dem Durchschnittsgewicht. So wurde zwischen dem Label \textit{Gewicht} und der Spalte 
 \textit{Alter} eine Beziehung hergestellt. In weiteren Iterationen orientiert sich der GBC immer an der Abweichung 
 zum Durchschnittswert des vorherigen Baumes. So werden die getroffenen Erwartungen über mehrere Iterationen immer 
@@ -127,7 +128,7 @@ präziser.
 \newpage
 \subsection{Support Vector Classifier}
 Der \textit{Support Vector Classifier} SVC versucht in einem Datenset anhand von bestimmten Cut-Off-Values klare Grenzen 
-zwischen Werten zu finden, sodass man alle Messwerte ober- und unterhalb der Grenze eindeutig Klassifizieren 
+zwischen Werten zu finden, sodass man alle Messwerte ober- und unterhalb der Grenze eindeutig klassifizieren 
 kann.
 
 \begin{figure}[h]
@@ -137,11 +138,11 @@ kann.
     \label{fig:SVC_1D}
 \end{figure}
 
-In Abb. \ref{fig:SVC_1D} ist der SVC ein Punkt auf einer eindimensionalen Linie, auf der das Gewicht in Kg von z.B. 
-Mäusen in ,,Unter-'' und ,,Übergewichtig'' unterteilt wird. Dieser Punkt ist Ergebnis aller Verhältnisse der einzelnen
+In Abb. \ref{fig:SVC_1D} ist der SVC ein Punkt auf einer eindimensionalen Linie, auf der das Gewicht in kg von z.B. 
+Tieren in ,,unter-'' und ,,übergewichtig'' unterteilt wird. Dieser Punkt ist Ergebnis aller Verhältnisse der einzelnen
 Datenpunkte zueinander. Durch sog. ,,\textit{Kernel Funktionen}'' versucht der Algorithmus nun Beziehungen 
 in höheren Dimensionen zu finden, wie z.B. $Masse^2$, $Masse^3$ usw. . Der SVC stellt dann in diesen Dimensionen 
-eine Linie in einem zwei-dimensionalen oder eine Ebene in einem drei-dimensionalen Koordinatensystem dar.\\
+eine Linie in einem zweidimensionalen oder eine Ebene in einem dreidimensionalen Koordinatensystem dar.\\
 
 \begin{figure}[h]
     \centering
@@ -150,18 +151,18 @@ eine Linie in einem zwei-dimensionalen oder eine Ebene in einem drei-dimensional
     \label{fig:SVC_2D}
 \end{figure}
 
-Da der SVC die Verhältnisse aller Datenpunkte zueinander betrachtet, ist er sehr anfällig für Ausreißer in 
+Da der SVC die Verhältnisse aller Datenpunkte zueinander betrachtet, ist er sehr anfällig für Abweichungen in 
 den Daten, was bei der Datenvorbereitung und der Auswertung beachtet werden muss.
 
 \newpage
 \subsection{Logistische Regression}
 
-Die logistische Regression ordnet Daten einem bestimmten Label anhand einer Wahrscheinlichkeit zu. Trotz dem Teilnamen
+Die logistische Regression ordnet Daten anhand einer Wahrscheinlichkeit einem bestimmten Label  zu. Trotz des Teilnamens
 ,,Regression'' handelt es sich um einen Klassifizierungsalgorithmus. Der Name kommt daher, dass die berechnete Wahrscheinlichkeit
 zu einem kontinuierlichen Label zwischen 0 und 1 führt, was durch die Form einer Sigmoid-Funktion ausgedrückt wird.
 Der Algorithmus eignet sich wegen dieser Eigenschaft besonders für  das Klassifizierungsproblem der Projektarbeit, 
 bei der ein Wahrheitswert, wie ,,Anwesenheit'' oder ,,Abwesenheit'' untersucht werden soll.\\
-Nutzt man logistische Regression beispielsweise zur Abbildung einer Beziehung zwischen Gewicht von Mäusen in Gramm 
+Nutzt man logistische Regression beispielsweise zur Abbildung einer Beziehung zwischen Gewicht von Tieren in Gramm 
 zu einer Wahrscheinlichkeit für Übergewicht, könnte das entstehende Modell wie folgt aussehen.
 
 \begin{figure}[h]
@@ -177,7 +178,7 @@ Die Sigmoid-Funktion wird grundsätzlich durch
     p = \frac{1}{1 + e^{-(x-\mu)/s}}
 \end{align}
 
-beschrieben, wobei x der Eingabewert in Gramm und $\mu$ der Mittelpunkt der Kurve beschreibt, der sich aus dem 
+beschrieben, wobei x der Eingabewert in Gramm darstellt und $\mu$ der Mittelpunkt der Kurve beschreibt, der sich aus dem 
 Verhältnis von Eintrittswahrscheinlichkeit $p_1$ und Gegenwahrscheinlichkeit $p_0$ ergibt.
 
 \begin{align}
@@ -186,7 +187,7 @@ Verhältnis von Eintrittswahrscheinlichkeit $p_1$ und Gegenwahrscheinlichkeit $p
 
 \newpage
 Zusätzlich beschreibt s einen Skalierungsparameter, mit dem die Form der Kurve flacher oder steiler werden kann,
-was angibt, wie eindeutig die hereingegebenen Daten zugeordnet werden können. Wären im o.g. Beispiel also alle roten
+was angibt, wie eindeutig die eingegebenen Daten zugeordnet werden können. Wären im o.g. Beispiel also alle roten
 Punkte jeweils links und rechts von der Mitte einsortiert, wäre die Sigmoid-Funktion in der Mitte sehr steil, da alle
 Daten anhand des Mittelpunktes klar getrennt werden könnten.
 
@@ -203,7 +204,7 @@ bei $p < 0.5$ auf 0 und $p >= 0.5$ auf 1 gerundet wird.
 \subsection{K-Nearest-Neighbours}
 Der \textit{K-Nearest-Neighbours}-Algorithmus KNN betrachtet den Abstand von einem gegebenen Punkt $p$ zu einer 
 Menge an Punken in einem Datenset und ordnet ihn gemäß dieser Abstände einer bestimmten Kategorie zu. Die 
-Zuordnung geschiet anhand der Kategorie der größten Menge an nähesten Nachbarn.
+Zuordnung geschieht anhand der Kategorie der größten Menge zum nächsten Nachbarn.
 
 \begin{figure}[h]
     \centering
@@ -212,24 +213,24 @@ Zuordnung geschiet anhand der Kategorie der größten Menge an nähesten Nachbar
     \label{fig:KNN}
 \end{figure}
 
-Im oben gezeigten Beispiel würde ein Punkt anhand seiner drei nächsten Nachbarn als "grün" kategorisiert.
-Die Anzahl der gewünschten Nachbarn die zu untersuchen sind, ist frei wählbar.
+Im oben gezeigten Beispiel würde ein Punkt anhand seiner drei nächsten Nachbarn als ,,grün'' kategorisiert.
+Die Anzahl der gewünschten Nachbarn, die zu untersuchen sind, ist frei wählbar.
 Da die Abstandsberechnung über den \textit{Euklidischen Abstand} berechnet wird, funktioniert dieser 
-Algorithmus auch in höheren Dimensionen, da 
+Algorithmus auch in höheren Dimensionen, denn
 
 \begin{align}
     d = \sqrt{(x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2 + ... + (n2 - n1)^2}
 \end{align}
 
-sich in beliebig viele Dimensionen fortsetzen lässt.
+lässt sich für beliebig viele Dimensionen fortsetzen.
 \newpage
 \subsection{Neuronale Netzwerke}
-Die Funktionsweise eines Neuronalen Netzwerks ist direkt angelehnt an die Funktionsweise des menschlichen Gehirns.
-Einzelne Knotenpunkten(Neuronen) werden mithilfe von Gewichteten Verbindungen verknüpft, sodass das Netzwerk versucht 
+Die Funktionsweise eines neuronalen Netzwerks ist direkt angelehnt an die Funktionsweise des menschlichen Gehirns.
+Einzelne Knotenpunkte (Neuronen) werden mithilfe von gewichteten Verbindungen verknüpft, sodass das Netzwerk versucht 
 Eingabewerte bestimmten Ausgabewerten zuzuordnen. Diese Zuordnung der Ein- und Ausgabewerte im Input- und Output-Layer 
-geschiet nicht direkt, sondern durch ein oder mehrere \textit{Hidden Layer}, dessen Neuronenzahl üblicherweise über 
-der Anzahl Neuronen im Input Layer liegt. Die Anzahl der Neuronen im Output-Layer entspricht der Anzahl an Ergebnissen, 
-die sich aus dem Input Ergeben können. Im Beispiel der Anwesenheitsanalyse entspräche das hier also zwei Neuronen für 
+geschieht nicht direkt, sondern durch ein oder mehrere \textit{Hidden Layer}, dessen Neuronenzahl üblicherweise über 
+der Anzahl der Neuronen im Input Layer liegt. Die Anzahl der Neuronen im Output-Layer entspricht der Anzahl an Ergebnissen, 
+die sich aus dem Input ergeben können. Im Beispiel der Anwesenheitsanalyse entspräche das also zwei Neuronen für 
 An- und Abwesenheit.
 
 \begin{figure}[h]
@@ -245,8 +246,8 @@ bestimmte Anzahl von Iterationen werden die Gewichtungen zwischen den einzelnen 
 
 
 \subsection{Long Short Term Memory}
-Das \textit{Long Short Term Memory} LSTM ist eine Abwandlung herkömmlicher Neuronalen Netzwerke. Es handelt sich um ein
-\textit{rekurrentes} Neurales Netzwerk, was bedeutet, dass jedes Neuron seine Ausgabewerte auch wieder als Eingabewerte
+Das \textit{Long Short Term Memory} LSTM ist eine Abwandlung herkömmlicher neuronaler Netzwerke. Es handelt sich um ein
+\textit{rekurrentes} neurales Netzwerk, was bedeutet, dass jedes Neuron seine Ausgabewerte auch wieder als Eingabewerte
 nutzt. Der Begriff \textit{Memory} rührt daher, dass durch diese Rückkopplung eine Art Gedächtnis entsteht, durch 
 die das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-Wertes ziehen kann.\\
 
@@ -259,7 +260,7 @@ die das Netzwerk bessere Rückschlüsse auf die Einordnung des aktuellen Input-W
 \newpage
 Bei einem LSTM verfügt jedes Neuron zusätzlich über einen Zell-Status $C_t$, welcher durch einen Input $x_t$ verändert werden kann.
 Auf den Zell-Status nehmen \textit{Input-}, \textit{Forget-} und \textit{Output}-Gates Einfluss. Diese drei Gates
-besitzen jeweils ein eigenes neronales Netzwerk $\sigma$.\\\\
+besitzen jeweils ein eigenes neuronales Netzwerk $\sigma$.\\\\
 Das Input-Gate bestimmt, ob der Zell-Status anhand des anliegenden Inputs verändert werden darf.
 Das Forget-Gate gibt an, ob der Status der Zelle zurückgesetzt und somit das ,,Gedächtnis'' der Zelle gelöscht wird. Es
 stellt die zentrale Komponente des LSTMs dar.
@@ -273,19 +274,19 @@ der Zelle führt.
     \label{fig:LSTM_Cell}
 \end{figure}
 
-Ein LSTM kann auf diese Weise eine Vielzahl von Zeitschritten zurückblicken und verlässt sich so nicht direkt auf 
-einen gegebenen Input, sondern auf einen langen Verlauf von bereits verarbeiteten Input-Werten. 
+Ein LSTM kann auf diese Weise eine Vielzahl vorangegangener Zeitschritte einbeziehen. Es verlässt sich so nicht 
+direkt auf einen gegebenen Input, sondern auf einen langen Verlauf von bereits verarbeiteten Input-Werten. 
 LSTMs sind deshalb besonders interessant für Probleme bei denen Beziehungen zwischen kontinuierlichen 
 Datenwerten gebildet werden müssen.
 
 \newpage
-Geht man von einem LSTM aus, dass über eine Liste an Namen verfügt und anhand einem Datensatz gelernt
+Man gehe man von einem LSTM aus, das über eine Liste an Namen verfügt und anhand eines Datensatzes gelernt
 hat, zwei Namen mit der Beziehung ,,sah'' zu z.B. ,,Jonas sah Jakob.'' zu verknüpfen.\\
 Das LSTM hat nun intern einen Status, der angibt, dass auf einen Namen mit hoher Wahrscheinlichkeit das Wort 
 ,,sah'' und mit niedriger Wahrscheinlichkeit ein zweiter Name folgt. 
 Beginnt man nun einen neuen Satz mit ,,Jakob'', werden als mögliche nächste Worte ,,Jonas'', ,,Jakob'' und ,,sah''
-ausgewählt. Bisher ähnelt dieser Verlauf einem normalen Neuronalen Netzwerks. Beim LSTM
-steht aber nun wegen dem vorherigen Durchlauf der Name ,,Jakob'' im Forget-Gate, sodass ,,Jakob'' aus der verfügbaren
+ausgewählt. Bisher ähnelt dieser Verlauf einem normalen neuronalen Netzwerk. Beim LSTM
+steht aber nun wegen des vorherigen Durchlaufs der Name ,,Jakob'' im Forget-Gate, sodass ,,Jakob'' aus der verfügbaren
 Wortauswahl für das nächste Wort gelöscht wird.\\
 
 
@@ -298,37 +299,38 @@ Wortauswahl für das nächste Wort gelöscht wird.\\
 %Mensch als alleinige Quelle für CO2 angesehen werden.\\
 Der Anteil von CO2 in frischer Atemluft beträgt zwischen 350 und 450 ppm. Es gibt in Deutschland und auch Europa 
 keine grundsätzlich festgelegten Grenzwerte für akzeptable Raumluft, vielmehr raten Gesundheitsämter 
-verschiedener Länder Grenzwerte zwischen 1200 und 1500 ppm einzuhalten. Bei der Obergrenze von 1500 ppm 
-entstehen beim Menschen erste Müdigkeitserscheinungen, weshalb dieser Wert in der Literatur als maximaler 
+verschiedener Länder Grenzwerte zwischen 1200 und 1500 ppm einzuhalten. Ab der Obergrenze von 1500 ppm 
+zeigen sich beim Menschen erste Müdigkeitserscheinungen, weshalb dieser Wert in der Literatur als maximaler 
 Richtwert für Innenräume gilt.\\
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{pic/co2_singleDay.png}
-    \caption{CO2 Gehalt der Raumluft über einen Tag}
+    \caption{CO2-Gehalt der Raumluft über einen Tag}
     \label{fig:CO2_oneDay}
 \end{figure}
  
 Es ist zu erkennen, dass die CO2-Werte in einem normalen Büroraum innerhalb dieser empfohlenen Grenzen schwanken.
-Mit einigen kleinen Pausen sind fast durchgehend Personen anwesend, die täglich etwa um 12:00 den Raum lüften.
-Es ist auch klar zu erkennen, dass sich der CO2-Gehalt während Abwesenheit durch die passive Lüftung des Raumes  
-(Tür-/Fensterspalten) langsam wieder gegen den Grundwert bewegt.
+Abgesehen von einigen kleinen Pausen sind fast durchgehend Personen anwesend, die täglich etwa um 12:00 Uhr den 
+Raum lüften.
+Es ist auch klar zu erkennen, dass sich der CO2-Gehalt während der Abwesenheit von Personen durch die passive
+Lüftung des Raumes (Tür-/Fensterspalten) langsam wieder gegen den Grundwert bewegt.
 
 \newpage
 \section{Luftfeuchtigkeit und Temperatur}
 Auch wenn Luftfeuchtigkeit und Temperatur Indikatoren für menschliche Präsenz in einem Raum sein können, 
-unterliegen sie in ihrer Nützlichkeit dem CO2-Gehalt der Raumluft in einem wichtigen Faktor. 
-Sie sich beide stark beeinlusst, von äußeren Umweltfaktoren wie dem aktuellen Wetter oder der Jahreszeit.
-Beide Werte wurden zunächst in das Training aller Modelle miteinbezogen, es wird allerdings im Folgenden 
-Kapitel gezeigt, dass diese beiden Werte zusammen mit dem CO2-Werte nicht von besonderem Nutzen sind und 
+unterscheidet sich deren Aussagekraft von der des CO2-Gehaltes der Raumluft in einem wichtigen Faktor.\\ 
+Sie werden beide stark von äußeren Umweltfaktoren wie dem aktuellen Wetter oder der Jahreszeit beeinlusst.
+Beide Werte wurden zunächst in das Training aller Modelle miteinbezogen; es wird allerdings im folgenden 
+Kapitel gezeigt, dass diese beiden Werte zusammen mit dem CO2-Wert wenig aussagefähig sind und 
 deshalb später nicht weiter genutzt werden.  
 
 \section{Sensordaten}
 Wie bereits beschrieben, wurden die Sensordaten in mehreren Räumen der FH Aachen kontinuierlich 
-gesammelt. Durch das Filtern nach der Beziehung des Raumes ergab sich folgende Datenstruktur als
-Ausgangslage:\\
+gesammelt. Durch das Filtern nach den einzelnen Räumen kann für jeden Raum ein Datenset nach folgender Struktur
+erzeugt werden:\\
 
-\begin{table}
+\begin{table}[ht]
     \caption{Sensordaten}
     \centering
     \begin{tabular}{|p{4.5cm}||p{3cm}|p{5.5cm}|}
@@ -346,27 +348,28 @@ Ausgangslage:\\
     \end{tabular}             
 \end{table}
 
+\newpage
 \chapter{Technische Umsetzung}
 
 \section{Datenbeschaffung und -Vorbereitung}
 Die Daten wurden lokal auf einem der FH-Server in Form eines \textit{Hadoop Distributed File System} (HDFS) 
-gespeichert. Mithilfe von Apache Drill konnten die Daten jederzeit mit einfachen SQL-Abfragen beschafft werden. 
-Die Daten wurden so durch die gesamte Dauer des Projektes immer aktuell gehalten, damit alle Erkenntnisse 
-immer auf der aktuellsten Datenlage basieren.
+gespeichert. Mithilfe von Apache Drill waren die Daten jederzeit durch einfache SQL-Abfragen abrufbar. 
+Die Daten wurden so während der gesamten Dauer des Projektes immer aktuell gehalten, damit alle Erkenntnisse 
+jeweils auf der aktuellsten Datenlage basieren.
 \\\\
-Die Datenvorbereitung oder Pre-Processing ist eine der wichtigsten Schritte bei der Anwendung von Machine 
-Learning. Durch sie kann man beim Training des Models durch Bearbeitung bestehender Spalten oder Hinzufügen 
-von zusätzlichen Spalten im Datenset Schwerpunkte setzen, die es den Algorithmen beim Training zum einen 
-erleichtern, ihre Erwartungen zu präzisieren, zum anderen aber auch die Leitung beim Verarbeiten bestimmter 
-Spalten zu steigern.
+Die Datenvorbereitung (Pre-Processing) ist einer der wichtigsten Schritte bei der Anwendung von Machine 
+Learning. Dadurch besteht die Möglichkeit, beim Training des Modells durch Bearbeitung bestehender Spalten
+oder Hinzufügen zusätzlicher Spalten im Datenset Schwerpunkte zu setzen, die es den Algorithmen beim Training
+zum einen erleichtern, ihre Erwartungen zu präzisieren, zum anderen aber auch deren Leistung beim verarbeiten
+bestimmter Spalten zu steigern.
 \subsection{Gruppierung}
 Die Sensordaten wurden alle sechs Sekunden erfasst. Da sich weder CO2-Gehalt noch Feuchtigkeits- oder 
-Temperaturwerte der Raumluft so schnell nicht verändert, wurden die Daten direkt beim Drill per SQL zu 
+Temperaturwerte der Raumluft so schnell nicht verändern, wurden die Daten direkt beim Drill per SQL zu 
 zwei-Minuten-Intervallen zusammengefasst. Dabei werden über alle Spalten hinweg Durchschnittswerte gebildet, 
 die dann nachher zu einem Datensatz zusammengefasst werden. 
-Dies steigert die Leistung aller Algorithmen erheblich, da sich die Zahl der 
-Datensätze sich stark verringert. Da sich, wie oben erwähnt, der CO2-Gehalt der Raumluft in einem 
-Intervall von zwei Minuten kaum merklich verändert, verringert sich die Genauigkeit des gesamten Datensetz 
+Dies steigert die Leistung aller Algorithmen erheblich, weil sich dadurch die Zahl der 
+Datensätze stark verringert. Da sich, wie oben erwähnt, der CO2-Gehalt der Raumluft in einem 
+Intervall von zwei Minuten kaum merklich verändert, verringert sich die Genauigkeit des gesamten Datensets
 dadurch nicht maßgeblich.
 \subsection{Zyklische Codierung}
 Zyklische Codierung wird immer dort verwendet, wo Daten sich in wiederholenden Schemata bewegen. Diese 
@@ -376,7 +379,7 @@ Sinus- und Cosinus-Werte können diese Zusammenhänge vereinfacht werden.\\
 Hierzu wurde der Timestamp zuerst in Sekunden übersetzt, sodass sich ein bestimmter Zeitpunkt eines Tages 
 immer zwischen 0 und 86400 Sekunden bewegt.
 Aus diesem Wert wurden dann zwei neue Datenspalten ,,\textit{hour\_sin}'' und ,,\textit{hour\_cos}'' 
-in das Datenset eingefügt welche sich durch 
+in das Datenset eingefügt, welche sich aus 
 
 \begin{align}
     hour\_sin = sin(2 * \pi * x / x_{max}) \\ 
@@ -404,14 +407,14 @@ Luftfeuchtigkeitswerte ein wichtigerer Indikator sein könnte, als die tatsächl
 klimatisierten Raum könnten Grundwerte von z.B. CO2 höher sein, als in anderen Räumen. Durch die hinzufügten 
 Deltas werden diese Grundwerte ignoriert und Rückschlüsse auf die aktuelle Präsenz sind besser möglich.\\
 Im Zuge der Projektarbeit wurden verschiedene Kombinationsmöglichkeiten von Delta- und Shiftwerten mit 
-Zeitschritten zwischen zwei Minuten und einer Stunde mit Hinblick auf Verbesserungen der Model-Genauigkeiten 
+Zeitschritten zwischen zwei Minuten und einer Stunde mit Hinblick auf Verbesserungen der Modell-Genauigkeiten 
 getestet.
 
 \subsection{Outlier Detection}
 Wie bereits erwähnt, spielen Datenausreißer für die Ergebnisse mancher Algorithmen eine große Rolle. Überall 
 wo z.B. aus einer Reihe von Datenwerten Durchschnittswerte berechnet werden, würden Ausreißer in den Daten das 
 Ergebnis verfälschen und die Leistung des Algorithmus deutlich senken.
-Um diese Ausreißer vor dem Training der Models zu beseitigen wurde das Verfahren des 
+Um diese Ausreißer vor dem Training der Modelle zu beseitigen wurde das Verfahren des 
 \textit{Interquartilabstands} (IQR nach der englischen Bezeichnung \textit{Interquartile Range}) gewählt.\\
 Der IQR gibt die Intervallgröße an, die ein Wert vom Median einer Datenreihe abweichen darf. Bei einer 
 der Größe nach sortierten Datenreihe $x = (x_0,x_1,...,x_n)$ bestimmt man die Mediane der unteren und oberen 
@@ -433,10 +436,10 @@ Datensets kurzfristige CO2-Werte gibt, die natürlich in geschlossenen Räumen n
 \section{Validierung}
 \sloppy
 Über das Projekt hinweg wurden verschiedene Validierungsmethoden verwendet. Grundsätzlich unterteilt man das 
-Datenset in ein Trainings- und Testset mit einem Verhältnis von etwa 80-20. Das bedeutet, dass das Model mit
+Datenset in ein Trainings- und Testset mit einem Verhältnis von etwa 80-20. Das bedeutet, dass das Modell mit
 80 prozent der Daten trainiert wird, wobei die anderen 20 prozent zurückgehalten werden, um daraufhin das 
 fertig trainierte Model daran zu testen. Aus dem Ergebnis dieses Tests ergeben sich verschiedene Werte, die  
-die allgemeine Genauigkeit des Models repräsentieren, d.h. wie verlässlich das Model die An- und Abwesenheit 
+die allgemeine Genauigkeit des Modells repräsentieren, d.h. wie verlässlich das Modell die An- und Abwesenheit 
 des Testsets selbst berechnen kann, wenn man ihm den tatsächlichen Wert vorenthält.\\
 Allgemeine Basis für die errechneten Genauigkeiten bildet die sog. \textit{Confusion Matrix}.
 
@@ -480,10 +483,10 @@ gute Auskunft über die Qualität eines Modells.\\
 In diesem Anwendungsfall ist es durchaus wichtig, Anwesenheitswerte genauer zu betrachten als 
 Abwesenheitswerte, da ein Arbeitstag nur etwa ein Drittel eines tatsächlichen Tages darstellt. 
 Das Datenset ist also mit einem Verhältnis von etwa 8/16 in Richtung der Abwesenheit unausgeglichen. Dies 
-lässt die Erwartung zu, dass das trainierte Model wesentlich besser darin sein wird, Abwesenheit zu erkennen,
+lässt die Erwartung zu, dass das trainierte Modell wesentlich besser darin sein wird, Abwesenheit zu erkennen,
 als Anwesenheit.\\
 Hierzu wurde bei der Auswertung der Ergebnisse immer auch der \textit{Classification Report} hinzugezogen,
-aus dem ersichtlich ist, wie genau das Model beide möglichen Labelwerte berrechnen konnte.
+aus dem ersichtlich ist, wie genau das Modell beide möglichen Labelwerte berrechnen konnte.
 \newpage
 Desweiteren war es entscheidend zu erkennen, dass das Datenset über mehrere Monate hinweg nicht perfekt uniform 
 ist, da es in bestimmten Monaten zu verhätlnismäßig vielen Urlaubstagen (z.B. Weihnachten/Silvester) und damit 
@@ -507,10 +510,10 @@ getestet wurde.
 \\\\
 Da es für manche Räume keine Datensätze mit Labelwerten gab, musste die Validierung dieser Datensätze 
 augenscheinlich erfolgen. Hierfür wurde in ein Datenset eine Labelspalte eingefügt, die dann vom trainierten
-Model selbst gefüllt werden sollte. Das Ergebnis musste dann in einem Graphen gezeichnet und per Hand validiert 
+Modell selbst gefüllt werden sollte. Das Ergebnis musste dann in einem Graphen gezeichnet und per Hand validiert 
 werden. Da sich das Ergebnis der Berechnung in diesem Anwendungsfall, wie oben gezeigt, sehr übersichtlich als 
 Graph darstellen lässt, war diese Methode der Validierung zwar nicht perfekt, lieferte aber trotzdem einen 
-ausreichenden Eindruck über die Qualität des trainierten Models.
+ausreichenden Eindruck über die Qualität des trainierten Modells.
 
 
 \subsection{Over- und Underfitting}

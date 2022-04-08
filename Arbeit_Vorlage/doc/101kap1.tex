@@ -7,9 +7,9 @@
 
 Gebäudeautomatisierung bezeichnet die automatische Steuerung und Regelung von Ge-bäudetechnik 
 wie Heizung, Lüftung oder Beleuchtung. Während sie bisher hauptsächlich für die Optimierung 
-der Energieeffizienz von gewerblichen und öffentlichen Gebäuden genutzt wurde, welche in 
+der Energieeffizienz von gewerblichen und öffentlichen Gebäuden genutzt wurde, welche im 
 Zuge solcher Optimierungsschritte als ,,Smart Buildings'' bezeichnet werden, 
-rückt sie in den letzten Jahren zunehmend unter dem Begriff ,,Smart Home'' auch in den privaten 
+rückte sie im Verlauf der letzten Jahren zunehmend unter dem Begriff ,,Smart Home'' auch in den privaten 
 Bereich.\\
 Die beiden Begriffe stehen in den letzten Jahren so im Vordergrund, weil eine
 Verbesserung der Energieeffizienz durch bauphysikalische Maßnahmen, wie verminderte 
@@ -17,14 +17,14 @@ Wärmeverluste durch bessere Isolation, an ihre Grenzen gestoßen sind.
 \\\\
 In Deutschland haben private Haushalte einen Anteil am gesamten Energieverbrauch des Landes von 
 etwa 29\%\footnote[1]{\cite{Umweltbundesamt1}}. Davon nimmt die Erzeugung der Raumwärme einen Anteil
-von etwa 68\%\footnote[2]{\cite{Umweltbundesamt}} ein. Vorallem bezogen
+von etwa 68\%\footnote[2]{\cite{Umweltbundesamt}} ein. Vor allem bezogen
 auf den Energieverbrauch durch das Heizen stellt die Gebäudeautomatisierung also einen der größten
 Sektoren dar, in denen eine Optimierung der Prozesse entscheidend wäre. Beispielsweise können Wärmeverluste
-über die Nacht hinweg um 20\% verringert werden, wenn Abends die Rolläden heruntergelassen werden.\\\\
+über die Nacht hinweg um 20\% verringert werden, wenn abends die Rolläden heruntergelassen werden.\\\\
 Zur weiteren Steigerung der Energieeffizienz ist es also nötig, die Gebäudetechnik insofern
 automatisch anzusteuern, sodass sog. Performance-Gaps vermieden werden. Performance-Gaps
 stellen eine Diskrepanz im Energieverbrauch eines Gebäudes zwischen einem theoretischen 
-Soll-Wert zu einem tatsächlichem Ist-Wert dar.\\
+Soll-Wert zu einem tatsächlichen Ist-Wert dar.\\
 
 
 \section{Motivation und Aufgabenstellung}
@@ -33,30 +33,30 @@ Soll-Wert zu einem tatsächlichem Ist-Wert dar.\\
 Für nahezu alle Bereiche der Gebäudeautomatisierung stellt die Anwesenheit 
 von Personen eine zentrale Variable dar. Es ist entscheidend bei einem Optimierungsprozess zu erkennen, zu
 welchen Zeitpunkten sich Menschen in einem Raum aufhalten. Beispielsweise werden in vielen gewerblich 
-genutzen Gebäuden werden grundsätzlich alle Räume beheizt - unabhängig von tatsächlicher Anwesenheit von Personen. 
+genutzen Gebäuden werden grundsätzlich alle Räume beheizt - unabhängig davon, ob Personen tatsächlich anwesend sind. 
 Eine Erkennung von menschlicher Anwesenheit ist bei der Optimierung also essenziell.\\\\
 Da die direkte Messung von Anwesenheit über z.B. Infrarot- oder Kamerasensoren rechtlich problematisch ist, 
 soll in dieser Arbeit untersucht werden, inwiefern Machine-Learning Algorithmen genutzt werden können, 
-um eine genaue Erwartung über die Anwesenheit von Personen anhand von CO2-Werten in der Raumluft zu treffen.\\\\
+um menschliche Präsenz anhand von CO2-, Temperatur und Luftdruckwerten der Raumluft festzustellen.\\\\
 Die Motivation der Optimierung der Gebäudeautomatisierung exisitert, da ein steigender CO2-Gehalt der 
 Raumluft nachweislich mit einer Abnahme der menschlich kognitiven Leistung einhergeht. Mehrere Studien
-konnten belegen, dass sowohl sprachliche als auch logisch- mathematische Fähigkeiten abnehmen, sobald 
+konnten belegen, dass sowohl sprachliche als auch logisch-mathematische Fähigkeiten abnehmen, sobald 
 der CO2-Gehalt der  Raumluft bestimmte Werte überschreitet.\\ 
 Um eine angemessene Datengrundlage zu schaffen, wurden in diversen Büro-Räumen der FH Aachen Temperatur-,
 Luftfeuchtigkeits-, Infrarot- und CO2-Sensoren angebracht, deren Messungen kontinuierlich auf einer Datenbank
 gespeichert wurden. Der Zeitraum der Messwerte begann Mitte 2021.\\
 In allen Räumen sind täglich ein oder mehrere
-Personen im Rahmen eines ca. 8 stündigen Arbeitstages anwesend, weshalb die Temperatur-, Luftfeuchtigkeits-
+Personen im Rahmen eines ca. 8-stündigen Arbeitstages anwesend, weshalb die Temperatur-, Luftfeuchtigkeits-
 und CO2-Messwerte über einen Tag hinweg Schwankungen aufweisen. Diese sollen von einem Machine Learning Modell
-mit der direkten Präsenzmessung des Infrarotsensors gegenübergestellt werden, sodass das fertig Trainierte Modell
+mit der direkten Präsenzmessung des Infrarotsensors gegenübergestellt werden, sodass das fertig trainierte Modell
 anhand der Messwerte von Temperatur, Luftfeuchtigkeit und CO2 Aussagen über menschliche Präsenz treffen kann.\\
-Die Frage, ob ein in einem Raum trainiertes Modell auch präzise Aussagen über die Anwesenheit in einem anderen Raum
-treffen kann, stellte eines besondere Bedeutung dar.\\\\
+Die Frage, ob ein in einem Raum trainiertes Modell auch präzise Aussagen über menschliche Anwesenheit in einem anderen Raum
+treffen kann, stellt eine besondere Bedeutung dar.\\\\
 Es gab keine Einschränkungen hinsichtlich dessen, welche konkreten Machine-Learning Algorithmen 
 benutzt werden sollen.\\
-Als Programmiersprache für das Projekt wurde Python gewählt. Python ist wegen seiner umfassenden
-Machine-Learning Bibliotheken und einfachen Auswertungstechniken anhand von z.B. Graphen und Statistiken 
-gut für diesen Anwendungsfall geeignet.
+Als Programmiersprache für das Projekt wurde Python gewählt. Python ist wegen umfassender
+Machine-Learning Bibliotheken und einfacher Auswertungstechniken anhand von z.B. Graphen und Statistiken 
+für diesen Anwendungsfall gut geeignet.
 
 
 
@@ -78,19 +78,19 @@ gut für diesen Anwendungsfall geeignet.
 
 % Untersuchungsverlauf(pro Kapitel ein kurzer Absatz mit Verweis auf die Kapitelnummer)
 
-Das Projekt beschäftigte sich im Schwerpunkt mit den folgenden Arbeitsschritten:
+Das Projekt beschäftigt sich im Schwerpunkt mit den folgenden Arbeitsschritten:
 \begin{itemize}
     \item Datenbeschaffung durch Datenbankzugriffe per SQL
     \item Analyse und Vorbereitung der Daten (Pre-Processing)
     \item Trainieren von Machine-Learning Modellen anhand der vorbereiteten Datensets
-    \item Ergebnisauswertung durch Gegenüberstellung verschiedener Datensets und Models
+    \item Ergebnisauswertung durch Gegenüberstellung verschiedener Datensets und Modellen
 \end{itemize}
-Da es zwischen allen verfügbaren Datensets der einzlnen Räume und Machine-Learning-Models eine Vielzahl an
-Kombinationsmöglichkeiten gibt, war es ein Anspruch der Projektarbeit, ein möglichst übersichtliches, 
-gut gekapseltes Python Programm zu erstellen, mit dem man einfach und schnell verschiedene Datensets  
-verarbeiten und mit einer dem Forschungszweck angemessenen Anzahl von Machine-Learning Models auszuwerten. \\\\
+Da es zwischen allen verfügbaren Datensets der einzlnen Räume und Machine-Learning-Modellen eine Vielzahl an
+Kombinationsmöglichkeiten gibt, ist die Projektarbeit mit dem Anspruch angelegt, ein möglichst übersichtliches, 
+gut gekapseltes Python Programm zu erstellen, das einfach und schnell verschiedene Datensets  
+verarbeiten und mit einer dem Forschungszweck angemessenen Anzahl von Machine-Learning Modellen auszuwerten. \\\\
 Um einen Vergleich der Ergebnisse zu ermöglichen, sollen diese klar und verständlich dargestellt werden. 
 Da nicht bei allen Algorithmen die gleichen Leistungsindikatoren genutzt werden, sollen hauptsächlich nur 
-jene Indikatoren betrachtet werden, die bzgl. aller Algorithmen auch gleiche Bedeutung haben. Falls Model-
-spezifische Leistungsindikatoren als besonders Erkenntnisreich erachtet werden, wird dies in dieser Arbeit
+jene Indikatoren betrachtet werden, die bzgl. aller Algorithmen auch gleiche Bedeutung haben. Falls 
+modellspezifische Leistungsindikatoren als besonders erkenntnisreich erachtet werden, wird dies in dieser Arbeit
 angemerkt.
