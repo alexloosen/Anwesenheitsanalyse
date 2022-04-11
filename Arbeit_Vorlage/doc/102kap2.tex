@@ -404,7 +404,10 @@ Delta-Spalten stellen, dem Namen nach, Deltas zu vorherigen Werten dar:
 
 Die Erwartung ist hier, dass die Änderung der CO2-, Temperatur- und 
 Luftfeuchtigkeitswerte ein wichtigerer Indikator sein könnte, als die tatsächlichen Werte. In einem schlecht 
-klimatisierten Raum könnten Grundwerte von z.B. CO2 höher sein, als in anderen Räumen. Durch die hinzufügten 
+klimatisierten Raum könnten Grundwerte von z.B. CO2 höher sein, als in Räumen, in denen regelmäßig gelüftet wird.
+Unabhängig dieser Grundwerte könnte man bei einem starken Anstieg wesentlich einfacher menschliche Präsenz erkennen, 
+ohne dass zunächst die vorangegangenen Werte überprüft werden müssen.
+Durch die hinzufügten 
 Deltas werden diese Grundwerte ignoriert und Rückschlüsse auf die aktuelle Präsenz sind besser möglich.\\
 Im Zuge der Projektarbeit wurden verschiedene Kombinationsmöglichkeiten von Delta- und Shiftwerten mit 
 Zeitschritten zwischen zwei Minuten und einer Stunde mit Hinblick auf Verbesserungen der Modell-Genauigkeiten 
@@ -413,8 +416,8 @@ getestet.
 \subsection{Outlier Detection}
 Wie bereits erwähnt, spielen Datenausreißer für die Ergebnisse mancher Algorithmen eine große Rolle. Überall 
 wo z.B. aus einer Reihe von Datenwerten Durchschnittswerte berechnet werden, würden Ausreißer in den Daten das 
-Ergebnis verfälschen und die Leistung des Algorithmus deutlich senken.
-Um diese Ausreißer vor dem Training der Modelle zu beseitigen wurde das Verfahren des 
+Ergebnis verfälschen und die Aussagekraft des Algorithmus deutlich senken.
+Um diese Ausreißer vor dem Training der Modelle zu beseitigen, wurde das Verfahren des 
 \textit{Interquartilabstands} (IQR nach der englischen Bezeichnung \textit{Interquartile Range}) gewählt.\\
 Der IQR gibt die Intervallgröße an, die ein Wert vom Median einer Datenreihe abweichen darf. Bei einer 
 der Größe nach sortierten Datenreihe $x = (x_0,x_1,...,x_n)$ bestimmt man die Mediane der unteren und oberen 
@@ -422,23 +425,22 @@ Hälfe des Datensets $Q_1$ und $Q_2$. Der IQR ergibt sich nun aus
 \begin{align}
     IQR = Q_2 - Q_1
 \end{align}
-Mit diesm Wert kann man nun die erlaubten Ober- und Untergrenzen 
+Mit diesm Wert können jetzt die erlaubten Ober- und Untergrenzen 
 des Datensets mit 
 \begin{align}
     Limit_{upper} = Q_2 + 1.5 * IQR \\
     Limit_{lower} = Q_1 - 1.5 * IQR
 \end{align} 
-bestimmen. Alle Werte die außerhalb dieser Grenzen liegen, können als Ausreißer betrachtet werden.\\
-Ausreißer zu entfernen, ist hier wichtig, da die Sensoren Messfehler erzeugen können, oder gelegentlich zur 
-Demonstration von starken Veränderungen in der direkten Nähe des Sensors geatmet wurde und es so in vielen 
-Datensets kurzfristige CO2-Werte gibt, die natürlich in geschlossenen Räumen nicht vorkommen.
+bestimmt werden. Alle Werte die außerhalb dieser Grenzen liegen, können als Ausreißer betrachtet werden.\\
+Ausreißer zu entfernen, ist hier wichtig, da die Sensoren Messfehler erzeugen können und einige Modelle dadurch,
+wie bereits beschrieben, stark beeinflusst werden können.
 
 \section{Validierung}
 \sloppy
 Über das Projekt hinweg wurden verschiedene Validierungsmethoden verwendet. Grundsätzlich unterteilt man das 
 Datenset in ein Trainings- und Testset mit einem Verhältnis von etwa 80-20. Das bedeutet, dass das Modell mit
-80 prozent der Daten trainiert wird, wobei die anderen 20 prozent zurückgehalten werden, um daraufhin das 
-fertig trainierte Model daran zu testen. Aus dem Ergebnis dieses Tests ergeben sich verschiedene Werte, die  
+80 Prozent der Daten trainiert wird, wobei die anderen 20 Prozent zurückgehalten werden, um daraufhin das 
+fertig trainierte Modell daran zu testen. Aus dem Ergebnis dieses Tests ergeben sich verschiedene Werte, die  
 die allgemeine Genauigkeit des Modells repräsentieren, d.h. wie verlässlich das Modell die An- und Abwesenheit 
 des Testsets selbst berechnen kann, wenn man ihm den tatsächlichen Wert vorenthält.\\
 Allgemeine Basis für die errechneten Genauigkeiten bildet die sog. \textit{Confusion Matrix}.
@@ -450,8 +452,8 @@ Allgemeine Basis für die errechneten Genauigkeiten bildet die sog. \textit{Conf
     \label{fig:CV}
 \end{figure}
 
-Diese zeigt, inwiefern sich die Genauigkeit des Modells neben tatsächlich richtig erkannten Werten zusätzliche
-aus false negatives und false positives zusammensetzt.\\
+Diese zeigt, inwiefern die Genauigkeit des Modells neben tatsächlich richtig erkannten Werten zusätzlich
+von false negatives und false positives beeinflusst wird.\\
 \newpage
 Die \textit{Accuracy Score} ist eine einfache Methode zur Bestimmung der Modellqualität und berechnet sich 
 aus der Summe der richtigen Ergebnisse geteilt durch die Summe aller Ergebnisse.
@@ -466,13 +468,12 @@ Die \textit{Recall Score} beschreibt die Genauigkeit bezogen auf alle erkannten 
     $RecallScore = \dfrac{TP}{TP + FN}$    
 \end{center}
 
-Die \textit{Precision Score} gibt die allgemeine Menge, an positiven Werten, die hätten erkannt werden müssen,
-an.
+Die \textit{Precision Score} gibt die allgemeine Menge an positiven Werten an, die hätten erkannt werden müssen.
 \begin{center}
     $PrecisionScore = \dfrac{TP}{TP + FP}$    
 \end{center}
 
-Die \textit{F1-Score} ist der Durchschnittswert aus Recall- und Precision-Score und gibt im Allgemeinen eine 
+Die \textit{F1-Score} ist der Durchschnittswert aus Recall- und Precision-Score und liefert im Allgemeinen eine 
 gute Auskunft über die Qualität eines Modells.\\
 
 \begin{center}
@@ -480,22 +481,23 @@ gute Auskunft über die Qualität eines Modells.\\
 \end{center}
 
 \vspace{0.75cm}
-In diesem Anwendungsfall ist es durchaus wichtig, Anwesenheitswerte genauer zu betrachten als 
-Abwesenheitswerte, da ein Arbeitstag nur etwa ein Drittel eines tatsächlichen Tages darstellt. 
-Das Datenset ist also mit einem Verhältnis von etwa 8/16 in Richtung der Abwesenheit unausgeglichen. Dies 
-lässt die Erwartung zu, dass das trainierte Modell wesentlich besser darin sein wird, Abwesenheit zu erkennen,
-als Anwesenheit.\\
+In diesem Anwendungsfall ist es durchaus wichtig, Werte zur Anwesenheit von Personen genauer zu betrachten als 
+Werte zur Abwesenheit, da die tägliche Arbeitszeit nur etwa ein Drittel eines ganzen Tages ausmacht. 
+Da von 24 Stunden ca. 16 Stunden Werte zur Abwesenheit und nur etwa 8 Stunden Werte zur Anwesenheit enthalten, 
+ist das Datenset also mit einem Verhältnis von etwa 1/3 in Richtung der Abwesenheit unausgeglichen. 
+Dies lässt die Erwartung zu, dass das trainierte Modell wesentlich besser darin sein wird, Abwesenheit von Personen
+zu erkennen, als Anwesenheit.\\
 Hierzu wurde bei der Auswertung der Ergebnisse immer auch der \textit{Classification Report} hinzugezogen,
 aus dem ersichtlich ist, wie genau das Modell beide möglichen Labelwerte berrechnen konnte.
 \newpage
 Desweiteren war es entscheidend zu erkennen, dass das Datenset über mehrere Monate hinweg nicht perfekt uniform 
-ist, da es in bestimmten Monaten zu verhätlnismäßig vielen Urlaubstagen (z.B. Weihnachten/Silvester) und damit 
-einer Häufung an Abwesenheits-Werten kommt.
+ist, da in bestimmten Monaten verhätlnismäßig viele Urlaubstage (z.B. Weihnachten/Silvester) vorkommen und es damit 
+zu einer Häufung an Abwesenheitswerten kommt.
 Wenn die Daten nun im o.g. Verhältnis aufgeteilt werden und dann viele Daten des Testsets in solchen Monaten 
 liegen, könnte es beim Ergebnis zu Verzerrungen kommen.\\
 Hierfür wurde eine \textit{Kreuzvalidierung} (engl. Cross Validation CV) implementiert. Bei einer CV wird das 
-Datenset immernoch im gleichen Verhältnis aufgeteilt, allerdings mehrmals, sodass die Trainings- und Testsets 
-jedes mal aus jeweils anderen Daten bestehen.
+Datenset immer noch im gleichen Verhältnis aufgeteilt, allerdings mehrmals, sodass die Trainings- und Testsets 
+jedes Mal aus jeweils anderen Daten bestehen.
 
 \begin{figure}[h]
     \centering
@@ -505,12 +507,12 @@ jedes mal aus jeweils anderen Daten bestehen.
 \end{figure}
 
 Errechnet man nun die Durchschnittsgenauigkeit aller Iterationen der CV, ergibt sich eine Gesamtgenauigkeit, 
-die das Model besser repräsentiert, weil es an einer größeren Anzahl an verschiedenen Daten trainiert und 
+die das Model besser repräsentiert, weil es mit einer größeren Anzahl von verschiedenen Daten trainiert und 
 getestet wurde.
 \\\\
 Da es für manche Räume keine Datensätze mit Labelwerten gab, musste die Validierung dieser Datensätze 
 augenscheinlich erfolgen. Hierfür wurde in ein Datenset eine Labelspalte eingefügt, die dann vom trainierten
-Modell selbst gefüllt werden sollte. Das Ergebnis musste dann in einem Graphen gezeichnet und per Hand validiert 
+Modell selbst gefüllt werden sollte. Das Ergebnis musste schließlich als Graph gezeichnet und per Hand validiert 
 werden. Da sich das Ergebnis der Berechnung in diesem Anwendungsfall, wie oben gezeigt, sehr übersichtlich als 
 Graph darstellen lässt, war diese Methode der Validierung zwar nicht perfekt, lieferte aber trotzdem einen 
 ausreichenden Eindruck über die Qualität des trainierten Modells.
@@ -521,24 +523,24 @@ Over- und Underfitting sind Probleme, die bei allen Machine Learning Algorithmen
 im Allgemeinen einen falschen Umgang mit dem Datenset.
 \textit{Overfitting} bedeutet, dass das Modell mit zu vielen, sich zu stark ähnelnden, Daten trainiert wurde, 
 wodurch es nur in der Lage ist, neue Daten richtig zu kategorisieren, die dem Trainingsset besonders ähnlich sind.
-Overfitting kann während einer Kreuzvalidierung oder Validierung anhand eines anderen Datensets, als dem 
-Trainingsset, erkannt werden.\\
-Um Overfitting zu verhindern, kann das Datenset zu vereinfacht werden, um so die Beziehungen zwischen den
+Overfitting kann während einer Kreuzvalidierung oder der Validierung anhand eines anderen Datensets als dem 
+Trainingsset erkannt werden.\\
+Um Overfitting zu verhindern, kann das Datenset vereinfacht werden, um so die Beziehungen zwischen den
 für die Erwartungsberechnung relevanten Spalten zu stärken.\\\\
 \textit{Underfitting} bedeutet dagegen, dass es das Modell nicht geschafft hat, zwischen den gegebenen Daten
-Beziehungen herzustellen, die das Modell unbekannte Daten richtig kategorisieren lassen. Hier reicht es 
+Beziehungen herzustellen, sodass das Modell unbekannte Daten richtig kategorisieren kann. Hier reicht es 
 normalerweise aus, dem Modell mehr Daten zur Verfügung zu stellen und in der Datenvorbereitung Felder 
 einzufügen, die dem Modell bestimmte Beziehungen zwischen Datenfeldern hervorheben sollen. 
 
 \subsection{Parameter Tuning}
 \textit{Parameter Tuning} beschreibt einen Schritt der Modell-Optimierung, der normalerweise stattfindet, 
-nachdem ein funktionierendes Modell, das mit bereits verarbeiteten Daten gute Ergebnisse liefert, erstellt 
-wurde. Jedes Modell besitzt Parameter, die bei der Erstellung festgesetzt werden. Diese Parameter haben 
+nachdem ein funktionierendes Modell erstellt wurde, das mit bereits verarbeiteten Daten gute Ergebnisse liefert.
+Jedes Modell besitzt Parameter, die bei der Erstellung festgesetzt werden. Diese Parameter haben 
 großen Einfluss auf den Trainingsprozess, weshalb es sich anbietet, die Genauigkeiten mehrerer Modelle 
-mit verschiedenen Paramter-Kombinationen zu testen.\\
+mit verschiedenen Parameter-Kombinationen zu testen.\\
 Das im Scikit-Learn enthaltene \textit{GridSearchCV}-Modul
-bietet die Möglichkeit einem Modell eine Vielzahl an verschiedenen Parameter-Optionen zu übergeben. Mit diesen 
-werden kann automatisch Modelle trainiert und per Kreuzvalidierung verglichen. Am Ende liefert das Modul 
+bietet die Möglichkeit, einem Modell eine Vielzahl von verschiedenen Parameter-Optionen zu übergeben. Mit diesen 
+werden dann automatisch Modelle trainiert und per Kreuzvalidierung verglichen. Am Ende liefert das Modul 
 die Parameter-Kombination, mit der das beste Ergebnis erzielt wurde.
 
 \begin{figure}[h]
@@ -549,11 +551,10 @@ die Parameter-Kombination, mit der das beste Ergebnis erzielt wurde.
 \end{figure}
 
 Im obenstehenden Beispiel kann man erkennen, dass für bestimmte Parameter (rot) eine Sammlung an erlaubten 
-Werten (grün) übergeben werden. Alle Kombinationen aus diesen Parameter-Optionen werden dann vom 
+Werten (grün) übergeben wird. Alle Kombinationen aus diesen Parameter-Optionen werden dann vom 
 GridSearchCV-Modul ausgewertet.\\
 Die Verbesserungen gegenüber Standard-Parametern bewegen sich normalerweise im niedrigen einstelligen 
-Prozent-Bereich und kann auch zu einer leichten Verschlechterung führen, wenn die Standard-Parameter
-der einzelnen Modelle bereits gut gewählt waren.
+Prozent-Bereich.
 %% Zwei Abbildungen, die zusammen gehören
 
 %\begin{figure}

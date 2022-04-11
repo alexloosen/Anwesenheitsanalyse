@@ -1018,6 +1018,7 @@ INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
@@ -1029,6 +1030,8 @@ INPUT d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
+INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
+INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./doc/102kap2.tex
 INPUT ./doc/102kap2.tex
@@ -1040,9 +1043,6 @@ INPUT ./doc/102kap2.tex
 INPUT ./doc/102kap2.tex
 INPUT ./doc/102kap2.tex
 INPUT ./doc/102kap2.tex
-INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT d:/devTools/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
-INPUT d:/devTools/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./pic/Clustering_Beispiel.png
 INPUT ./pic/Clustering_Beispiel.png
 INPUT ./pic/Clustering_Beispiel.png

@@ -28,20 +28,20 @@
 \contentsline {subsection}{\numberline {4.2.2}Parameter Tuning}{24}{}%
 \contentsline {chapter}{\numberline {5}\textbf {Anwendung und Ergebnisse}}{25}{}%
 \contentsline {section}{\numberline {5.1}Feature Vektor}{25}{}%
-\contentsline {section}{\numberline {5.2}Ergebnisse}{29}{}%
-\contentsline {subsection}{\numberline {5.2.1}Decision Tree Modelle}{29}{}%
-\contentsline {subsection}{\numberline {5.2.2}Umgang mit fehlenden Präsenz-Labels}{32}{}%
-\contentsline {subsection}{\numberline {5.2.3}Neurale Netzwerke}{33}{}%
-\contentsline {subsection}{\numberline {5.2.4}Clustering Modelle}{34}{}%
-\contentsline {chapter}{\numberline {6}\textbf {Zusammenfassung und Ausblick}}{36}{}%
-\contentsline {section}{\numberline {6.1}CO2 als Anwesenheitsindikator}{36}{}%
-\contentsline {section}{\numberline {6.2}Mögliche Verbesserungen}{36}{}%
-\contentsline {chapter}{Quellenverzeichnis}{37}{}%
-\contentsline {chapter}{Abkürzungsverzeichnis}{38}{}%
-\contentsline {chapter}{Abbildungsverzeichnis}{39}{}%
-\contentsline {chapter}{Tabellenverzeichnis}{40}{}%
+\contentsline {section}{\numberline {5.2}Ergebnisse}{30}{}%
+\contentsline {subsection}{\numberline {5.2.1}Decision Tree Modelle}{30}{}%
+\contentsline {subsection}{\numberline {5.2.2}Umgang mit fehlenden Präsenz-Labels}{33}{}%
+\contentsline {subsection}{\numberline {5.2.3}Neuronale Netzwerke}{35}{}%
+\contentsline {subsection}{\numberline {5.2.4}Clustering Modelle}{36}{}%
+\contentsline {chapter}{\numberline {6}\textbf {Zusammenfassung und Ausblick}}{38}{}%
+\contentsline {section}{\numberline {6.1}CO2 als Anwesenheitsindikator}{38}{}%
+\contentsline {section}{\numberline {6.2}Mögliche Verbesserungen}{38}{}%
+\contentsline {chapter}{Quellenverzeichnis}{40}{}%
+\contentsline {chapter}{Abkürzungsverzeichnis}{41}{}%
+\contentsline {chapter}{Abbildungsverzeichnis}{42}{}%
+\contentsline {chapter}{Tabellenverzeichnis}{43}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Anhang}{40}{}%
-\contentsline {chapter}{\numberline {A}Quellcode}{41}{}%
-\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{42}{}%
+\contentsline {chapter}{Anhang}{43}{}%
+\contentsline {chapter}{\numberline {A}Quellcode}{44}{}%
+\contentsline {chapter}{\numberline {B}Rohdatenvisualisierungen}{45}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
