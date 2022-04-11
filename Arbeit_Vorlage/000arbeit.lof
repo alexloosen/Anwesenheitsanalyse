@@ -18,19 +18,19 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Beispiel einer Kreuzvalidierung\relax }}{23}{}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Beispiel einer Sammlung von Parameter-Optionen\relax }}{24}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Feature Importances eines Random Forest\relax }}{25}{}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Feature Importances eines Random Forest\relax }}{26}{}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Vergleich der Genauigkeiten\relax }}{27}{}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Confusion Matrix eines RFC\relax }}{29}{}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Messwerte des 13. Januar\relax }}{30}{}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Messwerte des 13. Januar\relax }}{30}{}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces !!PLACEHOLDER-GRAFIK!! Ergebnisse des Parameter Tuning\relax }}{31}{}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces ROC-Curves aller Modelle\relax }}{31}{}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Büroraum-Modell trifft Erwartungen für Wohnzimmer\relax }}{32}{}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Ergebnisse des NN\relax }}{33}{}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Ergebnisse des LSTM\relax }}{33}{}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Reduktion des Datensets auf zwei Dimensionen\relax }}{35}{}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Datenreduktion ohne Trennung\relax }}{35}{}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Feature Importances eines Random Forest\relax }}{26}{}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Feature Importances eines Random Forest\relax }}{27}{}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Vergleich der Genauigkeiten\relax }}{28}{}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Confusion Matrix eines RFC\relax }}{30}{}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Messwerte des 13. Januar\relax }}{31}{}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Erwartungsberechnung des 13. Januar\relax }}{31}{}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces !!PLACEHOLDER-GRAFIK!! Ergebnisse des Parameter Tuning\relax }}{32}{}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces ROC-Curves aller Modelle\relax }}{33}{}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Büroraum-Modell trifft Erwartungen für Wohnzimmer\relax }}{34}{}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Ergebnisse des NN\relax }}{35}{}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Ergebnisse des LSTM\relax }}{35}{}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Reduktion des Datensets auf zwei Dimensionen\relax }}{37}{}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Datenreduktion ohne Trennung\relax }}{37}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
