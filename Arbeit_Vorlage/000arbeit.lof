@@ -9,29 +9,32 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Beispiel logistischer Regression\relax }}{13}{}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Logistische Regression mit deutlicher Skalierung\relax }}{14}{}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Beispiel eines KNN\relax }}{15}{}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Beispiel eines neuronalen Netzwerks\relax }}{16}{}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Beispiel eines rekurrenten neuronalen Netzwerks\relax }}{17}{}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Vereinfachter Aufbau einer LSTM-Zelle\relax }}{17}{}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces CO2-Gehalt der Raumluft über einen Tag\relax }}{18}{}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Beispiel des K-Means Algorithmus\relax }}{16}{}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Beispiel des K-Means Algorithmus\relax }}{16}{}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Beispiel eines neuronalen Netzwerks\relax }}{17}{}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Beispiel eines rekurrenten neuronalen Netzwerks\relax }}{18}{}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Vereinfachter Aufbau einer LSTM-Zelle\relax }}{18}{}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces CO2-Gehalt der Raumluft über einen Tag\relax }}{19}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Beispiel einer Confusion Matrix\relax }}{22}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Beispiel einer Kreuzvalidierung\relax }}{24}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Beispiel einer Sammlung von Parameter-Optionen\relax }}{25}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Beispiel einer Confusion Matrix\relax }}{23}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Beispiel einer Kreuzvalidierung\relax }}{25}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Beispiel einer Sammlung von Parameter-Optionen\relax }}{26}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Feature Importances eines Random Forest\relax }}{27}{}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Feature Importances eines Random Forest\relax }}{28}{}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Vergleich der Genauigkeiten\relax }}{29}{}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Confusion Matrix eines RFC\relax }}{31}{}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Messwerte des 13. Januar\relax }}{32}{}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Erwartungsberechnung des 13. Januar\relax }}{32}{}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces !!PLACEHOLDER-GRAFIK!! Ergebnisse des Parameter Tuning\relax }}{33}{}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces ROC-Curves aller Modelle\relax }}{34}{}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Büroraum-Modell trifft Erwartungen für Wohnzimmer\relax }}{35}{}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Ergebnisse des NN\relax }}{36}{}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Ergebnisse des LSTM\relax }}{36}{}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Reduktion des Datensets auf zwei Dimensionen\relax }}{38}{}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Datenreduktion ohne Trennung\relax }}{38}{}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Feature Importances eines Random Forest\relax }}{28}{}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Feature Importances eines Random Forest\relax }}{29}{}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Vergleich der Genauigkeiten\relax }}{30}{}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Confusion Matrix eines RFC\relax }}{32}{}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Durchschnittsgenauigkeiten aller Modelle\relax }}{33}{}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Genauigkeiten einzlner Labelwerte aller Modelle\relax }}{33}{}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Messwerte des 13. Januar\relax }}{34}{}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Erwartungsberechnung des 13. Januar\relax }}{34}{}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces !!PLACEHOLDER-GRAFIK!! Ergebnisse des Parameter Tuning\relax }}{35}{}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces ROC-Curves aller Modelle\relax }}{36}{}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Büroraum-Modell trifft Erwartungen für Wohnzimmer\relax }}{37}{}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Ergebnisse des NN\relax }}{38}{}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Ergebnisse des LSTM\relax }}{38}{}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Reduktion des Datensets auf zwei Dimensionen\relax }}{40}{}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Datenreduktion ohne Trennung\relax }}{40}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -55,10 +55,10 @@ def parameterTuning(modelType, Xtrain, ytrain, Xtest, ytest, X_presence, y_prese
         classifier = KNeighborsClassifier()
         base_class = KNeighborsClassifier()
         param_test = {
-            'n_neighbors': [5, 10, 25, 50],
+            'n_neighbors': [5, 10, 25, 50, 75, 100],
             'weights': ['uniform', 'distance'],
-            'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
-            'leaf_size': [10, 20, 30, 60, 90, 120, 150],
+            'algorithm': ['auto', 'ball_tree', 'kd_tree'],
+            'leaf_size': [2, 5, 7, 10, 20, 30],
             'p': [1, 2, 3, 4]
         }
     elif (modelType == 'LR'):

@@ -201,7 +201,7 @@ Daten anhand des Mittelpunktes klar getrennt werden könnten.
 Anhand der optimierten Sigmoid-Funktion können nun neue Daten klassifiziert werden, wobei die Wahrscheinlichkeit
 bei $p < 0.5$ auf 0 und $p >= 0.5$ auf 1 gerundet wird.
 \newpage
-\subsection{K-Nearest-Neighbours}
+\subsection{K-Nearest-Neighbours Clustering}
 Der \textit{K-Nearest-Neighbours}-Algorithmus KNN betrachtet den Abstand von einem gegebenen Punkt $p$ zu einer 
 Menge an Punken in einem Datenset und ordnet ihn gemäß dieser Abstände einer bestimmten Kategorie zu. Die 
 Zuordnung geschieht anhand der Kategorie der größten Menge zum nächsten Nachbarn.
@@ -223,6 +223,38 @@ Algorithmus auch in höheren Dimensionen, denn
 \end{align}
 
 lässt sich für beliebig viele Dimensionen fortsetzen.
+
+\newpage
+
+\subsection{K-Means Clustering}
+Der \textit{K-Means} Algorithmus legt eine bestimmte Anzahl von neuen Datenpunkten an eine zufällige Position des
+Datensets.  Die herumliegenden Datenpunkte werden nun anhand ihrer Abstände diesen sog. \textit{Clustern} 
+zugeordnet (in Abb. \ref{fig:KMeans1} als vertikale Linien dargestellt).\\
+Die Abstände werden auch hier durch die Euklidische Abstandsformel berechnet.\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=12.0cm]{pic/KMeans_step1.png}
+    \caption{Beispiel des K-Means Algorithmus}
+    \label{fig:KMeans1}
+\end{figure}
+
+Da der Algorithmus die optimale Verteilung von Clustern nicht erkennen kann, wird die Position der Cluster 
+gespeichert und neue Cluster an zufällige Positionen gelegt. Sind die durchschnittlichen Abstände der Datenpunkte
+zu den neuen Clustern geringer als vorher, werden die gespeicherten Cluster nun in Richtung der neuen Cluster 
+verschoben (Abb. \ref{fig:KMeans2}).\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=12.0cm]{pic/KMeans_step2.png}
+    \caption{Beispiel des K-Means Algorithmus}
+    \label{fig:KMeans2}
+\end{figure}
+
+Die Anzahl an Schritten die der Algorithmus durchläuft kann vorgegeben werden. Allgemein sollte der Algorithmus
+so lange neue Schritte machen, bis der Abstand der gespeicherten und neuen Cluster zueinander einen bestimmten
+Minimalwert unterschreitet.
+
 \newpage
 \subsection{Neuronale Netzwerke}
 Die Funktionsweise eines neuronalen Netzwerks ist direkt angelehnt an die Funktionsweise des menschlichen Gehirns.
@@ -377,7 +409,7 @@ Schemata, wie z.B. die Zahlenumbrüche bei einer Uhrzeit, sind für Algorithmen 
 sind zudem für Computer nicht leicht zu verarbeiten. Durch eine Encodierung in 
 Sinus- und Cosinus-Werte können diese Zusammenhänge vereinfacht werden.\\
 Hierzu wurde der Timestamp zuerst in Sekunden übersetzt, sodass sich ein bestimmter Zeitpunkt eines Tages 
-immer zwischen 0 und 86400 Sekunden bewegt.
+immer zwischen 0 und 86399 Sekunden bewegt.
 Aus diesem Wert wurden dann zwei neue Datenspalten ,,\textit{hour\_sin}'' und ,,\textit{hour\_cos}'' 
 in das Datenset eingefügt, welche sich aus 
 
