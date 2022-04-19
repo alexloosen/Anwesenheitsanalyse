@@ -5,6 +5,7 @@ from sklearn.ensemble import BaggingClassifier, GradientBoostingClassifier, Rand
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.cluster import KMeans, MiniBatchKMeans
 
 import tensorflow as tf
 from keras.models import Sequential
@@ -25,6 +26,8 @@ def createClassifier(classType, Xtrain, ytrain):
         modelClass = GradientBoostingClassifier()
     elif (classType == 'KNN'):
         modelClass = KNeighborsClassifier()
+    elif (classType == 'KM'):
+        modelClass = MiniBatchKMeans(n_clusters=2, batch_size = 8192)
     elif (classType == 'LR'):
         modelClass = LogisticRegression(solver='saga', max_iter=5000)
         #Xtrain, scaler = prepareData.normalize_min_max(Xtrain)

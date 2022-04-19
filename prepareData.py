@@ -56,7 +56,7 @@ def preProcessDataset(df):
     # Timestamp einfacher zu verarbeiten, wenn als Integer gespeichert
     df_new = convertTimestamp(df_new)
     # Integer Timestamp jetzt zyklisch encodieren
-    df_new = encodeCyclical(df_new, 'second', 86400)
+    df_new = encodeCyclical(df_new, 'second', 86399)
 
     # Deltas einfuegen
     df_new = addDelta(df_new, 'co2_ppm', 1)
@@ -97,14 +97,14 @@ def preProcessDataset(df):
     #df_new['co2_ppm_last'] = df_new.shift(1)['co2_ppm']
 
     # Werte von vor n-Minuten einfuegen
-    df_new['co2_ppm_shift1'] = df_new.shift(1)['co2_ppm']
-    df_new['co2_ppm_shift2'] = df_new.shift(2)['co2_ppm']
-    df_new['co2_ppm_shift3'] = df_new.shift(3)['co2_ppm']
-    df_new['co2_ppm_shift4'] = df_new.shift(4)['co2_ppm']
-    df_new['co2_ppm_shift5'] = df_new.shift(5)['co2_ppm']
-    df_new['co2_ppm_shift6'] = df_new.shift(6)['co2_ppm']
-    df_new['co2_ppm_shift7'] = df_new.shift(7)['co2_ppm']
-    df_new['co2_ppm_shift8'] = df_new.shift(8)['co2_ppm']
+#    df_new['co2_ppm_shift1'] = df_new.shift(1)['co2_ppm']
+#    df_new['co2_ppm_shift2'] = df_new.shift(2)['co2_ppm']
+#    df_new['co2_ppm_shift3'] = df_new.shift(3)['co2_ppm']
+#    df_new['co2_ppm_shift4'] = df_new.shift(4)['co2_ppm']
+#    df_new['co2_ppm_shift5'] = df_new.shift(5)['co2_ppm']
+#    df_new['co2_ppm_shift6'] = df_new.shift(6)['co2_ppm']
+#    df_new['co2_ppm_shift7'] = df_new.shift(7)['co2_ppm']
+#    df_new['co2_ppm_shift8'] = df_new.shift(8)['co2_ppm']
 #    df_new['co2_ppm_shift9'] = df_new.shift(9)['co2_ppm']
 #    df_new['co2_ppm_shift10'] = df_new.shift(10)['co2_ppm']
 #    df_new['co2_ppm_shift11'] = df_new.shift(11)['co2_ppm']
