@@ -6,12 +6,11 @@
 Die Genauigkeit aller Modelle bei der Präsenzerkennung während der gesamten Durchführungsphase des Projektes 
 lag zwischen 88\% bei neuronalen Netzwerken und 95\% bei den Klassifizierungsalgorithmen. 
 Die Beziehung zwischen der aktuellen Tageszeit und dem CO2-Gehalt der Luft konnte erfolgreich bestätigt 
-werden. Resultate vorangegangener Forschung unterstützen dieses Ergebnis ebenfalls\footnote[1]{\cite{IPPR}}.
-.\\
+werden. Resultate vorangegangener Forschung unterstützen dieses Ergebnis ebenfalls\footnote[1]{\cite{IPPR}}.\\
 Weiterhin konnte gezeigt werden, dass alle Modelle zusätzlich in der Lage sind, menschliche Präsenz außerhalb
 der trainierten Uhrzeiten korrekt zu erkennen, wenn die Modelle mit Deltas zu Vergangenheitswerten des 
 CO2-Gehalts trainiert werden. Die Präsenzerkennung ist also vollständig unabhängig von den Umständen des
-Trainigssets und kann sowohl für andere Räume, als auch zu anderen Tageszeiten effektiv genutzt werden. 
+Trainingssets und kann sowohl für andere Räume, als auch zu anderen Tageszeiten effektiv genutzt werden. 
 Der CO2-Gehalt der Luft kann somit als geeigneter Indikator für menschliche Präsenz in Innenräumen angesehen 
 werden.\\\\
 Zudem wurde gezeigt, dass der Einsatz von CO2-Sensoren bei Gebäudeautomatisierungssystemen zweckmäßig ist.
@@ -20,13 +19,18 @@ Ein weiterer Vorteil besteht darin, dass diese kostengünstig und leicht zu impl
 
 \section{Mögliche Verbesserungen}
 Die Genauigkeit von Machine Learning Modellen kann allgemein durch die Hinzugabe von mehr Daten in ein Modell 
-verbessert werden. 
+verbessert werden. \\
 Da der Datenbestand, auf die sich diese Arbeit stützt, über die Bearbeitungszeit des Projektes 
 kontinuierlich vergrößert wurde, wuchs damit auch die Anzahl an Anhaltspunkten für Zusammenhänge zwischen den 
 Datenfeldern stetig an. Besonders nützlich wäre das Sammeln von Messdaten über ein oder mehrere Jahre hinweg.
 Somit hätten die Modelle eine Chance, Gewohnheiten in z.B. Urlaubstagen, Feiertagen oder auch wiederkehrenden
 Meetings korrekt einzuordnen, sodass Gebäudeautomatisierungssysteme ein Maximum an Komfort und Energieeffizienz
 herstellen können.\\\\
+Die Anwendung eines Modells auf andere Räume lies die Vermutung zu, dass diese Art von Präsenzerkennung das 
+Potential aufweist, anhand eines Traningssets auch eine Vielzahl anderer Datensets klassifizieren zu können.
+Durch Aufzeichnung von Daten aus anderen Räumen könnte diese Vermutung genauer untersucht werden.  \\\\
+
+\newpage
 
 Da Infrarotsensoren inhärent nicht in der Lage sind kontinuierliche Präsenz zu erkennen, wenn sich die Personen
 im Raum nicht bewegen, kam es innerhalb des Datensets immer wieder zu kleinen Messfehlern, die durch Gruppierung

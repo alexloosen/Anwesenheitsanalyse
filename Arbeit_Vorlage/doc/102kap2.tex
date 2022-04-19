@@ -2,7 +2,7 @@
 \chapter{\textbf{Stand der Technik für Anwesenheitserkennung/-prognose}}\label{grundlagen}
 %\addtocontents{toc}{\vspace{0.5cm}}
 
-Man kann verschiedene Techniken zur Anwesenheitserkennung und -prognose in Innenräumen in \text{aktive} und
+Man kann verschiedene Techniken zur Anwesenheitserkennung und -prognose in Innenräumen in \textit{aktive} und
 \textit{passive} Verfahren unterteilen. \\\\
 %\section{Aktive und Passive Messverfahren}
 Aktive Verfahren messen die menschliche Anwesenheit etwa mit 
@@ -11,11 +11,11 @@ dabei kontinuierlich Bilder des Raumes auf, während ein Algorithmus im Hintergr
 eines menschlichen Skeletts auf sich bewegende Teile des Bildes zu legen. Bewegen sich über mehrere Bilder 
 hinweg die Bereiche auf und unmittelbar neben dem 3D-Modell, registriert das System eine Anwesenheit.\\\\
 Infrarotsensoren dagegen funktionieren eher wie ein klassischer Bewegungsmelder, welcher Unterschiede in der 
-Infrarotstrahlung eines Raumes erkennt. Durch die generierte Körperwärme des menschlichen Körpers, verursacht 
+Infrarotstrahlung eines Raumes erkennt. Durch die generierte Körperwärme des menschlichen Körpers verursacht 
 ein Mensch, der sich durch den Sensor bewegt, einen Ausschlag des Sensors.\\
 
 Passive Verfahren orientieren sich an den physikalischen Eigenschaften des Raumes. Anstatt die Präsenz des 
-Menschen direkt zu messen, wird versucht, diese von Veränderungen der Eigenschaften der Raumluft oder 
+Menschen direkt zu messen, wird versucht, diese anhand von Veränderungen der Eigenschaften der Raumluft oder 
 elektromagnetischer Strahlung des Raumes zu erkennen. \\
 Verändert sich beispielsweise durch menschliche Anwesenheit die Luftfeuchtigkeit 
 in einem Raum in sehr geringem Maß, wird die  Laufzeit einer Ultraschallwelle, die durch diesen Raum 
@@ -29,7 +29,7 @@ Mit Mikrowellen können Bewegungen durch Ausnutzung des Doppler-Effektes einer e
 werden. Bewegen sich Objekte oder Personen auf den Sensor zu, wird das Echo der Welle gestaucht, wodurch die 
 Bewegung erkannt wird.\\
 Hier verdeutlicht sich nochmals die Motivation dieser Arbeit, da Sensoren für Temperatur, Luftfeuchtigkeit oder CO2
-weder teuer sind, noch besondere Ansprüche an Positionierung im Raum oder Kallibrierung besitzen.
+weder teuer sind, noch besondere Ansprüche an Positionierung im Raum oder Kalibrierung besitzen.
 
 \chapter{\textbf{Untersuchte Verfahren}}
 
@@ -38,10 +38,10 @@ weder teuer sind, noch besondere Ansprüche an Positionierung im Raum oder Kalli
 
 Machine Learning ist ein Teilbereich der künstlichen Intelligenz und beschreibt das Entwickeln mathematischer 
 Modelle zur statistischen Auswertung von Daten.\\
-Dabei wird dem Modell anhand von Trainigsdaten beigebracht, Gesetzmäßigkeiten zu erkennen, um danach Erwartungen 
+Dabei wird dem Modell anhand von Trainingsdaten beigebracht, Gesetzmäßigkeiten zu erkennen, um danach Erwartungen 
 über bisher unbekannte Daten treffen zu können.  
 Beispielsweise könnte ein solches Modell aus einem Datenset mit aktueller Jahreszeit, Uhrzeit und 
-Position der Sonne am Himmel trainiert werden, sodass es auch schließlich in einem anderen Datenset 
+Position der Sonne am Himmel trainiert werden, sodass es schließlich auch in einem anderen Datenset 
 aus Jahreszeit und Position der Sonne Rückschlüsse auf die Uhrzeit treffen kann.\\
 Als Vorbild für diesen ,,Lernvorgang'' dient das menschliche Gehirn, welches ebenfalls versucht zwischen 
 bestimmten Input-Parametern wie z.B. Form und Farbe eines Gegenstandes eine Beziehung herzustellen,
@@ -56,10 +56,10 @@ In dieser Arbeit sollen zwei Unterkategorien des Machine Learning genauer betrac
 \end{itemize}
 \textit{Supervised Learning} bedeutet zwischen bestimmten Feldern eines Datensets eine Beziehung
 zu einem sog. Label herzustellen, welches als eine Art Ergebnis aus den Eingabewerten gesehen 
-werden kann. Ein so traniertes Modell kann dann neue, ihm vorher unbekannte Datensets, mit einem 
+werden kann. Ein so trainiertes Modell kann dann neue, ihm vorher unbekannte Datensets, mit einem 
 Label versehen - etwa wie in dem o.g. Beispiel, wo Jahreszeit und Sonnenposition die Eingabewerte 
 und die Uhrzeit das Label darstellen. Der Begriff ,,\textit{supervised}'' ergibt sich daraus, dass 
-das Datenset, mit dem das Modell traniert wird, diese Labels gegeben 
+das Datenset, mit dem das Modell trainiert wird, diese Labels gegeben 
 hat, sodass das Modell sich bei jedem Schritt des Lernvorgangs selbst korrigieren kann, falls 
 eine Fehleinschätzung getroffen wurde.
 Bei einer sog. ,,\textit{Klassifizierung}'' sind diese Labels fest vorgegeben, während sie in der 
@@ -68,7 +68,7 @@ Klassifizierung eine ,,1'' für Anwesenheit und eine ,,0'' für Abwesenheit, wä
 Regression eine Wahrscheinlichkeit auf Anwesenheit zwischen 0.0 und 1.0 darstellen würde.
 \newpage
 Beim ,,\textit{Unsupervised Learning}'' versucht das Modell ohne Referenz zu einem bestimmten 
-Label, Zusammenhänge zwischen bestimmten Feldern des Datensets herzustellen. Solche Modelle 
+Label Zusammenhänge zwischen bestimmten Feldern des Datensets herzustellen. Solche Modelle 
 arbeiten vorrangig mit ,,\textit{Clustering}'' und ,,\textit{Dimensionality Reduction}''.\\
 ,,\textit{Clustering}''-Algorithmen versuchen ein Datenset in kleinere Teilmengen einzuteilen und
 so aus den Feldern des Datensets bestimmte Abhängigkeiten abzuleiten.
@@ -157,7 +157,7 @@ den Daten, was bei der Datenvorbereitung und der Auswertung beachtet werden muss
 \newpage
 \subsection{Logistische Regression}
 
-Die logistische Regression ordnet Daten anhand einer Wahrscheinlichkeit einem bestimmten Label  zu. Trotz des Teilnamens
+Die \textit{Logistische Regression} LR ordnet Daten anhand einer Wahrscheinlichkeit einem bestimmten Label  zu. Trotz des Teilnamens
 ,,Regression'' handelt es sich um einen Klassifizierungsalgorithmus. Der Name kommt daher, dass die berechnete Wahrscheinlichkeit
 zu einem kontinuierlichen Label zwischen 0 und 1 führt, was durch die Form einer Sigmoid-Funktion ausgedrückt wird.
 Der Algorithmus eignet sich wegen dieser Eigenschaft besonders für  das Klassifizierungsproblem der Projektarbeit, 
@@ -320,7 +320,7 @@ Lüftung des Raumes (Tür-/Fensterspalten) langsam wieder gegen den Grundwert be
 \section{Luftfeuchtigkeit und Temperatur}
 Auch wenn Luftfeuchtigkeit und Temperatur Indikatoren für menschliche Präsenz in einem Raum sein können, 
 unterscheidet sich deren Aussagekraft von der des CO2-Gehaltes der Raumluft in einem wichtigen Faktor.\\ 
-Sie werden beide stark von äußeren Umweltfaktoren wie dem aktuellen Wetter oder der Jahreszeit beeinlusst.
+Sie werden beide stark von äußeren Umweltfaktoren wie dem aktuellen Wetter oder der Jahreszeit beeinflusst.
 Beide Werte wurden zunächst in das Training aller Modelle miteinbezogen; es wird allerdings im folgenden 
 Kapitel gezeigt, dass diese beiden Werte zusammen mit dem CO2-Wert wenig aussagefähig sind und 
 deshalb später nicht weiter genutzt werden.  
@@ -360,13 +360,13 @@ jeweils auf der aktuellsten Datenlage basieren.
 Die Datenvorbereitung (Pre-Processing) ist einer der wichtigsten Schritte bei der Anwendung von Machine 
 Learning. Dadurch besteht die Möglichkeit, beim Training des Modells durch Bearbeitung bestehender Spalten
 oder Hinzufügen zusätzlicher Spalten im Datenset Schwerpunkte zu setzen, die es den Algorithmen beim Training
-zum einen erleichtern, ihre Erwartungen zu präzisieren, zum anderen aber auch deren Leistung beim verarbeiten
+zum einen erleichtern, ihre Erwartungen zu präzisieren, zum anderen aber auch deren Leistung bei der Verarbeitung
 bestimmter Spalten zu steigern.
 \subsection{Gruppierung}
 Die Sensordaten wurden alle sechs Sekunden erfasst. Da sich weder CO2-Gehalt noch Feuchtigkeits- oder 
 Temperaturwerte der Raumluft so schnell nicht verändern, wurden die Daten direkt beim Drill per SQL zu 
 zwei-Minuten-Intervallen zusammengefasst. Dabei werden über alle Spalten hinweg Durchschnittswerte gebildet, 
-die dann nachher zu einem Datensatz zusammengefasst werden. 
+die dann zu einem Datensatz zusammengefasst werden. 
 Dies steigert die Leistung aller Algorithmen erheblich, weil sich dadurch die Zahl der 
 Datensätze stark verringert. Da sich, wie oben erwähnt, der CO2-Gehalt der Raumluft in einem 
 Intervall von zwei Minuten kaum merklich verändert, verringert sich die Genauigkeit des gesamten Datensets
@@ -491,7 +491,7 @@ Hierzu wurde bei der Auswertung der Ergebnisse immer auch der \textit{Classifica
 aus dem ersichtlich ist, wie genau das Modell beide möglichen Labelwerte berrechnen konnte.
 \newpage
 Desweiteren war es entscheidend zu erkennen, dass das Datenset über mehrere Monate hinweg nicht perfekt uniform 
-ist, da in bestimmten Monaten verhätlnismäßig viele Urlaubstage (z.B. Weihnachten/Silvester) vorkommen und es damit 
+ist, da in bestimmten Monaten verhältnismäßig viele Urlaubstage (z.B. Weihnachten/Silvester) vorkommen und es damit 
 zu einer Häufung an Abwesenheitswerten kommt.
 Wenn die Daten nun im o.g. Verhältnis aufgeteilt werden und dann viele Daten des Testsets in solchen Monaten 
 liegen, könnte es beim Ergebnis zu Verzerrungen kommen.\\
@@ -522,7 +522,7 @@ ausreichenden Eindruck über die Qualität des trainierten Modells.
 Over- und Underfitting sind Probleme, die bei allen Machine Learning Algorithmen auftreten können und bezeichnen 
 im Allgemeinen einen falschen Umgang mit dem Datenset.
 \textit{Overfitting} bedeutet, dass das Modell mit zu vielen, sich zu stark ähnelnden, Daten trainiert wurde, 
-wodurch es nur in der Lage ist, neue Daten richtig zu kategorisieren, die dem Trainingsset besonders ähnlich sind.
+wodurch es in der Lage ist, nur neue Daten richtig zu kategorisieren, die dem Trainingsset besonders ähnlich sind.
 Overfitting kann während einer Kreuzvalidierung oder der Validierung anhand eines anderen Datensets als dem 
 Trainingsset erkannt werden.\\
 Um Overfitting zu verhindern, kann das Datenset vereinfacht werden, um so die Beziehungen zwischen den

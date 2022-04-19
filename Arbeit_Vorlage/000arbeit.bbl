@@ -7,6 +7,41 @@ Hanfstaengl, L., Parzinger, M., Wirnsberger, M., Spindler, U., and Wellisch, U.
   learning techniques using data of room control systems.
 \newblock Conference.
 
+\bibitem[Irvan B. Arief-Ang, 2017]{CDHOC}
+Irvan B. Arief-Ang, Flora D.~Salim, M.~H. (2017).
+\newblock Cd-hoc: Indoor human occupancy counting using carbon dioxide sensor
+  data.
+\newblock Online.
+
+\bibitem[Koehrsen, 2018]{ParTuning}
+Koehrsen, W. (2018).
+\newblock Hyperparameter tuning the random forest in python.
+\newblock {\em Towards Data Science}.
+
+\bibitem[{Riham Jaber} et~al., 2017]{RIHAMJABER}
+{Riham Jaber}, A., Dejan, M., and Marcella, U. (2017).
+\newblock The effect of indoor temperature and co2 levels on cognitive
+  performance of adult females in a university building in saudi arabia.
+\newblock {\em Energy Procedia}, 122.
+
+\bibitem[Ronaghan, 2018]{DecTrees}
+Ronaghan, S. (2018).
+\newblock The mathematics of decision trees, random forest and feature
+  importance in scikit-learn and spark.
+\newblock {\em Towards Data Science}.
+
+\bibitem[Roy, 2020]{FScaling}
+Roy, B. (2020).
+\newblock All about feature scaling.
+\newblock {\em Towards Data Science}.
+
+\bibitem[Snow et~al., 2019]{SNOW}
+Snow, S., Boyson, A.~S., Paas, K.~H., Gough, H., King, M.-F., Barlow, J.,
+  Noakes, C.~J., and m.c. schraefel (2019).
+\newblock Exploring the physiological, neurophysiological and cognitive
+  performance effects of elevated carbon dioxide concentrations indoors.
+\newblock {\em Building and Environment}, 156.
+
 \bibitem[Umweltbundesamt, 2020]{Umweltbundesamt}
 Umweltbundesamt (2020).
 \newblock Endenergieverbrauch der privaten haushalte.
@@ -20,5 +55,11 @@ Umweltbundesamt (2022).
 \newblock Online.
 \newblock
   https://www.umweltbundesamt.de/daten/energie/energieverbrauch-nach-energietraegern-sektoren.
+
+\bibitem[VanderPlas, 2016]{Handbook}
+VanderPlas, J. (2016).
+\newblock {\em Python Data Science Handbook: Essential Tools for Working with
+  Data}.
+\newblock O'Reilly Media, Incorperated.
 
 \end{thebibliography}
