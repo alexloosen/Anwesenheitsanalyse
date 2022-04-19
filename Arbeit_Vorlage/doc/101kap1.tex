@@ -33,15 +33,16 @@ Soll-Wert zu einem tatsächlichen Ist-Wert dar.\\
 Für nahezu alle Bereiche der Gebäudeautomatisierung stellt die Anwesenheit 
 von Personen eine zentrale Variable dar. Es ist entscheidend bei einem Optimierungsprozess zu erkennen, zu
 welchen Zeitpunkten sich Menschen in einem Raum aufhalten. Beispielsweise werden in vielen gewerblich 
-genutzen Gebäuden werden grundsätzlich alle Räume beheizt - unabhängig davon, ob Personen tatsächlich anwesend sind. 
+genutzen Gebäuden grundsätzlich alle Räume beheizt - unabhängig davon, ob Personen tatsächlich anwesend sind. 
 Eine Erkennung von menschlicher Anwesenheit ist bei der Optimierung also essenziell.\\\\
 Da die direkte Messung von Anwesenheit über z.B. Infrarot- oder Kamerasensoren rechtlich problematisch ist, 
 soll in dieser Arbeit untersucht werden, inwiefern Machine-Learning Algorithmen genutzt werden können, 
 um menschliche Präsenz anhand von CO2-, Temperatur und Luftdruckwerten der Raumluft festzustellen.\\\\
-Die Motivation der Optimierung der Gebäudeautomatisierung exisitert, da ein steigender CO2-Gehalt der 
-Raumluft nachweislich mit einer Abnahme der menschlich kognitiven Leistung einhergeht. Mehrere Studien
-konnten belegen, dass sowohl sprachliche als auch logisch-mathematische Fähigkeiten abnehmen, sobald 
-der CO2-Gehalt der  Raumluft bestimmte Werte überschreitet.\\ 
+Die Motivation der Optimierung der Gebäudeautomatisierung besteht, da ein steigender CO2-Gehalt der 
+Raumluft nachweislich mit einer Abnahme der menschlich kognitiven Leistung einhergeht. 
+Mehrere Studien\footnote[1]{\cite{SNOW}} \footnote[2]{\cite{RIHAMJABER}} konnten belegen, dass 
+sowohl sprachliche als auch logisch-mathematische Fähigkeiten abnehmen, sobald 
+der CO2-Gehalt der Raumluft bestimmte Werte überschreitet.\\ 
 Um eine angemessene Datengrundlage zu schaffen, wurden in diversen Büro-Räumen der FH Aachen Temperatur-,
 Luftfeuchtigkeits-, Infrarot- und CO2-Sensoren angebracht, deren Messungen kontinuierlich auf einer Datenbank
 gespeichert wurden. Der Zeitraum der Messwerte begann Mitte 2021.\\
@@ -85,7 +86,7 @@ Das Projekt beschäftigt sich im Schwerpunkt mit den folgenden Arbeitsschritten:
     \item Trainieren von Machine-Learning Modellen anhand der vorbereiteten Datensets
     \item Ergebnisauswertung durch Gegenüberstellung verschiedener Datensets und Modellen
 \end{itemize}
-Da es zwischen allen verfügbaren Datensets der einzlnen Räume und Machine-Learning-Modellen eine Vielzahl an
+Da es zwischen allen verfügbaren Datensets der einzelnen Räume und Machine-Learning-Modellen eine Vielzahl an
 Kombinationsmöglichkeiten gibt, ist die Projektarbeit mit dem Anspruch angelegt, ein möglichst übersichtliches, 
 gut gekapseltes Python Programm zu erstellen, das einfach und schnell verschiedene Datensets  
 verarbeiten und mit einer dem Forschungszweck angemessenen Anzahl von Machine-Learning Modellen auszuwerten. \\\\

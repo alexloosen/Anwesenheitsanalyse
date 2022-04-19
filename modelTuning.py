@@ -4,6 +4,7 @@ import pickle
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
 
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import cross_val_score, GridSearchCV
@@ -57,8 +58,18 @@ def parameterTuning(modelType, Xtrain, ytrain, Xtest, ytest, X_presence, y_prese
             'n_neighbors': [5, 10, 25, 50],
             'weights': ['uniform', 'distance'],
             'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
-            'leaf_size': [60, 90, 120, 150],
+            'leaf_size': [10, 20, 30, 60, 90, 120, 150],
             'p': [1, 2, 3, 4]
+        }
+    elif (modelType == 'LR'):
+        classifier = LogisticRegression()
+        base_class = LogisticRegression()
+        param_test = {
+            'penalty': ['l1', 'l2', 'elasticnet', 'none'],
+            'tol': [1e-2, 1e-4, 1e-6],
+            'C': [0.25, 0.5, 0.75, 1, 1.5, 2],
+            'solver': ['saga'],
+            'max_iter': [250, 500, 1000, 2000, 5000]
         }
         
     base_class.fit(Xtrain,ytrain)

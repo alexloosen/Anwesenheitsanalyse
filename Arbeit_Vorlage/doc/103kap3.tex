@@ -18,19 +18,19 @@ Ziel war es, mit einem möglichst kleinen Vektor eine möglichst hohe Genauigkei
 direkte Abhängigkeit zwischen Dauer der Berechnung und Dimensionalität des FV besteht. \\\\ 
 
 In diesem Fall wurden die Feature Importances eines Random Forest genutzt, um Auskunft darüber zu erhalten, wie 
-relevant bestimmte Felder für die Erwartungsberechnung sind. Diese werden errechnet, indem geprüft wird, wieviele
+relevant bestimmte Felder für die Erwartungsberechnung sind. Diese werden errechnet, indem geprüft wird, wie viele
 Datensätze des Sets bestimmte Knoten des Baumes erreichen. Wenn ein beliebiger Decision Tree eine große Menge
 des Datensets allein über seinen rechten Teilbaum klassifizieren kann, werden die darin enthaltenen Knoten schwerer
 gewichtet, da sie in einem höheren Maß in die endgültige Entscheidung einfließen.\\\\
 
 Diese Eigenschaft wurde zur Ermittlung des FVs genutzt, indem verschiedene Modelle mit einem FV-Kandidaten trainiert
-wurden und anschließend swohl die Genauigkeiten, als auch die Feature Importances gegenübergestellt wurden.
+wurden und anschließend sowohl die Genauigkeiten, als auch die Feature Importances gegenübergestellt wurden.
 Features mit geringer Relevanz wurden entfernt und die Modellgenauigkeiten erneut geprüft, um so über mehrere 
 Iterationen hinweg einen FV zu finden, dessen Felder möglichst hohe Aussagekraft besitzen, während die Anzahl 
 nötiger Felder möglichst gering ist.\\\\
 
 Hierzu wurden die Sensordaten zunächst um Delta- und Shiftwerte erweitert, um den Modellen die Möglichkeit zu geben
-die aktuellen Werte mit vorangegangenen Messungen gegenüberzustellen. Mit diesem FV wurde dann ein Random Forest
+die aktuellen Werte den vorangegangenen Messungen gegenüberzustellen. Mit diesem FV wurde dann ein Random Forest
 trainiert und dessen Feature Importances ausgewertet.
 
 \newpage
@@ -41,18 +41,19 @@ trainiert und dessen Feature Importances ausgewertet.
     \label{fig:FI}
 \end{figure}
 
-Wie bereits im vorherigen Kapitel angedeutet, sieht man in \ref{fig:FI}, dass die Temperatur- und 
+Wie bereits im vorherigen Kapitel angedeutet, sieht man in Abb. \ref{fig:FI}, dass die Temperatur- und 
 Luftfeuchtigkeitswerte für die Errechnung der Labels kaum zu Rate gezogen werden. 
 Weder Grund- noch Deltawerte weisen eine hohe Relevanz für das Modell auf.\\
 Es ist anzunehmen, dass Temperatur und Luftfeuchtigkeit an sich durchaus nützlich für solche Betrachtungen sein
-können, allerdings werden sie durch die CO2-Werte in ihrer Relevanz überschattet, da CO2 im Kontext menschlicher
+können, allerdings werden sie durch die CO2-Werte in ihrer Relevanz übertroffen, da CO2 im Kontext menschlicher
 Präsenz in Innenräumen eine deutlich höhere Aussagekraft besitzt.\\
-Zusätzlich weisen Temperatur und Luftfeuchtigkeit über größere Zeiträume starke Schwankungen auf. Diese Schwankungen
-müssten von einem Modell zunächst von menschlicher Präsenz getrennt werden, da ein Temperaturanstieg nicht unbedingt
-Schlüsse auf Präsenz zulässt.\\
-CO2-Werte kommen ohne einen solchen Referenzrahmen aus, da sie in ihrer Aussage eindeutig sind. Die Messwerte
-eines CO2-Sensors sind deutlich unabhängiger von äußeren Einflüssen und sind deshalb, wie in \ref{fig:FI} gezeigt,
-entscheidender Faktor bei der Berechnung.
+%Zusätzlich weisen die Grundwerte Temperatur und Luftfeuchtigkeit über größere Zeiträume wetterbedingt starke 
+%Schwankungen auf. Diese Schwankungen
+%müssten von einem Modell zunächst von menschlicher Präsenz getrennt werden, da ein Temperaturanstieg nicht unbedingt
+%Schlüsse auf Präsenz zulässt.\\
+Die CO2-Werte sind für das Modell einfacher zu klassifizieren. Die Messwerte
+eines CO2-Sensors erweisen sich als unabhängig von äußeren Einflüssen wie Jahreszeiten oder dem aktuellen Wetter 
+und sind deshalb, wie in Abb. \ref{fig:FI} gezeigt, entscheidender Faktor bei der Berechnung.
 \newpage
 Nach anschließender Exkludierung von Temperatur und Luftfeuchtigkeit wurden neue Deltas und Shifts für die 
 CO2-Werte eingefügt und die Feature Importances erneut betrachtet. 
@@ -64,8 +65,8 @@ CO2-Werte eingefügt und die Feature Importances erneut betrachtet.
     \label{fig:FIB}
 \end{figure}
 
-Es ist in \ref{fig:FIB} zu erkennen, dass die CO2-Shift-Werte ebenfalls nicht maßgeblich in die Berechnung einfließen. Diese weisen
-allerings noch deutlich höhere Feature Importances auf, als die Temperatur- und Luftfeuchtigkeitswerte.\\
+Es ist in Abb. \ref{fig:FIB} zu erkennen, dass die CO2-Shift-Werte ebenfalls nicht maßgeblich in die Berechnung einfließen. Diese weisen
+allerdings noch deutlich höhere Feature Importances auf, als die Temperatur- und Luftfeuchtigkeitswerte.\\
 Der Graph bestätigt die Annahme, dass beim CO2 die Deltawerte deutlich ausschlaggebender sind, als die 
 tatsächliche Messung zu einem bestimmten Moment. \\
 
@@ -142,9 +143,9 @@ Aus diesen Betrachtungen ergab sich folgender FV, der für den weiteren Verlauf 
 Da nicht alle Algorithmen auf die gleiche Weise evaluiert und grafisch dargestellt werden können, sollen 
 die Ergebnisse zu 
 \begin{itemize}
-    \item Clustering Modellen
     \item Decision Tree Modellen
-    \item Neuralen Netzwerken
+    \item Neuronalen Netzwerken
+    \item Clustering Modellen
 \end{itemize}
 einzeln betrachtet werden.
 
@@ -152,7 +153,7 @@ einzeln betrachtet werden.
 Die ausgewählten Algorithmen konnten mit dem ausgewählten FV bei der Erwartungsberechnung über das gesamte 
 Datenset eine Genauigkeit von etwa 94\% erreichen. Eine \textit{Confusion Matrix}, welche die errechneten 
 Werte den tatsächlichen Labelwerten gegenüberstellt, zeigt, dass im hier benutzten Beispiel ein Random Forest Classifier 
-selbst bei der starken Unausgeglichenheit des Datensets ähnlich viele Fehler in sowohl An- als auch Abwesenheit 
+selbst bei der starken Unausgeglichenheit des Datensets ähnlich viele Fehler bei sowohl An- als auch Abwesenheit 
 von Personen macht.
 
 \begin{figure}[h]
@@ -167,9 +168,9 @@ für jeweils Ab- und Anwesenheit errechnet hat, während die Felder oben rechts 
 Menge falscher Erwartungen für beide Werte zeigen.\\\\
 
 \newpage
-Ebenfalls aufschlussreich ist die erwarteten Labelwerte den tatsächlichen Labelwerten grafisch gegenüberzustellen, 
-indem man das ursprüngliche Datenset mit timestamp und CO2-Wert zeichnet. Dabei wird die Anwesenheit 
-farblich gelb für an- und blau für abwesend markiert.
+Ebenfalls aufschlussreich, ist die grafische Gegenüberstellung der erwarteten Labelwerte mit den tatsächlichen Labelwerten
+indem man das ursprüngliche Datenset mit \textit{timestamp} und \textit{CO2-Wert} zeichnet. Dabei markiert geld die Anwesenheit
+und blau die Abwesenheit von Personen.
 
 \begin{figure}[h]
     \centering
@@ -181,7 +182,8 @@ farblich gelb für an- und blau für abwesend markiert.
 \ref{fig:nov23} zeigt den Verlauf der CO2-Messungen über einen Arbeitstag. Die blaue und gelbe Einfärbung stellt
 die Messung des Infrarotsensors dar.\\ 
 Ersetzt man aus dieser Datenreihe die tatsächlichen Messwerte des Infrarotsensors durch die errechneten 
-Anwesenheitswerte des Modells, zeigt sich die hohe Genauigkeit durch die neue Einfärbung der Datenreihe deutlich. 
+Anwesenheitswerte des Modells, zeigt sich die hohe Genauigkeit in \ref{fig:nov23_pred} durch die neue Einfärbung 
+der Datenreihe deutlich. 
 Bis auf einige kleine Fehler trifft das Modell eine sehr präzise Aussage über die aktuelle Anwesenheit.
 
 \begin{figure}[h]
@@ -191,8 +193,9 @@ Bis auf einige kleine Fehler trifft das Modell eine sehr präzise Aussage über 
     \label{fig:nov23_pred}
 \end{figure}
 
-Dieses Ergebnis konnte über eine Vielzahl von Kombinationen verschiedener Räume und Modelle weiterhin
+Dieses Ergebnis konnte über weitere Kombinationen verschiedener Räume und Modelle weiterhin
 bestätigt und repliziert werden. 
+
 \newpage
 Die Tatsache, dass die Genauigkeiten aller Modelle so nah beieinander 
 liegen, rührt daher, dass dieses Datenset ein typisches Klassifizierungsproblem darstellt,
@@ -221,11 +224,12 @@ Zusätzlich wurden die \textit{ROC-Curves} (ROC: englisch für \textit{receiver 
 deutsch Operationscharakteristik)
 der True- und False-Positives gegeneinander gezeichnet, um zu erkennen, 
 inwiefern die Ergebnisse zufällig oder errechnet sind.\\\\
-Der Optimalwert wird hier durch die grüne Kurve dargestellt, was ebenfalls den Fall darstellt, 
-dass das Modell perfekte Erwartungen berechnet und es nie zu Fehleinschätzungen kommt.\\
-Die schwarze Kurve in der Mitte bedeutet, dass es zwischen True- und False-Positives ein 50/50 Verhältnis gibt, 
-was heißt, dass das Modell genauso oft richtig liegt, wie es Fehleinschätzungen trifft. Je näher die einzelnen
-Modelle an der schwarzen Linie liegen, desto weniger aussagefähig sind sie. 
+Der Optimalwert wird hier durch in der grünen Kurve gezeigt, welche den Fall darstellt, 
+dass das Modell die Labels immer richtig berechnet und es nie zu Fehleinschätzungen kommt.\\
+Liegt ein Modell näher an der schwarzen Diagonale in der Mitte bedeutet das, dass True- und 
+False-Positives jeweils 50\% der Ergebnismenge ausmachen. 
+Das Modell liegt dann genauso oft richtig, wie es Fehleinschätzungen trifft. 
+Je näher die einzelnen Modelle an der schwarzen Linie liegen, desto weniger aussagefähig sind sie. 
 
 \begin{figure}[h]
     \centering
@@ -238,27 +242,30 @@ Man sieht in \ref{fig:Roc_curves}, wie alle Modelle sehr ähnliche Ergebnisse au
 dafür auf, dass Ergebnisse wegen Underfitting erraten werden. Alle Modelle zeigen eine hohe Rate von True-Positives und
 sind somit in den meisten Fällen in der Lage, aus den Input-Werten das richtige Ergebnis für die Präsenz abzuleiten.  
 
+\newpage
+
 \subsection{Umgang mit fehlenden Präsenz-Labels}
-Da zur Auswertung auch eine große Menge an Datensätzen ohne Präsenz-Label zur Verfügung standen, konnte die 
+Da zur Auswertung auch eine große Menge an Datensätzen ohne Präsenz-Label zur Verfügung stand, konnte die 
 Qualität der Ergebnisse für diese Datensets nicht rechnerisch quantifiziert werden. Die Ergebnisse
-sind hierbei, aufgrund der fehlenden Label, lediglich augenscheinlich zu bewerten.\\
+sind hierbei aufgrund der fehlenden Label lediglich augenscheinlich zu bewerten, da eine mathematische
+Berechnung der Genauigkeit nicht möglich ist.\\
 In diesem Kontext stellt sich die Frage, inwiefern ein auf einen Büroraum trainiertes Modell auch richtige
 Erwartungen für einen Wohnraum treffen kann.
-Da das Modell unter anderen auf eine Erkennung der aktuellen Tageszeit trainert wird, muss geprüft
+Da das Modell unter anderem auf eine Erkennung der aktuellen Tageszeit trainert wird, muss geprüft
 werden, inwiefern ein solches Modell auch Aussagen über CO2-Werte treffen kann, dessen Veränderungen außerhalb
-der bisher trainierten Arbeitszeiten von etwa 7 Uhr morgens bis 17 Uhr Nachmittags liegen. 
-Außerdem sind Wohnräume in der Regel deutlich größer, als ein Büro und weist in diesem Fall eine größere Anzahl 
+der bisher trainierten Arbeitszeiten von etwa 7 Uhr morgens bis 17 Uhr nachmittags liegen. 
+Außerdem ist der Wohnraum in der Regel deutlich größer als ein Büro und weist in diesem Fall eine größere Anzahl 
 anwesender Personen auf, wodurch sich die ermittelten Deltas der CO2-Werte erheblich von denen der Büroräume 
 unterscheiden.\\
 Eines der Datensets zeichnete kontinuierliche Werte aus einem Wohnzimmer auf, in dem sich über einen 
 Tag hinweg maximal drei Personen befanden. Die Zeiträume, zu denen in diesem Wohnzimmer anhand der CO2-Werte
-Anwesenheit zu erkennen war, unterschieden sich deutlich von denen der Datensets der Büroräume. Die 
+Anwesenheit zu erkennen war, unterschieden sich deutlich von denen der Datensets der FH Aachen. Die 
 starken Anstiege des CO2-Wertes waren bei diesem Datenset viel mehr über den Tag verteilt, wodurch sich die 
 Datenreihe für diesen Test besonders anbot.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1.0\textwidth]{pic/h217_predicting_livingroom.png}
+    \includegraphics[width=0.95\textwidth]{pic/h217_predicting_livingroom.png}
     \caption{Büroraum-Modell trifft Erwartungen für Wohnzimmer}
     \label{fig:pred_livingroom}
 \end{figure}
@@ -267,10 +274,8 @@ Auch hier wurden mit den errechneten Anwesenheitswerten des Modells die Einfärb
 vorgenommen. 
 Wie in \ref{fig:pred_livingroom} anhand der Einfärbung zu erkennen ist, liegt die Vermutung nahe, dass das Modell 
 auch unabhängig von der Tageszeit und den bekannten Gegebenheiten eines normalen Arbeitstages Anwesenheit 
-erkennen kann. Vor allem deutliche Anstiege und Abfälle zeigen sich deutlich durch gelbe bzw. blaue Einfärbung.
-Es bleibt allerdings anzumerken, dass die Genauigkeit dieses Modells hier nur augenscheinlich bewertet werden kann.
-Der Nutzen solcher Modelle für Innenräume, mit anderen Gegebenheiten, als im Trainingsset, ist lediglich eine 
-begründete Vermutung. 
+erkennen kann. Vor allem deutliche Anstiege und Abfälle zeigen sich merklich durch kontinuierliche gelbe bzw. 
+blaue Einfärbung.
 \newpage
 
 \subsection{Neuronale Netzwerke}
@@ -282,7 +287,7 @@ zwischen richtigen und falschen Berechnungen.\\
 Die Loss-Funktion hingegen gibt die Abweichung einer Schätzung zum tatsächlichen Wert an. Diese beiden Werte 
 werden nach jeder Epoche ausgewertet, wobei zunächst der Erfolg während des Trainigs als \textit{train}
 angegeben wird und danach das Modell an einem zufälligen Teil des Validierungssets \textit{val} getestet wird.
-Liegen diese beiden Kurven nah beieinander, kann dies ein klares Anzeichen für ein funktionierndes Modell ohne 
+Liegen diese beiden Kurven nah beieinander, kann dies als ein klares Anzeichen für ein funktionierndes Modell ohne 
 Over- oder Underfitting gewertet werden, da sowohl beim Training als auch bei der Validierung die Genauigkeiten 
 Ähnlichkeiten aufweisen, während zugleich die Loss-Funktion minimiert wird.
 
@@ -310,10 +315,12 @@ Während die Genauigkeit bei der Erwartungsberechnung von Abwesenheit bei 94\% l
 K-Means-Modell Anwesenheiten nur zu 50\% erkennen, was bedeutet, dass das Modell das Ergebnis errät, anstatt
 es zuverlässig zu berechnen. \\
 Wegen der Unausgeglichenheit des Datensets sind ca. zwei Drittel des Datensets sehr einfach zu 
-klassifizieren, da es im ganzen Datenset nie Anwesenheiten zwischen beispielsweise 20:00 Uhr und 06:00 Uhr 
-gibt. Selbst wenn das Modell beim letzten Drittel, also den Anwesenheiten rät und somit nur
-mit einer Genauigkeit von 50\% trifft, suggeriert eine daraus resultierende Genauigkeit von etwa 80\% ein 
-funktionierendes Modell.
+klassifizieren, da es im ganzen Datenset nie Anwesenheiten zwischen ca. 20:00 Uhr und 06:00 Uhr 
+gibt. Bei diesem Teil der Daten wies das Modell eine hohe Genauigkeit von 94\% auf. So werden also ca. 67\% des 
+Datensets mit enorm hoher Genauigkeit klassifiziert.\\
+Selbst wenn das Modell beim letzten Drittel der Daten, also dem Teil des Datensets bei dem es zwischen
+An- und Abwesenheit unterscheiden muss, rät und somit nur mit einer Genauigkeit von 50\% das richtige Label 
+errechnet, suggeriert eine daraus resultierende Gesamtgenauigkeit von etwa 80\% ein funktionierendes Modell.
 Allerdings zeigt sich hier, warum auch die Gegenüberstellung von True und False Positives in der 
 Modellauswertung von entscheidender Wichtigkeit sein kann.\\
 
@@ -342,7 +349,7 @@ bei der das Datenset auf zwei Dimensionen reduziert wurde und An- und Abwesenhei
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{pic/pca.png}
+    \includegraphics[width=0.85\textwidth]{pic/pca.png}
     \caption{Reduktion des Datensets auf zwei Dimensionen}
     \label{fig:pca}
 \end{figure}
@@ -356,11 +363,14 @@ Abwesenheit zu unterscheiden.\\
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.55\textwidth]{pic/pca1.png}
+    \includegraphics[width=0.5\textwidth]{pic/pca1.png}
     \caption{Datenreduktion ohne Trennung}
     \label{fig:pca1}
 \end{figure}
 
-Das Erkennen von Abwesenheit im linken Teilbild von \ref{fig:pca1} ist nun erheblich einfacher, als die Trennung 
-zwischen An- und Abwesenheit im rechten Teilbild. Diesen Sachverhalt spiegelt auch die Auswertung des Classification
-in \ref{tab:clus} wieder.\\
+Da die Datenpunkte im rechten Teilbild kaum zu unterscheiden sind, schafft es das Modell nicht, An- und Abwesenheit
+während eines Arbeitstages zu unterscheiden. Währenddessen sind die Abwesenheiten im linken Teilbild sehr einfach
+zu klassifizieren.
+Diesen Sachverhalt spiegelt auch die Auswertung des \textit{Classification Report} in Tabelle \ref{tab:clus} wieder.\\
+%Das Erkennen von Abwesenheit im linken Teilbild von \ref{fig:pca1} ist nun erheblich einfacher, als die Trennung 
+%zwischen An- und Abwesenheit im rechten Teilbild. 
