@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  20 APR 2022 12:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.14)  20 APR 2022 12:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -741,47 +741,47 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              deprecated \float@addtolist interface.
 
 
-Overfull \hbox (27.7536pt too wide) in paragraph at lines 8--28
+Overfull \hbox (27.7536pt too wide) in paragraph at lines 8--27
 \OT1/ptm/m/n/12 rung der Ener-gie-ef-fi-zi-enz durch bau-phy-si-ka-li-sche Ma^^Y-nah-men, wie ver-min-der-te W[]armeverluste
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--28
+Underfull \hbox (badness 10000) in paragraph at lines 8--27
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--28
+Underfull \hbox (badness 10000) in paragraph at lines 8--27
 
  []
 
 
-Overfull \hbox (24.13786pt too wide) in paragraph at lines 8--28
+Overfull \hbox (24.13786pt too wide) in paragraph at lines 8--27
 \OT1/ptm/m/n/12 fern au-to-ma-tisch an-zu-steu-ern, so-dass sog. Performance-Gaps ver-mie-den wer-den. Performance-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--28
+Underfull \hbox (badness 10000) in paragraph at lines 8--27
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--62
+Underfull \hbox (badness 10000) in paragraph at lines 32--60
 
  []
 
 
-Overfull \hbox (2.4899pt too wide) in paragraph at lines 33--62
-\OT1/ptm/m/n/12 !! Warum ist das es-sen-zi-ell? !! Da die di-rek-te Mes-sung von An-we-sen-heit []uber z.B. Infrarot-
+Overfull \hbox (5.92534pt too wide) in paragraph at lines 32--60
+\OT1/ptm/m/n/12 lich pro-ble-ma-tisch ist, soll in die-ser Ar-beit un-ter-sucht wer-den, in-wie-fern Machine-Learning
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--62
+Underfull \hbox (badness 10000) in paragraph at lines 32--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--62
+Underfull \hbox (badness 10000) in paragraph at lines 32--60
 
  []
 
@@ -792,11 +792,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--62
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 85.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 83.
  (d:/devTools/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 90--141
+Underfull \hbox (badness 10000) in paragraph at lines 88--141
 
  []
 
@@ -1119,37 +1119,37 @@ Underfull \hbox (badness 1675) in paragraph at lines 172--183
 <pic/results_all.png, id=149, 358.33875pt x 213.79875pt>
 File: pic/results_all.png Graphic file (type png)
 <use pic/results_all.png>
-Package pdftex.def Info: pic/results_all.png  used on input line 191.
+Package pdftex.def Info: pic/results_all.png  used on input line 192.
 (pdftex.def)             Requested size: 298.75264pt x 178.2587pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--203
+Underfull \hbox (badness 10000) in paragraph at lines 197--204
 
  []
 
 <pic/results_spec.png, id=150, 358.33875pt x 213.04594pt>
 File: pic/results_spec.png Graphic file (type png)
 <use pic/results_spec.png>
-Package pdftex.def Info: pic/results_spec.png  used on input line 206.
+Package pdftex.def Info: pic/results_spec.png  used on input line 207.
 (pdftex.def)             Requested size: 298.75264pt x 177.63103pt.
 [33 <./pic/results_all.png> <./pic/results_spec.png>]
 <pic/nov23_actual.png, id=155, 1017.04968pt x 502.12593pt>
 File: pic/nov23_actual.png Graphic file (type png)
 <use pic/nov23_actual.png>
-Package pdftex.def Info: pic/nov23_actual.png  used on input line 221.
+Package pdftex.def Info: pic/nov23_actual.png  used on input line 222.
 (pdftex.def)             Requested size: 384.1096pt x 189.63757pt.
 <pic/nov23_predicted.png, id=156, 1019.30812pt x 537.50812pt>
 File: pic/nov23_predicted.png Graphic file (type png)
 <use pic/nov23_predicted.png>
-Package pdftex.def Info: pic/nov23_predicted.png  used on input line 235.
+Package pdftex.def Info: pic/nov23_predicted.png  used on input line 236.
 (pdftex.def)             Requested size: 384.1096pt x 202.54926pt.
  [34 <./pic/nov23_actual.png> <./pic/nov23_predicted.png>]
 <pic/param_eval.png, id=162, 359.84438pt x 213.79875pt>
 File: pic/param_eval.png Graphic file (type png)
 <use pic/param_eval.png>
-Package pdftex.def Info: pic/param_eval.png  used on input line 261.
+Package pdftex.def Info: pic/param_eval.png  used on input line 262.
 (pdftex.def)             Requested size: 256.07741pt x 152.15701pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--271
+Underfull \hbox (badness 10000) in paragraph at lines 267--272
 
  []
 
@@ -1157,10 +1157,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--271
 <pic/roc_all.png, id=166, 808.52063pt x 283.81032pt>
 File: pic/roc_all.png Graphic file (type png)
 <use pic/roc_all.png>
-Package pdftex.def Info: pic/roc_all.png  used on input line 294.
+Package pdftex.def Info: pic/roc_all.png  used on input line 295.
 (pdftex.def)             Requested size: 384.1096pt x 134.83295pt.
- [36 <./pic/roc_all.png>] [37]
-<pic/h217_predicting_livingroom.png, id=174, 1008.76875pt x 552.56438pt>
+ [36 <./pic/roc_all.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 307--326
+
+ []
+
+
+Underfull \hbox (badness 1117) in paragraph at lines 307--326
+\OT1/ptm/m/n/12 Eines der Da-ten-sets zeich-ne-te kon-ti-nu-ier-li-che Wer-te aus ei-nem Wohn-zim-mer auf,
+ []
+
+<pic/h217_predicting_livingroom.png, id=170, 1008.76875pt x 552.56438pt>
 File: pic/h217_predicting_livingroom.png Graphic file (type png)
 <use pic/h217_predicting_livingroom.png>
 Package pdftex.def Info: pic/h217_predicting_livingroom.png  used on input line 329.
@@ -1170,55 +1179,55 @@ Underfull \hbox (badness 1546) in paragraph at lines 334--340
 \OT1/ptm/m/n/12 Einf[]arbungen der ein-zel-nen Da-ten-punk-te vor-ge-nom-men. Wie in 5.11[] an-hand der
  []
 
-[38 <./pic/h217_predicting_livingroom.png>]
-<pic/eval_NN.png, id=178, 816.04875pt x 283.81032pt>
+[37 <./pic/h217_predicting_livingroom.png>]
+<pic/eval_NN.png, id=175, 816.04875pt x 283.81032pt>
 File: pic/eval_NN.png Graphic file (type png)
 <use pic/eval_NN.png>
-Package pdftex.def Info: pic/eval_NN.png  used on input line 357.
-(pdftex.def)             Requested size: 384.1096pt x 133.59007pt.
-<pic/eval_LSTM.png, id=179, 816.04875pt x 290.58563pt>
+Package pdftex.def Info: pic/eval_NN.png  used on input line 356.
+(pdftex.def)             Requested size: 341.43437pt x 118.7448pt.
+<pic/eval_LSTM.png, id=176, 816.04875pt x 290.58563pt>
 File: pic/eval_LSTM.png Graphic file (type png)
 <use pic/eval_LSTM.png>
-Package pdftex.def Info: pic/eval_LSTM.png  used on input line 364.
-(pdftex.def)             Requested size: 384.1096pt x 136.77922pt.
- [39 <./pic/eval_NN.png> <./pic/eval_LSTM.png>]
-<pic/roc_nn.png, id=183, 423.08063pt x 283.81032pt>
+Package pdftex.def Info: pic/eval_LSTM.png  used on input line 363.
+(pdftex.def)             Requested size: 341.43437pt x 121.57956pt.
+ [38 <./pic/eval_NN.png> <./pic/eval_LSTM.png>]
+<pic/roc_nn.png, id=180, 423.08063pt x 283.81032pt>
 File: pic/roc_nn.png Graphic file (type png)
 <use pic/roc_nn.png>
-Package pdftex.def Info: pic/roc_nn.png  used on input line 380.
+Package pdftex.def Info: pic/roc_nn.png  used on input line 379.
 (pdftex.def)             Requested size: 256.07741pt x 171.78587pt.
- [40 <./pic/roc_nn.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 425--439
+ [39 <./pic/roc_nn.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 424--438
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--459
+Underfull \hbox (badness 10000) in paragraph at lines 456--458
 
  []
 
-[41]
-<pic/pca.png, id=190, 764.8575pt x 391.4625pt>
+[40]
+<pic/pca.png, id=187, 764.8575pt x 391.4625pt>
 File: pic/pca.png Graphic file (type png)
 <use pic/pca.png>
-Package pdftex.def Info: pic/pca.png  used on input line 465.
+Package pdftex.def Info: pic/pca.png  used on input line 464.
 (pdftex.def)             Requested size: 362.77525pt x 185.67184pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--476
+Underfull \hbox (badness 10000) in paragraph at lines 469--475
 
  []
 
-<pic/pca1.png, id=191, 436.63126pt x 386.94562pt>
+<pic/pca1.png, id=188, 436.63126pt x 386.94562pt>
 File: pic/pca1.png Graphic file (type png)
 <use pic/pca1.png>
-Package pdftex.def Info: pic/pca1.png  used on input line 479.
+Package pdftex.def Info: pic/pca1.png  used on input line 478.
 (pdftex.def)             Requested size: 213.39568pt x 189.11494pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 484--488
+Underfull \hbox (badness 10000) in paragraph at lines 483--487
 
  []
 
-) [42 <./pic/pca.png> <./pic/pca1.png>]
+) [41 <./pic/pca.png> <./pic/pca1.png>]
 \openout2 = `./doc/111Schluss.aux'.
 
  (./doc/111Schluss.tex
@@ -1248,33 +1257,23 @@ Underfull \hbox (badness 5878) in paragraph at lines 6--20
 \OT1/ptm/m/n/12 Geb[]audeautomatisierungssystemen zweckm[]a^^Yig ist. Ein wei-te-rer Vor-teil be-steht
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--31
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--31
-
- []
-
-[43
+[42
 
 
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 34--37
+])
+Underfull \hbox (badness 10000) in paragraph at lines 34--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--37
+Underfull \hbox (badness 10000) in paragraph at lines 34--144
 
  []
 
-) [44] (./000arbeit.bbl
+[43] (./000arbeit.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 53--58
 []\OT1/ptm/m/n/12 Umweltbundesamt (2022).  Ener-
  []
@@ -1289,7 +1288,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--58
 \OT1/ptm/m/n/12 https://www.umweltbundesamt.de/daten/energie/energieverbrauch-nach-
  []
 
-) [45
+) [44
 
 
 
@@ -1297,7 +1296,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--58
 ]
 \openout2 = `./doc/202abkuerzungsverzeichnis.aux'.
 
- (./doc/202abkuerzungsverzeichnis.tex) [46
+ (./doc/202abkuerzungsverzeichnis.tex) [45
 
 
 
@@ -1306,7 +1305,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--58
 \tf@lof=\write4
 \openout4 = `000arbeit.lof'.
 
- [47
+ [46
 
 
 
@@ -1317,12 +1316,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--58
 
  (d:/devTools/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [48
+) [47
 
 
 ]
 chapter A.
-[49
+[48
 
 ] (./000arbeit.aux (./doc/001titelblatt.aux) (./doc/002erklaerung.aux) (./doc/101kap1.aux) (./doc/102kap2.aux) (./doc/103kap3.aux) (./doc/111Schluss.aux) (./doc/202abkuerzungsverzeichnis.aux))
 
@@ -1338,10 +1337,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10700b,731s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/devTools/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/devTools/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 000arbeit.pdf (49 pages, 1246439 bytes).
+Output written on 000arbeit.pdf (48 pages, 1245767 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
+ 265 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

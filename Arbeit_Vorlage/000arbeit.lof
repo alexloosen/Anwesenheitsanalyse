@@ -30,12 +30,12 @@
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Erwartungsberechnung des 13. Januar\relax }}{34}{}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Ergebnisse des Parameter Tuning\relax }}{35}{}%
 \contentsline {figure}{\numberline {5.10}{\ignorespaces ROC-Curves der Decision Tree und Clustering Modelle\relax }}{36}{}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Büroraum-Modell trifft Erwartungen für Wohnzimmer\relax }}{38}{}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Ergebnisse des NN\relax }}{39}{}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Ergebnisse des LSTM\relax }}{39}{}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces ROC-Curves aller Modelle\relax }}{40}{}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Reduktion des Datensets auf zwei Dimensionen\relax }}{42}{}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Datenreduktion ohne Trennung\relax }}{42}{}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Büroraum-Modell trifft Erwartungen für Wohnzimmer\relax }}{37}{}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Ergebnisse des NN\relax }}{38}{}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Ergebnisse des LSTM\relax }}{38}{}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces ROC-Curves aller Modelle\relax }}{39}{}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Reduktion des Datensets auf zwei Dimensionen\relax }}{41}{}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Datenreduktion ohne Trennung\relax }}{41}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
