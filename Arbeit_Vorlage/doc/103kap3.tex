@@ -185,7 +185,8 @@ lag immer höher, als bei Anwesenheit.
 
 Die Gegenüberstellung der Durchschnittsgenauigkeiten aller Modelle mit Precision-, Recall- und F1-Scores in 
 Abb. \ref{fig:ResAll}  zeigt, dass die Decision Tree Modelle bei diesem Klassifikationsproblem mit sehr hoher
-Genauigkeit sowohl An-, als auch Abwesenheit berechnen können.
+Genauigkeit sowohl An-, als auch Abwesenheit berechnen können. Zusätzlich wies das KNN Clustering ähnlich
+hohe Genauigkeiten auf.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{pic/results_all.png}
@@ -314,8 +315,7 @@ werden, inwiefern ein solches Modell auch Aussagen über CO2-Werte treffen kann,
 der bisher trainierten Arbeitszeiten von etwa 7 Uhr morgens bis 17 Uhr nachmittags liegen. 
 Außerdem ist der Wohnraum in der Regel deutlich größer als ein Büro und weist in diesem Fall eine größere Anzahl 
 anwesender Personen auf, wodurch sich die ermittelten Deltas der CO2-Werte erheblich von denen der Büroräume 
-unterscheiden.
-\newpage
+unterscheiden.\\\\
 Eines der Datensets zeichnete kontinuierliche Werte aus einem Wohnzimmer auf, in dem sich über einen 
 Tag hinweg maximal drei Personen befanden. Die Zeiträume, zu denen in diesem Wohnzimmer anhand der CO2-Werte
 Anwesenheit zu erkennen war, unterschieden sich deutlich von denen der Datensets der FH Aachen. Die 
@@ -337,7 +337,6 @@ Wie in \ref{fig:pred_livingroom} anhand der Einfärbung zu erkennen ist, liegt d
 auch unabhängig von der Tageszeit und den bekannten Gegebenheiten eines normalen Arbeitstages Anwesenheit 
 erkennen kann. Vor allem deutliche Anstiege und Abfälle zeigen sich merklich durch kontinuierliche gelbe bzw. 
 blaue Einfärbung.
-\newpage
 
 \subsection{Neuronale Netzwerke}
 Die beiden implementierten neuronalen Netze konnten eine ähnliche Leistung wie die bereits oben genannten 
@@ -354,14 +353,14 @@ Over- oder Underfitting gewertet werden, da sowohl beim Training als auch bei de
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{pic/eval_NN.png}
+    \includegraphics[width=0.8\textwidth]{pic/eval_NN.png}
     \caption{Ergebnisse des NN}
     \label{fig:eval_NN}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{pic/eval_LSTM.png}
+    \includegraphics[width=0.8\textwidth]{pic/eval_LSTM.png}
     \caption{Ergebnisse des LSTM}
     \label{fig:eval_LSTM}
 \end{figure}
