@@ -195,8 +195,8 @@ Genauigkeit sowohl An-, als auch Abwesenheit berechnen können.
 
 Als Metrik wurde hier die Durchschnittsgenauigkeit der Genauigkeiten für An- und Abwesenheit gewählt, da die 
 Datensets wie bereits beschrieben An- und Abwesenheit stark unausgeglichen sind. Wenn man die Genauigkeiten
-nach der Menge der jeweiligen Datenpunkte gewichtet, erhöht das die Genauigkeit aller Modelle deutlich.\\\\ 
-
+nach der Menge der jeweiligen Datenpunkte gewichtet, erhöht das die Genauigkeit aller Modelle deutlich,
+ohne dass sich deren Aussagekraft steigert.\\\\ 
 Dieser Sachverhalt zeigt sich besonders deutlich durch die Darstellung der tatsächlichen Genauigkeiten bezogen 
 auf die beiden Labelwertein Abb. \ref{fig:ResSpec}. Alle Modelle sind deutlich besser in der Erkennung von 
 Abwesenheit.
@@ -204,7 +204,7 @@ Abwesenheit.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{pic/results_spec.png}
-    \caption{Genauigkeiten einzlner Labelwerte aller Modelle}
+    \caption{Genauigkeiten einzelner Labelwerte aller Modelle}
     \label{fig:ResSpec}
 \end{figure}
 
@@ -241,19 +241,25 @@ Dieses Ergebnis konnte über weitere Kombinationen verschiedener Räume und Mode
 bestätigt und repliziert werden. 
 
 \newpage
-Die Tatsache, dass die Genauigkeiten aller Modelle so nah beieinander 
-liegen, rührt daher, dass dieses Datenset ein typisches Klassifizierungsproblem darstellt,
-wodurch die sich wiederholenden Schemata in den CO2-Werten von einer Vielzahl von Algorithmen schnell 
-erkannt und verarbeitet werden können.
-
-Beim Tuning der ausgewählten Modelle wurden als Parameter-Optionen ausschließlich Werte gewählt, die nicht 
+%Die Tatsache, dass die Genauigkeiten aller Modelle so nah beieinander 
+%liegen, rührt daher, dass dieses Datenset ein typisches Klassifizierungsproblem darstellt,
+%wodurch die sich wiederholenden Schemata in den CO2-Werten von einer Vielzahl von Algorithmen schnell 
+%erkannt und verarbeitet werden können.\\\\
+Beim Parameter Tuning der ausgewählten Modelle wurden als Parameter-Optionen ausschließlich Werte gewählt, die nicht 
 den Standardwerten der Modelle entsprechen. Somit sollte das GridSearchCV-Modul ausschließlich in der Menge 
-von Parametern nach Möglichkeiten suchen, die nicht den Standard-Einstellungen entsprechen.
+von Parametern nach Möglichkeiten suchen, die nicht den Standard-Einstellungen entsprechen.\\
+Hier ist anzumerken, dass das K-Means Modell kein Parameter Tuning unterstützt und deshalb hier nicht 
+beachtet wird. Wie beschrieben, werden beim K-Means Algorithmus zufällige Datenpunkte in das Datenset
+gelegt, weshalb nicht jede Ausführung des Modells die gleiche Genauigkeit liefert. Es ist deshalb auch
+durch manuelle Veränderung der Parameter sehr schwer Verbesserungen der Genauigkeit herbeizuführen.\\
+Neuronale Netze tauchen hier ebenfalls nicht auf, da diese Art von Modell vom GridSearchCV-Modul nicht
+unterstützt wird. Die Layer des NN und LSTM wurden manuell erzeugt, wobei deren Anordnung bereits so
+gewählt wurde, dass die Genauigkeiten möglichst maximiert werden.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{pic/param_eval.png}
-    \caption{!!PLACEHOLDER-GRAFIK!! Ergebnisse des Parameter Tuning}
+    \caption{Ergebnisse des Parameter Tuning}
     \label{fig:PT_eval}
 \end{figure}
 
@@ -264,10 +270,18 @@ sollte trotzdem grundsätzlich immer durchgeführt werden, um zu erkennen, ob ma
 der Parameter eine Verbesserung des Modells erzielen kann.\\
 
 \newpage
-Zusätzlich wurden die \textit{ROC-Curves} (ROC: englisch für \textit{receiver operating characteristic} bzw. 
-deutsch Operationscharakteristik)
-der True- und False-Positives gegeneinander gezeichnet, um zu erkennen, 
-inwiefern die Ergebnisse zufällig oder errechnet sind.\\\\
+Zusätzlich wurden die \textit{ROC-Curves} (ROC: englisch für \textit{receiver operating characteristic} 
+bzw. deutsch Operationscharakteristik) gezeichnet, um zu erkennen, inwiefern die Ergebnisse zufällig 
+oder errechnet sind.\\
+Hierbei berechnet sich die True Positive Rate auf der y-Achse aus
+\begin{align}
+    \dfrac{TP}{TP - FN}
+\end{align}
+während die False Positive Rate auf der x-Achse durch
+\begin{align}
+    \dfrac{FP}{FP + TN}
+\end{align}
+angegeben wird.\\
 Der Optimalwert wird hier durch in der grünen Kurve gezeigt, welche den Fall darstellt, 
 dass das Modell die Labels immer richtig berechnet und es nie zu Fehleinschätzungen kommt.\\
 Liegt ein Modell näher an der schwarzen Diagonale in der Mitte bedeutet das, dass True- und 
@@ -275,17 +289,17 @@ False-Positives jeweils 50\% der Ergebnismenge ausmachen.
 Das Modell liegt dann genauso oft richtig, wie es Fehleinschätzungen trifft. 
 Je näher die einzelnen Modelle an der schwarzen Linie liegen, desto weniger aussagefähig sind sie. 
 
-\begin{figure}[h]
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=0.7\textwidth]{pic/roc_curves.png}
-    \caption{ROC-Curves aller Modelle}
+    \includegraphics[width=0.9\textwidth]{pic/roc_all.png}
+    \caption{ROC-Curves der Decision Tree und Clustering Modelle}
     \label{fig:Roc_curves}
 \end{figure}
-
 In \ref{fig:Roc_curves} ist zu sehen, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines der Modelle weist Anzeichen 
 dafür auf, dass Ergebnisse wegen Underfitting erraten werden. Alle Modelle zeigen eine hohe Rate von True-Positives und
-sind somit in den meisten Fällen in der Lage, aus den Input-Werten das richtige Ergebnis für die Präsenz abzuleiten.  
-
+sind somit in den meisten Fällen in der Lage, aus den Input-Werten das richtige Ergebnis für die Präsenz abzuleiten.\\
+Es ist auch zu erkennen, dass für diesen Anwendungsfall Decision Tree Modelle am besten abschneiden.
+Von den Clustering Modellen ist das K-Nearest-Neighbours Modell erheblich genauer als das K-Means Modell. 
 \newpage
 
 \subsection{Umgang mit fehlenden Präsenz-Labels}
@@ -300,12 +314,15 @@ werden, inwiefern ein solches Modell auch Aussagen über CO2-Werte treffen kann,
 der bisher trainierten Arbeitszeiten von etwa 7 Uhr morgens bis 17 Uhr nachmittags liegen. 
 Außerdem ist der Wohnraum in der Regel deutlich größer als ein Büro und weist in diesem Fall eine größere Anzahl 
 anwesender Personen auf, wodurch sich die ermittelten Deltas der CO2-Werte erheblich von denen der Büroräume 
-unterscheiden.\\
+unterscheiden.
+\newpage
 Eines der Datensets zeichnete kontinuierliche Werte aus einem Wohnzimmer auf, in dem sich über einen 
 Tag hinweg maximal drei Personen befanden. Die Zeiträume, zu denen in diesem Wohnzimmer anhand der CO2-Werte
 Anwesenheit zu erkennen war, unterschieden sich deutlich von denen der Datensets der FH Aachen. Die 
 starken Anstiege des CO2-Wertes waren bei diesem Datenset viel mehr über den Tag verteilt, wodurch sich die 
-Datenreihe für diesen Test besonders anbot.
+Datenreihe für diesen Test besonders anbot.\\
+Auf dieses Datenset wurde das auf die Büroräume trainierte  SVC Modell angewendet, da dieses bisher die 
+besten Ergebnisse bei der Unterscheidung von An- und Abwesenheit während eines Arbeitstages liefern konnte. 
 
 \begin{figure}[h]
     \centering
@@ -314,7 +331,7 @@ Datenreihe für diesen Test besonders anbot.
     \label{fig:pred_livingroom}
 \end{figure}
 
-Auch hier wurden mit den errechneten Anwesenheitswerten des Modells die Einfärbungen der einzelnen Datenpunkte 
+Auch hier wurden mit den errechneten Anwesenheitswerten des SVC Modells die Einfärbungen der einzelnen Datenpunkte 
 vorgenommen. 
 Wie in \ref{fig:pred_livingroom} anhand der Einfärbung zu erkennen ist, liegt die Vermutung nahe, dass das Modell 
 auch unabhängig von der Tageszeit und den bekannten Gegebenheiten eines normalen Arbeitstages Anwesenheit 
@@ -352,6 +369,58 @@ Over- oder Underfitting gewertet werden, da sowohl beim Training als auch bei de
 Wie \ref{fig:eval_NN} und \ref{fig:eval_LSTM} zeigen, weisen beide Arten neuronaler Netzwerke diese Eigenschaften auf. Die Genauigkeiten beider Modelle
 konvergierten auch nach verschiedenen Epochen-Werten etwa bei 89\%.
 
+\newpage
+Die ROC-Curves zeigen auch hier, dass die durchschnittliche Modellgenauigkeit nicht als Metrik ausreicht, um
+die Qualität eines Modells festzustellen. Bei diesen Modellen zeigen sich deutlich größere Abweichungen zwischen
+den Genauigkeiten für die Berechnung von Ab- und Abwesenheit. Wie in Abb. \ref{fig:Roc_nn} zu sehen, liefern
+beide Modelle hohen Genauigkeiten bei der Errechnung von Anwesenheit.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pic/roc_nn.png}
+    \caption{ROC-Curves aller Modelle}
+    \label{fig:Roc_nn}
+\end{figure}
+
+Zieht man den Classification Report in Tab. \ref{tab:nn} hinzu, wird dieser Sachverhalt noch deutlicher.
+
+
+\begin{table}[h]
+    \centering
+    \caption{Genauigkeitsauswertung des NN}
+    \begin{tabular}{|p{2.5cm}||p{1.8cm}|p{1.5cm}|p{1.5cm}|}
+        \hline
+        \hfill Präsenz&\hfill Precision &\hfill Recall &\hfill F1\\
+        \hline
+        \hline
+        \hfill Abwesenheit&\hfill 0.96&\hfill 0.92&\hfill 0.94\\
+        \hfill Anwesenheit&\hfill 0.74&\hfill 0.83&\hfill 0.78\\
+        \hline
+    \end{tabular}          
+    \label{tab:nn}
+\end{table}
+\begin{table}[h]
+    \centering
+    \caption{Genauigkeitsauswertung des LSTM}
+    \begin{tabular}{|p{2.5cm}||p{1.8cm}|p{1.5cm}|p{1.5cm}|}
+        \hline
+        \hfill Präsenz&\hfill Precision &\hfill Recall &\hfill F1\\
+        \hline
+        \hline
+        \hfill Abwesenheit&\hfill 0.93&\hfill 0.93&\hfill 0.93\\
+        \hfill Anwesenheit&\hfill 0.73&\hfill 0.72&\hfill 0.72\\
+        \hline
+    \end{tabular}          
+    \label{tab:LSTM}
+\end{table}
+
+Die in den Abb. \ref{fig:eval_NN} und \ref{fig:eval_LSTM} errechnete Durchschnittsgenauigkeit von ca. 89\%
+ist in Richtung der Abwesenheitswerte gewichtet. Auch neuronale Netze scheinen, ähnlich die das K-Means Modell,
+Probleme bei der Unterscheidung von An- und Abwesenheit während des Arbeitstages zu haben. Nur bei der 
+Klassifizierung der Abwesenheitswerte außerhalb des Arbeitstages liefern diese Modellen befriedigende 
+Ergebnisse.
+\newpage
+
 \subsection{Ergebnisse des K-Means Modells}\label{KMeans}
 Von allen benutzten Modellen ergaben sich bei dem K-Means Modell die größten Schwierigkeiten bei der 
 Klassifikation des Datensets. 
@@ -371,7 +440,7 @@ Modellauswertung von entscheidender Wichtigkeit sein kann.\\
 \begin{center}
     \begin{table}[h]
         \centering
-        \caption{Genauigkeitsauswertung}
+        \caption{Genauigkeitsauswertung des K-Means Modells}
         \begin{tabular}{|p{2.5cm}||p{1.8cm}|p{1.5cm}|p{1.5cm}|}
             \hline
             \hfill Präsenz&\hfill Precision &\hfill Recall &\hfill F1\\
@@ -416,5 +485,6 @@ Da die Datenpunkte im rechten Teilbild kaum zu unterscheiden sind, schafft es da
 während eines Arbeitstages zu unterscheiden. Währenddessen sind die Abwesenheiten im linken Teilbild sehr einfach
 zu klassifizieren.
 Diesen Sachverhalt spiegelt auch die Auswertung des \textit{Classification Report} in Tabelle \ref{tab:clus} wieder.\\
+
 %Das Erkennen von Abwesenheit im linken Teilbild von \ref{fig:pca1} ist nun erheblich einfacher, als die Trennung 
 %zwischen An- und Abwesenheit im rechten Teilbild. 

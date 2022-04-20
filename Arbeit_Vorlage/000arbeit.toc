@@ -31,16 +31,16 @@
 \contentsline {section}{\numberline {5.1}Feature Vektor}{27}{}%
 \contentsline {section}{\numberline {5.2}Ergebnisse}{32}{}%
 \contentsline {subsection}{\numberline {5.2.1}Umgang mit fehlenden Präsenz-Labels}{37}{}%
-\contentsline {subsection}{\numberline {5.2.2}Neuronale Netzwerke}{38}{}%
-\contentsline {subsection}{\numberline {5.2.3}Ergebnisse des K-Means Modells}{39}{}%
-\contentsline {chapter}{\numberline {6}\textbf {Zusammenfassung und Ausblick}}{41}{}%
-\contentsline {section}{\numberline {6.1}CO2 als Anwesenheitsindikator}{41}{}%
-\contentsline {section}{\numberline {6.2}Mögliche Verbesserungen}{41}{}%
-\contentsline {chapter}{Quellenverzeichnis}{43}{}%
-\contentsline {chapter}{Abkürzungsverzeichnis}{44}{}%
-\contentsline {chapter}{Abbildungsverzeichnis}{45}{}%
-\contentsline {chapter}{Tabellenverzeichnis}{46}{}%
+\contentsline {subsection}{\numberline {5.2.2}Neuronale Netzwerke}{39}{}%
+\contentsline {subsection}{\numberline {5.2.3}Ergebnisse des K-Means Modells}{41}{}%
+\contentsline {chapter}{\numberline {6}\textbf {Zusammenfassung und Ausblick}}{43}{}%
+\contentsline {section}{\numberline {6.1}CO2 als Anwesenheitsindikator}{43}{}%
+\contentsline {section}{\numberline {6.2}Mögliche Verbesserungen}{43}{}%
+\contentsline {chapter}{Quellenverzeichnis}{45}{}%
+\contentsline {chapter}{Abkürzungsverzeichnis}{46}{}%
+\contentsline {chapter}{Abbildungsverzeichnis}{47}{}%
+\contentsline {chapter}{Tabellenverzeichnis}{48}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Anhang}{46}{}%
-\contentsline {chapter}{\numberline {A}Quellcode}{47}{}%
+\contentsline {chapter}{Anhang}{48}{}%
+\contentsline {chapter}{\numberline {A}Quellcode}{49}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

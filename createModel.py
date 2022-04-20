@@ -69,3 +69,33 @@ def createNN(Xtrain):
 #    model.build()
     
     return model
+
+def build_model(hp):
+  inputs = tf.keras.Input(shape=(64044, 12))
+  x = inputs
+  for i in range(hp.Int('conv_blocks', 3, 5, default=3)):
+    filters = hp.Int('filters_' + str(i), 32, 256, step=32)
+    for _ in range(2):
+      x = tf.keras.layers.Convolution2D(
+        filters, kernel_size=(3, 3), padding='same')(x)
+      x = tf.keras.layers.BatchNormalization()(x)
+      x = tf.keras.layers.ReLU()(x)
+    if hp.Choice('pooling_' + str(i), ['avg', 'max']) == 'max':
+      x = tf.keras.layers.MaxPool2D()(x)
+    else:
+      x = tf.keras.layers.AvgPool2D()(x)
+  x = tf.keras.layers.GlobalAvgPool2D()(x)
+  x = tf.keras.layers.Dense(
+      hp.Int('hidden_size', 30, 100, step=10, default=50),
+      activation='relu')(x)
+  x = tf.keras.layers.Dropout(
+      hp.Float('dropout', 0, 0.5, step=0.1, default=0.5))(x)
+  outputs = tf.keras.layers.Dense(10, activation='softmax')(x)
+
+  model = tf.keras.Model(inputs, outputs)
+  model.compile(
+    optimizer=tf.keras.optimizers.Adam(
+      hp.Float('learning_rate', 1e-4, 1e-2, sampling='log')),
+    loss='sparse_categorical_crossentropy', 
+    metrics=['accuracy'])
+  return model
