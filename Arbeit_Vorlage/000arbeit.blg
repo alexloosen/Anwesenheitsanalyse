@@ -10,44 +10,44 @@ A level-1 auxiliary file: ./doc/111Schluss.aux
 The style file: apalike.bst
 A level-1 auxiliary file: ./doc/202abkuerzungsverzeichnis.aux
 Database file #1: ./bib/quellen.bib
-You've used 10 entries,
+You've used 12 entries,
             1935 wiz_defined-function locations,
-            538 strings with 5690 characters,
-and the built_in function-call counts, 3071 in all, are:
-= -- 294
-> -- 138
-< -- 7
-+ -- 50
-- -- 46
-* -- 222
-:= -- 598
-add.period$ -- 32
-call.type$ -- 10
-change.case$ -- 72
-chr.to.int$ -- 10
-cite$ -- 10
-duplicate$ -- 119
-empty$ -- 184
-format.name$ -- 56
-if$ -- 564
+            550 strings with 5973 characters,
+and the built_in function-call counts, 3597 in all, are:
+= -- 348
+> -- 152
+< -- 9
++ -- 54
+- -- 50
+* -- 258
+:= -- 704
+add.period$ -- 38
+call.type$ -- 12
+change.case$ -- 82
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 143
+empty$ -- 218
+format.name$ -- 62
+if$ -- 660
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 7
-newline$ -- 55
-num.names$ -- 30
-pop$ -- 55
+newline$ -- 65
+num.names$ -- 36
+pop$ -- 63
 preamble$ -- 1
-purify$ -- 73
+purify$ -- 85
 quote$ -- 0
-skip$ -- 101
+skip$ -- 121
 stack$ -- 0
-substring$ -- 124
-swap$ -- 6
+substring$ -- 148
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
+type$ -- 70
 warning$ -- 0
-while$ -- 20
+while$ -- 24
 width$ -- 0
-write$ -- 128
+write$ -- 154
