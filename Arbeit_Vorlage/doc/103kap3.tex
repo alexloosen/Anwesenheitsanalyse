@@ -170,22 +170,22 @@ Menge falscher Erwartungen für beide Werte zeigen.
 \end{figure}
 
 Bezogen auf die Fehlerquote ist allerdings zu erkennen, dass die Berechnung von Abwesenheit mit wesentlich höherer
-Genauigkeit erfolgt, als die Berechnung von Anwesenheit. In Abb. \ref{fig:ConMatrix} liegt die Genauigkeit Für
-Abwesenheit etwa bei 97.5\%, während die Genauigkeit für Anwesenheit bei lediglich ca. 91.9\% liegt.
+Genauigkeit erfolgt, als die Berechnung von Anwesenheit. In Abb. \ref{fig:ConMatrix} liegt die Genauigkeit für
+Abwesenheit etwa bei 97.5\%, während die Genauigkeit für Anwesenheit lediglich ca. 91.9\% beträgt.
 \\\\
 Dies liegt daran, dass sehr viele Datenpunkte für Abwesenheit zwischen ca. 18:00 Uhr und
-07:00 Uhr des nächsten Tages aufgezeichnet werden. Während dieser Zeit sind nie Personen anwesend, 
-weshalb die Modelle diesen Teil des Datensets leicht klassifizieren können.\\
-Während dem Arbeitstag zwischen ca. 07:00 Uhr und 17:00 Uhr existieren sowohl Messwerte für An- als auch für 
+07:00 Uhr des nächsten Tages aufgezeichnet werden. Da während dieser Zeit nie Personen anwesend sind,
+können die Modelle diesen Teil des Datensets leicht klassifizieren.\\
+Während des Arbeitstages zwischen ca. 07:00 Uhr und 17:00 Uhr existieren sowohl Messwerte für An- als auch für 
 Abwesenheit, weshalb es hier deutlich schwieriger ist den richtigen Labelwert zu errechnen.\\\\
-Dieser Trend lies sich bei allen Modellen beobachten. Die Genauigkeit bei der Errechnung von Abwesenheit
+Dieser Trend ließ sich bei allen Modellen beobachten. Die Genauigkeit bei der Errechnung von Abwesenheit
 lag immer höher, als bei Anwesenheit.
 
 \newpage
 
-Die Gegenüberstellung der Durchschnittsgenauigkeiten aller Modelle mit Precision-, Recall- und F1-Scores in 
-Abb. \ref{fig:ResAll}  zeigt, dass die Decision Tree Modelle bei diesem Klassifikationsproblem mit sehr hoher
-Genauigkeit sowohl An-, als auch Abwesenheit berechnen können. Zusätzlich wies das KNN Clustering ähnlich
+Die Gegenüberstellung der Durchschnittsgenauigkeiten aller Modelle (Abkürzungen siehe S.45) mit Precision-, Recall- und F1-Scores in 
+Abb. \ref{fig:ResAll}  zeigt, dass die statistischen Modelle (RFC, GBC, SVC) bei diesem Klassifikationsproblem mit sehr hoher
+Genauigkeit sowohl An- als auch Abwesenheit berechnen können. Zusätzlich wies das KNN Clustering ähnlich
 hohe Genauigkeiten auf.
 \begin{figure}[h]
     \centering
@@ -194,12 +194,12 @@ hohe Genauigkeiten auf.
     \label{fig:ResAll}
 \end{figure}
 
-Als Metrik wurde hier die Durchschnittsgenauigkeit der Genauigkeiten für An- und Abwesenheit gewählt, da die 
-Datensets wie bereits beschrieben An- und Abwesenheit stark unausgeglichen sind. Wenn man die Genauigkeiten
-nach der Menge der jeweiligen Datenpunkte gewichtet, erhöht das die Genauigkeit aller Modelle deutlich,
-ohne dass sich deren Aussagekraft steigert.\\\\ 
-Dieser Sachverhalt zeigt sich besonders deutlich durch die Darstellung der tatsächlichen Genauigkeiten bezogen 
-auf die beiden Labelwertein Abb. \ref{fig:ResSpec}. Alle Modelle sind deutlich besser in der Erkennung von 
+Als Metrik wurde hier der Durchschnitt der Genauigkeiten für An- und Abwesenheit gewählt, da die 
+Datensets, wie bereits beschrieben, bezüglich der Labelwerte stark unausgeglichen sind. Wenn man die Genauigkeiten
+nach der Menge der jeweiligen Datenpunkte (s. Abb. \ref{fig:ConMatrix}) gewichtet, erhöht das die Genauigkeit 
+aller Modelle deutlich, ohne dass sich deren Aussagekraft steigert.\\\\ 
+Dieser Sachverhalt zeigt sich besonders ausgeprägt bei der Darstellung der tatsächlichen Genauigkeiten bezogen 
+auf die beiden Labelwerte in Abb. \ref{fig:ResSpec}. Alle Modelle sind merklich besser in der Erkennung von 
 Abwesenheit.
 
 \begin{figure}[h]
@@ -214,8 +214,8 @@ wird in \ref{KMeans} genauer betrachtet.
 \newpage
 
 Ebenfalls aufschlussreich, ist die grafische Gegenüberstellung der erwarteten Labelwerte mit den tatsächlichen Labelwerten
-indem man das ursprüngliche Datenset mit \textit{timestamp} und \textit{CO2-Wert} zeichnet. Dabei markiert gelb 
-die Anwesenheitund blau die Abwesenheit von Personen.
+, indem man das ursprüngliche Datenset mit \textit{timestamp} und \textit{CO2-Wert} zeichnet. Dabei markiert gelb 
+die Anwesenheit und blau die Abwesenheit von Personen.
 
 \begin{figure}[h]
     \centering
@@ -250,9 +250,9 @@ Beim Parameter Tuning der ausgewählten Modelle wurden als Parameter-Optionen au
 den Standardwerten der Modelle entsprechen. Somit sollte das GridSearchCV-Modul ausschließlich in der Menge 
 von Parametern nach Möglichkeiten suchen, die nicht den Standard-Einstellungen entsprechen.\\
 Hier ist anzumerken, dass das K-Means Modell kein Parameter Tuning unterstützt und deshalb hier nicht 
-beachtet wird. Wie beschrieben, werden beim K-Means Algorithmus zufällige Datenpunkte in das Datenset
-gelegt, weshalb nicht jede Ausführung des Modells die gleiche Genauigkeit liefert. Es ist deshalb auch
-durch manuelle Veränderung der Parameter sehr schwer Verbesserungen der Genauigkeit herbeizuführen.\\
+betrachtet wird. Wie beschrieben, werden beim K-Means Algorithmus zufällige Datenpunkte in das Datenset
+gelegt, weshalb nicht jede Ausführung des Modells die gleiche Genauigkeit liefert. Es ist deshalb sehr schwer,
+durch manuelle Veränderung der Parameter Verbesserungen der Genauigkeit herbeizuführen.\\
 Neuronale Netze tauchen hier ebenfalls nicht auf, da diese Art von Modell vom GridSearchCV-Modul nicht
 unterstützt wird. Die Layer des NN und LSTM wurden manuell erzeugt, wobei deren Anordnung bereits so
 gewählt wurde, dass die Genauigkeiten möglichst maximiert werden.
@@ -266,7 +266,10 @@ gewählt wurde, dass die Genauigkeiten möglichst maximiert werden.
 
 Es ist zu sehen, dass das Parameter Tuning die Genauigkeit der Modelle im erwarteten Rahmen erhöht oder 
 verringert hat. Dies bestätigt die Annahme, dass dieser Anwendungsfall ein typisches Klassifizierungsproblem 
-darstellt, weshalb die Modelle nicht mehr maßgeblich verbessert werden können. Der Schritt des Parameter Tunings 
+darstellt, weshalb die Modelle nicht mehr maßgeblich verbessert werden können. Die Standardparameter der 
+einzelnen Modelle sind im Scikit-learn bereits so eingestellt, dass eine große Zahl an Klassifizierungsproblemen
+ohne weiteres Tuning zufriedenstellend gelöst werden kann.
+Der Schritt des Parameter Tunings 
 sollte trotzdem grundsätzlich immer durchgeführt werden, um zu erkennen, ob man durch eine einfache Änderung 
 der Parameter eine Verbesserung des Modells erzielen kann.\\
 
@@ -282,10 +285,10 @@ während die False Positive Rate auf der x-Achse durch
 \begin{align}
     \dfrac{FP}{FP + TN}
 \end{align}
-angegeben wird.\\
-Der Optimalwert wird hier durch in der grünen Kurve gezeigt, welche den Fall darstellt, 
+angegeben wird.\\\\
+Der Optimalwert wird hier in der grünen Kurve gezeigt, welche den Fall darstellt, 
 dass das Modell die Labels immer richtig berechnet und es nie zu Fehleinschätzungen kommt.\\
-Liegt ein Modell näher an der schwarzen Diagonale in der Mitte bedeutet das, dass True- und 
+Liegt ein Modell näher an der schwarzen Diagonale in der Mitte, bedeutet das, dass True- und 
 False-Positives jeweils 50\% der Ergebnismenge ausmachen. 
 Das Modell liegt dann genauso oft richtig, wie es Fehleinschätzungen trifft. 
 Je näher die einzelnen Modelle an der schwarzen Linie liegen, desto weniger aussagefähig sind sie. 
@@ -296,7 +299,7 @@ Je näher die einzelnen Modelle an der schwarzen Linie liegen, desto weniger aus
     \caption{ROC-Curves der Decision Tree und Clustering Modelle}
     \label{fig:Roc_curves}
 \end{figure}
-In \ref{fig:Roc_curves} ist zu sehen, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines der Modelle weist Anzeichen 
+In \ref{fig:Roc_curves} ist zu sehen, wie alle Modelle sehr ähnliche Ergebnisse aufweisen. Keines weist Anzeichen 
 dafür auf, dass Ergebnisse wegen Underfitting erraten werden. Alle Modelle zeigen eine hohe Rate von True-Positives und
 sind somit in den meisten Fällen in der Lage, aus den Input-Werten das richtige Ergebnis für die Präsenz abzuleiten.\\
 Es ist auch zu erkennen, dass für diesen Anwendungsfall Decision Tree Modelle am besten abschneiden.
@@ -318,9 +321,9 @@ anwesender Personen auf, wodurch sich die ermittelten Deltas der CO2-Werte erheb
 unterscheiden.\\\\
 Eines der Datensets zeichnete kontinuierliche Werte aus einem Wohnzimmer auf, in dem sich über einen 
 Tag hinweg maximal drei Personen befanden. Die Zeiträume, zu denen in diesem Wohnzimmer anhand der CO2-Werte
-Anwesenheit zu erkennen war, unterschieden sich deutlich von denen der Datensets der FH Aachen. Die 
-starken Anstiege des CO2-Wertes waren bei diesem Datenset viel mehr über den Tag verteilt, wodurch sich die 
-Datenreihe für diesen Test besonders anbot.\\
+Anwesenheit zu erkennen war, unterschieden sich deutlich von denen der Datensets der Büroräume der FH Aachen. 
+Die starken Anstiege des CO2-Wertes waren bei diesem Datenset viel mehr über den Tag verteilt, 
+wodurch sich die Datenreihe für diesen Test besonders anbot.\\
 Auf dieses Datenset wurde das auf die Büroräume trainierte  SVC Modell angewendet, da dieses bisher die 
 besten Ergebnisse bei der Unterscheidung von An- und Abwesenheit während eines Arbeitstages liefern konnte. 
 
@@ -369,10 +372,10 @@ Wie \ref{fig:eval_NN} und \ref{fig:eval_LSTM} zeigen, weisen beide Arten neurona
 konvergierten auch nach verschiedenen Epochen-Werten etwa bei 89\%.
 
 \newpage
-Die ROC-Curves zeigen auch hier, dass die durchschnittliche Modellgenauigkeit nicht als Metrik ausreicht, um
+Die ROC-Curves lassen auch hier erkennen, dass die durchschnittliche Modellgenauigkeit nicht als Metrik ausreicht, um
 die Qualität eines Modells festzustellen. Bei diesen Modellen zeigen sich deutlich größere Abweichungen zwischen
-den Genauigkeiten für die Berechnung von Ab- und Abwesenheit. Wie in Abb. \ref{fig:Roc_nn} zu sehen, liefern
-beide Modelle hohen Genauigkeiten bei der Errechnung von Anwesenheit.
+den Genauigkeiten für die Berechnung von An- und Abwesenheit. Wie in Abb. \ref{fig:Roc_nn} zu sehen, liefern
+beide Modelle hohe Genauigkeiten bei der Errechnung von Anwesenheit.
 
 \begin{figure}[!h]
     \centering
@@ -414,9 +417,9 @@ Zieht man den Classification Report in Tab. \ref{tab:nn} hinzu, wird dieser Sach
 \end{table}
 
 Die in den Abb. \ref{fig:eval_NN} und \ref{fig:eval_LSTM} errechnete Durchschnittsgenauigkeit von ca. 89\%
-ist in Richtung der Abwesenheitswerte gewichtet. Auch neuronale Netze scheinen, ähnlich die das K-Means Modell,
+ist in Richtung der Abwesenheitswerte gewichtet. Auch neuronale Netze scheinen, ähnlich wie das K-Means Modell,
 Probleme bei der Unterscheidung von An- und Abwesenheit während des Arbeitstages zu haben. Nur bei der 
-Klassifizierung der Abwesenheitswerte außerhalb des Arbeitstages liefern diese Modellen befriedigende 
+Klassifizierung der Abwesenheitswerte außerhalb des Arbeitstages liefern diese Modelle befriedigende 
 Ergebnisse.
 \newpage
 
@@ -430,8 +433,8 @@ Wegen der Unausgeglichenheit des Datensets sind ca. zwei Drittel des Datensets s
 klassifizieren, da es im ganzen Datenset nie Anwesenheiten zwischen ca. 18:00 Uhr und 07:00 Uhr des nächsten 
 Tages gibt. Bei diesem Teil der Daten wies das Modell eine hohe Genauigkeit von 94\% auf. So werden also 
 ca. 67\% des Datensets mit enorm hoher Genauigkeit klassifiziert.\\
-Selbst wenn das Modell beim letzten Drittel der Daten, also dem Teil des Datensets bei dem es zwischen
-An- und Abwesenheit unterscheiden muss, rät und somit nur mit einer Genauigkeit von 50\% das richtige Label 
+Selbst wenn das Modell beim letzten Drittel der Daten rät, also dem Teil des Datensets bei dem es zwischen
+An- und Abwesenheit unterscheiden muss, und somit nur mit einer Genauigkeit von 50\% das richtige Label 
 errechnet, suggeriert eine daraus resultierende Gesamtgenauigkeit von etwa 80\% ein funktionierendes Modell.
 Allerdings zeigt sich hier, warum auch die Gegenüberstellung von True und False Positives in der 
 Modellauswertung von entscheidender Wichtigkeit sein kann.\\
@@ -470,8 +473,8 @@ Die Menge der Anwesenheiten (orange) ist in \ref{fig:pca} nahezu identisch mit d
 Abwesenheiten (blau). 
 Das heißt, dass alle Datenpunkte, die in der linken Hälfte des blauen Datensets liegen, sehr einfach klassifiziert 
 werden können.\\
-Legt man beide Datensets übereinander, ist es nun ohne die Einfärbung nahezu unmöglich zwischen An- und 
-Abwesenheit zu unterscheiden.\\
+Legt man beide Datensets übereinander, ist es nun ohne die Einfärbung nahezu unmöglich An- und 
+Abwesenheit auseinanderzuhalten.\\
 
 \begin{figure}[h]
     \centering
@@ -480,10 +483,14 @@ Abwesenheit zu unterscheiden.\\
     \label{fig:pca1}
 \end{figure}
 
-Da die Datenpunkte im rechten Teilbild kaum zu unterscheiden sind, schafft es das Modell nicht, An- und Abwesenheit
-während eines Arbeitstages zu unterscheiden. Währenddessen sind die Abwesenheiten im linken Teilbild sehr einfach
-zu klassifizieren.
-Diesen Sachverhalt spiegelt auch die Auswertung des \textit{Classification Report} in Tabelle \ref{tab:clus} wieder.\\
+%Da die Datenpunkte im rechten Teilbild kaum zu unterscheiden sind, schafft es das Modell nicht, 
+%An- und Abwesenheit während eines Arbeitstages zu unterscheiden. Währenddessen sind die Abwesenheiten im linken
+%Teilbild sehr einfach zu klassifizieren.
+Die Datenpunkte im rechten Teilbild von Abb. \ref{fig:pca1} sind kaum auseinanderzuhalten. Das Modell schafft es
+folglich nicht, An- und Abwesenheiten während eines Arbeitstages zu unterscheiden. Die Abwesenheiten im linken
+Teilbild sind hingegen sehr einfach zu klassifizieren.
+Diesen Sachverhalt spiegelt auch die Auswertung des \textit{Classification Report} in Tabelle \ref{tab:clus} 
+wieder.\\
 
 %Das Erkennen von Abwesenheit im linken Teilbild von \ref{fig:pca1} ist nun erheblich einfacher, als die Trennung 
 %zwischen An- und Abwesenheit im rechten Teilbild. 

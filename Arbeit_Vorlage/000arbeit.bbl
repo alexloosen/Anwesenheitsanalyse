@@ -13,10 +13,21 @@ Irvan B. Arief-Ang, Flora D.~Salim, M.~H. (2017).
   data.
 \newblock Online.
 
+\bibitem[Kleiminger, 2015]{Kleiminger}
+Kleiminger, W. (2015).
+\newblock {\em Occupancy Sensing and Prediction for Automated Energy Savings}.
+\newblock PhD thesis, ETH Zürich.
+
 \bibitem[Koehrsen, 2018]{ParTuning}
 Koehrsen, W. (2018).
 \newblock Hyperparameter tuning the random forest in python.
 \newblock {\em Towards Data Science}.
+
+\bibitem[Krieger, 2002]{Krieger}
+Krieger, T. (2002).
+\newblock {\em Innovative Sensorkonzepte und Signalverarbeitungsstrategien zur
+  Bewegungserkennung und Präsenzkontrolle von Personen}.
+\newblock PhD thesis, Universität Siegen.
 
 \bibitem[{Riham Jaber} et~al., 2017]{RIHAMJABER}
 {Riham Jaber}, A., Dejan, M., and Marcella, U. (2017).
