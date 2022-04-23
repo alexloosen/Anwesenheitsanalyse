@@ -15,14 +15,12 @@ von möglichen Feldern durch Verknüpfung von Temperatur, Luftfeuchtigkeit, CO2 
 vorgenommen. Anschließend werden die Modellgenauigkeiten einzelner FVs miteinander verglichen.
 
 Ziel war es, mit einem möglichst kleinen Vektor eine möglichst hohe Genauigkeit zu erreichen, da bei den meisten Algorithmen eine 
-direkte Abhängigkeit zwischen Dauer der Berechnung und Dimensionalität des FV besteht. \\\\ 
-
+direkte Abhängigkeit zwischen Dauer der Berechnung und Dimensionalität des FV besteht.\\\\ 
 In diesem Fall wurden die Feature Importances eines Random Forest genutzt, um Auskunft darüber zu erhalten, wie 
 relevant bestimmte Felder für die Erwartungsberechnung sind. Diese werden errechnet, indem geprüft wird, wie viele
 Datensätze des Sets bestimmte Knoten des Baumes erreichen. Wenn ein beliebiger Decision Tree eine große Menge
 des Datensets allein über seinen rechten Teilbaum klassifizieren kann, werden die darin enthaltenen Knoten schwerer
 gewichtet, da sie in einem höheren Maß in die endgültige Entscheidung einfließen.\\\\
-
 Diese Eigenschaft wurde zur Ermittlung des FVs genutzt, indem verschiedene Modelle mit einem FV-Kandidaten trainiert
 wurden und anschließend sowohl die Genauigkeiten, als auch die Feature Importances gegenübergestellt wurden.
 Features mit geringer Relevanz wurden entfernt und die Modellgenauigkeiten erneut geprüft, um so über mehrere 

@@ -1196,11 +1196,11 @@ INPUT ./pic/confusion_matrix_ex.png
 INPUT pic/confusion_matrix_ex.png
 INPUT ./pic/confusion_matrix_ex.png
 INPUT ./pic/confusion_matrix_ex.png
-INPUT ./pic/CV.png
-INPUT ./pic/CV.png
-INPUT pic/CV.png
-INPUT ./pic/CV.png
-INPUT ./pic/CV.png
+INPUT ./pic/cv_new.png
+INPUT ./pic/cv_new.png
+INPUT pic/cv_new.png
+INPUT ./pic/cv_new.png
+INPUT ./pic/cv_new.png
 INPUT ./pic/param_test.png
 INPUT ./pic/param_test.png
 INPUT pic/param_test.png

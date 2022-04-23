@@ -41,6 +41,4 @@
 \contentsline {chapter}{Abbildungsverzeichnis}{46}{}%
 \contentsline {chapter}{Tabellenverzeichnis}{47}{}%
 \vspace {0.8cm}
-\contentsline {chapter}{Anhang}{47}{}%
-\contentsline {chapter}{\numberline {A}Quellcode}{48}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
