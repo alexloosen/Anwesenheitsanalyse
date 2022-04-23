@@ -222,7 +222,7 @@ die Anwesenheit und blau die Abwesenheit von Personen.
     \label{fig:nov23}
 \end{figure}
 
-\ref{fig:nov23} zeigt den Verlauf der CO2-Messungen über einen Arbeitstag. Die blaue und gelbe Einfärbung stellt
+Abb. \ref{fig:nov23} zeigt den Verlauf der CO2-Messungen über einen Arbeitstag. Die blaue und gelbe Einfärbung stellt
 die Messung des Infrarotsensors dar.\\ 
 Ersetzt man aus dieser Datenreihe die tatsächlichen Messwerte des Infrarotsensors durch die errechneten 
 Anwesenheitswerte des Modells, zeigt sich die hohe Genauigkeit in \ref{fig:nov23_pred} durch die neue Einfärbung 
@@ -470,9 +470,9 @@ bei der das Datenset auf zwei Dimensionen reduziert wurde und An- und Abwesenhei
 Die Menge der Anwesenheiten (orange) ist in \ref{fig:pca} nahezu identisch mit der rechten Teilmenge der 
 Abwesenheiten (blau). 
 Das heißt, dass alle Datenpunkte, die in der linken Hälfte des blauen Datensets liegen, sehr einfach klassifiziert 
-werden können.\\
-Legt man beide Datensets übereinander, ist es nun ohne die Einfärbung nahezu unmöglich An- und 
-Abwesenheit auseinanderzuhalten.\\
+werden können.\\\\
+Legt man beide Datensets übereinander, ist es ohne die Einfärbung nahezu unmöglich An- und 
+Abwesenheit auseinanderzuhalten, wie in Abb. \ref{fig:pca1} zu sehen ist.\\
 
 \begin{figure}[h]
     \centering
@@ -484,9 +484,9 @@ Abwesenheit auseinanderzuhalten.\\
 %Da die Datenpunkte im rechten Teilbild kaum zu unterscheiden sind, schafft es das Modell nicht, 
 %An- und Abwesenheit während eines Arbeitstages zu unterscheiden. Währenddessen sind die Abwesenheiten im linken
 %Teilbild sehr einfach zu klassifizieren.
-Die Datenpunkte im rechten Teilbild von Abb. \ref{fig:pca1} sind kaum auseinanderzuhalten. Das Modell schafft es
-folglich nicht, An- und Abwesenheiten während eines Arbeitstages zu unterscheiden. Die Abwesenheiten im linken
-Teilbild sind hingegen sehr einfach zu klassifizieren.
+%Die Datenpunkte im rechten Teilbild von Abb. \ref{fig:pca1} sind kaum auseinanderzuhalten.
+Das Modell schafft es folglich nicht, An- und Abwesenheiten während eines Arbeitstages zu unterscheiden. 
+Die Abwesenheiten im linken Teilbild sind hingegen sehr einfach zu klassifizieren.
 Diesen Sachverhalt spiegelt auch die Auswertung des \textit{Classification Report} in Tabelle \ref{tab:clus} 
 wieder.\\
 

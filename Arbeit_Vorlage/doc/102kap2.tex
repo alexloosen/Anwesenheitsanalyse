@@ -105,7 +105,8 @@ Anordnungen von bestimmten Fragen, die über das Datenset gestellt werden, um ei
 \end{figure}
 
 Erstellt man ein ,,\textit{Ensemble}'' aus Decision Trees, die Erwartungen über einen zufällig gewählten 
-Teil des Datensets treffen können, entsteht ein Random Forest.
+Teil des Datensets treffen können, entsteht ein Random Forest. Der Teilname \textit{Random} bedeutet, dass
+jeder Decision Tree des Ensenbles ein zufällig gewähltes Subset an Spalten des Datensets enthält.\\
 Der Random Forest Classifier versucht, eine Menge einfacher Schätzfunktionen über einen komplexeren 
 Sachverhalt ,,abstimmen'' zu lassen. Während sich in einem einzelnen Entscheidungsbaum Fehleinschätzungen 
 entwickeln können, sinkt die Chance auf eine solche Fehleinschätzung, je mehr unabhängige 
@@ -115,7 +116,7 @@ Entscheidungsbäume man befragt.
 Der \textit{Gradient Boosting Classifier} GBC ist eine Abwandlung eines RFC und  versucht, seine Erwartungen
 aufgrund von Abweichungen eines Labels vom Durchschnitt dieses Labels zu treffen. \\
 Versucht man beispielsweise aus dem Gewicht eines Tieres dessen Alter zu bestimmen, wird 
-ein GBC als Ausgangswert den Durchschnitt aller Label-Werte, also dem Gewicht, berechnen. Danach werden die 
+ein GBC als Ausgangswert den Durchschnitt aller Label-Werte, also dem Alter, berechnen. Danach werden die 
 Abweichungen aller Label-Werte zu diesem Durchschnitt gebildet. Diese Abweichungen werden nun in Beziehung zu den 
 anderen Spalten des Datensets gesetzt. 
 \\\\
@@ -140,9 +141,11 @@ kann.
 
 In Abb. \ref{fig:SVC_1D} ist der SVC ein Punkt auf einer eindimensionalen Linie, auf der das Gewicht in kg von z.B. 
 Tieren in ,,unter-'' und ,,übergewichtig'' unterteilt wird. Dieser Punkt ist Ergebnis aller Verhältnisse der einzelnen
-Datenpunkte zueinander. Durch sog. ,,\textit{Kernel Funktionen}'' versucht der Algorithmus nun Beziehungen 
+Datenpunkte zueinander. Der SVC versucht sich dabei stets so zu positionieren, dass sein Abstand zu den beiden nächsten
+grünen und roten punkten minimal wird. Die Position wird zusätzlich durch die Verteilung der Datenpunkte gewichtet.\\
+Durch sog. ,,\textit{Kernel Funktionen}'' versucht der Algorithmus nun Beziehungen 
 in höheren Dimensionen zu finden, wie z.B. $Masse^2$, $Masse^3$ usw. . Der SVC stellt dann in diesen Dimensionen 
-eine Linie in einem zweidimensionalen oder eine Ebene in einem dreidimensionalen Koordinatensystem dar.\\
+eine Linie in einem zweidimensionalen oder eine Ebene in einem dreidimensionalen Koordinatensystem usw. dar.\\
 
 \begin{figure}[h]
     \centering
