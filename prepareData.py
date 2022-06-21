@@ -8,6 +8,7 @@ def encodeCyclical(df, col, max_val):
     return df
 
 def detectOutliers(df):
+    # IQR Tukey's Method
     x = df['co2_ppm']
     q1 = np.percentile(x, 5)
     q3 = np.percentile(x, 95)
@@ -16,7 +17,6 @@ def detectOutliers(df):
     ceiling = q3 + 1.5*iqr
     outlier_indices = list(x.index[(x < floor) | (x > ceiling)])
     outlier_values = list(x[outlier_indices])
-    print(outlier_values)
     return outlier_indices
 
 def extractSection(df, dateFrom, dateTo):
@@ -50,7 +50,7 @@ def insertWeekday(df):
     return df
 
 def preProcessDataset(df):
-    # Daten mit falschen PIR-Werten rausschmeissen
+    # Daten mit falschen PIR-Werten entfernen
     df_new = dropSection(df, 1634518800, 1637586000)
 
     # Timestamp einfacher zu verarbeiten, wenn als Integer gespeichert
@@ -59,77 +59,17 @@ def preProcessDataset(df):
     df_new = encodeCyclical(df_new, 'second', 86399)
 
     # Deltas einfuegen
-    df_new = addDelta(df_new, 'co2_ppm', 1)
-    df_new = addDelta(df_new, 'co2_ppm', 2)
-    df_new = addDelta(df_new, 'co2_ppm', 3)
-    df_new = addDelta(df_new, 'co2_ppm', 4)
-    df_new = addDelta(df_new, 'co2_ppm', 5)
-    df_new = addDelta(df_new, 'co2_ppm', 6)
-    df_new = addDelta(df_new, 'co2_ppm', 7)
-    df_new = addDelta(df_new, 'co2_ppm', 8)
-    #df_new = addDelta(df_new, 'co2_ppm', 9)
-    #df_new = addDelta(df_new, 'co2_ppm', 10)
-    #df_new = addDelta(df_new, 'co2_ppm', 11)
-    #df_new = addDelta(df_new, 'co2_ppm', 12)
-    #df_new = addDelta(df_new, 'co2_ppm', 13)
-    #df_new = addDelta(df_new, 'co2_ppm', 14)
-    #df_new = addDelta(df_new, 'co2_ppm', 15)
+    for x in range(8):
+        df_new = addDelta(df_new, 'co2_ppm', x)
     
-#    df_new = addDelta(df_new, 'temperature_celsius', 1)
-#    df_new = addDelta(df_new, 'temperature_celsius', 2)
-#    df_new = addDelta(df_new, 'temperature_celsius', 3)
-#    df_new = addDelta(df_new, 'temperature_celsius', 4)
-#    df_new = addDelta(df_new, 'temperature_celsius', 5)
-#    df_new = addDelta(df_new, 'temperature_celsius', 6)
-#    df_new = addDelta(df_new, 'temperature_celsius', 7)
-#    df_new = addDelta(df_new, 'temperature_celsius', 8)
-    
-#    df_new = addDelta(df_new, 'relative_humidity_percent', 1)
-#    df_new = addDelta(df_new, 'relative_humidity_percent', 2)
-#    df_new = addDelta(df_new, 'relative_humidity_percent', 3)
-#    df_new = addDelta(df_new, 'relative_humidity_percent', 4)
-#    df_new = addDelta(df_new, 'relative_humidity_percent', 5)
-#    df_new = addDelta(df_new, 'relative_humidity_percent', 6)
-#    df_new = addDelta(df_new, 'relative_humidity_percent', 7)
-#    df_new = addDelta(df_new, 'relative_humidity_percent', 8)
-    
-    # Daten shiften
-    #df_new['co2_ppm_last'] = df_new.shift(1)['co2_ppm']
-
-    # Werte von vor n-Minuten einfuegen
-#    df_new['co2_ppm_shift1'] = df_new.shift(1)['co2_ppm']
-#    df_new['co2_ppm_shift2'] = df_new.shift(2)['co2_ppm']
-#    df_new['co2_ppm_shift3'] = df_new.shift(3)['co2_ppm']
-#    df_new['co2_ppm_shift4'] = df_new.shift(4)['co2_ppm']
-#    df_new['co2_ppm_shift5'] = df_new.shift(5)['co2_ppm']
-#    df_new['co2_ppm_shift6'] = df_new.shift(6)['co2_ppm']
-#    df_new['co2_ppm_shift7'] = df_new.shift(7)['co2_ppm']
-#    df_new['co2_ppm_shift8'] = df_new.shift(8)['co2_ppm']
-#    df_new['co2_ppm_shift9'] = df_new.shift(9)['co2_ppm']
-#    df_new['co2_ppm_shift10'] = df_new.shift(10)['co2_ppm']
-#    df_new['co2_ppm_shift11'] = df_new.shift(11)['co2_ppm']
-#    df_new['co2_ppm_shift12'] = df_new.shift(12)['co2_ppm']
-#    df_new['co2_ppm_shift13'] = df_new.shift(13)['co2_ppm']
-#    df_new['co2_ppm_shift14'] = df_new.shift(14)['co2_ppm']
-#    df_new['co2_ppm_shift15'] = df_new.shift(15)['co2_ppm']
-
-#    df_new['shift1_delta'] = df_new.shift(1)['co2_ppm'] - df_new.shift(2)['co2_ppm']
-#    df_new['shift2_delta'] = df_new.shift(2)['co2_ppm'] - df_new.shift(3)['co2_ppm']
-#    df_new['shift3_delta'] = df_new.shift(3)['co2_ppm'] - df_new.shift(4)['co2_ppm']
-#    df_new['shift4_delta'] = df_new.shift(4)['co2_ppm'] - df_new.shift(5)['co2_ppm']
-#    df_new['shift5_delta'] = df_new.shift(5)['co2_ppm'] - df_new.shift(6)['co2_ppm']
-#    df_new['shift6_delta'] = df_new.shift(6)['co2_ppm'] - df_new.shift(7)['co2_ppm']
-
     # Wochentag einfuegen
-    # verringert Genauigkeit, weil wahrscheinlich zu "verlaesslich"
-
     df_new = insertWeekday(df_new)
     #df_new = df_new.drop(df_new[df_new.dayOfWeek > 4].index)
 
     # Leere Felder entfernen
     df_new = df_new.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
 
-    # Ausreisser mit Interquartile Range (IQR) und Tukey's Method loeschen
+    # Ausreisser loeschen
     outlier_indices = detectOutliers(df_new)
     df_new.drop(index=outlier_indices, inplace=True)
 
@@ -138,10 +78,6 @@ def preProcessDataset(df):
 def reshape_data_for_LSTM(X, y, timesteps_per_sample):
     X = X.copy()
     sample_count = int(X.count()[0]/timesteps_per_sample)
-    
-    while X.count()[0] % sample_count != 0:
-        X = X.iloc[1: , :]
-        y = y.iloc[1:]
     
     X_array = X.to_numpy()
     y_array = y.to_numpy()

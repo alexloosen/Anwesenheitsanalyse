@@ -17,3 +17,4 @@ def plotHistoryLoss(history):
     mplt.xlabel('epoch')
     mplt.legend(['train', 'val'], loc='upper right')
     return mplt
+

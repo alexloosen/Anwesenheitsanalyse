@@ -27,7 +27,8 @@ def createClassifier(classType, Xtrain, ytrain):
     elif (classType == 'KNN'):
         modelClass = KNeighborsClassifier()
     elif (classType == 'KM'):
-        modelClass = MiniBatchKMeans(n_clusters=2, batch_size = 8192)
+        modelClass = MiniBatchKMeans(n_clusters=2, batch_size = 8192, init = 'k-means++', max_iter = 2000, 
+                                     tol=1e-6, verbose=1, reassignment_ratio=0.1)
     elif (classType == 'LR'):
         modelClass = LogisticRegression(solver='saga', max_iter=5000)
         #Xtrain, scaler = prepareData.normalize_min_max(Xtrain)

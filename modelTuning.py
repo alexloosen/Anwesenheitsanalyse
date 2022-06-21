@@ -96,3 +96,4 @@ def parameterTuning(modelType, Xtrain, ytrain, Xtest, ytest, X_presence, y_prese
 
 def crossValidation(model, X_presence, y_presence, cv):
     print(cross_val_score(model, X_presence, y_presence, cv=cv))
+    
